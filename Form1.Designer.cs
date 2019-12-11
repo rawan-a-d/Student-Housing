@@ -30,37 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem(new string[] {
             "07-12-19 (SA)",
             "17:30 - 23:59",
             "Christmas Party",
             "Sarah Harrings",
             "84%"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem(new string[] {
             "04-12-19 (WE)",
             "Task: Cleaning",
             "David Mandela"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
             "07-12-19 (SA)",
             "Task: Cleaning",
             "Sarah Harrings"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem(new string[] {
             "07-12-19 (SA)",
             "Event: Party",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(new string[] {
             "09-12-19 (MO)",
             "Task: Groceries",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem(new string[] {
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
             "23-11-19",
             "Complaint",
             "Very loud after midnight.",
@@ -102,9 +102,9 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.lv_HouseRulesStudent = new System.Windows.Forms.ListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvwHouseRulesStudent = new System.Windows.Forms.ListView();
+            this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
             this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
@@ -155,18 +155,18 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_Logout = new System.Windows.Forms.Button();
-            this.lbl_TodayDate = new System.Windows.Forms.Label();
+            this.lblTodayDate = new System.Windows.Forms.Label();
             this.btn_SwitchInterface = new System.Windows.Forms.Button();
             this.tabs_Admin = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.btn_RulesModifySelected = new System.Windows.Forms.Button();
-            this.btn_RulesRemoveSelected = new System.Windows.Forms.Button();
+            this.btnRulesModifySelected = new System.Windows.Forms.Button();
+            this.btnRulesRemoveSelected = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_RulesNewDescription = new System.Windows.Forms.TextBox();
-            this.btn_RulesAdd = new System.Windows.Forms.Button();
-            this.lv_RulesAdmin = new System.Windows.Forms.ListView();
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbxNewRule = new System.Windows.Forms.TextBox();
+            this.btnAddRule = new System.Windows.Forms.Button();
+            this.lvwHouseRulesAdmin = new System.Windows.Forms.ListView();
+            this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDateAdded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTenantAdd = new System.Windows.Forms.Button();
@@ -206,6 +206,7 @@
             this.tb_LoginPassword = new System.Windows.Forms.TextBox();
             this.btn_Login = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.tabs_Student.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -475,7 +476,7 @@
             this.lv_PendingEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_PendingEvents.HideSelection = false;
             this.lv_PendingEvents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9});
+            listViewItem33});
             this.lv_PendingEvents.Location = new System.Drawing.Point(497, 249);
             this.lv_PendingEvents.Margin = new System.Windows.Forms.Padding(4);
             this.lv_PendingEvents.Name = "lv_PendingEvents";
@@ -568,10 +569,10 @@
             this.lv_Schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_Schedule.HideSelection = false;
             this.lv_Schedule.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10,
-            listViewItem11,
-            listViewItem12,
-            listViewItem13});
+            listViewItem34,
+            listViewItem35,
+            listViewItem36,
+            listViewItem37});
             this.lv_Schedule.Location = new System.Drawing.Point(8, 7);
             this.lv_Schedule.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Schedule.Name = "lv_Schedule";
@@ -598,7 +599,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.lv_HouseRulesStudent);
+            this.tabPage4.Controls.Add(this.lvwHouseRulesStudent);
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
@@ -607,29 +608,29 @@
             this.tabPage4.Text = "House Rules";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // lv_HouseRulesStudent
+            // lvwHouseRulesStudent
             // 
-            this.lv_HouseRulesStudent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10,
-            this.columnHeader11});
-            this.lv_HouseRulesStudent.HideSelection = false;
-            this.lv_HouseRulesStudent.Location = new System.Drawing.Point(4, 4);
-            this.lv_HouseRulesStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_HouseRulesStudent.Name = "lv_HouseRulesStudent";
-            this.lv_HouseRulesStudent.Size = new System.Drawing.Size(1025, 430);
-            this.lv_HouseRulesStudent.TabIndex = 0;
-            this.lv_HouseRulesStudent.UseCompatibleStateImageBehavior = false;
-            this.lv_HouseRulesStudent.View = System.Windows.Forms.View.Details;
+            this.lvwHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chDate,
+            this.chDescription});
+            this.lvwHouseRulesStudent.HideSelection = false;
+            this.lvwHouseRulesStudent.Location = new System.Drawing.Point(4, 4);
+            this.lvwHouseRulesStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.lvwHouseRulesStudent.Name = "lvwHouseRulesStudent";
+            this.lvwHouseRulesStudent.Size = new System.Drawing.Size(1025, 430);
+            this.lvwHouseRulesStudent.TabIndex = 0;
+            this.lvwHouseRulesStudent.UseCompatibleStateImageBehavior = false;
+            this.lvwHouseRulesStudent.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader10
+            // chDate
             // 
-            this.columnHeader10.Text = "Date Added";
-            this.columnHeader10.Width = 69;
+            this.chDate.Text = "Date Added";
+            this.chDate.Width = 210;
             // 
-            // columnHeader11
+            // chDescription
             // 
-            this.columnHeader11.Text = "Description";
-            this.columnHeader11.Width = 697;
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 697;
             // 
             // tabPage5
             // 
@@ -640,7 +641,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 27);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1037, 445);
+            this.tabPage5.Size = new System.Drawing.Size(1033, 445);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Agreements";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -681,8 +682,8 @@
             this.columnHeader23});
             this.lv_Agreements.HideSelection = false;
             this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem14,
-            listViewItem15});
+            listViewItem38,
+            listViewItem39});
             this.lv_Agreements.Location = new System.Drawing.Point(0, 4);
             this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Agreements.Name = "lv_Agreements";
@@ -717,7 +718,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1037, 445);
+            this.tabPage3.Size = new System.Drawing.Size(1033, 445);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "My Complaints & Questions";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -781,7 +782,7 @@
             this.columnHeader19});
             this.lv_CQStudent.HideSelection = false;
             this.lv_CQStudent.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem16});
+            listViewItem40});
             this.lv_CQStudent.Location = new System.Drawing.Point(5, 5);
             this.lv_CQStudent.Margin = new System.Windows.Forms.Padding(4);
             this.lv_CQStudent.Name = "lv_CQStudent";
@@ -842,7 +843,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1037, 445);
+            this.tabPage2.Size = new System.Drawing.Size(1033, 445);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Account Information";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1128,24 +1129,25 @@
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = true;
             // 
-            // lbl_TodayDate
+            // lblTodayDate
             // 
-            this.lbl_TodayDate.AutoSize = true;
-            this.lbl_TodayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TodayDate.Location = new System.Drawing.Point(841, 31);
-            this.lbl_TodayDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_TodayDate.Name = "lbl_TodayDate";
-            this.lbl_TodayDate.Size = new System.Drawing.Size(205, 36);
-            this.lbl_TodayDate.TabIndex = 7;
-            this.lbl_TodayDate.Text = "03-12-19 (TU)";
+            this.lblTodayDate.AutoSize = true;
+            this.lblTodayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayDate.Location = new System.Drawing.Point(841, 31);
+            this.lblTodayDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTodayDate.Name = "lblTodayDate";
+            this.lblTodayDate.Size = new System.Drawing.Size(0, 36);
+            this.lblTodayDate.TabIndex = 7;
             // 
             // btn_SwitchInterface
             // 
-            this.btn_SwitchInterface.BackColor = System.Drawing.Color.Red;
+            this.btn_SwitchInterface.BackColor = System.Drawing.Color.Teal;
+            this.btn_SwitchInterface.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SwitchInterface.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_SwitchInterface.Location = new System.Drawing.Point(491, -1);
             this.btn_SwitchInterface.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SwitchInterface.Name = "btn_SwitchInterface";
-            this.btn_SwitchInterface.Size = new System.Drawing.Size(80, 37);
+            this.btn_SwitchInterface.Size = new System.Drawing.Size(97, 45);
             this.btn_SwitchInterface.TabIndex = 9;
             this.btn_SwitchInterface.Text = "SWITCH";
             this.btn_SwitchInterface.UseVisualStyleBackColor = false;
@@ -1156,48 +1158,50 @@
             this.tabs_Admin.Controls.Add(this.tabPage6);
             this.tabs_Admin.Controls.Add(this.tabPage7);
             this.tabs_Admin.Controls.Add(this.tabPage8);
-            this.tabs_Admin.Location = new System.Drawing.Point(13, 73);
+            this.tabs_Admin.Location = new System.Drawing.Point(16, 71);
             this.tabs_Admin.Margin = new System.Windows.Forms.Padding(4);
             this.tabs_Admin.Name = "tabs_Admin";
             this.tabs_Admin.SelectedIndex = 0;
-            this.tabs_Admin.Size = new System.Drawing.Size(1041, 471);
+            this.tabs_Admin.Size = new System.Drawing.Size(1033, 473);
             this.tabs_Admin.TabIndex = 16;
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.btn_RulesModifySelected);
-            this.tabPage6.Controls.Add(this.btn_RulesRemoveSelected);
+            this.tabPage6.Controls.Add(this.btnRulesModifySelected);
+            this.tabPage6.Controls.Add(this.btnRulesRemoveSelected);
             this.tabPage6.Controls.Add(this.label1);
-            this.tabPage6.Controls.Add(this.tb_RulesNewDescription);
-            this.tabPage6.Controls.Add(this.btn_RulesAdd);
-            this.tabPage6.Controls.Add(this.lv_RulesAdmin);
+            this.tabPage6.Controls.Add(this.tbxNewRule);
+            this.tabPage6.Controls.Add(this.btnAddRule);
+            this.tabPage6.Controls.Add(this.lvwHouseRulesAdmin);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1033, 442);
+            this.tabPage6.Size = new System.Drawing.Size(1025, 444);
             this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "Housing Rules";
+            this.tabPage6.Text = "House Rules";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // btn_RulesModifySelected
+            // btnRulesModifySelected
             // 
-            this.btn_RulesModifySelected.Location = new System.Drawing.Point(729, 358);
-            this.btn_RulesModifySelected.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_RulesModifySelected.Name = "btn_RulesModifySelected";
-            this.btn_RulesModifySelected.Size = new System.Drawing.Size(147, 27);
-            this.btn_RulesModifySelected.TabIndex = 6;
-            this.btn_RulesModifySelected.Text = "Modify Selected";
-            this.btn_RulesModifySelected.UseVisualStyleBackColor = true;
+            this.btnRulesModifySelected.Location = new System.Drawing.Point(647, 396);
+            this.btnRulesModifySelected.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRulesModifySelected.Name = "btnRulesModifySelected";
+            this.btnRulesModifySelected.Size = new System.Drawing.Size(147, 27);
+            this.btnRulesModifySelected.TabIndex = 6;
+            this.btnRulesModifySelected.Text = "Modify Selected";
+            this.btnRulesModifySelected.UseVisualStyleBackColor = true;
+            this.btnRulesModifySelected.Click += new System.EventHandler(this.btnRulesModifySelected_Click);
             // 
-            // btn_RulesRemoveSelected
+            // btnRulesRemoveSelected
             // 
-            this.btn_RulesRemoveSelected.Location = new System.Drawing.Point(880, 358);
-            this.btn_RulesRemoveSelected.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_RulesRemoveSelected.Name = "btn_RulesRemoveSelected";
-            this.btn_RulesRemoveSelected.Size = new System.Drawing.Size(147, 27);
-            this.btn_RulesRemoveSelected.TabIndex = 5;
-            this.btn_RulesRemoveSelected.Text = "Remove Selected";
-            this.btn_RulesRemoveSelected.UseVisualStyleBackColor = true;
+            this.btnRulesRemoveSelected.Location = new System.Drawing.Point(880, 358);
+            this.btnRulesRemoveSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRulesRemoveSelected.Name = "btnRulesRemoveSelected";
+            this.btnRulesRemoveSelected.Size = new System.Drawing.Size(147, 27);
+            this.btnRulesRemoveSelected.TabIndex = 5;
+            this.btnRulesRemoveSelected.Text = "Remove Selected";
+            this.btnRulesRemoveSelected.UseVisualStyleBackColor = true;
+            this.btnRulesRemoveSelected.Click += new System.EventHandler(this.btnRulesRemoveSelected_Click);
             // 
             // label1
             // 
@@ -1205,51 +1209,53 @@
             this.label1.Location = new System.Drawing.Point(4, 378);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 17);
+            this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Add New Rule";
+            this.label1.Text = "Add / Modify Rule";
             // 
-            // tb_RulesNewDescription
+            // tbxNewRule
             // 
-            this.tb_RulesNewDescription.Location = new System.Drawing.Point(5, 398);
-            this.tb_RulesNewDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_RulesNewDescription.Name = "tb_RulesNewDescription";
-            this.tb_RulesNewDescription.Size = new System.Drawing.Size(524, 22);
-            this.tb_RulesNewDescription.TabIndex = 3;
+            this.tbxNewRule.Location = new System.Drawing.Point(5, 398);
+            this.tbxNewRule.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxNewRule.Name = "tbxNewRule";
+            this.tbxNewRule.Size = new System.Drawing.Size(524, 22);
+            this.tbxNewRule.TabIndex = 3;
             // 
-            // btn_RulesAdd
+            // btnAddRule
             // 
-            this.btn_RulesAdd.Location = new System.Drawing.Point(539, 396);
-            this.btn_RulesAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_RulesAdd.Name = "btn_RulesAdd";
-            this.btn_RulesAdd.Size = new System.Drawing.Size(100, 27);
-            this.btn_RulesAdd.TabIndex = 2;
-            this.btn_RulesAdd.Text = "Add";
-            this.btn_RulesAdd.UseVisualStyleBackColor = true;
+            this.btnAddRule.Location = new System.Drawing.Point(539, 396);
+            this.btnAddRule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRule.Name = "btnAddRule";
+            this.btnAddRule.Size = new System.Drawing.Size(100, 27);
+            this.btnAddRule.TabIndex = 2;
+            this.btnAddRule.Text = "Add";
+            this.btnAddRule.UseVisualStyleBackColor = true;
+            this.btnAddRule.Click += new System.EventHandler(this.btnAddRule_Click);
             // 
-            // lv_RulesAdmin
+            // lvwHouseRulesAdmin
             // 
-            this.lv_RulesAdmin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader14,
-            this.columnHeader16});
-            this.lv_RulesAdmin.HideSelection = false;
-            this.lv_RulesAdmin.Location = new System.Drawing.Point(3, 4);
-            this.lv_RulesAdmin.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_RulesAdmin.Name = "lv_RulesAdmin";
-            this.lv_RulesAdmin.Size = new System.Drawing.Size(1021, 347);
-            this.lv_RulesAdmin.TabIndex = 1;
-            this.lv_RulesAdmin.UseCompatibleStateImageBehavior = false;
-            this.lv_RulesAdmin.View = System.Windows.Forms.View.Details;
+            this.lvwHouseRulesAdmin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chId,
+            this.chDateAdded,
+            this.chDesc});
+            this.lvwHouseRulesAdmin.HideSelection = false;
+            this.lvwHouseRulesAdmin.Location = new System.Drawing.Point(3, 4);
+            this.lvwHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.lvwHouseRulesAdmin.Name = "lvwHouseRulesAdmin";
+            this.lvwHouseRulesAdmin.Size = new System.Drawing.Size(1021, 347);
+            this.lvwHouseRulesAdmin.TabIndex = 1;
+            this.lvwHouseRulesAdmin.UseCompatibleStateImageBehavior = false;
+            this.lvwHouseRulesAdmin.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader14
+            // chId
             // 
-            this.columnHeader14.Text = "Date Added";
-            this.columnHeader14.Width = 69;
+            this.chId.Text = "Id";
+            this.chId.Width = 69;
             // 
-            // columnHeader16
+            // chDateAdded
             // 
-            this.columnHeader16.Text = "Description";
-            this.columnHeader16.Width = 692;
+            this.chDateAdded.Text = "Date Added";
+            this.chDateAdded.Width = 200;
             // 
             // tabPage7
             // 
@@ -1272,7 +1278,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage7.Size = new System.Drawing.Size(1033, 442);
+            this.tabPage7.Size = new System.Drawing.Size(1025, 444);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Tenant List";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1480,7 +1486,7 @@
             this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage8.Size = new System.Drawing.Size(1033, 442);
+            this.tabPage8.Size = new System.Drawing.Size(1025, 444);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Complaints & Questions";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1614,6 +1620,11 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // chDesc
+            // 
+            this.chDesc.Text = "Description";
+            this.chDesc.Width = 450;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1626,7 +1637,7 @@
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.tabs_Admin);
             this.Controls.Add(this.btn_SwitchInterface);
-            this.Controls.Add(this.lbl_TodayDate);
+            this.Controls.Add(this.lblTodayDate);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.tabs_Student);
             this.Controls.Add(this.lbl_LoggedInAsName);
@@ -1676,7 +1687,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btn_Logout;
-        private System.Windows.Forms.Label lbl_TodayDate;
+        private System.Windows.Forms.Label lblTodayDate;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label5;
@@ -1694,9 +1705,9 @@
         private System.Windows.Forms.Button btn_EventVoteSelectedYES;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListView lv_HouseRulesStudent;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ListView lvwHouseRulesStudent;
+        private System.Windows.Forms.ColumnHeader chDate;
+        private System.Windows.Forms.ColumnHeader chDescription;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.ListView lv_Agreements;
         private System.Windows.Forms.ColumnHeader columnHeader12;
@@ -1759,14 +1770,14 @@
         private System.Windows.Forms.Button btn_SwitchInterface;
         private System.Windows.Forms.TabControl tabs_Admin;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Button btn_RulesModifySelected;
-        private System.Windows.Forms.Button btn_RulesRemoveSelected;
+        private System.Windows.Forms.Button btnRulesModifySelected;
+        private System.Windows.Forms.Button btnRulesRemoveSelected;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_RulesNewDescription;
-        private System.Windows.Forms.Button btn_RulesAdd;
-        private System.Windows.Forms.ListView lv_RulesAdmin;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.TextBox tbxNewRule;
+        private System.Windows.Forms.Button btnAddRule;
+        private System.Windows.Forms.ListView lvwHouseRulesAdmin;
+        private System.Windows.Forms.ColumnHeader chId;
+        private System.Windows.Forms.ColumnHeader chDateAdded;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTenantAdd;
@@ -1806,6 +1817,7 @@
         private System.Windows.Forms.TextBox tb_LoginPassword;
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ColumnHeader chDesc;
     }
 }
 

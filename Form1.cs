@@ -14,10 +14,11 @@ namespace Project
     {
         Student student;
         StudentsHousing studentsHousing = new StudentsHousing();
+        HouseRule houseRule;
 
 
-
-        private int counterId = 0;
+        private int counterStudentId = 0;
+        private int counterHouseRuleId = 0;
 
         int nextTab = 0;
         public Form1()
@@ -29,21 +30,19 @@ namespace Project
         {
             tabs_Student.Visible = false;
             tabs_Admin.Visible = false;
-            lbl_TodayDate.Visible = false;
+            lblTodayDate.Visible = false;
             lbl_LoggedInAsPicture.Visible = false;
             lbl_LoggedInAsName.Visible = false;
             lbl_LoggedInAs.Visible = false;
             btn_Logout.Visible = false;
 
-            //lvwTenantList.Items.Add("Rawan");
-            //lvwTenantList.Items.Add("Rawan");
-            //lvwTenantList.Items.Add("Rawan");
-            //lvwTenantList.Text = "Rawan";
-            //lvwTenantList.Items.SubItems.Add("Rona");
-            //lvwTenantList.Items[1].SubItems.Add("Omar");
+            // Display house rules
+            UpdateHouseRulesListView();
+            // Display student list
+            UpdateStudentListView();
 
-
-
+            // Display today's date
+            lblTodayDate.Text = (DateTime.Now.ToString("dd/MM/yyyy"));
         }
 
         private void Btn_SwitchInterface_Click(object sender, EventArgs e)
@@ -54,7 +53,7 @@ namespace Project
                 //nextTab = 0;
                 tabs_Student.Visible = false;
                 tabs_Admin.Visible = false;
-                lbl_TodayDate.Visible = false;
+                lblTodayDate.Visible = false;
                 lbl_LoggedInAsPicture.Visible = false;
                 lbl_LoggedInAsName.Visible = false;
                 lbl_LoggedInAs.Visible = false;
@@ -73,7 +72,7 @@ namespace Project
                 tabs_Student.Visible = false;
                 tabs_Admin.Visible = true;
                 lbl_LoggedInAsName.Text = "Administrator";
-                lbl_TodayDate.Visible = true;
+                lblTodayDate.Visible = true;
                 lbl_LoggedInAsPicture.Visible = true;
                 lbl_LoggedInAsName.Visible = true;
                 lbl_LoggedInAs.Visible = true;
@@ -92,7 +91,7 @@ namespace Project
                 lbl_LoggedInAsName.Text = "Peter Young";
                 tabs_Student.Visible = true;
                 tabs_Admin.Visible = false;
-                lbl_TodayDate.Visible = true;
+                lblTodayDate.Visible = true;
                 lbl_LoggedInAsPicture.Visible = true;
                 lbl_LoggedInAsName.Visible = true;
                 lbl_LoggedInAs.Visible = true;
@@ -127,16 +126,16 @@ namespace Project
             bool formValidated = ValidateChildren(ValidationConstraints.Enabled);
             if (formValidated)
             {
-                counterId++;
+                counterStudentId++;
                 // Initialize student object
                 student = new Student();
 
-                student.AddStudent(counterId, name, email, password, Convert.ToInt32(floorNr), Convert.ToInt32(roomNr));
+                student.AddStudent(counterStudentId, name, email, password, Convert.ToInt32(floorNr), Convert.ToInt32(roomNr));
                 //Add student to list
                 studentsHousing.AddStudentToList(student);
 
                 MessageBox.Show("Student was successfully added");
-                UpdateListView();
+                UpdateStudentListView();
             }
         }
 
@@ -147,11 +146,11 @@ namespace Project
 
             studentsHousing.RemoveStudentById(selectedUserToBeRemoved);
 
-            UpdateListView();
+            UpdateStudentListView();
         }
 
         // Update List view
-        private void UpdateListView()
+        private void UpdateStudentListView()
         {
             List<Student> studentsList = studentsHousing.GetStudentsList();
             // Update list view
@@ -273,6 +272,100 @@ namespace Project
             }
         }
 
+        // Add house rule
+        private void btnAddRule_Click(object sender, EventArgs e)
+        {
+            string newRule = tbxNewRule.Text;
+            DateTime currentDate = DateTime.Now;
+
+            if (newRule != "")
+            {
+                counterHouseRuleId++;
+
+                houseRule = new HouseRule();
+
+                houseRule.AddHouseRule(counterHouseRuleId, currentDate, newRule);
+                // Add rule to list
+                studentsHousing.AddHouseRuleToList(houseRule);
+
+                MessageBox.Show("House Rule was successfully added");
+
+                // Update list view
+                UpdateHouseRulesListView();
+            }
+
+            else
+            {
+                MessageBox.Show("Please insert a new rule");
+            }
+
+        }
+
+        // Remove house rule
+        private void btnRulesRemoveSelected_Click(object sender, EventArgs e)
+        {
+            // If no rule was selected
+            if (lvwHouseRulesAdmin.SelectedIndices.Count <= 0)
+            {
+                MessageBox.Show("Please select a rule to be removed");
+            }
+            else
+            {
+                int selectedRuleToBeRemoved = Convert.ToInt32(lvwHouseRulesAdmin.SelectedItems[0].Text);
+                studentsHousing.RemoveHouseRuleById(selectedRuleToBeRemoved);
+
+                // Update list view
+                UpdateHouseRulesListView();
+            }
+        }
+
+        // Modify house rule
+        private void btnRulesModifySelected_Click(object sender, EventArgs e)
+        {
+            string updatedRule = tbxNewRule.Text;
+
+            // If no rule was selected
+            if (lvwHouseRulesAdmin.SelectedIndices.Count <= 0)
+            {
+                MessageBox.Show("Please select a rule to be modified");
+            }
+            // If nothing was inserted
+            else if (updatedRule == "")
+            {
+                MessageBox.Show("Please insert the modified rule");
+            }
+            else
+            {
+                int selectedRuleToBeModified = Convert.ToInt32(lvwHouseRulesAdmin.SelectedItems[0].Text);
+                studentsHousing.ModifyHouseRuleById(selectedRuleToBeModified, updatedRule);
+
+                // Update list view
+                UpdateHouseRulesListView();
+            }
+        }
+
+        // Update List view
+        private void UpdateHouseRulesListView()
+        {
+            List<HouseRule> houseRules = studentsHousing.GetRulesList();
+
+            // Clear list view
+            lvwHouseRulesAdmin.Items.Clear();
+            lvwHouseRulesStudent.Items.Clear();
+            // Display rules
+            foreach (var rule in houseRules)
+            {
+                // Create new row
+                var row = new string[] { rule.Id.ToString(), (rule.DateCreated).ToString(), rule.Rule };
+                var rowStudent = new string[] {(rule.DateCreated).ToString(), rule.Rule };
+                // Create new list view item
+                ListViewItem lvwRuleAdmin = new ListViewItem(row);
+                ListViewItem lvwRuleStudent = new ListViewItem(rowStudent);
+                // Add the item to list view
+                lvwHouseRulesAdmin.Items.Add(lvwRuleAdmin);
+                lvwHouseRulesStudent.Items.Add(lvwRuleStudent);
+            }
+        }
 
     }
 }
