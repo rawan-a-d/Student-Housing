@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Project
 {
+    enum MessageSubject { Question, Complaint}
     class StudentsHousing
     {
         // Fields
         List<Student> students;
         List<HouseRule> houseRules;
+        List<Message> messages;
 
         // Constructor
         public StudentsHousing()
@@ -19,6 +21,7 @@ namespace Project
             // Initialize lists
             students = new List<Student>();
             houseRules = new List<HouseRule>();
+            messages = new List<Message>();
         }
 
         // Methods
@@ -38,7 +41,7 @@ namespace Project
         {
             for (int i = 0; i < students.Count; i++)
             {
-                if (students[i].Id == id)
+                if (students[i].GetId() == id)
                 {
                     students.Remove(students[i]);
                 }
@@ -61,7 +64,7 @@ namespace Project
         {
             for (int i = 0; i < houseRules.Count; i++)
             {
-                if(houseRules[i].Id == id)
+                if(houseRules[i].GetId() == id)
                 {
                     houseRules.Remove(houseRules[i]);
                 }
@@ -72,9 +75,47 @@ namespace Project
         {
             foreach (var rule in houseRules)
             {
-                if (rule.Id == id)
+                if (rule.GetId() == id)
                 {
                     rule.UpdateHouseRule(id, updatedRule);
+                }
+            }
+        }
+
+
+        // Messages
+        // Add message
+        public void AddMessageToList(Message message)
+        {
+            messages.Add(message);
+        }
+
+        // Get messages
+        public List<Message> GetMessagesList()
+        {
+            return messages;
+        }
+
+        // Remove message
+        public void RemoveMessageById(int messageId)
+        {
+            for (int i = 0; i < messages.Count; i++)
+            {
+                if (messages[i].GetId() == messageId)
+                {
+                    messages.Remove(messages[i]);
+                }
+            }
+        }
+
+        // Send reply/ ADMIN
+        public void SendReply(int messageId, string reply)
+        {
+            for (int i = 0; i < messages.Count; i++)
+            {
+                if (messages[i].GetId() == messageId)
+                {
+                    messages[i].UpdateReply(messageId, reply);
                 }
             }
         }

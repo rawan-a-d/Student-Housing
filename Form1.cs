@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Project
 {
@@ -15,15 +17,13 @@ namespace Project
         Student student;
         StudentsHousing studentsHousing = new StudentsHousing();
         HouseRule houseRule;
-
-
-        private int counterStudentId = 0;
-        private int counterHouseRuleId = 0;
+        Message message;
 
         int nextTab = 0;
         public Form1()
         {
             InitializeComponent();
+            // Add test data here
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,6 +40,8 @@ namespace Project
             UpdateHouseRulesListView();
             // Display student list
             UpdateStudentListView();
+            // Display messages
+            UpdateMessagesListView();
 
             // Display today's date
             lblTodayDate.Text = (DateTime.Now.ToString("dd/MM/yyyy"));
@@ -126,11 +128,9 @@ namespace Project
             bool formValidated = ValidateChildren(ValidationConstraints.Enabled);
             if (formValidated)
             {
-                counterStudentId++;
                 // Initialize student object
-                student = new Student();
+                student = new Student(name, email, password, Convert.ToInt32(floorNr), Convert.ToInt32(roomNr));
 
-                student.AddStudent(counterStudentId, name, email, password, Convert.ToInt32(floorNr), Convert.ToInt32(roomNr));
                 //Add student to list
                 studentsHousing.AddStudentToList(student);
 
@@ -158,7 +158,7 @@ namespace Project
             foreach (var student in studentsList)
             {
                 // Create new row
-                var row = new string[] { student.Id.ToString(), student.Name, student.Email, "", student.FloorNr.ToString(), student.RoomNr.ToString() };
+                var row = new string[] { student.GetId().ToString(), student.GetName(), student.GetEmail(), "", student.GetFloorNr().ToString(), student.GetRoomNr().ToString() };
                 // Create new list view item
                 ListViewItem lvwTenants = new ListViewItem(row);
                 // Add the item to list view
@@ -280,11 +280,8 @@ namespace Project
 
             if (newRule != "")
             {
-                counterHouseRuleId++;
+                houseRule = new HouseRule(currentDate, newRule);
 
-                houseRule = new HouseRule();
-
-                houseRule.AddHouseRule(counterHouseRuleId, currentDate, newRule);
                 // Add rule to list
                 studentsHousing.AddHouseRuleToList(houseRule);
 
@@ -344,7 +341,7 @@ namespace Project
             }
         }
 
-        // Update List view
+        // Update List view (STUDENT and ADMIN)
         private void UpdateHouseRulesListView()
         {
             List<HouseRule> houseRules = studentsHousing.GetRulesList();
@@ -356,8 +353,8 @@ namespace Project
             foreach (var rule in houseRules)
             {
                 // Create new row
-                var row = new string[] { rule.Id.ToString(), (rule.DateCreated).ToString(), rule.Rule };
-                var rowStudent = new string[] {(rule.DateCreated).ToString(), rule.Rule };
+                var row = new string[] { rule.GetId().ToString(), (rule.GetDateCreated()).ToString(), rule.GetRule() };
+                var rowStudent = new string[] {(rule.GetDateCreated()).ToString(), rule.GetRule() };
                 // Create new list view item
                 ListViewItem lvwRuleAdmin = new ListViewItem(row);
                 ListViewItem lvwRuleStudent = new ListViewItem(rowStudent);
@@ -367,5 +364,115 @@ namespace Project
             }
         }
 
+                                                                                /* Student */
+                                                                                // Complaints and Questions
+        // Send message
+        private void btnMessageAdd_Click(object sender, EventArgs e)
+        {
+            MessageSubject messageType = (MessageSubject)cbxMessageType.SelectedIndex;
+            string messageDesc = tbxMessageDescription.Text;
+            DateTime currentDate = DateTime.Now;
+            /////////// For now let's say it's user with Id 1/ until we implement login functionality //////////////
+            int currentStudentId = 1;
+
+            message = new Message(currentDate, messageType, messageDesc, currentStudentId);
+
+            // Add message to list
+            studentsHousing.AddMessageToList(message);
+
+            MessageBox.Show("Your message was successfully sent");
+
+            //Display messages in list view
+            UpdateMessagesListView();
+        }
+
+        // Remove selected message
+        private void btnRemoveSelectedMessage_Click(object sender, EventArgs e)
+        {
+            // if no message was selected
+            if (lvwMessagesStudent.SelectedIndices.Count <= 0)
+            {
+                MessageBox.Show("Please select a message to be removed");
+            }
+            else
+            {
+                int selectedMessageToRemove = Convert.ToInt32(lvwMessagesStudent.SelectedItems[0].Text);
+
+                studentsHousing.RemoveMessageById(selectedMessageToRemove);
+
+                MessageBox.Show("Your message was successfully removed");
+
+                //Display messages in list view
+                UpdateMessagesListView();
+            }
+        }
+
+
+                                                                                    /* Admin */
+        private void btnSendReply_Click(object sender, EventArgs e)
+        {
+            string reply = tbxReply.Text;
+
+            // If no reply was inserted
+            if (tbxReply.Text == "")
+            {
+                MessageBox.Show("Please insert a reply");
+            }
+            // If no message was selected
+            else if (lvwMessagesAdmin.SelectedIndices.Count <= 0)
+            {
+                MessageBox.Show("Please select a message");
+            }
+            else
+            {
+                int selectedMessageToReplyTo = Convert.ToInt32(lvwMessagesAdmin.SelectedItems[0].Text);
+                message.UpdateReply(selectedMessageToReplyTo, reply);
+
+                MessageBox.Show("Your reply was successfully sent");
+
+                //Display messages in list view
+                UpdateMessagesListView();
+            }
+        }
+
+        // Export Messages as EXCEL
+        private void btnMessagesExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // Update List view (STUDENT and ADMIN)
+        private void UpdateMessagesListView()
+        {
+            List<Message> messages = studentsHousing.GetMessagesList();
+
+            /////////// Show messages based on the current Student Id ///////////////
+
+            // Clear list view
+            lvwMessagesAdmin.Items.Clear();
+            lvwMessagesStudent.Items.Clear();
+            // Display rules
+            foreach (var message in messages)
+            {
+                // Create new row
+                var row = new string[]
+                {
+                    message.GetId().ToString(), (message.GetDateCreated()).ToString(), message.GetSubject().ToString(),
+                    message.GetMessage(), message.GetReply()
+                };
+                var rowStudent = new string[]
+                {
+                    message.GetId().ToString(), (message.GetDateCreated()).ToString(), message.GetSubject().ToString(),
+                    message.GetMessage(), message.GetReply()
+                };
+                // Create new list view item
+                ListViewItem lvwMessageAdmin = new ListViewItem(row);
+                ListViewItem lvwMessageStudent = new ListViewItem(rowStudent);
+                // Add the item to list view
+                lvwMessagesAdmin.Items.Add(lvwMessageAdmin);
+                lvwMessagesStudent.Items.Add(lvwMessageStudent);
+            }
+        }
     }
 }
