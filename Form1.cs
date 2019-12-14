@@ -475,7 +475,7 @@ namespace Project
             app.Visible = true;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["sheet1"];
+            worksheet = workbook.Sheets["Sheet1"];
             worksheet = workbook.ActiveSheet;
             // changing the name of active sheet  
             worksheet.Name = "Exported from gridview";
@@ -489,13 +489,21 @@ namespace Project
             {
                 for (int j = 0; j < dgvMessageAdmin.Columns.Count; j++)
                 {
-                    worksheet.Cells[i + 2, j + 1] = dgvMessageAdmin.Rows[i].Cells[j].Value.ToString();
+                    if (dgvMessageAdmin.Rows[i].Cells[j].Value != null)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dgvMessageAdmin.Rows[i].Cells[j].Value.ToString();
+                    }
+                    else
+                    {
+                        worksheet.Cells[i + 2, j + 1] = "";
+                    }
                 }
             }
 
             // AutoSet Cell Widths to Content Size
             worksheet.Cells.Select();
             worksheet.Cells.EntireColumn.AutoFit();
+            // Style cells
             worksheet.Cells.Borders.Color = Color.LightBlue;
             worksheet.Cells.Range["A:E"].Interior.Color = Color.GhostWhite;
             worksheet.Cells.Range["A1:E1"].Interior.Color = Color.SteelBlue;
