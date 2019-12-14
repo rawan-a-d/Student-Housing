@@ -30,7 +30,6 @@ namespace Project
             autoIncId++;
         }
 
-
         // Methods
         // Update reply
         public void UpdateReply(int messageId, string reply)

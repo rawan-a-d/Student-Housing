@@ -24,6 +24,7 @@ namespace Project
         {
             InitializeComponent();
             // Add test data here
+            studentsHousing.GenerateTestDate();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -302,13 +303,13 @@ namespace Project
         private void btnRulesRemoveSelected_Click(object sender, EventArgs e)
         {
             // If no rule was selected
-            if (lvwHouseRulesAdmin.SelectedIndices.Count <= 0)
+            if (dgvHouseRulesAdmin.SelectedCells.Count <= 0)
             {
                 MessageBox.Show("Please select a rule to be removed");
             }
             else
             {
-                int selectedRuleToBeRemoved = Convert.ToInt32(lvwHouseRulesAdmin.SelectedItems[0].Text);
+                int selectedRuleToBeRemoved = Convert.ToInt32(dgvHouseRulesAdmin.CurrentRow.Cells[0].Value);
                 studentsHousing.RemoveHouseRuleById(selectedRuleToBeRemoved);
 
                 // Update list view
@@ -322,7 +323,7 @@ namespace Project
             string updatedRule = tbxNewRule.Text;
 
             // If no rule was selected
-            if (lvwHouseRulesAdmin.SelectedIndices.Count <= 0)
+            if (dgvHouseRulesAdmin.SelectedCells.Count <= 0)
             {
                 MessageBox.Show("Please select a rule to be modified");
             }
@@ -333,8 +334,10 @@ namespace Project
             }
             else
             {
-                int selectedRuleToBeModified = Convert.ToInt32(lvwHouseRulesAdmin.SelectedItems[0].Text);
+                int selectedRuleToBeModified = Convert.ToInt32(dgvHouseRulesAdmin.SelectedRows[0].Cells[0].Value);
                 studentsHousing.ModifyHouseRuleById(selectedRuleToBeModified, updatedRule);
+
+                MessageBox.Show("The selected rule was successfully modified");
 
                 // Update list view
                 UpdateHouseRulesListView();
@@ -347,56 +350,79 @@ namespace Project
             List<HouseRule> houseRules = studentsHousing.GetRulesList();
 
             // Clear list view
-            lvwHouseRulesAdmin.Items.Clear();
-            lvwHouseRulesStudent.Items.Clear();
+            dgvHouseRulesAdmin.Rows.Clear();
+            dgvHouseRulesStudent.Rows.Clear();
             // Display rules
             foreach (var rule in houseRules)
             {
-                // Create new row
-                var row = new string[] { rule.GetId().ToString(), (rule.GetDateCreated()).ToString(), rule.GetRule() };
-                var rowStudent = new string[] {(rule.GetDateCreated()).ToString(), rule.GetRule() };
-                // Create new list view item
-                ListViewItem lvwRuleAdmin = new ListViewItem(row);
-                ListViewItem lvwRuleStudent = new ListViewItem(rowStudent);
+                // Create new rows
+                DataGridViewRow row = (DataGridViewRow)dgvHouseRulesAdmin.Rows[0].Clone();
+                DataGridViewRow rowStudent = (DataGridViewRow)dgvHouseRulesStudent.Rows[0].Clone();
+
+                // Insert data into rows
+                row.Cells[0].Value = rule.GetId().ToString();
+                row.Cells[1].Value = (rule.GetDateCreated()).ToString();
+                row.Cells[2].Value = (rule.GetRule()).ToString();
+                rowStudent.Cells[0].Value = rule.GetId().ToString();
+                rowStudent.Cells[1].Value = (rule.GetDateCreated()).ToString();
+                rowStudent.Cells[2].Value = (rule.GetRule()).ToString();
+
                 // Add the item to list view
-                lvwHouseRulesAdmin.Items.Add(lvwRuleAdmin);
-                lvwHouseRulesStudent.Items.Add(lvwRuleStudent);
+                dgvHouseRulesAdmin.Rows.Add(row);
+                dgvHouseRulesStudent.Rows.Add(rowStudent);
+
+                // Text wrap
+                dgvHouseRulesAdmin.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvHouseRulesAdmin.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvHouseRulesStudent.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvHouseRulesStudent.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
         }
 
-                                                                                /* Student */
+                                                                                        /* Student */
                                                                                 // Complaints and Questions
         // Send message
         private void btnMessageAdd_Click(object sender, EventArgs e)
         {
+            // Get message data
             MessageSubject messageType = (MessageSubject)cbxMessageType.SelectedIndex;
             string messageDesc = tbxMessageDescription.Text;
             DateTime currentDate = DateTime.Now;
             /////////// For now let's say it's user with Id 1/ until we implement login functionality //////////////
             int currentStudentId = 1;
+            if (cbxMessageType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a subject");
+            }
+            else if (messageDesc == "")
+            {
+                MessageBox.Show("Please insert your message");
+            }
+            else
+            {
+                message = new Message(currentDate, messageType, messageDesc, currentStudentId);
 
-            message = new Message(currentDate, messageType, messageDesc, currentStudentId);
+                // Add message to list
+                studentsHousing.AddMessageToList(message);
 
-            // Add message to list
-            studentsHousing.AddMessageToList(message);
+                MessageBox.Show("Your message was successfully sent");
 
-            MessageBox.Show("Your message was successfully sent");
-
-            //Display messages in list view
-            UpdateMessagesListView();
+                //Display messages in list view
+                UpdateMessagesListView();
+            }
         }
 
         // Remove selected message
         private void btnRemoveSelectedMessage_Click(object sender, EventArgs e)
         {
             // if no message was selected
-            if (lvwMessagesStudent.SelectedIndices.Count <= 0)
+            if (dgvMessageStudent.SelectedCells.Count <= 0)
             {
                 MessageBox.Show("Please select a message to be removed");
             }
             else
             {
-                int selectedMessageToRemove = Convert.ToInt32(lvwMessagesStudent.SelectedItems[0].Text);
+                int selectedMessageToRemove = Convert.ToInt32(dgvMessageStudent.CurrentRow.Cells[0].Value);
 
                 studentsHousing.RemoveMessageById(selectedMessageToRemove);
 
@@ -419,14 +445,15 @@ namespace Project
                 MessageBox.Show("Please insert a reply");
             }
             // If no message was selected
-            else if (lvwMessagesAdmin.SelectedIndices.Count <= 0)
+            else if (dgvMessageAdmin.SelectedCells.Count <= 0)
             {
                 MessageBox.Show("Please select a message");
             }
             else
             {
-                int selectedMessageToReplyTo = Convert.ToInt32(lvwMessagesAdmin.SelectedItems[0].Text);
-                message.UpdateReply(selectedMessageToReplyTo, reply);
+
+                int selectedMessageToReplyTo = Convert.ToInt32(dgvMessageAdmin.CurrentRow.Cells[0].Value);
+                studentsHousing.SendReply(selectedMessageToReplyTo, reply);
 
                 MessageBox.Show("Your reply was successfully sent");
 
@@ -438,7 +465,42 @@ namespace Project
         // Export Messages as EXCEL
         private void btnMessagesExport_Click(object sender, EventArgs e)
         {
+            // creating Excel Application  
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            // creating new WorkBook within Excel application  
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            // creating new Excelsheet in workbook  
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            // see the excel sheet behind the program  
+            app.Visible = true;
+            // get the reference of first sheet. By default its name is Sheet1.  
+            // store its reference to worksheet  
+            worksheet = workbook.Sheets["sheet1"];
+            worksheet = workbook.ActiveSheet;
+            // changing the name of active sheet  
+            worksheet.Name = "Exported from gridview";
+            // storing header part in Excel  
+            for (int i = 1; i < dgvMessageAdmin.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = dgvMessageAdmin.Columns[i - 1].HeaderText;
+            }
+            // storing Each row and column value to excel sheet  
+            for (int i = 0; i < dgvMessageAdmin.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < dgvMessageAdmin.Columns.Count; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1] = dgvMessageAdmin.Rows[i].Cells[j].Value.ToString();
+                }
+            }
 
+            // AutoSet Cell Widths to Content Size
+            worksheet.Cells.Select();
+            worksheet.Cells.EntireColumn.AutoFit();
+            worksheet.Cells.Borders.Color = Color.LightBlue;
+            worksheet.Cells.Range["A:E"].Interior.Color = Color.GhostWhite;
+            worksheet.Cells.Range["A1:E1"].Interior.Color = Color.SteelBlue;
+            worksheet.Cells.Range["A1:E1"].Font.Bold = true;
+            worksheet.Cells.Range["A1:E1"].Font.Color = Color.White;
         }
 
 
@@ -447,32 +509,39 @@ namespace Project
         {
             List<Message> messages = studentsHousing.GetMessagesList();
 
-            /////////// Show messages based on the current Student Id ///////////////
-
             // Clear list view
-            lvwMessagesAdmin.Items.Clear();
-            lvwMessagesStudent.Items.Clear();
+            dgvMessageAdmin.Rows.Clear();
+            dgvMessageStudent.Rows.Clear();
             // Display rules
             foreach (var message in messages)
             {
-                // Create new row
-                var row = new string[]
-                {
-                    message.GetId().ToString(), (message.GetDateCreated()).ToString(), message.GetSubject().ToString(),
-                    message.GetMessage(), message.GetReply()
-                };
-                var rowStudent = new string[]
-                {
-                    message.GetId().ToString(), (message.GetDateCreated()).ToString(), message.GetSubject().ToString(),
-                    message.GetMessage(), message.GetReply()
-                };
-                // Create new list view item
-                ListViewItem lvwMessageAdmin = new ListViewItem(row);
-                ListViewItem lvwMessageStudent = new ListViewItem(rowStudent);
+                // Create new rows
+                DataGridViewRow row = (DataGridViewRow)dgvMessageAdmin.Rows[0].Clone();
+                DataGridViewRow rowStudent = (DataGridViewRow)dgvMessageStudent.Rows[0].Clone();
+
+                // Insert data into rows
+                row.Cells[0].Value = message.GetId().ToString();
+                row.Cells[1].Value = (message.GetDateCreated()).ToString();
+                row.Cells[2].Value = (message.GetSubject()).ToString();
+                row.Cells[3].Value = (message.GetMessage()).ToString();
+                row.Cells[4].Value = (message.GetReply());
+                rowStudent.Cells[0].Value = message.GetId().ToString();
+                rowStudent.Cells[1].Value = (message.GetDateCreated()).ToString();
+                rowStudent.Cells[2].Value = (message.GetSubject()).ToString();
+                rowStudent.Cells[3].Value = (message.GetMessage()).ToString();
+                rowStudent.Cells[4].Value = (message.GetReply());
+
                 // Add the item to list view
-                lvwMessagesAdmin.Items.Add(lvwMessageAdmin);
-                lvwMessagesStudent.Items.Add(lvwMessageStudent);
+                dgvMessageAdmin.Rows.Add(row);
+                dgvMessageStudent.Rows.Add(rowStudent);
+
+                // Text wrap
+                dgvMessageAdmin.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvMessageAdmin.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvMessageStudent.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvMessageStudent.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
+
         }
     }
 }
