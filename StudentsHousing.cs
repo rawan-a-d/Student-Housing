@@ -8,12 +8,16 @@ using System.Threading.Tasks;
 namespace Project
 {
     enum MessageSubject { Question, Complaint}
+    enum TaskType { Cleaning, Garbage, Shopping}
+    enum TaskStatus { Pending, Completed}
     class StudentsHousing
     {
         // Fields
         List<Student> students;
         List<HouseRule> houseRules;
         List<Message> messages;
+        List<Date> dates;
+        List<Schedule> schedules;
 
         // Constructor
         public StudentsHousing()
@@ -22,6 +26,8 @@ namespace Project
             students = new List<Student>();
             houseRules = new List<HouseRule>();
             messages = new List<Message>();
+            dates = new List<Date>();
+            schedules = new List<Schedule>();
         }
 
         // Methods
@@ -46,6 +52,19 @@ namespace Project
                     students.Remove(students[i]);
                 }
             }
+        }
+
+        public string FindStudentById(int studentId)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].GetId() == studentId)
+                {
+                    return students[i].GetName();
+                }
+            }
+
+            return "";
         }
 
 
@@ -120,19 +139,120 @@ namespace Project
             }
         }
 
+
+        // Dates
+        // Add date
+        public void AddDateToList(Date date)
+        {
+            dates.Add(date);
+        }
+
+        public List<Date> GetDatesList()
+        {
+            return dates;
+        }
+
+
+        // Schedules
+        public void AddScheduleToList(Schedule schedule)
+        {
+            schedules.Add(schedule);
+        }
+
+        public List<Schedule> GetSchedulesList()
+        {
+            return schedules;
+        }
+
+        // Create schedule
+        public void CreateSchedule()
+        {
+            // Dates list
+            List<Date> dates = GetDatesList();
+            // Students list
+            List<Student> students = GetStudentsList();
+
+            int taskCounter = 0;
+            int dateCounter = 0;
+            for (int i = 0; i < students.Count; i++)
+            {
+                for (int j = dateCounter; j < dates.Count; j += 3)
+                {
+                    // New schedule
+                    Schedule schedule = new Schedule(dates[j].GetId(), (TaskType)taskCounter, students[i].GetId(), TaskStatus.Pending);
+                    AddScheduleToList(schedule);
+
+                    taskCounter++;
+
+                    // If task counter has th same length as TaskType
+                    if (taskCounter == Enum.GetNames(typeof(TaskType)).Length)
+                    {
+                        taskCounter = 0;
+                    }
+                }
+                // Increase date by two so that the next student starts after two days
+                dateCounter += 2;
+                // Set taskCounter back to 0
+                taskCounter = 0;
+            }
+        }
+        
+
+        // Create dates and ad them to dates list
+        public void AddDates()
+        {
+            DateTime temp_start;
+            DateTime temp_end;
+            DateTime startDate = DateTime.Today;
+            DateTime endDate = startDate.AddDays(60);
+
+            //--Normalize dates by getting rid of minues since they will get in the way when doing the loop
+            temp_start = new DateTime(startDate.Year, startDate.Month, startDate.Day);
+            temp_end = new DateTime(endDate.Year, endDate.Month, endDate.Day);
+
+            // Create and add dates to list
+            for (DateTime date = temp_start; date <= temp_end; date = date.AddDays(1))
+            {
+                Date newDate = new Date(date);
+
+                AddDateToList(newDate);
+            }
+        }
+
+        public DateTime FindDateById(int dateId)
+        {
+            for (int i = 0; i < dates.Count; i++)
+            {
+                if (dates[i].GetId() == dateId)
+                {
+                    return dates[i].GetDate();
+                }
+            }
+
+            return DateTime.Now;
+        }
+
+
         // Test data
         public void GenerateTestDate()
         {
             //Students
-            Student student1, student2, student3, student4;
+            Student student1, student2, student3, student4, student5, student6, student7;
             student1 = new Student("Rawan", "rawan@fontys.com", "12345", 1, 1);
             student2 = new Student("Baian", "baian@fontys.com", "12345", 1, 2);
             student3 = new Student("Femke", "femke@fontys.com", "12345", 1, 3);
             student4 = new Student("Mark", "mark@fontys.com", "12345", 1, 4);
+            student5 = new Student("Kelvin", "kelvin@fontys.com", "12345", 1, 5);
+            student6 = new Student("Ranim", "ranim@fontys.com", "12345", 1, 6);
+            student7 = new Student("Robin", "robin@fontys.com", "12345", 1, 7);
             AddStudentToList(student1);
             AddStudentToList(student2);
             AddStudentToList(student3);
             AddStudentToList(student4);
+            AddStudentToList(student5);
+            AddStudentToList(student6);
+            AddStudentToList(student7);
+
 
             //Messages
             Message message1, message2, message3, message4, message5, message6, message7, message8;
