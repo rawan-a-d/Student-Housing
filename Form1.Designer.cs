@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
@@ -770,8 +770,8 @@
             this.columnHeader23});
             this.lv_Agreements.HideSelection = false;
             this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem35,
-            listViewItem36});
+            listViewItem1,
+            listViewItem2});
             this.lv_Agreements.Location = new System.Drawing.Point(0, 4);
             this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Agreements.Name = "lv_Agreements";
@@ -1228,7 +1228,7 @@
             this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage8.Size = new System.Drawing.Size(1035, 445);
+            this.tabPage8.Size = new System.Drawing.Size(1033, 445);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Complaints & Questions";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1353,7 +1353,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage7.Size = new System.Drawing.Size(1035, 445);
+            this.tabPage7.Size = new System.Drawing.Size(1033, 445);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Tenant List";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1506,6 +1506,7 @@
             this.chFloor,
             this.chRoom,
             this.chScore});
+            this.lvwTenantList.FullRowSelect = true;
             this.lvwTenantList.HideSelection = false;
             this.lvwTenantList.Location = new System.Drawing.Point(9, 9);
             this.lvwTenantList.Margin = new System.Windows.Forms.Padding(4);
@@ -1561,7 +1562,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1035, 445);
+            this.tabPage6.Size = new System.Drawing.Size(1033, 445);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "House Rules";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1664,12 +1665,12 @@
             this.tabs_Admin.Controls.Add(this.tabPage6);
             this.tabs_Admin.Controls.Add(this.tabPage7);
             this.tabs_Admin.Controls.Add(this.tabPage8);
-            this.tabs_Admin.Location = new System.Drawing.Point(14, 70);
+            this.tabs_Admin.Location = new System.Drawing.Point(16, 70);
             this.tabs_Admin.Margin = new System.Windows.Forms.Padding(4);
             this.tabs_Admin.Multiline = true;
             this.tabs_Admin.Name = "tabs_Admin";
             this.tabs_Admin.SelectedIndex = 0;
-            this.tabs_Admin.Size = new System.Drawing.Size(1043, 474);
+            this.tabs_Admin.Size = new System.Drawing.Size(1041, 474);
             this.tabs_Admin.TabIndex = 16;
             // 
             // lblLoginPassword
