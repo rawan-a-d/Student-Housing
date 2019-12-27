@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project
+﻿namespace Project
 {
     class Student
     {
@@ -38,11 +32,14 @@ namespace Project
 
 
         // Methods
+        // Set phone number
+
         // Get methods
         public int GetId()
         {
             return id;
         }
+
         public string GetName()
         {
             return name;
