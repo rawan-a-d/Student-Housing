@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
@@ -37,13 +37,13 @@
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             this.pHeader = new System.Windows.Forms.Panel();
             this.btnMinimizeWindow = new System.Windows.Forms.Button();
             this.btnX = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.lbl_LoggedInAsName = new System.Windows.Forms.Label();
             this.btn_SwitchInterface = new System.Windows.Forms.Button();
+            this.lbl_LoggedInAsPicture = new System.Windows.Forms.PictureBox();
             this.lbl_LoggedInAs = new System.Windows.Forms.Label();
             this.mtcStudent = new MetroFramework.Controls.MetroTabControl();
             this.mtpSchedule = new MetroFramework.Controls.MetroTabPage();
@@ -59,6 +59,7 @@
             this.DTP_EventDateTime = new System.Windows.Forms.DateTimePicker();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_EventVoteSelectedNO = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_EventVoteSelectedYES = new System.Windows.Forms.Button();
@@ -84,6 +85,8 @@
             this.chMessageType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessageText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessageReply = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbxAddMessage = new System.Windows.Forms.PictureBox();
+            this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
             this.btnRemoveSelectedMessage = new System.Windows.Forms.Button();
             this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
             this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
@@ -99,34 +102,34 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lv_MyTasks = new System.Windows.Forms.ListView();
-            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Task = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.dgvStudentTasks = new System.Windows.Forms.DataGridView();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.pbxDeposit = new System.Windows.Forms.PictureBox();
+            this.btnCompleteTask = new System.Windows.Forms.Button();
+            this.tbxFloor = new System.Windows.Forms.TextBox();
+            this.tbxPassword = new System.Windows.Forms.TextBox();
+            this.tbxAddBalance = new System.Windows.Forms.TextBox();
+            this.tbxRoom = new System.Windows.Forms.TextBox();
+            this.lblProfileFloor = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.btnDeposit = new System.Windows.Forms.Button();
+            this.lblAddBalance = new System.Windows.Forms.Label();
+            this.lblRoom = new System.Windows.Forms.Label();
+            this.tbxScore = new System.Windows.Forms.TextBox();
+            this.tbxBalance = new System.Windows.Forms.TextBox();
+            this.tbxPhone = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
+            this.tbxAge = new System.Windows.Forms.TextBox();
+            this.tbxName = new System.Windows.Forms.TextBox();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lblMyTasks = new System.Windows.Forms.Label();
+            this.lblGeneralInfo = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -152,34 +155,31 @@
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.btnPrevMonth = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pbxAddMessage = new System.Windows.Forms.PictureBox();
-            this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
-            this.pbxDeposit = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbl_LoggedInAsPicture = new System.Windows.Forms.PictureBox();
+            this.chDateTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chTaskDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chStatusTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.mtcStudent.SuspendLayout();
             this.mtpSchedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.mtpMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
             this.mtpHouseRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
             this.mtpAgreements.SuspendLayout();
             this.mtpProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -273,6 +273,18 @@
             this.btn_SwitchInterface.UseVisualStyleBackColor = false;
             this.btn_SwitchInterface.Click += new System.EventHandler(this.btn_SwitchInterface_Click);
             // 
+            // lbl_LoggedInAsPicture
+            // 
+            this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
+            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
+            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
+            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
+            this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lbl_LoggedInAsPicture.TabIndex = 12;
+            this.lbl_LoggedInAsPicture.TabStop = false;
+            // 
             // lbl_LoggedInAs
             // 
             this.lbl_LoggedInAs.AutoSize = true;
@@ -289,10 +301,10 @@
             // 
             this.mtcStudent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mtcStudent.Controls.Add(this.mtpSchedule);
+            this.mtcStudent.Controls.Add(this.mtpProfile);
             this.mtcStudent.Controls.Add(this.mtpMessages);
             this.mtcStudent.Controls.Add(this.mtpHouseRules);
             this.mtcStudent.Controls.Add(this.mtpAgreements);
-            this.mtcStudent.Controls.Add(this.mtpProfile);
             this.mtcStudent.Controls.Add(this.metroTabPage1);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtcStudent.CustomBackground = true;
@@ -300,7 +312,7 @@
             this.mtcStudent.ItemSize = new System.Drawing.Size(86, 35);
             this.mtcStudent.Location = new System.Drawing.Point(0, 106);
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 2;
+            this.mtcStudent.SelectedIndex = 4;
             this.mtcStudent.Size = new System.Drawing.Size(1054, 513);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
@@ -468,6 +480,16 @@
             this.lblFloor.Size = new System.Drawing.Size(40, 17);
             this.lblFloor.TabIndex = 45;
             this.lblFloor.Text = "Floor";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
+            this.pictureBox2.TabIndex = 44;
+            this.pictureBox2.TabStop = false;
             // 
             // btn_EventVoteSelectedNO
             // 
@@ -751,6 +773,28 @@
             this.chMessageReply.Name = "chMessageReply";
             this.chMessageReply.Width = 300;
             // 
+            // pbxAddMessage
+            // 
+            this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
+            this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
+            this.pbxAddMessage.Name = "pbxAddMessage";
+            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
+            this.pbxAddMessage.TabIndex = 17;
+            this.pbxAddMessage.TabStop = false;
+            // 
+            // pbxRemoveMessage
+            // 
+            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
+            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
+            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
+            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
+            this.pbxRemoveMessage.TabIndex = 18;
+            this.pbxRemoveMessage.TabStop = false;
+            // 
             // btnRemoveSelectedMessage
             // 
             this.btnRemoveSelectedMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
@@ -903,32 +947,33 @@
             // mtpProfile
             // 
             this.mtpProfile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.mtpProfile.Controls.Add(this.dgvStudentTasks);
+            this.mtpProfile.Controls.Add(this.btnEdit);
             this.mtpProfile.Controls.Add(this.pbxDeposit);
-            this.mtpProfile.Controls.Add(this.button3);
-            this.mtpProfile.Controls.Add(this.textBox13);
-            this.mtpProfile.Controls.Add(this.textBox1);
-            this.mtpProfile.Controls.Add(this.textBox17);
-            this.mtpProfile.Controls.Add(this.textBox15);
-            this.mtpProfile.Controls.Add(this.label20);
-            this.mtpProfile.Controls.Add(this.label10);
-            this.mtpProfile.Controls.Add(this.button13);
-            this.mtpProfile.Controls.Add(this.label26);
-            this.mtpProfile.Controls.Add(this.label25);
-            this.mtpProfile.Controls.Add(this.lv_MyTasks);
-            this.mtpProfile.Controls.Add(this.textBox12);
-            this.mtpProfile.Controls.Add(this.textBox11);
-            this.mtpProfile.Controls.Add(this.textBox10);
-            this.mtpProfile.Controls.Add(this.textBox9);
-            this.mtpProfile.Controls.Add(this.textBox8);
-            this.mtpProfile.Controls.Add(this.textBox7);
-            this.mtpProfile.Controls.Add(this.label19);
-            this.mtpProfile.Controls.Add(this.label18);
-            this.mtpProfile.Controls.Add(this.label17);
-            this.mtpProfile.Controls.Add(this.label16);
-            this.mtpProfile.Controls.Add(this.label15);
-            this.mtpProfile.Controls.Add(this.label14);
-            this.mtpProfile.Controls.Add(this.label13);
-            this.mtpProfile.Controls.Add(this.label12);
+            this.mtpProfile.Controls.Add(this.btnCompleteTask);
+            this.mtpProfile.Controls.Add(this.tbxFloor);
+            this.mtpProfile.Controls.Add(this.tbxPassword);
+            this.mtpProfile.Controls.Add(this.tbxAddBalance);
+            this.mtpProfile.Controls.Add(this.tbxRoom);
+            this.mtpProfile.Controls.Add(this.lblProfileFloor);
+            this.mtpProfile.Controls.Add(this.lblPassword);
+            this.mtpProfile.Controls.Add(this.btnDeposit);
+            this.mtpProfile.Controls.Add(this.lblAddBalance);
+            this.mtpProfile.Controls.Add(this.lblRoom);
+            this.mtpProfile.Controls.Add(this.tbxScore);
+            this.mtpProfile.Controls.Add(this.tbxBalance);
+            this.mtpProfile.Controls.Add(this.tbxPhone);
+            this.mtpProfile.Controls.Add(this.tbxEmail);
+            this.mtpProfile.Controls.Add(this.tbxAge);
+            this.mtpProfile.Controls.Add(this.tbxName);
+            this.mtpProfile.Controls.Add(this.lblScore);
+            this.mtpProfile.Controls.Add(this.lblBalance);
+            this.mtpProfile.Controls.Add(this.lblMyTasks);
+            this.mtpProfile.Controls.Add(this.lblGeneralInfo);
+            this.mtpProfile.Controls.Add(this.lblPhone);
+            this.mtpProfile.Controls.Add(this.lblEmail);
+            this.mtpProfile.Controls.Add(this.lblAge);
+            this.mtpProfile.Controls.Add(this.lblName);
             this.mtpProfile.Controls.Add(this.pictureBox3);
             this.mtpProfile.HorizontalScrollbarBarColor = true;
             this.mtpProfile.Location = new System.Drawing.Point(4, 39);
@@ -938,288 +983,312 @@
             this.mtpProfile.Text = "Profile";
             this.mtpProfile.VerticalScrollbarBarColor = true;
             // 
-            // button3
+            // dgvStudentTasks
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(289, 281);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(221, 45);
-            this.button3.TabIndex = 68;
-            this.button3.Text = "Complete Selected Task";
-            this.button3.UseVisualStyleBackColor = false;
+            this.dgvStudentTasks.AllowUserToDeleteRows = false;
+            this.dgvStudentTasks.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvStudentTasks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvStudentTasks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvStudentTasks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvStudentTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chDateTask,
+            this.chTaskDesc,
+            this.chStatusTask});
+            this.dgvStudentTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvStudentTasks.Location = new System.Drawing.Point(288, 43);
+            this.dgvStudentTasks.Name = "dgvStudentTasks";
+            this.dgvStudentTasks.RowHeadersVisible = false;
+            this.dgvStudentTasks.RowHeadersWidth = 51;
+            this.dgvStudentTasks.RowTemplate.Height = 24;
+            this.dgvStudentTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudentTasks.Size = new System.Drawing.Size(688, 219);
+            this.dgvStudentTasks.TabIndex = 70;
             // 
-            // textBox13
+            // btnEdit
             // 
-            this.textBox13.Location = new System.Drawing.Point(25, 265);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(41, 22);
-            this.textBox13.TabIndex = 67;
-            this.textBox13.Text = "2";
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEdit.Location = new System.Drawing.Point(24, 417);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(112, 38);
+            this.btnEdit.TabIndex = 69;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // textBox1
+            // pbxDeposit
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 112);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 22);
-            this.textBox1.TabIndex = 65;
-            this.textBox1.Text = "********";
+            this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
+            this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxDeposit.Location = new System.Drawing.Point(678, 372);
+            this.pbxDeposit.Name = "pbxDeposit";
+            this.pbxDeposit.Size = new System.Drawing.Size(22, 24);
+            this.pbxDeposit.TabIndex = 2;
+            this.pbxDeposit.TabStop = false;
             // 
-            // textBox17
+            // btnCompleteTask
             // 
-            this.textBox17.Location = new System.Drawing.Point(289, 387);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(113, 22);
-            this.textBox17.TabIndex = 62;
+            this.btnCompleteTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnCompleteTask.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnCompleteTask.FlatAppearance.BorderSize = 0;
+            this.btnCompleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCompleteTask.Location = new System.Drawing.Point(289, 281);
+            this.btnCompleteTask.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCompleteTask.Name = "btnCompleteTask";
+            this.btnCompleteTask.Size = new System.Drawing.Size(221, 45);
+            this.btnCompleteTask.TabIndex = 68;
+            this.btnCompleteTask.Text = "Complete Selected Task";
+            this.btnCompleteTask.UseVisualStyleBackColor = false;
+            this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
             // 
-            // textBox15
+            // tbxFloor
             // 
-            this.textBox15.Location = new System.Drawing.Point(73, 265);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(140, 22);
-            this.textBox15.TabIndex = 60;
-            this.textBox15.Text = "31";
+            this.tbxFloor.Location = new System.Drawing.Point(25, 265);
+            this.tbxFloor.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxFloor.Name = "tbxFloor";
+            this.tbxFloor.ReadOnly = true;
+            this.tbxFloor.Size = new System.Drawing.Size(41, 22);
+            this.tbxFloor.TabIndex = 67;
             // 
-            // label20
+            // tbxPassword
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label20.Location = new System.Drawing.Point(21, 245);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(40, 17);
-            this.label20.TabIndex = 66;
-            this.label20.Text = "Floor";
+            this.tbxPassword.Location = new System.Drawing.Point(25, 112);
+            this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
+            this.tbxPassword.Size = new System.Drawing.Size(189, 22);
+            this.tbxPassword.TabIndex = 65;
             // 
-            // label10
+            // tbxAddBalance
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(22, 94);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 17);
-            this.label10.TabIndex = 64;
-            this.label10.Text = "Password";
+            this.tbxAddBalance.Location = new System.Drawing.Point(289, 387);
+            this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxAddBalance.Name = "tbxAddBalance";
+            this.tbxAddBalance.Size = new System.Drawing.Size(238, 22);
+            this.tbxAddBalance.TabIndex = 62;
             // 
-            // button13
+            // tbxRoom
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button13.Location = new System.Drawing.Point(410, 363);
-            this.button13.Margin = new System.Windows.Forms.Padding(4);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(155, 46);
-            this.button13.TabIndex = 63;
-            this.button13.Text = "Deposit";
-            this.button13.UseVisualStyleBackColor = false;
+            this.tbxRoom.Location = new System.Drawing.Point(73, 265);
+            this.tbxRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxRoom.Name = "tbxRoom";
+            this.tbxRoom.ReadOnly = true;
+            this.tbxRoom.Size = new System.Drawing.Size(140, 22);
+            this.tbxRoom.TabIndex = 60;
             // 
-            // label26
+            // lblProfileFloor
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label26.Location = new System.Drawing.Point(286, 363);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 17);
-            this.label26.TabIndex = 61;
-            this.label26.Text = "Add balance";
+            this.lblProfileFloor.AutoSize = true;
+            this.lblProfileFloor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblProfileFloor.Location = new System.Drawing.Point(21, 245);
+            this.lblProfileFloor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProfileFloor.Name = "lblProfileFloor";
+            this.lblProfileFloor.Size = new System.Drawing.Size(40, 17);
+            this.lblProfileFloor.TabIndex = 66;
+            this.lblProfileFloor.Text = "Floor";
             // 
-            // label25
+            // lblPassword
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label25.Location = new System.Drawing.Point(69, 245);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(45, 17);
-            this.label25.TabIndex = 59;
-            this.label25.Text = "Room";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPassword.Location = new System.Drawing.Point(22, 94);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
+            this.lblPassword.TabIndex = 64;
+            this.lblPassword.Text = "Password";
             // 
-            // lv_MyTasks
+            // btnDeposit
             // 
-            this.lv_MyTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Date,
-            this.Task,
-            this.columnHeader2});
-            this.lv_MyTasks.HideSelection = false;
-            this.lv_MyTasks.Location = new System.Drawing.Point(289, 35);
-            this.lv_MyTasks.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_MyTasks.Name = "lv_MyTasks";
-            this.lv_MyTasks.Size = new System.Drawing.Size(637, 232);
-            this.lv_MyTasks.TabIndex = 58;
-            this.lv_MyTasks.UseCompatibleStateImageBehavior = false;
-            this.lv_MyTasks.View = System.Windows.Forms.View.Details;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnDeposit.FlatAppearance.BorderSize = 0;
+            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeposit.Location = new System.Drawing.Point(552, 363);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(155, 46);
+            this.btnDeposit.TabIndex = 63;
+            this.btnDeposit.Text = "Deposit";
+            this.btnDeposit.UseVisualStyleBackColor = false;
             // 
-            // Date
+            // lblAddBalance
             // 
-            this.Date.Text = "Date";
-            this.Date.Width = 91;
+            this.lblAddBalance.AutoSize = true;
+            this.lblAddBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAddBalance.Location = new System.Drawing.Point(286, 363);
+            this.lblAddBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddBalance.Name = "lblAddBalance";
+            this.lblAddBalance.Size = new System.Drawing.Size(87, 17);
+            this.lblAddBalance.TabIndex = 61;
+            this.lblAddBalance.Text = "Add balance";
             // 
-            // Task
+            // lblRoom
             // 
-            this.Task.Text = "Task";
-            this.Task.Width = 177;
+            this.lblRoom.AutoSize = true;
+            this.lblRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblRoom.Location = new System.Drawing.Point(69, 245);
+            this.lblRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Size = new System.Drawing.Size(45, 17);
+            this.lblRoom.TabIndex = 59;
+            this.lblRoom.Text = "Room";
             // 
-            // columnHeader2
+            // tbxScore
             // 
-            this.columnHeader2.Text = "Status";
-            this.columnHeader2.Width = 93;
+            this.tbxScore.Enabled = false;
+            this.tbxScore.Location = new System.Drawing.Point(25, 372);
+            this.tbxScore.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxScore.Name = "tbxScore";
+            this.tbxScore.ReadOnly = true;
+            this.tbxScore.Size = new System.Drawing.Size(189, 22);
+            this.tbxScore.TabIndex = 57;
             // 
-            // textBox12
+            // tbxBalance
             // 
-            this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(25, 372);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(189, 22);
-            this.textBox12.TabIndex = 57;
-            this.textBox12.Text = "13";
+            this.tbxBalance.Enabled = false;
+            this.tbxBalance.Location = new System.Drawing.Point(25, 314);
+            this.tbxBalance.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxBalance.Name = "tbxBalance";
+            this.tbxBalance.ReadOnly = true;
+            this.tbxBalance.Size = new System.Drawing.Size(189, 22);
+            this.tbxBalance.TabIndex = 55;
             // 
-            // textBox11
+            // tbxPhone
             // 
-            this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(25, 314);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(189, 22);
-            this.textBox11.TabIndex = 55;
-            this.textBox11.Text = "€21.50";
+            this.tbxPhone.Location = new System.Drawing.Point(23, 214);
+            this.tbxPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPhone.Name = "tbxPhone";
+            this.tbxPhone.Size = new System.Drawing.Size(189, 22);
+            this.tbxPhone.TabIndex = 50;
             // 
-            // textBox10
+            // tbxEmail
             // 
-            this.textBox10.Location = new System.Drawing.Point(23, 214);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(189, 22);
-            this.textBox10.TabIndex = 50;
-            this.textBox10.Text = "+31 6 12345678";
+            this.tbxEmail.Location = new System.Drawing.Point(23, 163);
+            this.tbxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(189, 22);
+            this.tbxEmail.TabIndex = 48;
             // 
-            // textBox9
+            // tbxAge
             // 
-            this.textBox9.Location = new System.Drawing.Point(23, 163);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(189, 22);
-            this.textBox9.TabIndex = 48;
-            this.textBox9.Text = "p.young@fontys.nl";
+            this.tbxAge.Location = new System.Drawing.Point(173, 62);
+            this.tbxAge.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxAge.Name = "tbxAge";
+            this.tbxAge.Size = new System.Drawing.Size(40, 22);
+            this.tbxAge.TabIndex = 46;
             // 
-            // textBox8
+            // tbxName
             // 
-            this.textBox8.Location = new System.Drawing.Point(173, 62);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(40, 22);
-            this.textBox8.TabIndex = 46;
-            this.textBox8.Text = "21";
+            this.tbxName.Location = new System.Drawing.Point(23, 62);
+            this.tbxName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(143, 22);
+            this.tbxName.TabIndex = 44;
             // 
-            // textBox7
+            // lblScore
             // 
-            this.textBox7.Location = new System.Drawing.Point(23, 62);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(143, 22);
-            this.textBox7.TabIndex = 44;
-            this.textBox7.Text = "Peter Young";
+            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblScore.Location = new System.Drawing.Point(22, 346);
+            this.lblScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(114, 17);
+            this.lblScore.TabIndex = 56;
+            this.lblScore.Text = "Score this month";
             // 
-            // label19
+            // lblBalance
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(22, 346);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(114, 17);
-            this.label19.TabIndex = 56;
-            this.label19.Text = "Score this month";
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblBalance.Location = new System.Drawing.Point(22, 296);
+            this.lblBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(59, 17);
+            this.lblBalance.TabIndex = 54;
+            this.lblBalance.Text = "Balance";
             // 
-            // label18
+            // lblMyTasks
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(22, 296);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 17);
-            this.label18.TabIndex = 54;
-            this.label18.Text = "Balance";
+            this.lblMyTasks.AutoSize = true;
+            this.lblMyTasks.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMyTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMyTasks.Location = new System.Drawing.Point(285, 11);
+            this.lblMyTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMyTasks.Name = "lblMyTasks";
+            this.lblMyTasks.Size = new System.Drawing.Size(76, 20);
+            this.lblMyTasks.TabIndex = 52;
+            this.lblMyTasks.Text = "My tasks";
             // 
-            // label17
+            // lblGeneralInfo
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(285, 11);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 17);
-            this.label17.TabIndex = 52;
-            this.label17.Text = "My tasks";
+            this.lblGeneralInfo.AutoSize = true;
+            this.lblGeneralInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblGeneralInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeneralInfo.Location = new System.Drawing.Point(21, 11);
+            this.lblGeneralInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGeneralInfo.Name = "lblGeneralInfo";
+            this.lblGeneralInfo.Size = new System.Drawing.Size(156, 20);
+            this.lblGeneralInfo.TabIndex = 51;
+            this.lblGeneralInfo.Text = "General Information";
             // 
-            // label16
+            // lblPhone
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(21, 11);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(133, 17);
-            this.label16.TabIndex = 51;
-            this.label16.Text = "General Information";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPhone.Location = new System.Drawing.Point(21, 196);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(49, 17);
+            this.lblPhone.TabIndex = 49;
+            this.lblPhone.Text = "Phone";
             // 
-            // label15
+            // lblEmail
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Location = new System.Drawing.Point(21, 196);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 17);
-            this.label15.TabIndex = 49;
-            this.label15.Text = "Phone";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEmail.Location = new System.Drawing.Point(21, 144);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 47;
+            this.lblEmail.Text = "Email";
             // 
-            // label14
+            // lblAge
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(21, 144);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 17);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "Email";
+            this.lblAge.AutoSize = true;
+            this.lblAge.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAge.Location = new System.Drawing.Point(170, 43);
+            this.lblAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(33, 17);
+            this.lblAge.TabIndex = 45;
+            this.lblAge.Text = "Age";
             // 
-            // label13
+            // lblName
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(170, 43);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 17);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "Age";
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblName.Location = new System.Drawing.Point(21, 42);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.TabIndex = 43;
+            this.lblName.Text = "Name";
             // 
-            // label12
+            // pictureBox3
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(21, 42);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 17);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Name";
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(253, 11);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1, 418);
+            this.pictureBox3.TabIndex = 53;
+            this.pictureBox3.TabStop = false;
             // 
             // metroTabPage1
             // 
@@ -1477,75 +1546,26 @@
             this.btnPrevMonth.Text = "<";
             this.btnPrevMonth.UseVisualStyleBackColor = true;
             // 
-            // notifyIcon1
+            // chDateTask
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            this.chDateTask.HeaderText = "Date";
+            this.chDateTask.MinimumWidth = 6;
+            this.chDateTask.Name = "chDateTask";
+            this.chDateTask.Width = 200;
             // 
-            // pictureBox2
+            // chTaskDesc
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
-            this.pictureBox2.TabIndex = 44;
-            this.pictureBox2.TabStop = false;
+            this.chTaskDesc.HeaderText = "Task";
+            this.chTaskDesc.MinimumWidth = 6;
+            this.chTaskDesc.Name = "chTaskDesc";
+            this.chTaskDesc.Width = 150;
             // 
-            // pbxAddMessage
+            // chStatusTask
             // 
-            this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
-            this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
-            this.pbxAddMessage.Name = "pbxAddMessage";
-            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
-            this.pbxAddMessage.TabIndex = 17;
-            this.pbxAddMessage.TabStop = false;
-            // 
-            // pbxRemoveMessage
-            // 
-            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
-            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
-            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
-            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
-            this.pbxRemoveMessage.TabIndex = 18;
-            this.pbxRemoveMessage.TabStop = false;
-            // 
-            // pbxDeposit
-            // 
-            this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
-            this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDeposit.Location = new System.Drawing.Point(536, 372);
-            this.pbxDeposit.Name = "pbxDeposit";
-            this.pbxDeposit.Size = new System.Drawing.Size(22, 24);
-            this.pbxDeposit.TabIndex = 2;
-            this.pbxDeposit.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(253, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1, 418);
-            this.pictureBox3.TabIndex = 53;
-            this.pictureBox3.TabStop = false;
-            // 
-            // lbl_LoggedInAsPicture
-            // 
-            this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
-            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
-            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
-            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
-            this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lbl_LoggedInAsPicture.TabIndex = 12;
-            this.lbl_LoggedInAsPicture.TabStop = false;
+            this.chStatusTask.HeaderText = "Status";
+            this.chStatusTask.MinimumWidth = 6;
+            this.chStatusTask.Name = "chStatusTask";
+            this.chStatusTask.Width = 150;
             // 
             // FrmStudent
             // 
@@ -1560,19 +1580,26 @@
             this.Load += new System.EventHandler(this.FrmStudent_Load);
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.mtcStudent.ResumeLayout(false);
             this.mtpSchedule.ResumeLayout(false);
             this.mtpSchedule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             this.mtpMessages.ResumeLayout(false);
             this.mtpMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
             this.mtpHouseRules.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
             this.mtpAgreements.ResumeLayout(false);
             this.mtpAgreements.PerformLayout();
             this.mtpProfile.ResumeLayout(false);
             this.mtpProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -1580,12 +1607,6 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1654,35 +1675,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessageText;
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessageReply;
         private MetroFramework.Controls.MetroTabPage mtpProfile;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ListView lv_MyTasks;
-        private System.Windows.Forms.ColumnHeader Date;
-        private System.Windows.Forms.ColumnHeader Task;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnCompleteTask;
+        private System.Windows.Forms.TextBox tbxFloor;
+        private System.Windows.Forms.TextBox tbxPassword;
+        private System.Windows.Forms.TextBox tbxAddBalance;
+        private System.Windows.Forms.TextBox tbxRoom;
+        private System.Windows.Forms.Label lblProfileFloor;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnDeposit;
+        private System.Windows.Forms.Label lblAddBalance;
+        private System.Windows.Forms.Label lblRoom;
+        private System.Windows.Forms.TextBox tbxScore;
+        private System.Windows.Forms.TextBox tbxBalance;
+        private System.Windows.Forms.TextBox tbxPhone;
+        private System.Windows.Forms.TextBox tbxEmail;
+        private System.Windows.Forms.TextBox tbxAge;
+        private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblMyTasks;
+        private System.Windows.Forms.Label lblGeneralInfo;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblName;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel2;
@@ -1708,10 +1725,14 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.HelpProvider helpProvider1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button btnMinimizeWindow;
         private System.Windows.Forms.PictureBox pbxDeposit;
         private System.Windows.Forms.PictureBox pbxAddMessage;
         private System.Windows.Forms.PictureBox pbxRemoveMessage;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.DataGridView dgvStudentTasks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chDateTask;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chTaskDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chStatusTask;
     }
 }

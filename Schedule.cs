@@ -36,5 +36,10 @@
         {
             return status;
         }
+
+        public void SetStatus(TaskStatus status)
+        {
+            this.status = status;
+        }
     }
 }

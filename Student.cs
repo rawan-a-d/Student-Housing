@@ -1,4 +1,6 @@
-﻿namespace Project
+﻿using System;
+
+namespace Project
 {
     class Student
     {
@@ -6,6 +8,7 @@
         private static int autoIncId = 1;
         private int id;
         private string name;
+        private int birthYear;
         private string email;
         private string password;
         private string phoneNr;
@@ -63,6 +66,39 @@
         public int GetRoomNr()
         {
             return roomNr;
+        }
+
+        public double GetBalance()
+        {
+            return balance;
+        }
+
+        public int GetAge()
+        {
+            int currentYear = DateTime.Now.Year;
+            if (birthYear != 0)
+            {
+                return (currentYear - birthYear);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public string GetPhone()
+        {
+            return phoneNr;
+        }
+
+        public void UpdateInfo(string name, int age, string email, string password, string phone)
+        {
+            int currentYear = DateTime.Now.Year;
+            this.name = name;
+            this.birthYear = currentYear - age;
+            this.email = email;
+            this.password = password;
+            this.phoneNr = phone;
         }
     }
 }

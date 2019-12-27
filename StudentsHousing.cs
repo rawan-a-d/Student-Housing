@@ -52,7 +52,7 @@ namespace Project
         // Methods
    
 
-    // Student
+    /* Student */
     public void AddStudentToList(Student student)
         {
             students.Add(student);
@@ -87,8 +87,18 @@ namespace Project
             return "";
         }
 
+        public void UpdateStudentInfo(int studentId, string name, int age, string email, string password, string phone)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].GetId() == studentId)
+                {
+                    students[i].UpdateInfo(name, age, email, password, phone);
+                }
+            }
+        }
 
-        // House Rule
+        /* House Rule */
         public void AddHouseRuleToList(HouseRule rule)
         {
             houseRules.Add(rule);
@@ -122,7 +132,7 @@ namespace Project
         }
 
 
-        // Messages
+        /* Messages */
         // Add message
         public void AddMessageToList(Message message)
         {
@@ -257,6 +267,34 @@ namespace Project
             return DateTime.Now;
         }
 
+        public int FindDateId(DateTime date)
+        {
+            for (int i = 0; i < dates.Count; i++)
+            {
+                if (dates[i].GetDate() == date)
+                {
+                    return dates[i].GetId();
+                }
+            }
+
+            return 0;
+        }
+
+
+        // Complete task
+        public void CompleteTask(int studentId, DateTime date)
+        {
+            int dateId = FindDateId(date);
+            for (int i = 0; i < schedules.Count; i++)
+            {
+                if(schedules[i].GetStudentId() == studentId && schedules[i].GetDateId() == dateId)
+                {
+                    schedules[i].SetStatus(TaskStatus.Completed);
+                    break;
+                }
+            }
+        }
+
 
         // Export Excel
         public void ExportToExcel()
@@ -321,6 +359,8 @@ namespace Project
             worksheet.Rows[0].Style.HorizontalAlignment = HorizontalAlignmentStyle.Center;
             workbook.Save("messages.xlsx");
         }
+
+
 
 
         // Test data

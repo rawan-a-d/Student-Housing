@@ -175,6 +175,112 @@ namespace Project
             }
         }
 
+                                                                    /* Profile */
+        public void DisplayProfileInfo()
+        {
+            List<Student> students = studentsHousing.GetStudentsList();
+            // User Id 1 for now **************
+            int currentUserId = 1;
+
+            for (int i = 0; i < students.Count; i++)
+            {
+                if(students[i].GetId() == currentUserId)
+                {
+                    tbxName.Text = students[i].GetName();
+                    if (students[i].GetAge() != 0)
+                    {
+                        tbxAge.Text = (students[i].GetAge()).ToString();
+                    }
+                    tbxPassword.Text = students[i].GetPassword();
+                    tbxEmail.Text = students[i].GetEmail();
+                    tbxFloor.Text = (students[i].GetFloorNr()).ToString();
+                    tbxRoom.Text = (students[i].GetRoomNr()).ToString();
+                    //tbxBalance.Text = (students[i].GetBalance()).ToString();
+                    //tbxScore.Text = students[i].GetScore();
+                    tbxPhone.Text = students[i].GetPhone();
+                }
+            }
+
+            // Student schedule
+            GetScheduleCurrentUser();
+        }
+
+        // Update student's tasks in profile
+        public void GetScheduleCurrentUser()
+        {
+            // User Id 1 for now **************
+            int currentUserId = 1;
+            // Schedule list
+            List<Schedule> schedules = studentsHousing.GetSchedulesList().OrderBy(o => o.GetDateId()).ToList();
+
+            // Clear list view
+            dgvStudentTasks.Rows.Clear();
+            // Display rules
+            foreach (var schedule in schedules)
+            {
+                if(schedule.GetStudentId() == currentUserId)
+                {
+                    // Create new rows
+                    DataGridViewRow row = (DataGridViewRow)dgvStudentTasks.Rows[0].Clone();
+
+                    // Insert data into rows
+                    row.Cells[0].Value = studentsHousing.FindDateById(schedule.GetDateId());
+                    row.Cells[1].Value = (schedule.GetTask()).ToString();
+                    row.Cells[2].Value = (schedule.GetStatus()).ToString();
+
+                    // Add the item to list view
+                    dgvStudentTasks.Rows.Add(row);
+
+                    // Text wrap
+                    dgvStudentTasks.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    dgvStudentTasks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+            }
+        }
+
+        private void btnCompleteTask_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmDialog = MessageBox.Show("Are you sure you want to complete this task?", "Complete task", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // if no task was selected
+            if (dgvStudentTasks.SelectedCells.Count <= 0)
+            {
+                MessageBox.Show("Please select the task that you completed");
+            }
+            // If the student confirmed the completion of task
+            else if(confirmDialog == DialogResult.Yes) {
+                DateTime selectedTaskDate = Convert.ToDateTime(dgvStudentTasks.CurrentRow.Cells[0].Value);
+                // User Id 1 for now **************
+                int currentUserId = 1;
+                studentsHousing.CompleteTask(currentUserId, selectedTaskDate);
+
+                // Update current student's schedule list in profile page
+                GetScheduleCurrentUser();
+
+                // Update all schedules in schedule page
+                UpdateScheduleList();
+            }
+            else
+            {
+                MessageBox.Show("Task was not completed", "Complete task", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // User Id 1 for now **************
+            int currentUserId = 1;
+            string name = tbxName.Text;
+            int age = Convert.ToInt32(tbxAge.Text);
+            string password = tbxPassword.Text;
+            string email = tbxEmail.Text;
+            string phone = tbxPhone.Text;
+            studentsHousing.UpdateStudentInfo(currentUserId, name, age, email, password, phone);
+
+            // Update Profile Info
+            DisplayProfileInfo();
+        }
+
+
         // Call needed methods
         public void SetUp()
         {
@@ -188,6 +294,8 @@ namespace Project
             // Display messages
             UpdateMessagesListView();
 
+            // Display profile info
+            DisplayProfileInfo();
         }
 
         private void btnX_Click(object sender, EventArgs e)
