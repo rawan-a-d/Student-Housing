@@ -1,27 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Project
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
         Student student;
-        StudentsHousing studentsHousing = new StudentsHousing();
+        // Create instance of studentsHousing or use made instance
+        StudentsHousing studentsHousing = StudentsHousing.Instance;
         HouseRule houseRule;
-        Message message;
-    
 
-        int nextTab = 0;
-        public Form1()
+        public FrmMain()
         {
             InitializeComponent();
 
@@ -29,78 +20,25 @@ namespace Project
             SetUp();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
         {
-            tabs_Student.Visible = false;
-            tabs_Admin.Visible = false;
-            lblTodayDate.Visible = false;
-            lbl_LoggedInAsPicture.Visible = false;
-            lbl_LoggedInAsName.Visible = false;
-            lbl_LoggedInAs.Visible = false;
-            btn_Logout.Visible = false;
 
             // Display today's date
             lblTodayDate.Text = (DateTime.Now.ToString("dd/MM/yyyy"));
-
-            //DTP_EventDateTime.CustomFormat = "MMMM dd, yyyy -- HH:mm";
         }
 
         private void Btn_SwitchInterface_Click(object sender, EventArgs e)
         {
-            // default (0) is login screen.
-            if (nextTab == 2) // switch to default
-            {
-                //nextTab = 0;
-                tabs_Student.Visible = false;
-                tabs_Admin.Visible = false;
-                lblTodayDate.Visible = false;
-                lbl_LoggedInAsPicture.Visible = false;
-                lbl_LoggedInAsName.Visible = false;
-                lbl_LoggedInAs.Visible = false;
-                btn_Logout.Visible = false;
-
-                pLogin.Visible = true;
-            }
-
-            if (nextTab == 1) // switch to administrator
-            {
-                //nextTab = 2;
-                tabs_Student.Visible = false;
-                tabs_Admin.Visible = true;
-                lbl_LoggedInAsName.Text = "Administrator";
-                lblTodayDate.Visible = true;
-                lbl_LoggedInAsPicture.Visible = true;
-                lbl_LoggedInAsName.Visible = true;
-                lbl_LoggedInAs.Visible = true;
-                btn_Logout.Visible = true;
-            }
-
-            if (nextTab == 0) // switch to student
-            {
-                //nextTab = 1;
-                lbl_LoggedInAsName.Text = "Peter Young";
-                tabs_Student.Visible = true;
-                tabs_Admin.Visible = false;
-                lblTodayDate.Visible = true;
-                lbl_LoggedInAsPicture.Visible = true;
-                lbl_LoggedInAsName.Visible = true;
-                lbl_LoggedInAs.Visible = true;
-                btn_Logout.Visible = true;
-
-                pLogin.Visible = false;
-            }
-            nextTab++;
-            if (nextTab == 3)
-            {
-                nextTab = 0;
-            }
+            Form FormStudent = new FrmStudent();
+            FormStudent.Show();
+            this.Close();
         }
 
                                                                             /* Admin */
 
                                                                             // Tenants list page
         // Add student
-        private void btn_TenantAdd_Click(object sender, EventArgs e)
+        private void Btn_TenantAdd_Click(object sender, EventArgs e)
         {
             // Get student info
             string name = tbxTenantName.Text;
@@ -124,7 +62,7 @@ namespace Project
         }
 
         // Remove student
-        private void btn_TenantRemoveSelected_Click(object sender, EventArgs e)
+        private void Btn_TenantRemoveSelected_Click(object sender, EventArgs e)
         {
             int selectedUserToBeRemoved = Convert.ToInt32(lvwTenantList.SelectedItems[0].Text);
 
@@ -151,7 +89,7 @@ namespace Project
         }
 
         // Fields validation
-        private void tbxTenantEmail_Validating(object sender, CancelEventArgs e)
+        private void TbxTenantEmail_Validating(object sender, CancelEventArgs e)
         {
             string email = tbxTenantEmail.Text;
             if (string.IsNullOrWhiteSpace(email))
@@ -174,7 +112,7 @@ namespace Project
             }
         }
 
-        private void tbxTenantName_Validating(object sender, CancelEventArgs e)
+        private void TbxTenantName_Validating(object sender, CancelEventArgs e)
         {
             string name = tbxTenantName.Text;
             if (string.IsNullOrWhiteSpace(name))
@@ -196,7 +134,7 @@ namespace Project
             }
         }
 
-        private void tbxTenantPassword_Validating(object sender, CancelEventArgs e)
+        private void TbxTenantPassword_Validating(object sender, CancelEventArgs e)
         {
             string password = tbxTenantPassword.Text;
             if (string.IsNullOrWhiteSpace(password))
@@ -212,7 +150,7 @@ namespace Project
             }
         }
 
-        private void tbxTenantRoom_Validating(object sender, CancelEventArgs e)
+        private void TbxTenantRoom_Validating(object sender, CancelEventArgs e)
         {
             string roomNr = tbxTenantRoom.Text;
             if (string.IsNullOrWhiteSpace(roomNr))
@@ -234,7 +172,7 @@ namespace Project
             }
         }
 
-        private void tbxTenantFloor_Validating(object sender, CancelEventArgs e)
+        private void TbxTenantFloor_Validating(object sender, CancelEventArgs e)
         {
             string floorNr = tbxTenantFloor.Text;
             if (string.IsNullOrWhiteSpace(floorNr))
@@ -258,7 +196,7 @@ namespace Project
 
                                                                               // House rules
         // Add house rule
-        private void btnAddRule_Click(object sender, EventArgs e)
+        private void BtnAddRule_Click(object sender, EventArgs e)
         {
             string newRule = tbxNewRule.Text;
             DateTime currentDate = DateTime.Now;
@@ -284,7 +222,7 @@ namespace Project
         }
 
         // Remove house rule
-        private void btnRulesRemoveSelected_Click(object sender, EventArgs e)
+        private void BtnRulesRemoveSelected_Click(object sender, EventArgs e)
         {
             // If no rule was selected
             if (dgvHouseRulesAdmin.SelectedCells.Count <= 0)
@@ -304,7 +242,7 @@ namespace Project
         }
 
         // Modify house rule
-        private void btnRulesModifySelected_Click(object sender, EventArgs e)
+        private void BtnRulesModifySelected_Click(object sender, EventArgs e)
         {
             string updatedRule = tbxNewRule.Text;
 
@@ -337,37 +275,29 @@ namespace Project
 
             // Clear list view
             dgvHouseRulesAdmin.Rows.Clear();
-            dgvHouseRulesStudent.Rows.Clear();
             // Display rules
             foreach (var rule in houseRules)
             {
                 // Create new rows
                 DataGridViewRow row = (DataGridViewRow)dgvHouseRulesAdmin.Rows[0].Clone();
-                DataGridViewRow rowStudent = (DataGridViewRow)dgvHouseRulesStudent.Rows[0].Clone();
 
                 // Insert data into rows
                 row.Cells[0].Value = rule.GetId().ToString();
                 row.Cells[1].Value = (rule.GetDateCreated().ToString("dd/MM/yyyy")).ToString();
                 row.Cells[2].Value = (rule.GetRule()).ToString();
-                rowStudent.Cells[0].Value = rule.GetId().ToString();
-                rowStudent.Cells[1].Value = (rule.GetDateCreated().ToString("dd/MM/yyyy")).ToString();
-                rowStudent.Cells[2].Value = (rule.GetRule()).ToString();
 
                 // Add the item to list view
                 dgvHouseRulesAdmin.Rows.Add(row);
-                dgvHouseRulesStudent.Rows.Add(rowStudent);
 
                 // Text wrap
                 dgvHouseRulesAdmin.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgvHouseRulesAdmin.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                dgvHouseRulesStudent.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                dgvHouseRulesStudent.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
         }
 
                                                                         // Complaints and Questions
         // Reply to a message
-        private void btnSendReply_Click(object sender, EventArgs e)
+        private void BtnSendReply_Click(object sender, EventArgs e)
         {
             string reply = tbxReply.Text;
 
@@ -394,52 +324,9 @@ namespace Project
         }
 
         // Export Messages as EXCEL
-        private void btnMessagesExport_Click(object sender, EventArgs e)
+        private void BtnMessagesExport_Click(object sender, EventArgs e)
         {
-            // creating Excel Application  
-            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-            // creating new WorkBook within Excel application  
-            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-            // creating new Excelsheet in workbook  
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            // see the excel sheet behind the program  
-            app.Visible = true;
-            // get the reference of first sheet. By default its name is Sheet1.  
-            // store its reference to worksheet  
-            worksheet = workbook.Sheets["Sheet1"];
-            worksheet = workbook.ActiveSheet;
-            // changing the name of active sheet  
-            worksheet.Name = "Exported from gridview";
-            // storing header part in Excel  
-            for (int i = 1; i < dgvMessageAdmin.Columns.Count + 1; i++)
-            {
-                worksheet.Cells[1, i] = dgvMessageAdmin.Columns[i - 1].HeaderText;
-            }
-            // storing Each row and column value to excel sheet  
-            for (int i = 0; i < dgvMessageAdmin.Rows.Count - 1; i++)
-            {
-                for (int j = 0; j < dgvMessageAdmin.Columns.Count; j++)
-                {
-                    if (dgvMessageAdmin.Rows[i].Cells[j].Value != null)
-                    {
-                        worksheet.Cells[i + 2, j + 1] = dgvMessageAdmin.Rows[i].Cells[j].Value.ToString();
-                    }
-                    else
-                    {
-                        worksheet.Cells[i + 2, j + 1] = "";
-                    }
-                }
-            }
-
-            // AutoSet Cell Widths to Content Size
-            worksheet.Cells.Select();
-            worksheet.Cells.EntireColumn.AutoFit();
-            // Style cells
-            worksheet.Cells.Borders.Color = Color.LightBlue;
-            worksheet.Cells.Range["A:E"].Interior.Color = Color.GhostWhite;
-            worksheet.Cells.Range["A1:E1"].Interior.Color = Color.SteelBlue;
-            worksheet.Cells.Range["A1:E1"].Font.Bold = true;
-            worksheet.Cells.Range["A1:E1"].Font.Color = Color.White;
+            studentsHousing.ExportToExcel();
         }
 
         // Update List view (STUDENT and ADMIN)
@@ -449,13 +336,11 @@ namespace Project
 
             // Clear list view
             dgvMessageAdmin.Rows.Clear();
-            dgvMessageStudent.Rows.Clear();
             // Display rules
             foreach (var message in messages)
             {
                 // Create new rows
                 DataGridViewRow row = (DataGridViewRow)dgvMessageAdmin.Rows[0].Clone();
-                DataGridViewRow rowStudent = (DataGridViewRow)dgvMessageStudent.Rows[0].Clone();
 
                 // Insert data into rows
                 row.Cells[0].Value = message.GetId().ToString();
@@ -463,125 +348,38 @@ namespace Project
                 row.Cells[2].Value = (message.GetSubject()).ToString();
                 row.Cells[3].Value = (message.GetMessage()).ToString();
                 row.Cells[4].Value = (message.GetReply());
-                rowStudent.Cells[0].Value = message.GetId().ToString();
-                rowStudent.Cells[1].Value = (message.GetDateCreated().ToString("dd/MM/yyyy")).ToString();
-                rowStudent.Cells[2].Value = (message.GetSubject()).ToString();
-                rowStudent.Cells[3].Value = (message.GetMessage()).ToString();
-                rowStudent.Cells[4].Value = (message.GetReply());
 
                 // Add the item to list view
                 dgvMessageAdmin.Rows.Add(row);
-                dgvMessageStudent.Rows.Add(rowStudent);
 
                 // Text wrap
                 dgvMessageAdmin.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgvMessageAdmin.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                dgvMessageStudent.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                dgvMessageStudent.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            }
-        }
-
-
-                                                                            /* Student */
-                                                                            // Complaints and Questions
-        // Send message
-        private void btnMessageAdd_Click(object sender, EventArgs e)
-        {
-            // Get message data
-            MessageSubject messageType = (MessageSubject)cbxMessageType.SelectedIndex;
-            string messageDesc = tbxMessageDescription.Text;
-            DateTime currentDate = DateTime.Now;
-            /////////// For now let's say it's user with Id 1/ until we implement login functionality //////////////
-            int currentStudentId = 1;
-            if (cbxMessageType.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a subject");
-            }
-            else if (messageDesc == "")
-            {
-                MessageBox.Show("Please insert your message");
-            }
-            else
-            {
-                message = new Message(currentDate, messageType, messageDesc, currentStudentId);
-
-                // Add message to list
-                studentsHousing.AddMessageToList(message);
-
-                MessageBox.Show("Your message was successfully sent");
-
-                //Display messages in list view
-                UpdateMessagesListView();
-            }
-        }
-
-        // Remove selected message
-        private void btnRemoveSelectedMessage_Click(object sender, EventArgs e)
-        {
-            // if no message was selected
-            if (dgvMessageStudent.SelectedCells.Count <= 0)
-            {
-                MessageBox.Show("Please select a message to be removed");
-            }
-            else
-            {
-                int selectedMessageToRemove = Convert.ToInt32(dgvMessageStudent.CurrentRow.Cells[0].Value);
-
-                studentsHousing.RemoveMessageById(selectedMessageToRemove);
-
-                MessageBox.Show("Your message was successfully removed");
-
-                //Display messages in list view
-                UpdateMessagesListView();
-            }
-        }
-
-                                                                                // Schedule
-        public void UpdateScheduleList()
-        {
-            // Schedule list
-            List<Schedule> schedules = studentsHousing.GetSchedulesList().OrderBy(o => o.GetDateId()).ToList();
-
-            // Clear list view
-            dgvSchedule.Rows.Clear();
-            // Display rules
-            foreach (var schedule in schedules)
-            {
-                // Create new rows
-                DataGridViewRow row = (DataGridViewRow)dgvSchedule.Rows[0].Clone();
-
-                // Insert data into rows
-                row.Cells[0].Value = (studentsHousing.FindStudentById(schedule.GetStudentId())).ToString();
-                row.Cells[1].Value = (studentsHousing.FindDateById(schedule.GetDateId())).ToString("dd/MM/yyyy");
-                row.Cells[2].Value = (schedule.GetTask()).ToString();
-                row.Cells[3].Value = (schedule.GetStatus()).ToString();
-
-                // Add the item to list view
-                dgvSchedule.Rows.Add(row);
-
-                // Text wrap
-                dgvSchedule.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                dgvSchedule.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
         }
 
         // Call needed methods
         public void SetUp()
         {
-            // Add test data here
-            studentsHousing.GenerateTestDate();
-
-            // Add dates and create schedule
-            studentsHousing.AddDates();
-            studentsHousing.CreateSchedule();
-            UpdateScheduleList();
-
             // Display house rules
             UpdateHouseRulesListView();
             // Display student list
             UpdateStudentListView();
             // Display messages
             UpdateMessagesListView();
+           
+        }
+
+        // Close window
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // Minimize window
+        private void btnMinimizeWindow_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using GemBox.Spreadsheet;
+using GemBox.Spreadsheet.ConditionalFormatting;
+using System.Data;
 
 namespace Project
 {
     enum MessageSubject { Question, Complaint}
     enum TaskType { Cleaning, Garbage, Shopping}
     enum TaskStatus { Pending, Completed}
+
     class StudentsHousing
     {
         // Fields
@@ -18,9 +18,12 @@ namespace Project
         List<Message> messages;
         List<Date> dates;
         List<Schedule> schedules;
+        private static StudentsHousing instance = null;
+        private static readonly object padlock = new object();
 
         // Constructor
-        public StudentsHousing()
+
+        StudentsHousing()
         {
             // Initialize lists
             students = new List<Student>();
@@ -28,12 +31,29 @@ namespace Project
             messages = new List<Message>();
             dates = new List<Date>();
             schedules = new List<Schedule>();
+            GenerateTestDate();
+        }
+
+        public static StudentsHousing Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new StudentsHousing();
+                    }
+                    return instance;
+                }
+            }
         }
 
         // Methods
+   
 
-        // Student
-        public void AddStudentToList(Student student)
+    /* Student */
+    public void AddStudentToList(Student student)
         {
             students.Add(student);
         }
@@ -67,8 +87,18 @@ namespace Project
             return "";
         }
 
+        public void UpdateStudentInfo(int studentId, string name, int age, string email, string password, string phone)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].GetId() == studentId)
+                {
+                    students[i].UpdateInfo(name, age, email, password, phone);
+                }
+            }
+        }
 
-        // Housing Rule
+        /* House Rule */
         public void AddHouseRuleToList(HouseRule rule)
         {
             houseRules.Add(rule);
@@ -102,7 +132,7 @@ namespace Project
         }
 
 
-        // Messages
+        /* Messages */
         // Add message
         public void AddMessageToList(Message message)
         {
@@ -167,6 +197,7 @@ namespace Project
         // Create schedule
         public void CreateSchedule()
         {
+            EmptySchedule();
             // Dates list
             List<Date> dates = GetDatesList();
             // Students list
@@ -181,7 +212,6 @@ namespace Project
                     // New schedule
                     Schedule schedule = new Schedule(dates[j].GetId(), (TaskType)taskCounter, students[i].GetId(), TaskStatus.Pending);
                     AddScheduleToList(schedule);
-
                     taskCounter++;
 
                     // If task counter has th same length as TaskType
@@ -191,20 +221,20 @@ namespace Project
                     }
                 }
                 // Increase date by two so that the next student starts after two days
-                dateCounter += 2;
+                dateCounter += 5;
                 // Set taskCounter back to 0
                 taskCounter = 0;
             }
         }
-        
 
-        // Create dates and ad them to dates list
+
+        // Create dates and add them to dates list
         public void AddDates()
         {
             DateTime temp_start;
             DateTime temp_end;
             DateTime startDate = DateTime.Today;
-            DateTime endDate = startDate.AddDays(60);
+            DateTime endDate = startDate.AddDays(54);
 
             //--Normalize dates by getting rid of minues since they will get in the way when doing the loop
             temp_start = new DateTime(startDate.Year, startDate.Month, startDate.Day);
@@ -219,6 +249,11 @@ namespace Project
             }
         }
 
+        public void EmptySchedule()
+        {
+            schedules.Clear();
+        }
+
         public DateTime FindDateById(int dateId)
         {
             for (int i = 0; i < dates.Count; i++)
@@ -231,6 +266,101 @@ namespace Project
 
             return DateTime.Now;
         }
+
+        public int FindDateId(DateTime date)
+        {
+            for (int i = 0; i < dates.Count; i++)
+            {
+                if (dates[i].GetDate() == date)
+                {
+                    return dates[i].GetId();
+                }
+            }
+
+            return 0;
+        }
+
+
+        // Complete task
+        public void CompleteTask(int studentId, DateTime date)
+        {
+            int dateId = FindDateId(date);
+            for (int i = 0; i < schedules.Count; i++)
+            {
+                if(schedules[i].GetStudentId() == studentId && schedules[i].GetDateId() == dateId)
+                {
+                    schedules[i].SetStatus(TaskStatus.Completed);
+                    break;
+                }
+            }
+        }
+
+
+        // Export Excel
+        public void ExportToExcel()
+        {
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+            var workbook = new ExcelFile();
+            var worksheet = workbook.Worksheets.Add("Exported from messages");
+
+            // Create headers
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("Id", typeof(int));
+            dataTable.Columns.Add("Date Added", typeof(DateTime));
+            dataTable.Columns.Add("Type", typeof(string));
+            dataTable.Columns.Add("Message", typeof(string));
+            dataTable.Columns.Add("Reply", typeof(string));
+
+            // Create rows
+            for (int i = 0; i < messages.Count; i++)
+            {
+                // If message is a question
+                if(messages[i].GetSubject() == MessageSubject.Question)
+                {
+                    dataTable.Rows.Add(messages[i].GetId(), messages[i].GetDateCreated(), "Question", messages[i].GetMessage());
+
+                }
+                // If message is a complaint
+                else
+                {
+                    dataTable.Rows.Add(messages[i].GetId(), messages[i].GetDateCreated(), "Complaint", messages[i].GetMessage());
+                }
+            }
+
+            // Insert DataTable to an Excel worksheet.
+            worksheet.InsertDataTable(dataTable,
+                new InsertDataTableOptions()
+                {
+                    ColumnHeaders = true,
+                    StartRow = 0
+                });
+
+            /* Style */
+            // Auto fit columns, add color and background color
+            int columnCount = worksheet.CalculateMaxUsedColumns();
+            for (int i = 0; i < columnCount; i++)
+            {
+                worksheet.Columns[i].AutoFit(1, worksheet.Rows[0], worksheet.Rows[worksheet.Rows.Count - 1]);
+                worksheet.Rows[0].Cells[i].Style.FillPattern.SetGradient(GradientShadingStyle.HorizontalHigh, SpreadsheetColor.FromName(ColorName.Accent5Darker25Pct), SpreadsheetColor.FromName(ColorName.Accent5Darker50Pct));
+                worksheet.Rows[0].Cells[i].Style.Font.Color = SpreadsheetColor.FromName(ColorName.White);
+            }
+
+            // Apply borders to specific cells
+            worksheet.ConditionalFormatting.AddContainText("C2:C" + (messages.Count + 1), ContainTextOperator.Contains, "Complaint").
+                Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromName(ColorName.Red), LineStyle.Double);
+            worksheet.ConditionalFormatting.AddContainText("C2:C" + (messages.Count + 1), ContainTextOperator.Contains, "Question").
+                Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromName(ColorName.Green), LineStyle.Thick);
+
+            // Font weight
+            worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
+            // Wrap text
+            worksheet.Cells.Style.WrapText = true;
+            // Header horizontal alignment
+            worksheet.Rows[0].Style.HorizontalAlignment = HorizontalAlignmentStyle.Center;
+            workbook.Save("messages.xlsx");
+        }
+
+
 
 
         // Test data

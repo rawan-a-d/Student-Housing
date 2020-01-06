@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
-using Microsoft.Office.Interop.Excel;
-
-namespace Project
+﻿namespace Project
 {
     class Schedule
     {
@@ -43,6 +35,11 @@ namespace Project
         public TaskStatus GetStatus()
         {
             return status;
+        }
+
+        public void SetStatus(TaskStatus status)
+        {
+            this.status = status;
         }
     }
 }
