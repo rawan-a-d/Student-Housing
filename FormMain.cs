@@ -1,20 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Project
 {
     public partial class FrmMain : Form
     {
-        Student student;
         // Create instance of studentsHousing or use made instance
         StudentsHousing studentsHousing = StudentsHousing.Instance;
-        HouseRule houseRule;
-
+        User currentUser;
         public FrmMain()
         {
             InitializeComponent();
+
+            currentUser = studentsHousing.GetCurrentAdmin();
+
+            // Create schedule if it wasn't created
+            if (studentsHousing.GetSchedulesList().Count == 0)
+            {
+                studentsHousing.AddDates();
+                studentsHousing.CreateSchedule();
+                UpdateScheduleList();
+            }
+            else
+            {
+                UpdateScheduleList();
+            }
 
             // Call needed methods
             SetUp();
@@ -27,16 +40,8 @@ namespace Project
             lblTodayDate.Text = (DateTime.Now.ToString("dd/MM/yyyy"));
         }
 
-        private void Btn_SwitchInterface_Click(object sender, EventArgs e)
-        {
-            Form FormStudent = new FrmStudent();
-            FormStudent.Show();
-            this.Close();
-        }
 
-                                                                            /* Admin */
-
-                                                                            // Tenants list page
+                                                                            /* Tenants list page */
         // Add student
         private void Btn_TenantAdd_Click(object sender, EventArgs e)
         {
@@ -50,11 +55,8 @@ namespace Project
             bool formValidated = ValidateChildren(ValidationConstraints.Enabled);
             if (formValidated)
             {
-                // Initialize student object
-                student = new Student(name, email, password, Convert.ToInt32(floorNr), Convert.ToInt32(roomNr));
-
-                //Add student to list
-                studentsHousing.AddStudentToList(student);
+                // Create student
+                studentsHousing.CreateStudent(name, email, password, Convert.ToInt32(floorNr), Convert.ToInt32(roomNr));
 
                 MessageBox.Show("Student was successfully added");
                 UpdateStudentListView();
@@ -80,7 +82,8 @@ namespace Project
             foreach (var student in studentsList)
             {
                 // Create new row
-                var row = new string[] { student.GetId().ToString(), student.GetName(), student.GetEmail(), "", student.GetFloorNr().ToString(), student.GetRoomNr().ToString() };
+                var row = new string[] { student.Id.ToString(), student.Name, student.Email, student.PhoneNumber, student.FloorNr.ToString(), student.RoomNr.ToString(), student.Score.ToString() };
+
                 // Create new list view item
                 ListViewItem lvwTenants = new ListViewItem(row);
                 // Add the item to list view
@@ -194,19 +197,17 @@ namespace Project
             }
         }
 
-                                                                              // House rules
+                                                                              /* House rules */
         // Add house rule
         private void BtnAddRule_Click(object sender, EventArgs e)
         {
             string newRule = tbxNewRule.Text;
             DateTime currentDate = DateTime.Now;
 
-            if (newRule != "")
+            if (newRule.Length != 0)
             {
-                houseRule = new HouseRule(currentDate, newRule);
-
-                // Add rule to list
-                studentsHousing.AddHouseRuleToList(houseRule);
+                // Create House Rule
+                studentsHousing.CreateHouseRule(currentDate, newRule);
 
                 MessageBox.Show("House Rule was successfully added");
 
@@ -252,7 +253,7 @@ namespace Project
                 MessageBox.Show("Please select a rule to be modified");
             }
             // If nothing was inserted
-            else if (updatedRule == "")
+            else if (updatedRule.Length == 0)
             {
                 MessageBox.Show("Please insert the modified rule");
             }
@@ -268,7 +269,7 @@ namespace Project
             }
         }
 
-        // Update List view (STUDENT and ADMIN)
+        // Update List view (ADMIN)
         private void UpdateHouseRulesListView()
         {
             List<HouseRule> houseRules = studentsHousing.GetRulesList();
@@ -282,9 +283,9 @@ namespace Project
                 DataGridViewRow row = (DataGridViewRow)dgvHouseRulesAdmin.Rows[0].Clone();
 
                 // Insert data into rows
-                row.Cells[0].Value = rule.GetId().ToString();
-                row.Cells[1].Value = (rule.GetDateCreated().ToString("dd/MM/yyyy")).ToString();
-                row.Cells[2].Value = (rule.GetRule()).ToString();
+                row.Cells[0].Value = rule.Id.ToString();
+                row.Cells[1].Value = (rule.DateCreated.ToString("dd/MM/yyyy")).ToString();
+                row.Cells[2].Value = (rule.Rule).ToString();
 
                 // Add the item to list view
                 dgvHouseRulesAdmin.Rows.Add(row);
@@ -295,14 +296,14 @@ namespace Project
             }
         }
 
-                                                                        // Complaints and Questions
+                                                                        /* Complaints and Questions */
         // Reply to a message
         private void BtnSendReply_Click(object sender, EventArgs e)
         {
             string reply = tbxReply.Text;
 
             // If no reply was inserted
-            if (tbxReply.Text == "")
+            if (tbxReply.Text.Length == 0)
             {
                 MessageBox.Show("Please insert a reply");
             }
@@ -343,11 +344,11 @@ namespace Project
                 DataGridViewRow row = (DataGridViewRow)dgvMessageAdmin.Rows[0].Clone();
 
                 // Insert data into rows
-                row.Cells[0].Value = message.GetId().ToString();
-                row.Cells[1].Value = (message.GetDateCreated().ToString("dd/MM/yyyy")).ToString();
-                row.Cells[2].Value = (message.GetSubject()).ToString();
-                row.Cells[3].Value = (message.GetMessage()).ToString();
-                row.Cells[4].Value = (message.GetReply());
+                row.Cells[0].Value = message.Id.ToString();
+                row.Cells[1].Value = (message.DateCreated.ToString("dd/MM/yyyy")).ToString();
+                row.Cells[2].Value = (message.Subject).ToString();
+                row.Cells[3].Value = (message.MessageText).ToString();
+                row.Cells[4].Value = (message.Reply);
 
                 // Add the item to list view
                 dgvMessageAdmin.Rows.Add(row);
@@ -358,8 +359,21 @@ namespace Project
             }
         }
 
+
+                                                                                  /* Logout */
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            studentsHousing.EndSession();
+            MessageBox.Show("Logged out successfully");
+            this.Hide();
+            Form FormLogIn = new FrmLogin();
+            FormLogIn.ShowDialog();
+            this.Close();
+        }
+
+
         // Call needed methods
-        public void SetUp()
+        private void SetUp()
         {
             // Display house rules
             UpdateHouseRulesListView();
@@ -367,7 +381,6 @@ namespace Project
             UpdateStudentListView();
             // Display messages
             UpdateMessagesListView();
-           
         }
 
         // Close window
@@ -380,6 +393,62 @@ namespace Project
         private void btnMinimizeWindow_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+
+                                                                            /* Tenants Schedule */
+        private void btnUncompleteTask_Click(object sender, EventArgs e)
+        {
+            // if no task was selected
+            if (dgvSchedule.SelectedCells.Count <= 0)
+            {
+                MessageBox.Show("Please select the task that you want to uncomplete");
+            }
+            // If task status is Completed
+            else if (dgvSchedule.CurrentRow.Cells[3].Value.ToString() == "Completed")
+            {
+                DateTime selectedTaskDate = Convert.ToDateTime(dgvSchedule.CurrentRow.Cells[1].Value);
+                string studentName = dgvSchedule.CurrentRow.Cells[0].Value.ToString();
+                // Student
+                int studentId = studentsHousing.FindStudentId(studentName);
+                studentsHousing.UnCompleteTask(studentId, selectedTaskDate);
+
+                // Update all schedules in schedule page
+                UpdateScheduleList();
+            }
+            else
+            {
+                MessageBox.Show("The task you selected is not completed");
+            }
+        }
+
+
+        private void UpdateScheduleList()
+        {
+            // Schedule list
+            List<Schedule> schedules = studentsHousing.GetSchedulesList().OrderBy(o => o.DateId).ToList();
+
+            // Clear list view
+            dgvSchedule.Rows.Clear();
+            // Display rules
+            foreach (var schedule in schedules)
+            {
+                // Create new rows
+                DataGridViewRow row = (DataGridViewRow)dgvSchedule.Rows[0].Clone();
+
+                // Insert data into rows
+                row.Cells[0].Value = studentsHousing.FindStudentById(schedule.StudentId).ToString();
+                row.Cells[1].Value = studentsHousing.FindDateById(schedule.DateId);
+                row.Cells[2].Value = (schedule.TaskType).ToString();
+                row.Cells[3].Value = (schedule.Status).ToString();
+
+                // Add the item to list view
+                dgvSchedule.Rows.Add(row);
+
+                // Text wrap
+                dgvSchedule.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvSchedule.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
         }
     }
 }

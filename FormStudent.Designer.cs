@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             this.pHeader = new System.Windows.Forms.Panel();
             this.btnMinimizeWindow = new System.Windows.Forms.Button();
             this.btnX = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.lbl_LoggedInAsName = new System.Windows.Forms.Label();
-            this.btn_SwitchInterface = new System.Windows.Forms.Button();
-            this.lbl_LoggedInAsPicture = new System.Windows.Forms.PictureBox();
             this.lbl_LoggedInAs = new System.Windows.Forms.Label();
             this.mtcStudent = new MetroFramework.Controls.MetroTabControl();
             this.mtpSchedule = new MetroFramework.Controls.MetroTabPage();
@@ -59,7 +57,6 @@
             this.DTP_EventDateTime = new System.Windows.Forms.DateTimePicker();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_EventVoteSelectedNO = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_EventVoteSelectedYES = new System.Windows.Forms.Button();
@@ -74,20 +71,6 @@
             this.chDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtpMessages = new MetroFramework.Controls.MetroTabPage();
-            this.btnMessageAdd = new System.Windows.Forms.Button();
-            this.tbxMessageDescription = new System.Windows.Forms.TextBox();
-            this.cbxMessageType = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dgvMessageStudent = new System.Windows.Forms.DataGridView();
-            this.chMessagesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessagesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessageType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessageText = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessageReply = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pbxAddMessage = new System.Windows.Forms.PictureBox();
-            this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
-            this.btnRemoveSelectedMessage = new System.Windows.Forms.Button();
             this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
             this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
             this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,10 +84,24 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mtpMessages = new MetroFramework.Controls.MetroTabPage();
+            this.tbxMessageDescription = new System.Windows.Forms.TextBox();
+            this.cbxMessageType = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dgvMessageStudent = new System.Windows.Forms.DataGridView();
+            this.chMessagesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessagesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessageType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessageText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessageReply = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRemoveSelectedMessage = new System.Windows.Forms.Button();
+            this.btnMessageAdd = new System.Windows.Forms.Button();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.dgvStudentTasks = new System.Windows.Forms.DataGridView();
+            this.chDateTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chTaskDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chStatusTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.pbxDeposit = new System.Windows.Forms.PictureBox();
             this.btnCompleteTask = new System.Windows.Forms.Button();
             this.tbxFloor = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
@@ -129,7 +126,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -155,31 +151,34 @@
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.btnPrevMonth = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.chDateTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chTaskDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chStatusTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbxDeposit = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbxAddMessage = new System.Windows.Forms.PictureBox();
+            this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
+            this.lbl_LoggedInAsPicture = new System.Windows.Forms.PictureBox();
             this.pHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.mtcStudent.SuspendLayout();
             this.mtpSchedule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
-            this.mtpMessages.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
             this.mtpHouseRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
             this.mtpAgreements.SuspendLayout();
+            this.mtpMessages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
             this.mtpProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -189,7 +188,6 @@
             this.pHeader.Controls.Add(this.btnX);
             this.pHeader.Controls.Add(this.btn_Logout);
             this.pHeader.Controls.Add(this.lbl_LoggedInAsName);
-            this.pHeader.Controls.Add(this.btn_SwitchInterface);
             this.pHeader.Controls.Add(this.lbl_LoggedInAsPicture);
             this.pHeader.Controls.Add(this.lbl_LoggedInAs);
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -244,6 +242,7 @@
             this.btn_Logout.TabIndex = 15;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // lbl_LoggedInAsName
             // 
@@ -257,33 +256,6 @@
             this.lbl_LoggedInAsName.Size = new System.Drawing.Size(181, 36);
             this.lbl_LoggedInAsName.TabIndex = 13;
             this.lbl_LoggedInAsName.Text = "Peter Young";
-            // 
-            // btn_SwitchInterface
-            // 
-            this.btn_SwitchInterface.BackColor = System.Drawing.Color.Teal;
-            this.btn_SwitchInterface.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_SwitchInterface.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SwitchInterface.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_SwitchInterface.Location = new System.Drawing.Point(540, 21);
-            this.btn_SwitchInterface.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_SwitchInterface.Name = "btn_SwitchInterface";
-            this.btn_SwitchInterface.Size = new System.Drawing.Size(97, 46);
-            this.btn_SwitchInterface.TabIndex = 14;
-            this.btn_SwitchInterface.Text = "SWITCH";
-            this.btn_SwitchInterface.UseVisualStyleBackColor = false;
-            this.btn_SwitchInterface.Click += new System.EventHandler(this.btn_SwitchInterface_Click);
-            // 
-            // lbl_LoggedInAsPicture
-            // 
-            this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
-            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
-            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
-            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
-            this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lbl_LoggedInAsPicture.TabIndex = 12;
-            this.lbl_LoggedInAsPicture.TabStop = false;
             // 
             // lbl_LoggedInAs
             // 
@@ -301,19 +273,19 @@
             // 
             this.mtcStudent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mtcStudent.Controls.Add(this.mtpSchedule);
-            this.mtcStudent.Controls.Add(this.mtpProfile);
-            this.mtcStudent.Controls.Add(this.mtpMessages);
             this.mtcStudent.Controls.Add(this.mtpHouseRules);
             this.mtcStudent.Controls.Add(this.mtpAgreements);
+            this.mtcStudent.Controls.Add(this.mtpMessages);
+            this.mtcStudent.Controls.Add(this.mtpProfile);
             this.mtcStudent.Controls.Add(this.metroTabPage1);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtcStudent.CustomBackground = true;
             this.mtcStudent.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.mtcStudent.ItemSize = new System.Drawing.Size(86, 35);
-            this.mtcStudent.Location = new System.Drawing.Point(0, 106);
+            this.mtcStudent.Location = new System.Drawing.Point(0, 98);
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 4;
-            this.mtcStudent.Size = new System.Drawing.Size(1054, 513);
+            this.mtcStudent.SelectedIndex = 0;
+            this.mtcStudent.Size = new System.Drawing.Size(1054, 521);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
             this.mtcStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -327,7 +299,6 @@
             this.mtpSchedule.Controls.Add(this.cbx_FilterTasks);
             this.mtpSchedule.Controls.Add(this.cbx_FilterEvents);
             this.mtpSchedule.Controls.Add(this.lblAsignee);
-            this.mtpSchedule.Controls.Add(this.btn_FilterSearch);
             this.mtpSchedule.Controls.Add(this.label33);
             this.mtpSchedule.Controls.Add(this.cb_EventFloor);
             this.mtpSchedule.Controls.Add(this.label32);
@@ -346,12 +317,13 @@
             this.mtpSchedule.Controls.Add(this.lblCreateEvent);
             this.mtpSchedule.Controls.Add(this.lblFilter);
             this.mtpSchedule.Controls.Add(this.dgvSchedule);
+            this.mtpSchedule.Controls.Add(this.btn_FilterSearch);
             this.mtpSchedule.CustomBackground = true;
             this.mtpSchedule.HorizontalScrollbarBarColor = true;
             this.mtpSchedule.ImeMode = System.Windows.Forms.ImeMode.On;
             this.mtpSchedule.Location = new System.Drawing.Point(4, 39);
             this.mtpSchedule.Name = "mtpSchedule";
-            this.mtpSchedule.Size = new System.Drawing.Size(1046, 470);
+            this.mtpSchedule.Size = new System.Drawing.Size(1046, 478);
             this.mtpSchedule.TabIndex = 0;
             this.mtpSchedule.Text = "Schedule";
             this.mtpSchedule.VerticalScrollbarBarColor = true;
@@ -481,16 +453,6 @@
             this.lblFloor.TabIndex = 45;
             this.lblFloor.Text = "Floor";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
-            this.pictureBox2.TabIndex = 44;
-            this.pictureBox2.TabStop = false;
-            // 
             // btn_EventVoteSelectedNO
             // 
             this.btn_EventVoteSelectedNO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
@@ -619,7 +581,7 @@
             this.dgvSchedule.RowHeadersVisible = false;
             this.dgvSchedule.RowHeadersWidth = 51;
             this.dgvSchedule.RowTemplate.Height = 24;
-            this.dgvSchedule.Size = new System.Drawing.Size(438, 362);
+            this.dgvSchedule.Size = new System.Drawing.Size(438, 423);
             this.dgvSchedule.TabIndex = 34;
             // 
             // chAsignee
@@ -650,9 +612,143 @@
             this.chStatus.Name = "chStatus";
             this.chStatus.ReadOnly = true;
             // 
+            // mtpHouseRules
+            // 
+            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
+            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
+            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
+            this.mtpHouseRules.Name = "mtpHouseRules";
+            this.mtpHouseRules.Size = new System.Drawing.Size(1046, 478);
+            this.mtpHouseRules.TabIndex = 1;
+            this.mtpHouseRules.Text = "House Rules";
+            this.mtpHouseRules.VerticalScrollbarBarColor = true;
+            // 
+            // dgvHouseRulesStudent
+            // 
+            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
+            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chIdStudent,
+            this.chDateStudent,
+            this.chDescriptionStudent});
+            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(9, 11);
+            this.dgvHouseRulesStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
+            this.dgvHouseRulesStudent.RowHeadersVisible = false;
+            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
+            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(1026, 421);
+            this.dgvHouseRulesStudent.TabIndex = 9;
+            // 
+            // chIdStudent
+            // 
+            this.chIdStudent.HeaderText = "Id";
+            this.chIdStudent.MinimumWidth = 6;
+            this.chIdStudent.Name = "chIdStudent";
+            this.chIdStudent.Width = 122;
+            // 
+            // chDateStudent
+            // 
+            this.chDateStudent.HeaderText = "Date Added";
+            this.chDateStudent.MinimumWidth = 6;
+            this.chDateStudent.Name = "chDateStudent";
+            this.chDateStudent.Width = 190;
+            // 
+            // chDescriptionStudent
+            // 
+            this.chDescriptionStudent.HeaderText = "Description";
+            this.chDescriptionStudent.MinimumWidth = 6;
+            this.chDescriptionStudent.Name = "chDescriptionStudent";
+            this.chDescriptionStudent.Width = 477;
+            // 
+            // mtpAgreements
+            // 
+            this.mtpAgreements.Controls.Add(this.btn_NewAgreementSubmit);
+            this.mtpAgreements.Controls.Add(this.tb_NewAgreementDescription);
+            this.mtpAgreements.Controls.Add(this.label9);
+            this.mtpAgreements.Controls.Add(this.lv_Agreements);
+            this.mtpAgreements.HorizontalScrollbarBarColor = true;
+            this.mtpAgreements.Location = new System.Drawing.Point(4, 39);
+            this.mtpAgreements.Name = "mtpAgreements";
+            this.mtpAgreements.Size = new System.Drawing.Size(1046, 478);
+            this.mtpAgreements.TabIndex = 2;
+            this.mtpAgreements.Text = "Agreements";
+            this.mtpAgreements.VerticalScrollbarBarColor = true;
+            // 
+            // btn_NewAgreementSubmit
+            // 
+            this.btn_NewAgreementSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_NewAgreementSubmit.FlatAppearance.BorderSize = 0;
+            this.btn_NewAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_NewAgreementSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_NewAgreementSubmit.Location = new System.Drawing.Point(961, 372);
+            this.btn_NewAgreementSubmit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_NewAgreementSubmit.Name = "btn_NewAgreementSubmit";
+            this.btn_NewAgreementSubmit.Size = new System.Drawing.Size(76, 27);
+            this.btn_NewAgreementSubmit.TabIndex = 6;
+            this.btn_NewAgreementSubmit.Text = "Submit";
+            this.btn_NewAgreementSubmit.UseVisualStyleBackColor = false;
+            // 
+            // tb_NewAgreementDescription
+            // 
+            this.tb_NewAgreementDescription.Location = new System.Drawing.Point(7, 374);
+            this.tb_NewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_NewAgreementDescription.Name = "tb_NewAgreementDescription";
+            this.tb_NewAgreementDescription.Size = new System.Drawing.Size(946, 22);
+            this.tb_NewAgreementDescription.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(4, 344);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 18);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Add agreement";
+            // 
+            // lv_Agreements
+            // 
+            this.lv_Agreements.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader23});
+            this.lv_Agreements.HideSelection = false;
+            this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem5,
+            listViewItem6});
+            this.lv_Agreements.Location = new System.Drawing.Point(4, 11);
+            this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
+            this.lv_Agreements.Name = "lv_Agreements";
+            this.lv_Agreements.Size = new System.Drawing.Size(1033, 320);
+            this.lv_Agreements.TabIndex = 2;
+            this.lv_Agreements.UseCompatibleStateImageBehavior = false;
+            this.lv_Agreements.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Date Added";
+            this.columnHeader12.Width = 70;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Description";
+            this.columnHeader13.Width = 595;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Creator";
+            this.columnHeader23.Width = 104;
+            // 
             // mtpMessages
             // 
-            this.mtpMessages.Controls.Add(this.btnMessageAdd);
             this.mtpMessages.Controls.Add(this.tbxMessageDescription);
             this.mtpMessages.Controls.Add(this.cbxMessageType);
             this.mtpMessages.Controls.Add(this.label11);
@@ -660,27 +756,14 @@
             this.mtpMessages.Controls.Add(this.pbxAddMessage);
             this.mtpMessages.Controls.Add(this.pbxRemoveMessage);
             this.mtpMessages.Controls.Add(this.btnRemoveSelectedMessage);
+            this.mtpMessages.Controls.Add(this.btnMessageAdd);
             this.mtpMessages.HorizontalScrollbarBarColor = true;
             this.mtpMessages.Location = new System.Drawing.Point(4, 39);
             this.mtpMessages.Name = "mtpMessages";
-            this.mtpMessages.Size = new System.Drawing.Size(1046, 470);
+            this.mtpMessages.Size = new System.Drawing.Size(1046, 478);
             this.mtpMessages.TabIndex = 3;
             this.mtpMessages.Text = "Complaints and Questions";
             this.mtpMessages.VerticalScrollbarBarColor = true;
-            // 
-            // btnMessageAdd
-            // 
-            this.btnMessageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnMessageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessageAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMessageAdd.Location = new System.Drawing.Point(901, 375);
-            this.btnMessageAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMessageAdd.Name = "btnMessageAdd";
-            this.btnMessageAdd.Size = new System.Drawing.Size(136, 54);
-            this.btnMessageAdd.TabIndex = 13;
-            this.btnMessageAdd.Text = "Add";
-            this.btnMessageAdd.UseVisualStyleBackColor = false;
-            this.btnMessageAdd.Click += new System.EventHandler(this.BtnMessageAdd_Click);
             // 
             // tbxMessageDescription
             // 
@@ -707,10 +790,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(4, 371);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(135, 17);
+            this.label11.Size = new System.Drawing.Size(141, 18);
             this.label11.TabIndex = 10;
             this.label11.Text = "Add a new message";
             // 
@@ -773,28 +857,6 @@
             this.chMessageReply.Name = "chMessageReply";
             this.chMessageReply.Width = 300;
             // 
-            // pbxAddMessage
-            // 
-            this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
-            this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
-            this.pbxAddMessage.Name = "pbxAddMessage";
-            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
-            this.pbxAddMessage.TabIndex = 17;
-            this.pbxAddMessage.TabStop = false;
-            // 
-            // pbxRemoveMessage
-            // 
-            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
-            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
-            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
-            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
-            this.pbxRemoveMessage.TabIndex = 18;
-            this.pbxRemoveMessage.TabStop = false;
-            // 
             // btnRemoveSelectedMessage
             // 
             this.btnRemoveSelectedMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
@@ -810,146 +872,25 @@
             this.btnRemoveSelectedMessage.UseVisualStyleBackColor = false;
             this.btnRemoveSelectedMessage.Click += new System.EventHandler(this.BtnRemoveSelectedMessage_Click);
             // 
-            // mtpHouseRules
+            // btnMessageAdd
             // 
-            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
-            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
-            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
-            this.mtpHouseRules.Name = "mtpHouseRules";
-            this.mtpHouseRules.Size = new System.Drawing.Size(1046, 470);
-            this.mtpHouseRules.TabIndex = 1;
-            this.mtpHouseRules.Text = "House Rules";
-            this.mtpHouseRules.VerticalScrollbarBarColor = true;
-            // 
-            // dgvHouseRulesStudent
-            // 
-            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
-            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chIdStudent,
-            this.chDateStudent,
-            this.chDescriptionStudent});
-            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(9, 11);
-            this.dgvHouseRulesStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
-            this.dgvHouseRulesStudent.RowHeadersVisible = false;
-            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
-            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(1026, 421);
-            this.dgvHouseRulesStudent.TabIndex = 9;
-            // 
-            // chIdStudent
-            // 
-            this.chIdStudent.HeaderText = "Id";
-            this.chIdStudent.MinimumWidth = 6;
-            this.chIdStudent.Name = "chIdStudent";
-            this.chIdStudent.Width = 122;
-            // 
-            // chDateStudent
-            // 
-            this.chDateStudent.HeaderText = "Date Added";
-            this.chDateStudent.MinimumWidth = 6;
-            this.chDateStudent.Name = "chDateStudent";
-            this.chDateStudent.Width = 190;
-            // 
-            // chDescriptionStudent
-            // 
-            this.chDescriptionStudent.HeaderText = "Description";
-            this.chDescriptionStudent.MinimumWidth = 6;
-            this.chDescriptionStudent.Name = "chDescriptionStudent";
-            this.chDescriptionStudent.Width = 477;
-            // 
-            // mtpAgreements
-            // 
-            this.mtpAgreements.Controls.Add(this.btn_NewAgreementSubmit);
-            this.mtpAgreements.Controls.Add(this.tb_NewAgreementDescription);
-            this.mtpAgreements.Controls.Add(this.label9);
-            this.mtpAgreements.Controls.Add(this.lv_Agreements);
-            this.mtpAgreements.HorizontalScrollbarBarColor = true;
-            this.mtpAgreements.Location = new System.Drawing.Point(4, 39);
-            this.mtpAgreements.Name = "mtpAgreements";
-            this.mtpAgreements.Size = new System.Drawing.Size(1046, 470);
-            this.mtpAgreements.TabIndex = 2;
-            this.mtpAgreements.Text = "Agreements";
-            this.mtpAgreements.VerticalScrollbarBarColor = true;
-            // 
-            // btn_NewAgreementSubmit
-            // 
-            this.btn_NewAgreementSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btn_NewAgreementSubmit.FlatAppearance.BorderSize = 0;
-            this.btn_NewAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_NewAgreementSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_NewAgreementSubmit.Location = new System.Drawing.Point(961, 372);
-            this.btn_NewAgreementSubmit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_NewAgreementSubmit.Name = "btn_NewAgreementSubmit";
-            this.btn_NewAgreementSubmit.Size = new System.Drawing.Size(76, 27);
-            this.btn_NewAgreementSubmit.TabIndex = 6;
-            this.btn_NewAgreementSubmit.Text = "Submit";
-            this.btn_NewAgreementSubmit.UseVisualStyleBackColor = false;
-            // 
-            // tb_NewAgreementDescription
-            // 
-            this.tb_NewAgreementDescription.Location = new System.Drawing.Point(7, 374);
-            this.tb_NewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_NewAgreementDescription.Name = "tb_NewAgreementDescription";
-            this.tb_NewAgreementDescription.Size = new System.Drawing.Size(946, 22);
-            this.tb_NewAgreementDescription.TabIndex = 5;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(4, 344);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 17);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Add agreement";
-            // 
-            // lv_Agreements
-            // 
-            this.lv_Agreements.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader23});
-            this.lv_Agreements.HideSelection = false;
-            this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8});
-            this.lv_Agreements.Location = new System.Drawing.Point(4, 11);
-            this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_Agreements.Name = "lv_Agreements";
-            this.lv_Agreements.Size = new System.Drawing.Size(1033, 320);
-            this.lv_Agreements.TabIndex = 2;
-            this.lv_Agreements.UseCompatibleStateImageBehavior = false;
-            this.lv_Agreements.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Date Added";
-            this.columnHeader12.Width = 70;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Description";
-            this.columnHeader13.Width = 595;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "Creator";
-            this.columnHeader23.Width = 104;
+            this.btnMessageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnMessageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessageAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMessageAdd.Location = new System.Drawing.Point(901, 375);
+            this.btnMessageAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMessageAdd.Name = "btnMessageAdd";
+            this.btnMessageAdd.Size = new System.Drawing.Size(136, 54);
+            this.btnMessageAdd.TabIndex = 13;
+            this.btnMessageAdd.Text = "Add";
+            this.btnMessageAdd.UseVisualStyleBackColor = false;
+            this.btnMessageAdd.Click += new System.EventHandler(this.BtnMessageAdd_Click);
             // 
             // mtpProfile
             // 
             this.mtpProfile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mtpProfile.Controls.Add(this.dgvStudentTasks);
             this.mtpProfile.Controls.Add(this.btnEdit);
-            this.mtpProfile.Controls.Add(this.pbxDeposit);
             this.mtpProfile.Controls.Add(this.btnCompleteTask);
             this.mtpProfile.Controls.Add(this.tbxFloor);
             this.mtpProfile.Controls.Add(this.tbxPassword);
@@ -957,7 +898,6 @@
             this.mtpProfile.Controls.Add(this.tbxRoom);
             this.mtpProfile.Controls.Add(this.lblProfileFloor);
             this.mtpProfile.Controls.Add(this.lblPassword);
-            this.mtpProfile.Controls.Add(this.btnDeposit);
             this.mtpProfile.Controls.Add(this.lblAddBalance);
             this.mtpProfile.Controls.Add(this.lblRoom);
             this.mtpProfile.Controls.Add(this.tbxScore);
@@ -974,11 +914,13 @@
             this.mtpProfile.Controls.Add(this.lblEmail);
             this.mtpProfile.Controls.Add(this.lblAge);
             this.mtpProfile.Controls.Add(this.lblName);
+            this.mtpProfile.Controls.Add(this.pbxDeposit);
             this.mtpProfile.Controls.Add(this.pictureBox3);
+            this.mtpProfile.Controls.Add(this.btnDeposit);
             this.mtpProfile.HorizontalScrollbarBarColor = true;
             this.mtpProfile.Location = new System.Drawing.Point(4, 39);
             this.mtpProfile.Name = "mtpProfile";
-            this.mtpProfile.Size = new System.Drawing.Size(1046, 470);
+            this.mtpProfile.Size = new System.Drawing.Size(1046, 478);
             this.mtpProfile.TabIndex = 4;
             this.mtpProfile.Text = "Profile";
             this.mtpProfile.VerticalScrollbarBarColor = true;
@@ -1005,6 +947,27 @@
             this.dgvStudentTasks.Size = new System.Drawing.Size(688, 219);
             this.dgvStudentTasks.TabIndex = 70;
             // 
+            // chDateTask
+            // 
+            this.chDateTask.HeaderText = "Date";
+            this.chDateTask.MinimumWidth = 6;
+            this.chDateTask.Name = "chDateTask";
+            this.chDateTask.Width = 200;
+            // 
+            // chTaskDesc
+            // 
+            this.chTaskDesc.HeaderText = "Task";
+            this.chTaskDesc.MinimumWidth = 6;
+            this.chTaskDesc.Name = "chTaskDesc";
+            this.chTaskDesc.Width = 150;
+            // 
+            // chStatusTask
+            // 
+            this.chStatusTask.HeaderText = "Status";
+            this.chStatusTask.MinimumWidth = 6;
+            this.chStatusTask.Name = "chStatusTask";
+            this.chStatusTask.Width = 150;
+            // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
@@ -1016,17 +979,6 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // pbxDeposit
-            // 
-            this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
-            this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDeposit.Location = new System.Drawing.Point(678, 372);
-            this.pbxDeposit.Name = "pbxDeposit";
-            this.pbxDeposit.Size = new System.Drawing.Size(22, 24);
-            this.pbxDeposit.TabIndex = 2;
-            this.pbxDeposit.TabStop = false;
             // 
             // btnCompleteTask
             // 
@@ -1106,7 +1058,7 @@
             this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.btnDeposit.FlatAppearance.BorderSize = 0;
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDeposit.Location = new System.Drawing.Point(552, 363);
             this.btnDeposit.Margin = new System.Windows.Forms.Padding(4);
@@ -1120,10 +1072,11 @@
             // 
             this.lblAddBalance.AutoSize = true;
             this.lblAddBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddBalance.Location = new System.Drawing.Point(286, 363);
             this.lblAddBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddBalance.Name = "lblAddBalance";
-            this.lblAddBalance.Size = new System.Drawing.Size(87, 17);
+            this.lblAddBalance.Size = new System.Drawing.Size(88, 18);
             this.lblAddBalance.TabIndex = 61;
             this.lblAddBalance.Text = "Add balance";
             // 
@@ -1140,7 +1093,6 @@
             // 
             // tbxScore
             // 
-            this.tbxScore.Enabled = false;
             this.tbxScore.Location = new System.Drawing.Point(25, 372);
             this.tbxScore.Margin = new System.Windows.Forms.Padding(4);
             this.tbxScore.Name = "tbxScore";
@@ -1150,7 +1102,6 @@
             // 
             // tbxBalance
             // 
-            this.tbxBalance.Enabled = false;
             this.tbxBalance.Location = new System.Drawing.Point(25, 314);
             this.tbxBalance.Margin = new System.Windows.Forms.Padding(4);
             this.tbxBalance.Name = "tbxBalance";
@@ -1229,7 +1180,7 @@
             this.lblGeneralInfo.AutoSize = true;
             this.lblGeneralInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblGeneralInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGeneralInfo.Location = new System.Drawing.Point(21, 11);
+            this.lblGeneralInfo.Location = new System.Drawing.Point(22, 11);
             this.lblGeneralInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGeneralInfo.Name = "lblGeneralInfo";
             this.lblGeneralInfo.Size = new System.Drawing.Size(156, 20);
@@ -1280,16 +1231,6 @@
             this.lblName.TabIndex = 43;
             this.lblName.Text = "Name";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(253, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1, 418);
-            this.pictureBox3.TabIndex = 53;
-            this.pictureBox3.TabStop = false;
-            // 
             // metroTabPage1
             // 
             this.metroTabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -1305,7 +1246,7 @@
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1046, 470);
+            this.metroTabPage1.Size = new System.Drawing.Size(1046, 478);
             this.metroTabPage1.TabIndex = 5;
             this.metroTabPage1.Text = "Whole schedule";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -1546,26 +1487,70 @@
             this.btnPrevMonth.Text = "<";
             this.btnPrevMonth.UseVisualStyleBackColor = true;
             // 
-            // chDateTask
+            // pictureBox2
             // 
-            this.chDateTask.HeaderText = "Date";
-            this.chDateTask.MinimumWidth = 6;
-            this.chDateTask.Name = "chDateTask";
-            this.chDateTask.Width = 200;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
+            this.pictureBox2.TabIndex = 44;
+            this.pictureBox2.TabStop = false;
             // 
-            // chTaskDesc
+            // pbxDeposit
             // 
-            this.chTaskDesc.HeaderText = "Task";
-            this.chTaskDesc.MinimumWidth = 6;
-            this.chTaskDesc.Name = "chTaskDesc";
-            this.chTaskDesc.Width = 150;
+            this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
+            this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxDeposit.Location = new System.Drawing.Point(675, 372);
+            this.pbxDeposit.Name = "pbxDeposit";
+            this.pbxDeposit.Size = new System.Drawing.Size(22, 24);
+            this.pbxDeposit.TabIndex = 2;
+            this.pbxDeposit.TabStop = false;
             // 
-            // chStatusTask
+            // pictureBox3
             // 
-            this.chStatusTask.HeaderText = "Status";
-            this.chStatusTask.MinimumWidth = 6;
-            this.chStatusTask.Name = "chStatusTask";
-            this.chStatusTask.Width = 150;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(253, 11);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1, 418);
+            this.pictureBox3.TabIndex = 53;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pbxAddMessage
+            // 
+            this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
+            this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
+            this.pbxAddMessage.Name = "pbxAddMessage";
+            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
+            this.pbxAddMessage.TabIndex = 17;
+            this.pbxAddMessage.TabStop = false;
+            // 
+            // pbxRemoveMessage
+            // 
+            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
+            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
+            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
+            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
+            this.pbxRemoveMessage.TabIndex = 18;
+            this.pbxRemoveMessage.TabStop = false;
+            // 
+            // lbl_LoggedInAsPicture
+            // 
+            this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
+            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
+            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
+            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
+            this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lbl_LoggedInAsPicture.TabIndex = 12;
+            this.lbl_LoggedInAsPicture.TabStop = false;
             // 
             // FrmStudent
             // 
@@ -1577,29 +1562,22 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmStudent";
             this.Text = "Student";
-            this.Load += new System.EventHandler(this.FrmStudent_Load);
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.mtcStudent.ResumeLayout(false);
             this.mtpSchedule.ResumeLayout(false);
             this.mtpSchedule.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
-            this.mtpMessages.ResumeLayout(false);
-            this.mtpMessages.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
             this.mtpHouseRules.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
             this.mtpAgreements.ResumeLayout(false);
             this.mtpAgreements.PerformLayout();
+            this.mtpMessages.ResumeLayout(false);
+            this.mtpMessages.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
             this.mtpProfile.ResumeLayout(false);
             this.mtpProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -1607,6 +1585,12 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1617,7 +1601,6 @@
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Label lbl_LoggedInAsName;
-        private System.Windows.Forms.Button btn_SwitchInterface;
         private System.Windows.Forms.PictureBox lbl_LoggedInAsPicture;
         private System.Windows.Forms.Label lbl_LoggedInAs;
         private MetroFramework.Controls.MetroTabControl mtcStudent;

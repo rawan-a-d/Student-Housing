@@ -8,25 +8,35 @@ namespace Project
 {
     enum MessageSubject { Question, Complaint}
     enum TaskType { Cleaning, Garbage, Shopping}
-    enum TaskStatus { Pending, Completed}
+    enum TaskStatus { Pending, Completed, NotCompleted}
 
     class StudentsHousing
     {
         // Fields
         List<Student> students;
+        List<Admin> admins;
         List<HouseRule> houseRules;
         List<Message> messages;
         List<Date> dates;
         List<Schedule> schedules;
         private static StudentsHousing instance = null;
+        // No need for this/ because it's not multi threading
         private static readonly object padlock = new object();
+        // Current user
+        private Student currentStudent;
+        private Admin currentAdmin;
+        private Student student;
+        private HouseRule houseRule;
+        private Message message;
+        private int studentWithHighestScore;
+
 
         // Constructor
-
         StudentsHousing()
         {
             // Initialize lists
             students = new List<Student>();
+            admins = new List<Admin>();
             houseRules = new List<HouseRule>();
             messages = new List<Message>();
             dates = new List<Date>();
@@ -50,10 +60,16 @@ namespace Project
         }
 
         // Methods
-   
+        /* Student */
+        public void CreateStudent(string name, string email, string password, int floorNr, int roomNr)
+        {
+            student = new Student(name, email, password, floorNr, roomNr);
 
-    /* Student */
-    public void AddStudentToList(Student student)
+            //Add student to list
+            AddStudentToList(student);
+        }
+
+        private void AddStudentToList(Student student)
         {
             students.Add(student);
         }
@@ -67,7 +83,7 @@ namespace Project
         {
             for (int i = 0; i < students.Count; i++)
             {
-                if (students[i].GetId() == id)
+                if (students[i].Id == id)
                 {
                     students.Remove(students[i]);
                 }
@@ -78,28 +94,92 @@ namespace Project
         {
             for (int i = 0; i < students.Count; i++)
             {
-                if (students[i].GetId() == studentId)
+                if (students[i].Id == studentId)
                 {
-                    return students[i].GetName();
+                    return students[i].Name;
                 }
             }
-
             return "";
+        }
+
+        public int FindStudentIndex(int studentId)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].Id == studentId)
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
+
+        public int FindStudentId(string name)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].Name == name)
+                {
+                    return students[i].Id;
+                }
+            }
+            return 0;
+        }
+
+        public bool StudentExists(string email)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if(students[i].Email == email)
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
         }
 
         public void UpdateStudentInfo(int studentId, string name, int age, string email, string password, string phone)
         {
             for (int i = 0; i < students.Count; i++)
             {
-                if (students[i].GetId() == studentId)
+                if (students[i].Id == studentId)
                 {
                     students[i].UpdateInfo(name, age, email, password, phone);
                 }
             }
         }
 
+        /* Admin */
+        private void AddAdminToList(Admin admin)
+        {
+            admins.Add(admin);
+        }
+
+        public bool AdminExists(string email)
+        {
+            for (int i = 0; i < admins.Count; i++)
+            {
+                if (admins[i].Email == email)
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
+        }
+
+
         /* House Rule */
-        public void AddHouseRuleToList(HouseRule rule)
+        public void CreateHouseRule(DateTime currentDate, string newRule)
+        {
+            houseRule = new HouseRule(currentDate, newRule);
+
+            // Add rule to list
+            AddHouseRuleToList(houseRule);
+        }
+
+        private void AddHouseRuleToList(HouseRule rule)
         {
             houseRules.Add(rule);
         }
@@ -113,7 +193,7 @@ namespace Project
         {
             for (int i = 0; i < houseRules.Count; i++)
             {
-                if(houseRules[i].GetId() == id)
+                if(houseRules[i].Id == id)
                 {
                     houseRules.Remove(houseRules[i]);
                 }
@@ -124,7 +204,7 @@ namespace Project
         {
             foreach (var rule in houseRules)
             {
-                if (rule.GetId() == id)
+                if (rule.Id == id)
                 {
                     rule.UpdateHouseRule(id, updatedRule);
                 }
@@ -133,8 +213,17 @@ namespace Project
 
 
         /* Messages */
+        // Create Message
+        public void CreateMessage(DateTime currentDate, MessageSubject messageType, string messageDesc, int currentStudentId)
+        {
+            message = new Message(currentDate, messageType, messageDesc, currentStudentId);
+
+            // Add message to list
+            AddMessageToList(message);
+        }
+
         // Add message
-        public void AddMessageToList(Message message)
+        private void AddMessageToList(Message message)
         {
             messages.Add(message);
         }
@@ -150,7 +239,7 @@ namespace Project
         {
             for (int i = 0; i < messages.Count; i++)
             {
-                if (messages[i].GetId() == messageId)
+                if (messages[i].Id == messageId)
                 {
                     messages.Remove(messages[i]);
                 }
@@ -162,7 +251,7 @@ namespace Project
         {
             for (int i = 0; i < messages.Count; i++)
             {
-                if (messages[i].GetId() == messageId)
+                if (messages[i].Id == messageId)
                 {
                     messages[i].UpdateReply(messageId, reply);
                 }
@@ -170,9 +259,9 @@ namespace Project
         }
 
 
-        // Dates
+        /* Dates */
         // Add date
-        public void AddDateToList(Date date)
+        private void AddDateToList(Date date)
         {
             dates.Add(date);
         }
@@ -183,8 +272,8 @@ namespace Project
         }
 
 
-        // Schedules
-        public void AddScheduleToList(Schedule schedule)
+        /* Schedules */
+        private void AddScheduleToList(Schedule schedule)
         {
             schedules.Add(schedule);
         }
@@ -210,7 +299,7 @@ namespace Project
                 for (int j = dateCounter; j < dates.Count; j += 3)
                 {
                     // New schedule
-                    Schedule schedule = new Schedule(dates[j].GetId(), (TaskType)taskCounter, students[i].GetId(), TaskStatus.Pending);
+                    Schedule schedule = new Schedule(dates[j].Id, (TaskType)taskCounter, students[i].Id, TaskStatus.Pending);
                     AddScheduleToList(schedule);
                     taskCounter++;
 
@@ -249,7 +338,7 @@ namespace Project
             }
         }
 
-        public void EmptySchedule()
+        private void EmptySchedule()
         {
             schedules.Clear();
         }
@@ -258,9 +347,9 @@ namespace Project
         {
             for (int i = 0; i < dates.Count; i++)
             {
-                if (dates[i].GetId() == dateId)
+                if (dates[i].Id == dateId)
                 {
-                    return dates[i].GetDate();
+                    return dates[i].TaskDate;
                 }
             }
 
@@ -271,12 +360,11 @@ namespace Project
         {
             for (int i = 0; i < dates.Count; i++)
             {
-                if (dates[i].GetDate() == date)
+                if (dates[i].TaskDate == date)
                 {
-                    return dates[i].GetId();
+                    return dates[i].Id;
                 }
             }
-
             return 0;
         }
 
@@ -284,10 +372,15 @@ namespace Project
         // Complete task
         public void CompleteTask(int studentId, DateTime date)
         {
+            // Update score
+            int studentIndex = FindStudentIndex(studentId);
+            UpdateScore(studentIndex);
+
+            // Complete task
             int dateId = FindDateId(date);
             for (int i = 0; i < schedules.Count; i++)
             {
-                if(schedules[i].GetStudentId() == studentId && schedules[i].GetDateId() == dateId)
+                if(schedules[i].StudentId == studentId && schedules[i].DateId == dateId)
                 {
                     schedules[i].SetStatus(TaskStatus.Completed);
                     break;
@@ -295,6 +388,53 @@ namespace Project
             }
         }
 
+        private void UpdateScore(int studentIndex)
+        {
+            // Update score
+            students[studentIndex].UpdateScore(3);
+        }
+        
+        // Compare scores
+        public bool CompareScores()
+        {
+            int currentStudentScore = currentStudent.Score;
+            for (int i = 0; i < students.Count; i++)
+            {
+                if(students[i].Score > studentWithHighestScore)
+                {
+                    studentWithHighestScore = students[i].Score;
+                }
+            }
+            if(studentWithHighestScore == currentStudentScore)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        // Uncomplete task
+        public void UnCompleteTask(int studentId, DateTime date)
+        {
+            // Update Score
+            int studentIndex = FindStudentIndex(studentId);
+            students[studentIndex].Score = 0;
+            students[studentIndex].Score = -5;
+
+            // Uncomplete task
+            int dateId = FindDateId(date);
+            for (int i = 0; i < schedules.Count; i++)
+            {
+                if (schedules[i].StudentId == studentId && schedules[i].DateId == dateId)
+                {
+                    schedules[i].SetStatus(TaskStatus.NotCompleted);
+                    break;
+                }
+            }
+        }
 
         // Export Excel
         public void ExportToExcel()
@@ -315,15 +455,15 @@ namespace Project
             for (int i = 0; i < messages.Count; i++)
             {
                 // If message is a question
-                if(messages[i].GetSubject() == MessageSubject.Question)
+                if(messages[i].Subject == MessageSubject.Question)
                 {
-                    dataTable.Rows.Add(messages[i].GetId(), messages[i].GetDateCreated(), "Question", messages[i].GetMessage());
+                    dataTable.Rows.Add(messages[i].Id, messages[i].DateCreated, "Question", messages[i].MessageText, messages[i].Reply);
 
                 }
                 // If message is a complaint
                 else
                 {
-                    dataTable.Rows.Add(messages[i].GetId(), messages[i].GetDateCreated(), "Complaint", messages[i].GetMessage());
+                    dataTable.Rows.Add(messages[i].Id, messages[i].DateCreated, "Complaint", messages[i].MessageText, messages[i].Reply);
                 }
             }
 
@@ -360,17 +500,89 @@ namespace Project
             workbook.Save("messages.xlsx");
         }
 
+        /* Login */
+        public string GetUserType(string email)
+        {
+            if (StudentExists(email))
+            {
+                return "Student";
+            }
+            else if(AdminExists(email))
+            {
+                return "Admin";
+            }
+            else
+            {
+                return "No user found";
+            }
+        }
 
 
+        public bool CheckCredentials(string userType, string email, string password)
+        { 
+            // If student
+            if(userType == "Student")
+            {
+                for (int i = 0; i < students.Count; i++)
+                {
+                    if (email == students[i].Email && password == students[i].Password)
+                    {
+                        SetCredentials(students[i]);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            // if admin
+            else if(userType == "Admin")
+            {
+                for (int i = 0; i < admins.Count; i++)
+                {
+                    if (email == admins[i].Email && password == admins[i].Password)
+                    {
+                        SetCredentials(admins[i]);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return false;
+        }
+
+
+        private void SetCredentials(Student currentUser)
+        {
+            this.currentStudent = currentUser;
+        }
+        private void SetCredentials(Admin currentUser)
+        {
+            this.currentAdmin = currentUser;
+        }
+
+        public Student GetCurrentStudent()
+        {
+            return this.currentStudent;
+        }
+        public Admin GetCurrentAdmin()
+        {
+            return this.currentAdmin;
+        }
+
+        // End session user/ logout
+        public void EndSession()
+        {
+            this.currentStudent = null;
+            this.currentAdmin = null;
+        }
 
         // Test data
-        public void GenerateTestDate()
+        private void GenerateTestDate()
         {
             //Students
             Student student1, student2, student3, student4, student5, student6, student7;
-            student1 = new Student("Rawan", "rawan@fontys.com", "12345", 1, 1);
-            student2 = new Student("Baian", "baian@fontys.com", "12345", 1, 2);
-            student3 = new Student("Femke", "femke@fontys.com", "12345", 1, 3);
+            student1 = new Student("Omar", "omar@fontys.com", "12345", 1, 1);
+            student2 = new Student("Pieter", "pieter@fontys.com", "12345", 1, 2);
+            student3 = new Student("Miley", "miley@fontys.com", "12345", 1, 3);
             student4 = new Student("Mark", "mark@fontys.com", "12345", 1, 4);
             student5 = new Student("Kelvin", "kelvin@fontys.com", "12345", 1, 5);
             student6 = new Student("Ranim", "ranim@fontys.com", "12345", 1, 6);
@@ -382,7 +594,22 @@ namespace Project
             AddStudentToList(student5);
             AddStudentToList(student6);
             AddStudentToList(student7);
+            student1.UpdateScore(15);
+            student2.UpdateScore(38);
+            student3.UpdateScore(2);
+            student4.UpdateScore(64);
+            student5.UpdateScore(5);
+            student6.UpdateScore(12);
+            student7.UpdateScore(24);
 
+            // Admins
+            Admin admin1, admin2, admin3;
+            admin1 = new Admin("Rawan", "rawan@fontys.com", "12345");
+            admin2 = new Admin("Baian", "baian@fontys.com", "12345");
+            admin3 = new Admin("Femke", "femke@fontys.com", "12345");
+            AddAdminToList(admin1);
+            AddAdminToList(admin2);
+            AddAdminToList(admin3);
 
             //Messages
             Message message1, message2, message3, message4, message5, message6, message7, message8;

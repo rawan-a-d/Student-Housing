@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    class Date
+    class User
     {
         private static int autoIncId = 1;
 
-        // Constructor
-        public Date(DateTime date)
+        public User(string name, string email, string password)
         {
             this.Id = autoIncId;
-            this.TaskDate = date;
+            this.Name = name;
+            this.Email = email;
+            this.Password = password;
             autoIncId++;
         }
 
         // Properties
         public int Id { get; }
-        public DateTime TaskDate { get; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

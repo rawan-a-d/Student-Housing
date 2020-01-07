@@ -36,8 +36,8 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.mpsLogin = new MetroFramework.Controls.MetroProgressSpinner();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.tbxLoginName = new JMaterialTextbox.JMaterialTextbox();
-            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
+            this.tbxLoginEmail = new JMaterialTextbox.JMaterialTextbox();
+            this.tbxPassword = new JMaterialTextbox.JMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbxPassword = new System.Windows.Forms.PictureBox();
             this.pbxName = new System.Windows.Forms.PictureBox();
@@ -111,70 +111,70 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 51);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(265, 402);
+            this.splitter1.Size = new System.Drawing.Size(295, 402);
             this.splitter1.TabIndex = 48;
             this.splitter1.TabStop = false;
             // 
-            // tbxLoginName
+            // tbxLoginEmail
             // 
-            this.tbxLoginName.BackColor = System.Drawing.Color.Transparent;
-            this.tbxLoginName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbxLoginName.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbxLoginName.ForeColors = System.Drawing.Color.Black;
-            this.tbxLoginName.HintText = "Name";
-            this.tbxLoginName.IsPassword = false;
-            this.tbxLoginName.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbxLoginName.LineThickness = 2;
-            this.tbxLoginName.Location = new System.Drawing.Point(335, 124);
-            this.tbxLoginName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxLoginName.MaxLength = 32767;
-            this.tbxLoginName.Name = "tbxLoginName";
-            this.tbxLoginName.OnFocusedColor = System.Drawing.Color.DarkGray;
-            this.tbxLoginName.OnFocusedTextColor = System.Drawing.Color.DarkGray;
-            this.tbxLoginName.ReadOnly = false;
-            this.tbxLoginName.Size = new System.Drawing.Size(274, 31);
-            this.tbxLoginName.TabIndex = 50;
-            this.tbxLoginName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbxLoginName.TextName = "Name";
+            this.tbxLoginEmail.BackColor = System.Drawing.Color.Transparent;
+            this.tbxLoginEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbxLoginEmail.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbxLoginEmail.ForeColors = System.Drawing.Color.Black;
+            this.tbxLoginEmail.HintText = "Name";
+            this.tbxLoginEmail.IsPassword = false;
+            this.tbxLoginEmail.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbxLoginEmail.LineThickness = 2;
+            this.tbxLoginEmail.Location = new System.Drawing.Point(335, 124);
+            this.tbxLoginEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxLoginEmail.MaxLength = 32767;
+            this.tbxLoginEmail.Name = "tbxLoginEmail";
+            this.tbxLoginEmail.OnFocusedColor = System.Drawing.Color.DarkGray;
+            this.tbxLoginEmail.OnFocusedTextColor = System.Drawing.Color.Gray;
+            this.tbxLoginEmail.ReadOnly = false;
+            this.tbxLoginEmail.Size = new System.Drawing.Size(274, 31);
+            this.tbxLoginEmail.TabIndex = 50;
+            this.tbxLoginEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbxLoginEmail.TextName = "Name";
             // 
-            // jMaterialTextbox1
+            // tbxPassword
             // 
-            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.HintText = "Password";
-            this.jMaterialTextbox1.IsPassword = true;
-            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox1.LineThickness = 2;
-            this.jMaterialTextbox1.Location = new System.Drawing.Point(335, 228);
-            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.jMaterialTextbox1.MaxLength = 32767;
-            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
-            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.DarkGray;
-            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.DarkGray;
-            this.jMaterialTextbox1.ReadOnly = false;
-            this.jMaterialTextbox1.Size = new System.Drawing.Size(274, 33);
-            this.jMaterialTextbox1.TabIndex = 51;
-            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox1.TextName = "Password";
+            this.tbxPassword.BackColor = System.Drawing.Color.Transparent;
+            this.tbxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbxPassword.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbxPassword.ForeColors = System.Drawing.Color.Black;
+            this.tbxPassword.HintText = "Password";
+            this.tbxPassword.IsPassword = true;
+            this.tbxPassword.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbxPassword.LineThickness = 2;
+            this.tbxPassword.Location = new System.Drawing.Point(335, 228);
+            this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPassword.MaxLength = 32767;
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.OnFocusedColor = System.Drawing.Color.DarkGray;
+            this.tbxPassword.OnFocusedTextColor = System.Drawing.Color.Gray;
+            this.tbxPassword.ReadOnly = false;
+            this.tbxPassword.Size = new System.Drawing.Size(274, 33);
+            this.tbxPassword.TabIndex = 51;
+            this.tbxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbxPassword.TextName = "Password";
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Project.Properties.Resources.bv_student_housing;
+            this.panel1.BackgroundImage = global::Project.Properties.Resources.logo;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(12, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 369);
+            this.panel1.Size = new System.Drawing.Size(268, 369);
             this.panel1.TabIndex = 58;
             // 
             // pbxPassword
             // 
             this.pbxPassword.BackgroundImage = global::Project.Properties.Resources.iconfinder_icons_password_1564520;
             this.pbxPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxPassword.Location = new System.Drawing.Point(581, 217);
+            this.pbxPassword.Location = new System.Drawing.Point(581, 219);
             this.pbxPassword.Name = "pbxPassword";
-            this.pbxPassword.Size = new System.Drawing.Size(27, 31);
+            this.pbxPassword.Size = new System.Drawing.Size(27, 29);
             this.pbxPassword.TabIndex = 56;
             this.pbxPassword.TabStop = false;
             // 
@@ -226,8 +226,8 @@
             this.Controls.Add(this.pbxPassword);
             this.Controls.Add(this.pbxName);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.jMaterialTextbox1);
-            this.Controls.Add(this.tbxLoginName);
+            this.Controls.Add(this.tbxPassword);
+            this.Controls.Add(this.tbxLoginEmail);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.mpsLogin);
@@ -251,8 +251,8 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMinimizeWindow;
-        private JMaterialTextbox.JMaterialTextbox tbxLoginName;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox1;
+        private JMaterialTextbox.JMaterialTextbox tbxLoginEmail;
+        private JMaterialTextbox.JMaterialTextbox tbxPassword;
         private FlatButton.JFlatButton btnLogin;
         private System.Windows.Forms.PictureBox pbxName;
         private System.Windows.Forms.PictureBox pbxPassword;
