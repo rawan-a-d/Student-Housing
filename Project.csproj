@@ -37,29 +37,51 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FlatButton">
-      <HintPath>..\..\Project\JControls\FlatButton.dll</HintPath>
+    <Reference Include="Csla, Version=4.11.2.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>packages\CSLA-Core.4.11.2\lib\net461\Csla.dll</HintPath>
+    </Reference>
+    <Reference Include="Csla.Windows, Version=4.11.2.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>packages\CSLA-WindowsForms.4.11.2\lib\net461\Csla.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Cyotek.Windows.Forms.ColorPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
+      <HintPath>packages\Cyotek.Windows.Forms.ColorPicker.1.7.2\lib\net35\Cyotek.Windows.Forms.ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="FlatButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\FlatButton.dll</HintPath>
     </Reference>
     <Reference Include="GemBox.Spreadsheet, Version=45.0.35.1069, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
       <HintPath>packages\GemBox.Spreadsheet.45.0.0.1069\lib\net35\GemBox.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="JImageButton">
-      <HintPath>..\..\Project\JControls\JImageButton.dll</HintPath>
+    <Reference Include="JDragControl">
+      <HintPath>packages\JControls\JDragControl.dll</HintPath>
     </Reference>
-    <Reference Include="JMaterialTextbox">
-      <HintPath>..\..\Project\JControls\JMaterialTextbox.dll</HintPath>
+    <Reference Include="JGradient Panel">
+      <HintPath>packages\JControls\JGradient Panel.dll</HintPath>
     </Reference>
-    <Reference Include="JMetroTextBox">
-      <HintPath>..\..\Project\JControls\JMetroTextBox.dll</HintPath>
+    <Reference Include="JImageButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\JImageButton.dll</HintPath>
     </Reference>
-    <Reference Include="JTextBox">
-      <HintPath>..\..\Project\JControls\JTextBox.dll</HintPath>
+    <Reference Include="JMaterialTextbox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\JMaterialTextbox.dll</HintPath>
     </Reference>
-    <Reference Include="JTextBox2">
-      <HintPath>..\..\Project\JControls\JTextBox2.dll</HintPath>
+    <Reference Include="JMetroTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\JMetroTextBox.dll</HintPath>
     </Reference>
-    <Reference Include="JThinButton">
-      <HintPath>..\..\Project\JControls\JThinButton.dll</HintPath>
+    <Reference Include="JTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\JTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\JTextBox2.dll</HintPath>
+    </Reference>
+    <Reference Include="JThinButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\JControls\JThinButton.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialDesignThemes.3.0.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
@@ -77,12 +99,29 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="MetroSet UI, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MetroSet_UI.1.0.5\lib\net45\MetroSet UI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.6.5\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.Windows.Forms.4.3.0\lib\net35\NLog.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,6 +133,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Date.cs" />
     <Compile Include="FormStudent.cs">
       <SubType>Form</SubType>
@@ -125,6 +165,7 @@
     <Compile Include="Schedule.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentsHousing.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="FormStudent.resx">
       <DependentUpon>FormStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +195,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Analyzer Include="packages\CSLA-Core.4.11.2\analyzers\c#\Csla.Analyzers.dll" />
     <Analyzer Include="packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
     <Analyzer Include="packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
     <Analyzer Include="packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
@@ -163,6 +205,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\logo.png" />
     <None Include="Resources\x-mark-4-512.png" />
     <None Include="Resources\edit-8-512.png" />
     <None Include="Resources\add-512.png" />
@@ -173,12 +216,8 @@
     <None Include="Resources\add-user-512.png" />
     <None Include="Resources\plus-512.png" />
     <None Include="Resources\search-3-512.png" />
-    <None Include="Resources\iconfinder_Upload_1214988.png" />
-    <None Include="Resources\iconfinder_plus_325963.png" />
-    <None Include="Resources\iconfinder_icon-ios7-minus-outline_211774.png" />
     <None Include="Resources\iconfinder_user_216498.png" />
     <None Include="Resources\iconfinder_icons_password_1564520.png" />
-    <None Include="Resources\bv_student_housing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

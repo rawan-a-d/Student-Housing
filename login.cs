@@ -5,6 +5,8 @@ namespace Project
 {
     public partial class FrmLogin : Form
     {
+        // Create instance of studentsHousing or use made instance
+        StudentsHousing studentsHousing = StudentsHousing.Instance;
         public FrmLogin()
         {
             InitializeComponent();
@@ -15,35 +17,63 @@ namespace Project
             mpsLogin.Visible = true;
             mpsLogin.Value = 0;
             timer.Start();
-            //Form FormMain = new FrmMain();
-            //FormMain.Show();
-            //this.Close();
-        }
-
-        private void BtnX_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-                mpsLogin.Value += 10;
-                if (mpsLogin.Value == 100)
+            mpsLogin.Value += 10;
+            if (mpsLogin.Value == 100)
+            {
+                // Get login details
+                string email = tbxLoginEmail.TextName;
+                string password = tbxPassword.TextName;
+                timer.Stop();
+                if(studentsHousing.GetUserType(email) == "Student")
                 {
-                    timer.Stop();
-                    using (Form FormMain = new FrmMain())
+                    if (studentsHousing.CheckCredentials("Student", email, password))
                     {
-                        FormMain.ShowDialog();
                         this.Hide();
-                    }
+                        Form FormStudent = new FrmStudent();
 
+                        FormStudent.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credentials are wrong");
+                    }
                 }
+                else if(studentsHousing.GetUserType(email) == "Admin")
+                {
+                    if (studentsHousing.CheckCredentials("Admin",email, password))
+                    {
+                        this.Hide();
+                        Form FormMain = new FrmMain();
+
+                        FormMain.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credentials are wrong");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("User does not exist");
+                }
+            }
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             mpsLogin.Value += 0;
             mpsLogin.Visible = false;
+        }
+
+        private void BtnX_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnMinimizeWindow_Click(object sender, EventArgs e)
