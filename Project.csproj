@@ -46,42 +46,35 @@
     <Reference Include="Cyotek.Windows.Forms.ColorPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
       <HintPath>packages\Cyotek.Windows.Forms.ColorPicker.1.7.2\lib\net35\Cyotek.Windows.Forms.ColorPicker.dll</HintPath>
     </Reference>
-    <Reference Include="FlatButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\FlatButton.dll</HintPath>
+    <Reference Include="FlatButton">
+      <HintPath>..\..\JControls\FlatButton.dll</HintPath>
     </Reference>
     <Reference Include="GemBox.Spreadsheet, Version=45.0.35.1069, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
       <HintPath>packages\GemBox.Spreadsheet.45.0.0.1069\lib\net35\GemBox.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="JDragControl">
-      <HintPath>packages\JControls\JDragControl.dll</HintPath>
+      <HintPath>..\..\JControls\JDragControl.dll</HintPath>
     </Reference>
     <Reference Include="JGradient Panel">
-      <HintPath>packages\JControls\JGradient Panel.dll</HintPath>
+      <HintPath>..\..\JControls\JGradient Panel.dll</HintPath>
     </Reference>
-    <Reference Include="JImageButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\JImageButton.dll</HintPath>
+    <Reference Include="JImageButton">
+      <HintPath>..\..\JControls\JImageButton.dll</HintPath>
     </Reference>
-    <Reference Include="JMaterialTextbox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\JMaterialTextbox.dll</HintPath>
+    <Reference Include="JMaterialTextbox">
+      <HintPath>..\..\JControls\JMaterialTextbox.dll</HintPath>
     </Reference>
-    <Reference Include="JMetroTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\JMetroTextBox.dll</HintPath>
+    <Reference Include="JMetroTextBox">
+      <HintPath>..\..\JControls\JMetroTextBox.dll</HintPath>
     </Reference>
-    <Reference Include="JTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\JTextBox.dll</HintPath>
+    <Reference Include="JTextBox">
+      <HintPath>..\..\JControls\JTextBox.dll</HintPath>
     </Reference>
-    <Reference Include="JTextBox2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\JTextBox2.dll</HintPath>
+    <Reference Include="JTextBox2">
+      <HintPath>..\..\JControls\JTextBox2.dll</HintPath>
     </Reference>
-    <Reference Include="JThinButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\JControls\JThinButton.dll</HintPath>
+    <Reference Include="JThinButton">
+      <HintPath>..\..\JControls\JThinButton.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialDesignThemes.3.0.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>

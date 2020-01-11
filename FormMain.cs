@@ -29,6 +29,8 @@ namespace Project
                 UpdateScheduleList();
             }
 
+            lbl_LoggedInAsName.Text = currentUser.Name;
+
             // Call needed methods
             SetUp();
         }
