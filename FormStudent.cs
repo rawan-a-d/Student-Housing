@@ -49,7 +49,7 @@ namespace Project
             {
                 MessageBox.Show("Please select a subject");
             }
-            else if (messageDesc == "")
+            else if (messageDesc.Length == 0)
             {
                 MessageBox.Show("Please insert your message");
             }
@@ -194,10 +194,10 @@ namespace Project
 
             if (studentsHousing.CompareScores())
             {
-                tbxScore.Text += " WOW, the highest score";
+                tbxScore.Text += " Highest score! Good job!";
                 //tbxScore.Enabled = true;
                 tbxScore.BackColor = Color.White;
-                tbxScore.ForeColor = Color.Orange;
+                tbxScore.ForeColor = Color.Black;
             }
 
             // Student schedule
@@ -209,30 +209,27 @@ namespace Project
         {
             int currentUserId = currentUser.Id;
             // Schedule list
-            List<Schedule> schedules = studentsHousing.GetSchedulesList().OrderBy(o => o.DateId).ToList();
+            Schedule[] scheduleCurrentUser = studentsHousing.GetScheduleCurrentUser(currentUserId).OrderBy(o => o.DateId).ToArray();
 
             // Clear list view
             dgvStudentTasks.Rows.Clear();
             // Display rules
-            foreach (var schedule in schedules)
+            foreach (var schedule in scheduleCurrentUser)
             {
-                if(schedule.StudentId == currentUserId)
-                {
-                    // Create new rows
-                    DataGridViewRow row = (DataGridViewRow)dgvStudentTasks.Rows[0].Clone();
+                // Create new rows
+                DataGridViewRow row = (DataGridViewRow)dgvStudentTasks.Rows[0].Clone();
 
-                    // Insert data into rows
-                    row.Cells[0].Value = studentsHousing.FindDateById(schedule.DateId);
-                    row.Cells[1].Value = (schedule.TaskType).ToString();
-                    row.Cells[2].Value = (schedule.Status).ToString();
+                // Insert data into rows
+                row.Cells[0].Value = studentsHousing.FindDateById(schedule.DateId);
+                row.Cells[1].Value = (schedule.TaskType).ToString();
+                row.Cells[2].Value = (schedule.Status).ToString();
 
-                    // Add the item to list view
-                    dgvStudentTasks.Rows.Add(row);
+                // Add the item to list view
+                dgvStudentTasks.Rows.Add(row);
 
-                    // Text wrap
-                    dgvStudentTasks.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                    dgvStudentTasks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                }
+                // Text wrap
+                dgvStudentTasks.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvStudentTasks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
         }
 
@@ -294,8 +291,8 @@ namespace Project
             studentsHousing.EndSession();
             MessageBox.Show("Logged out successfully");
             this.Hide();
-            Form FormLogIn = new FrmLogin();
-            FormLogIn.ShowDialog();
+            Form formLogIn = new FrmLogin();
+            formLogIn.ShowDialog();
             this.Close();
         }
 

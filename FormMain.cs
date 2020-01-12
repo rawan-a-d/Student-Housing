@@ -66,11 +66,19 @@ namespace Project
         // Remove student
         private void Btn_TenantRemoveSelected_Click(object sender, EventArgs e)
         {
-            int selectedUserToBeRemoved = Convert.ToInt32(lvwTenantList.SelectedItems[0].Text);
+            // If nothing was selected
+            if (lvwTenantList.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Please select a tenant to be removed");
+            }
+            else
+            {
+                int selectedUserToBeRemoved = Convert.ToInt32(lvwTenantList.SelectedItems[0].Text);
 
-            studentsHousing.RemoveStudentById(selectedUserToBeRemoved);
+                studentsHousing.RemoveStudentById(selectedUserToBeRemoved);
 
-            UpdateStudentListView();
+                UpdateStudentListView();
+            }
         }
 
         // Update List view

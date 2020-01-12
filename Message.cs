@@ -28,7 +28,7 @@ namespace Project
 
         // Methods
         // Update reply
-        public void UpdateReply(int messageId, string reply)
+        public void UpdateReply(string reply)
         {
             this.Reply = reply;
         }

@@ -26,7 +26,7 @@ namespace Project
 
 
         // Constructor
-        StudentsHousing()
+        public StudentsHousing()
         {
             // Initialize lists
             students = new List<Student>();
@@ -83,13 +83,14 @@ namespace Project
 
         public string FindStudentById(int studentId)
         {
-            for (int i = 0; i < students.Count; i++)
+            foreach (var student in students)
             {
-                if (students[i].Id == studentId)
+                if (student.Id == studentId)
                 {
-                    return students[i].Name;
+                    return student.Name;
                 }
             }
+
             return "";
         }
 
@@ -107,36 +108,37 @@ namespace Project
 
         public int FindStudentId(string name)
         {
-            for (int i = 0; i < students.Count; i++)
+            foreach (var student in students)
             {
-                if (students[i].Name == name)
+                if (student.Name == name)
                 {
-                    return students[i].Id;
+                    return student.Id;
                 }
             }
+
             return 0;
         }
 
         private bool StudentExists(string email)
         {
-            for (int i = 0; i < students.Count; i++)
+            foreach (var student in students)
             {
-                if(students[i].Email == email)
+                if(student.Email == email)
                 {
                     return true;
-                    break;
                 }
             }
+
             return false;
         }
 
         public void UpdateStudentInfo(int studentId, string name, int age, string email, string password, string phone)
         {
-            for (int i = 0; i < students.Count; i++)
+            foreach (var student in students)
             {
-                if (students[i].Id == studentId)
+                if (student.Id == studentId)
                 {
-                    students[i].UpdateInfo(name, age, email, password, phone);
+                    student.UpdateInfo(name, age, email, password, phone);
                 }
             }
         }
@@ -149,14 +151,15 @@ namespace Project
 
         private bool AdminExists(string email)
         {
-            for (int i = 0; i < admins.Count; i++)
+            foreach (var admin in admins)
             {
-                if (admins[i].Email == email)
+                if (admin.Email == email)
                 {
                     return true;
                     break;
                 }
             }
+
             return false;
         }
 
@@ -259,7 +262,7 @@ namespace Project
             {
                 if (message.Id == messageId)
                 {
-                    message.UpdateReply(messageId, reply);
+                    message.UpdateReply(reply);
                 }
             }
         }
@@ -287,6 +290,19 @@ namespace Project
         public Schedule[] GetSchedulesList()
         {
             return schedules.ToArray();
+        }
+
+        public Schedule[] GetScheduleCurrentUser(int studentId)
+        {
+            List<Schedule> scheduleCurrentUser = new List<Schedule>();
+            foreach (var schedule in schedules)
+            {
+                if (schedule.StudentId == studentId)
+                {
+                    scheduleCurrentUser.Add(schedule);
+                }
+            }
+            return scheduleCurrentUser.ToArray();
         }
 
         // Create schedule
@@ -351,11 +367,11 @@ namespace Project
 
         public DateTime FindDateById(int dateId)
         {
-            for (int i = 0; i < dates.Count; i++)
+            foreach (var date in dates)
             {
-                if (dates[i].Id == dateId)
+                if (date.Id == dateId)
                 {
-                    return dates[i].TaskDate;
+                    return date.TaskDate;
                 }
             }
 
@@ -364,11 +380,11 @@ namespace Project
 
         private int FindDateId(DateTime date)
         {
-            for (int i = 0; i < dates.Count; i++)
+            foreach (var dateItem in dates)
             {
-                if (dates[i].TaskDate == date)
+                if (dateItem.TaskDate == date)
                 {
-                    return dates[i].Id;
+                    return dateItem.Id;
                 }
             }
             return 0;
@@ -384,11 +400,11 @@ namespace Project
 
             // Complete task
             int dateId = FindDateId(date);
-            for (int i = 0; i < schedules.Count; i++)
+            foreach (var schedule in schedules)
             {
-                if(schedules[i].StudentId == studentId && schedules[i].DateId == dateId)
+                if(schedule.StudentId == studentId && schedule.DateId == dateId)
                 {
-                    schedules[i].SetStatus(TaskStatus.Completed);
+                    schedule.SetStatus(TaskStatus.Completed);
                     break;
                 }
             }
@@ -404,11 +420,11 @@ namespace Project
         public bool CompareScores()
         {
             int currentStudentScore = currentStudent.Score;
-            for (int i = 0; i < students.Count; i++)
+            foreach (var student in students)
             {
-                if(students[i].Score > studentWithHighestScore)
+                if(student.Score > studentWithHighestScore)
                 {
-                    studentWithHighestScore = students[i].Score;
+                    studentWithHighestScore = student.Score;
                 }
             }
             if(studentWithHighestScore == currentStudentScore)
@@ -432,11 +448,11 @@ namespace Project
 
             // Uncomplete task
             int dateId = FindDateId(date);
-            for (int i = 0; i < schedules.Count; i++)
+            foreach (var schedule in schedules)
             {
-                if (schedules[i].StudentId == studentId && schedules[i].DateId == dateId)
+                if (schedule.StudentId == studentId && schedule.DateId == dateId)
                 {
-                    schedules[i].SetStatus(TaskStatus.NotCompleted);
+                    schedule.SetStatus(TaskStatus.NotCompleted);
                     break;
                 }
             }
@@ -465,27 +481,29 @@ namespace Project
             // If student
             if(userType == "Student")
             {
-                for (int i = 0; i < students.Count; i++)
+                foreach (var student in students)
                 {
-                    if (email == students[i].Email && password == students[i].Password)
+                    if (email == student.Email && password == student.Password)
                     {
-                        SetCredentials(students[i]);
+                        SetCredentials(student);
                         return true;
                     }
                 }
+
                 return false;
             }
             // if admin
             else if(userType == "Admin")
             {
-                for (int i = 0; i < admins.Count; i++)
+                foreach (var admin in admins)
                 {
-                    if (email == admins[i].Email && password == admins[i].Password)
+                    if (email == admin.Email && password == admin.Password)
                     {
-                        SetCredentials(admins[i]);
+                        SetCredentials(admin);
                         return true;
                     }
                 }
+
                 return false;
             }
             return false;

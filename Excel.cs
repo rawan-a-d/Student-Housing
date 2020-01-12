@@ -27,18 +27,18 @@ namespace Project
             dataTable.Columns.Add("Reply", typeof(string));
 
             // Create rows
-            for (int i = 0; i < messages.Length; i++)
+            foreach (var message in messages)
             {
                 // If message is a question
-                if (messages[i].Subject == MessageSubject.Question)
+                if (message.Subject == MessageSubject.Question)
                 {
-                    dataTable.Rows.Add(messages[i].Id, messages[i].DateCreated, "Question", messages[i].MessageText, messages[i].Reply);
+                    dataTable.Rows.Add(message.Id, message.DateCreated, "Question", message.MessageText, message.Reply);
 
                 }
                 // If message is a complaint
                 else
                 {
-                    dataTable.Rows.Add(messages[i].Id, messages[i].DateCreated, "Complaint", messages[i].MessageText, messages[i].Reply);
+                    dataTable.Rows.Add(message.Id, message.DateCreated, "Complaint", message.MessageText, message.Reply);
                 }
             }
 

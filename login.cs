@@ -56,11 +56,14 @@ namespace Project
                     else
                     {
                         MessageBox.Show("Credentials are wrong");
+                        mpsLogin.Value += 0;
+                        mpsLogin.Visible = false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("User does not exist");
+                    MessageBox.Show("User does not exist"); mpsLogin.Value += 0;
+                    mpsLogin.Visible = false;
                 }
             }
         }

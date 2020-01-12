@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
@@ -36,12 +37,12 @@
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             this.pHeader = new System.Windows.Forms.Panel();
             this.btnMinimizeWindow = new System.Windows.Forms.Button();
             this.btnX = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.lbl_LoggedInAsName = new System.Windows.Forms.Label();
+            this.lbl_LoggedInAsPicture = new System.Windows.Forms.PictureBox();
             this.lbl_LoggedInAs = new System.Windows.Forms.Label();
             this.mtcStudent = new MetroFramework.Controls.MetroTabControl();
             this.mtpSchedule = new MetroFramework.Controls.MetroTabPage();
@@ -49,7 +50,6 @@
             this.cbx_FilterTasks = new System.Windows.Forms.CheckBox();
             this.cbx_FilterEvents = new System.Windows.Forms.CheckBox();
             this.lblAsignee = new System.Windows.Forms.Label();
-            this.btn_FilterSearch = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.cb_EventFloor = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.DTP_EventDateTime = new System.Windows.Forms.DateTimePicker();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_EventVoteSelectedNO = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_EventVoteSelectedYES = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             this.chDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_FilterSearch = new System.Windows.Forms.Button();
             this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
             this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
             this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +96,8 @@
             this.chMessageType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessageText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessageReply = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbxAddMessage = new System.Windows.Forms.PictureBox();
+            this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
             this.btnRemoveSelectedMessage = new System.Windows.Forms.Button();
             this.btnMessageAdd = new System.Windows.Forms.Button();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
@@ -109,7 +113,6 @@
             this.tbxRoom = new System.Windows.Forms.TextBox();
             this.lblProfileFloor = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnDeposit = new System.Windows.Forms.Button();
             this.lblAddBalance = new System.Windows.Forms.Label();
             this.lblRoom = new System.Windows.Forms.Label();
             this.tbxScore = new System.Windows.Forms.TextBox();
@@ -126,59 +129,27 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.btnNextMonth = new System.Windows.Forms.Button();
-            this.btnPrevMonth = new System.Windows.Forms.Button();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbxDeposit = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pbxAddMessage = new System.Windows.Forms.PictureBox();
-            this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
-            this.lbl_LoggedInAsPicture = new System.Windows.Forms.PictureBox();
+            this.btnDeposit = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.pHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.mtcStudent.SuspendLayout();
             this.mtpSchedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.mtpHouseRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
             this.mtpAgreements.SuspendLayout();
             this.mtpMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
-            this.mtpProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
-            this.metroTabPage1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
+            this.mtpProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -257,6 +228,18 @@
             this.lbl_LoggedInAsName.TabIndex = 13;
             this.lbl_LoggedInAsName.Text = "Peter Young";
             // 
+            // lbl_LoggedInAsPicture
+            // 
+            this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
+            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
+            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
+            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
+            this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lbl_LoggedInAsPicture.TabIndex = 12;
+            this.lbl_LoggedInAsPicture.TabStop = false;
+            // 
             // lbl_LoggedInAs
             // 
             this.lbl_LoggedInAs.AutoSize = true;
@@ -277,14 +260,13 @@
             this.mtcStudent.Controls.Add(this.mtpAgreements);
             this.mtcStudent.Controls.Add(this.mtpMessages);
             this.mtcStudent.Controls.Add(this.mtpProfile);
-            this.mtcStudent.Controls.Add(this.metroTabPage1);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtcStudent.CustomBackground = true;
             this.mtcStudent.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.mtcStudent.ItemSize = new System.Drawing.Size(86, 35);
             this.mtcStudent.Location = new System.Drawing.Point(0, 98);
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 0;
+            this.mtcStudent.SelectedIndex = 4;
             this.mtcStudent.Size = new System.Drawing.Size(1054, 521);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
@@ -372,21 +354,6 @@
             this.lblAsignee.TabIndex = 53;
             this.lblAsignee.Text = "Asignee";
             // 
-            // btn_FilterSearch
-            // 
-            this.btn_FilterSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btn_FilterSearch.FlatAppearance.BorderSize = 0;
-            this.btn_FilterSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_FilterSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_FilterSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_FilterSearch.Location = new System.Drawing.Point(872, 30);
-            this.btn_FilterSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_FilterSearch.Name = "btn_FilterSearch";
-            this.btn_FilterSearch.Size = new System.Drawing.Size(138, 37);
-            this.btn_FilterSearch.TabIndex = 52;
-            this.btn_FilterSearch.Text = "Search";
-            this.btn_FilterSearch.UseVisualStyleBackColor = false;
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -452,6 +419,16 @@
             this.lblFloor.Size = new System.Drawing.Size(40, 17);
             this.lblFloor.TabIndex = 45;
             this.lblFloor.Text = "Floor";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
+            this.pictureBox2.TabIndex = 44;
+            this.pictureBox2.TabStop = false;
             // 
             // btn_EventVoteSelectedNO
             // 
@@ -611,6 +588,21 @@
             this.chStatus.MinimumWidth = 6;
             this.chStatus.Name = "chStatus";
             this.chStatus.ReadOnly = true;
+            // 
+            // btn_FilterSearch
+            // 
+            this.btn_FilterSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_FilterSearch.FlatAppearance.BorderSize = 0;
+            this.btn_FilterSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_FilterSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_FilterSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_FilterSearch.Location = new System.Drawing.Point(872, 30);
+            this.btn_FilterSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_FilterSearch.Name = "btn_FilterSearch";
+            this.btn_FilterSearch.Size = new System.Drawing.Size(138, 37);
+            this.btn_FilterSearch.TabIndex = 52;
+            this.btn_FilterSearch.Text = "Search";
+            this.btn_FilterSearch.UseVisualStyleBackColor = false;
             // 
             // mtpHouseRules
             // 
@@ -857,6 +849,28 @@
             this.chMessageReply.Name = "chMessageReply";
             this.chMessageReply.Width = 300;
             // 
+            // pbxAddMessage
+            // 
+            this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
+            this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
+            this.pbxAddMessage.Name = "pbxAddMessage";
+            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
+            this.pbxAddMessage.TabIndex = 17;
+            this.pbxAddMessage.TabStop = false;
+            // 
+            // pbxRemoveMessage
+            // 
+            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
+            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
+            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
+            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
+            this.pbxRemoveMessage.TabIndex = 18;
+            this.pbxRemoveMessage.TabStop = false;
+            // 
             // btnRemoveSelectedMessage
             // 
             this.btnRemoveSelectedMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
@@ -938,13 +952,13 @@
             this.chTaskDesc,
             this.chStatusTask});
             this.dgvStudentTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvStudentTasks.Location = new System.Drawing.Point(288, 43);
+            this.dgvStudentTasks.Location = new System.Drawing.Point(324, 43);
             this.dgvStudentTasks.Name = "dgvStudentTasks";
             this.dgvStudentTasks.RowHeadersVisible = false;
             this.dgvStudentTasks.RowHeadersWidth = 51;
             this.dgvStudentTasks.RowTemplate.Height = 24;
             this.dgvStudentTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentTasks.Size = new System.Drawing.Size(688, 219);
+            this.dgvStudentTasks.Size = new System.Drawing.Size(652, 219);
             this.dgvStudentTasks.TabIndex = 70;
             // 
             // chDateTask
@@ -987,7 +1001,7 @@
             this.btnCompleteTask.FlatAppearance.BorderSize = 0;
             this.btnCompleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCompleteTask.Location = new System.Drawing.Point(289, 281);
+            this.btnCompleteTask.Location = new System.Drawing.Point(324, 282);
             this.btnCompleteTask.Margin = new System.Windows.Forms.Padding(4);
             this.btnCompleteTask.Name = "btnCompleteTask";
             this.btnCompleteTask.Size = new System.Drawing.Size(221, 45);
@@ -1002,7 +1016,7 @@
             this.tbxFloor.Margin = new System.Windows.Forms.Padding(4);
             this.tbxFloor.Name = "tbxFloor";
             this.tbxFloor.ReadOnly = true;
-            this.tbxFloor.Size = new System.Drawing.Size(41, 22);
+            this.tbxFloor.Size = new System.Drawing.Size(111, 22);
             this.tbxFloor.TabIndex = 67;
             // 
             // tbxPassword
@@ -1011,12 +1025,12 @@
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
-            this.tbxPassword.Size = new System.Drawing.Size(189, 22);
+            this.tbxPassword.Size = new System.Drawing.Size(238, 22);
             this.tbxPassword.TabIndex = 65;
             // 
             // tbxAddBalance
             // 
-            this.tbxAddBalance.Location = new System.Drawing.Point(289, 387);
+            this.tbxAddBalance.Location = new System.Drawing.Point(324, 398);
             this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(4);
             this.tbxAddBalance.Name = "tbxAddBalance";
             this.tbxAddBalance.Size = new System.Drawing.Size(238, 22);
@@ -1024,11 +1038,11 @@
             // 
             // tbxRoom
             // 
-            this.tbxRoom.Location = new System.Drawing.Point(73, 265);
+            this.tbxRoom.Location = new System.Drawing.Point(145, 265);
             this.tbxRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tbxRoom.Name = "tbxRoom";
             this.tbxRoom.ReadOnly = true;
-            this.tbxRoom.Size = new System.Drawing.Size(140, 22);
+            this.tbxRoom.Size = new System.Drawing.Size(118, 22);
             this.tbxRoom.TabIndex = 60;
             // 
             // lblProfileFloor
@@ -1053,27 +1067,12 @@
             this.lblPassword.TabIndex = 64;
             this.lblPassword.Text = "Password";
             // 
-            // btnDeposit
-            // 
-            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnDeposit.FlatAppearance.BorderSize = 0;
-            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeposit.Location = new System.Drawing.Point(552, 363);
-            this.btnDeposit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(155, 46);
-            this.btnDeposit.TabIndex = 63;
-            this.btnDeposit.Text = "Deposit";
-            this.btnDeposit.UseVisualStyleBackColor = false;
-            // 
             // lblAddBalance
             // 
             this.lblAddBalance.AutoSize = true;
             this.lblAddBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBalance.Location = new System.Drawing.Point(286, 363);
+            this.lblAddBalance.Location = new System.Drawing.Point(327, 363);
             this.lblAddBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddBalance.Name = "lblAddBalance";
             this.lblAddBalance.Size = new System.Drawing.Size(88, 18);
@@ -1084,7 +1083,7 @@
             // 
             this.lblRoom.AutoSize = true;
             this.lblRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRoom.Location = new System.Drawing.Point(69, 245);
+            this.lblRoom.Location = new System.Drawing.Point(147, 245);
             this.lblRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(45, 17);
@@ -1097,7 +1096,7 @@
             this.tbxScore.Margin = new System.Windows.Forms.Padding(4);
             this.tbxScore.Name = "tbxScore";
             this.tbxScore.ReadOnly = true;
-            this.tbxScore.Size = new System.Drawing.Size(189, 22);
+            this.tbxScore.Size = new System.Drawing.Size(238, 22);
             this.tbxScore.TabIndex = 57;
             // 
             // tbxBalance
@@ -1106,7 +1105,7 @@
             this.tbxBalance.Margin = new System.Windows.Forms.Padding(4);
             this.tbxBalance.Name = "tbxBalance";
             this.tbxBalance.ReadOnly = true;
-            this.tbxBalance.Size = new System.Drawing.Size(189, 22);
+            this.tbxBalance.Size = new System.Drawing.Size(238, 22);
             this.tbxBalance.TabIndex = 55;
             // 
             // tbxPhone
@@ -1114,7 +1113,7 @@
             this.tbxPhone.Location = new System.Drawing.Point(23, 214);
             this.tbxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPhone.Name = "tbxPhone";
-            this.tbxPhone.Size = new System.Drawing.Size(189, 22);
+            this.tbxPhone.Size = new System.Drawing.Size(240, 22);
             this.tbxPhone.TabIndex = 50;
             // 
             // tbxEmail
@@ -1122,15 +1121,15 @@
             this.tbxEmail.Location = new System.Drawing.Point(23, 163);
             this.tbxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(189, 22);
+            this.tbxEmail.Size = new System.Drawing.Size(240, 22);
             this.tbxEmail.TabIndex = 48;
             // 
             // tbxAge
             // 
-            this.tbxAge.Location = new System.Drawing.Point(173, 62);
+            this.tbxAge.Location = new System.Drawing.Point(190, 62);
             this.tbxAge.Margin = new System.Windows.Forms.Padding(4);
             this.tbxAge.Name = "tbxAge";
-            this.tbxAge.Size = new System.Drawing.Size(40, 22);
+            this.tbxAge.Size = new System.Drawing.Size(73, 22);
             this.tbxAge.TabIndex = 46;
             // 
             // tbxName
@@ -1138,7 +1137,7 @@
             this.tbxName.Location = new System.Drawing.Point(23, 62);
             this.tbxName.Margin = new System.Windows.Forms.Padding(4);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(143, 22);
+            this.tbxName.Size = new System.Drawing.Size(159, 22);
             this.tbxName.TabIndex = 44;
             // 
             // lblScore
@@ -1168,7 +1167,7 @@
             this.lblMyTasks.AutoSize = true;
             this.lblMyTasks.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblMyTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyTasks.Location = new System.Drawing.Point(285, 11);
+            this.lblMyTasks.Location = new System.Drawing.Point(327, 11);
             this.lblMyTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMyTasks.Name = "lblMyTasks";
             this.lblMyTasks.Size = new System.Drawing.Size(76, 20);
@@ -1213,7 +1212,7 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAge.Location = new System.Drawing.Point(170, 43);
+            this.lblAge.Location = new System.Drawing.Point(190, 43);
             this.lblAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(33, 17);
@@ -1231,278 +1230,12 @@
             this.lblName.TabIndex = 43;
             this.lblName.Text = "Name";
             // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel7);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel6);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel5);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel4);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel3);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel2);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel1);
-            this.metroTabPage1.Controls.Add(this.panel1);
-            this.metroTabPage1.Controls.Add(this.metroPanel1);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1046, 478);
-            this.metroTabPage1.TabIndex = 5;
-            this.metroTabPage1.Text = "Whole schedule";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            // 
-            // flowLayoutPanel7
-            // 
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(899, 98);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel7.TabIndex = 10;
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(749, 98);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel6.TabIndex = 9;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(600, 98);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel5.TabIndex = 8;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(450, 98);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel4.TabIndex = 7;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(301, 98);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel3.TabIndex = 6;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(151, 98);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel2.TabIndex = 5;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.label21);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel1);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 98);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(148, 89);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // label21
-            // 
-            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label21.Location = new System.Drawing.Point(3, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(145, 23);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "1";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(3, 23);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(99, 17);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Appointment 1";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(3, 40);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(48, 17);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Friend";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1046, 31);
-            this.panel1.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(895, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 31);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Saturday";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(749, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 31);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Firday";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(600, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 31);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Thursday";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(151, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 31);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Monday";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Aqua;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(302, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 31);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tuesday";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(451, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 31);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Wednesday";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 31);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Sunday";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.metroPanel1.Controls.Add(this.lblDate);
-            this.metroPanel1.Controls.Add(this.metroPanel2);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(1046, 66);
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(23, 14);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(224, 38);
-            this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "January, 2020";
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.Controls.Add(this.btnNextMonth);
-            this.metroPanel2.Controls.Add(this.btnPrevMonth);
-            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(892, 0);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(154, 66);
-            this.metroPanel2.TabIndex = 2;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // btnNextMonth
-            // 
-            this.btnNextMonth.Location = new System.Drawing.Point(87, 14);
-            this.btnNextMonth.Name = "btnNextMonth";
-            this.btnNextMonth.Size = new System.Drawing.Size(52, 39);
-            this.btnNextMonth.TabIndex = 3;
-            this.btnNextMonth.Text = ">";
-            this.btnNextMonth.UseVisualStyleBackColor = true;
-            // 
-            // btnPrevMonth
-            // 
-            this.btnPrevMonth.Location = new System.Drawing.Point(17, 14);
-            this.btnPrevMonth.Name = "btnPrevMonth";
-            this.btnPrevMonth.Size = new System.Drawing.Size(52, 39);
-            this.btnPrevMonth.TabIndex = 2;
-            this.btnPrevMonth.Text = "<";
-            this.btnPrevMonth.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
-            this.pictureBox2.TabIndex = 44;
-            this.pictureBox2.TabStop = false;
-            // 
             // pbxDeposit
             // 
             this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
             this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDeposit.Location = new System.Drawing.Point(675, 372);
+            this.pbxDeposit.Location = new System.Drawing.Point(747, 384);
             this.pbxDeposit.Name = "pbxDeposit";
             this.pbxDeposit.Size = new System.Drawing.Size(22, 24);
             this.pbxDeposit.TabIndex = 2;
@@ -1511,46 +1244,27 @@
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(253, 11);
+            this.pictureBox3.Location = new System.Drawing.Point(297, 11);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1, 418);
             this.pictureBox3.TabIndex = 53;
             this.pictureBox3.TabStop = false;
             // 
-            // pbxAddMessage
+            // btnDeposit
             // 
-            this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
-            this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
-            this.pbxAddMessage.Name = "pbxAddMessage";
-            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
-            this.pbxAddMessage.TabIndex = 17;
-            this.pbxAddMessage.TabStop = false;
-            // 
-            // pbxRemoveMessage
-            // 
-            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
-            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
-            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
-            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
-            this.pbxRemoveMessage.TabIndex = 18;
-            this.pbxRemoveMessage.TabStop = false;
-            // 
-            // lbl_LoggedInAsPicture
-            // 
-            this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
-            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
-            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
-            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
-            this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lbl_LoggedInAsPicture.TabIndex = 12;
-            this.lbl_LoggedInAsPicture.TabStop = false;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnDeposit.FlatAppearance.BorderSize = 0;
+            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeposit.Location = new System.Drawing.Point(626, 374);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(155, 46);
+            this.btnDeposit.TabIndex = 63;
+            this.btnDeposit.Text = "Deposit";
+            this.btnDeposit.UseVisualStyleBackColor = false;
             // 
             // FrmStudent
             // 
@@ -1564,9 +1278,11 @@
             this.Text = "Student";
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.mtcStudent.ResumeLayout(false);
             this.mtpSchedule.ResumeLayout(false);
             this.mtpSchedule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             this.mtpHouseRules.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
@@ -1575,22 +1291,13 @@
             this.mtpMessages.ResumeLayout(false);
             this.mtpMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
             this.mtpProfile.ResumeLayout(false);
             this.mtpProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
-            this.metroTabPage1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
-            this.metroPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1683,30 +1390,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblName;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Button btnNextMonth;
-        private System.Windows.Forms.Button btnPrevMonth;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button btnMinimizeWindow;
         private System.Windows.Forms.PictureBox pbxDeposit;
