@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    class Admin: User
+    public class Admin: User
     {
         public Admin(string name, string email, string password)
             : base(name, email, password)

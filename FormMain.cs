@@ -18,7 +18,7 @@ namespace Project
             currentUser = studentsHousing.GetCurrentAdmin();
 
             // Create schedule if it wasn't created
-            if (studentsHousing.GetSchedulesList().Count == 0)
+            if (studentsHousing.GetSchedulesList().Length == 0)
             {
                 studentsHousing.AddDates();
                 studentsHousing.CreateSchedule();
@@ -76,7 +76,7 @@ namespace Project
         // Update List view
         private void UpdateStudentListView()
         {
-            List<Student> studentsList = studentsHousing.GetStudentsList();
+            Student[] studentsList = studentsHousing.GetStudentsList();
             // Update list view
             lvwTenantList.Items.Clear();
             foreach (var student in studentsList)
@@ -272,7 +272,7 @@ namespace Project
         // Update List view (ADMIN)
         private void UpdateHouseRulesListView()
         {
-            List<HouseRule> houseRules = studentsHousing.GetRulesList();
+            HouseRule[] houseRules = studentsHousing.GetRulesList();
 
             // Clear list view
             dgvHouseRulesAdmin.Rows.Clear();
@@ -327,13 +327,14 @@ namespace Project
         // Export Messages as EXCEL
         private void BtnMessagesExport_Click(object sender, EventArgs e)
         {
-            studentsHousing.ExportToExcel();
+            Message[] messages = studentsHousing.GetMessagesList();
+            Excel.ExportToExcel(messages);
         }
 
         // Update List view (STUDENT and ADMIN)
         private void UpdateMessagesListView()
         {
-            List<Message> messages = studentsHousing.GetMessagesList();
+            Message[] messages = studentsHousing.GetMessagesList();
 
             // Clear list view
             dgvMessageAdmin.Rows.Clear();

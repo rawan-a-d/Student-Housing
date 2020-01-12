@@ -54,6 +54,19 @@
             this.chHouseRulesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chDateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtpMessagesAdmin = new MetroFramework.Controls.MetroTabPage();
+            this.tbxReply = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvMessageAdmin = new System.Windows.Forms.DataGridView();
+            this.chMessagesIdAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessagesDateAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessagesTypeAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessagesMessageAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessagesReplyAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbxExport = new System.Windows.Forms.PictureBox();
+            this.pbxReply = new System.Windows.Forms.PictureBox();
+            this.btnSendReply = new System.Windows.Forms.Button();
+            this.btnMessagesExport = new System.Windows.Forms.Button();
             this.mtpTenantList = new MetroFramework.Controls.MetroTabPage();
             this.lblRoom = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
@@ -79,19 +92,6 @@
             this.chScore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_TenantRemoveSelected = new System.Windows.Forms.Button();
             this.btnTenantAdd = new System.Windows.Forms.Button();
-            this.mtpMessagesAdmin = new MetroFramework.Controls.MetroTabPage();
-            this.tbxReply = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvMessageAdmin = new System.Windows.Forms.DataGridView();
-            this.chMessagesIdAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessagesDateAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessagesTypeAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessagesMessageAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessagesReplyAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pbxExport = new System.Windows.Forms.PictureBox();
-            this.pbxReply = new System.Windows.Forms.PictureBox();
-            this.btnSendReply = new System.Windows.Forms.Button();
-            this.btnMessagesExport = new System.Windows.Forms.Button();
             this.mtpTenantsList = new MetroFramework.Controls.MetroTabPage();
             this.btnUncompleteTask = new System.Windows.Forms.Button();
             this.dgvSchedule = new System.Windows.Forms.DataGridView();
@@ -113,14 +113,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxModifyRule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddRule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesAdmin)).BeginInit();
-            this.mtpTenantList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mtpMessagesAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxReply)).BeginInit();
+            this.mtpTenantList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mtpTenantsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.pHeader.SuspendLayout();
@@ -193,15 +193,15 @@
             // mtcAdmin
             // 
             this.mtcAdmin.Controls.Add(this.mtpHouseRulesAdmin);
-            this.mtcAdmin.Controls.Add(this.mtpMessagesAdmin);
             this.mtcAdmin.Controls.Add(this.mtpTenantList);
+            this.mtcAdmin.Controls.Add(this.mtpMessagesAdmin);
             this.mtcAdmin.Controls.Add(this.mtpTenantsList);
             this.mtcAdmin.CustomBackground = true;
             this.mtcAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtcAdmin.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.mtcAdmin.Location = new System.Drawing.Point(0, 106);
             this.mtcAdmin.Name = "mtcAdmin";
-            this.mtcAdmin.SelectedIndex = 2;
+            this.mtcAdmin.SelectedIndex = 0;
             this.mtcAdmin.Size = new System.Drawing.Size(1054, 448);
             this.mtcAdmin.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcAdmin.TabIndex = 41;
@@ -367,6 +367,153 @@
             this.chDesc.MinimumWidth = 6;
             this.chDesc.Name = "chDesc";
             this.chDesc.Width = 477;
+            // 
+            // mtpMessagesAdmin
+            // 
+            this.mtpMessagesAdmin.Controls.Add(this.tbxReply);
+            this.mtpMessagesAdmin.Controls.Add(this.label1);
+            this.mtpMessagesAdmin.Controls.Add(this.dgvMessageAdmin);
+            this.mtpMessagesAdmin.Controls.Add(this.pbxExport);
+            this.mtpMessagesAdmin.Controls.Add(this.pbxReply);
+            this.mtpMessagesAdmin.Controls.Add(this.btnSendReply);
+            this.mtpMessagesAdmin.Controls.Add(this.btnMessagesExport);
+            this.mtpMessagesAdmin.HorizontalScrollbarBarColor = true;
+            this.mtpMessagesAdmin.Location = new System.Drawing.Point(4, 39);
+            this.mtpMessagesAdmin.Name = "mtpMessagesAdmin";
+            this.mtpMessagesAdmin.Size = new System.Drawing.Size(1046, 405);
+            this.mtpMessagesAdmin.TabIndex = 2;
+            this.mtpMessagesAdmin.Text = "Complaints and Questions";
+            this.mtpMessagesAdmin.VerticalScrollbarBarColor = true;
+            // 
+            // tbxReply
+            // 
+            this.tbxReply.Location = new System.Drawing.Point(3, 354);
+            this.tbxReply.Name = "tbxReply";
+            this.tbxReply.Size = new System.Drawing.Size(611, 22);
+            this.tbxReply.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 18);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Reply Selected With";
+            // 
+            // dgvMessageAdmin
+            // 
+            this.dgvMessageAdmin.AllowUserToDeleteRows = false;
+            this.dgvMessageAdmin.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMessageAdmin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvMessageAdmin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMessageAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMessageAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chMessagesIdAdmin,
+            this.chMessagesDateAdmin,
+            this.chMessagesTypeAdmin,
+            this.chMessagesMessageAdmin,
+            this.chMessagesReplyAdmin});
+            this.dgvMessageAdmin.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMessageAdmin.Location = new System.Drawing.Point(3, 5);
+            this.dgvMessageAdmin.Name = "dgvMessageAdmin";
+            this.dgvMessageAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMessageAdmin.RowHeadersVisible = false;
+            this.dgvMessageAdmin.RowHeadersWidth = 51;
+            this.dgvMessageAdmin.RowTemplate.Height = 24;
+            this.dgvMessageAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMessageAdmin.Size = new System.Drawing.Size(1035, 298);
+            this.dgvMessageAdmin.TabIndex = 9;
+            // 
+            // chMessagesIdAdmin
+            // 
+            this.chMessagesIdAdmin.HeaderText = "Id";
+            this.chMessagesIdAdmin.MinimumWidth = 6;
+            this.chMessagesIdAdmin.Name = "chMessagesIdAdmin";
+            this.chMessagesIdAdmin.Width = 50;
+            // 
+            // chMessagesDateAdmin
+            // 
+            this.chMessagesDateAdmin.HeaderText = "Date added";
+            this.chMessagesDateAdmin.MinimumWidth = 6;
+            this.chMessagesDateAdmin.Name = "chMessagesDateAdmin";
+            this.chMessagesDateAdmin.Width = 175;
+            // 
+            // chMessagesTypeAdmin
+            // 
+            this.chMessagesTypeAdmin.HeaderText = "Type";
+            this.chMessagesTypeAdmin.MinimumWidth = 6;
+            this.chMessagesTypeAdmin.Name = "chMessagesTypeAdmin";
+            this.chMessagesTypeAdmin.Width = 125;
+            // 
+            // chMessagesMessageAdmin
+            // 
+            this.chMessagesMessageAdmin.HeaderText = "Message";
+            this.chMessagesMessageAdmin.MinimumWidth = 6;
+            this.chMessagesMessageAdmin.Name = "chMessagesMessageAdmin";
+            this.chMessagesMessageAdmin.Width = 300;
+            // 
+            // chMessagesReplyAdmin
+            // 
+            this.chMessagesReplyAdmin.HeaderText = "Reply";
+            this.chMessagesReplyAdmin.MinimumWidth = 6;
+            this.chMessagesReplyAdmin.Name = "chMessagesReplyAdmin";
+            this.chMessagesReplyAdmin.Width = 300;
+            // 
+            // pbxExport
+            // 
+            this.pbxExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxExport.BackgroundImage = global::Project.Properties.Resources.excel_2_512;
+            this.pbxExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxExport.Location = new System.Drawing.Point(1011, 343);
+            this.pbxExport.Name = "pbxExport";
+            this.pbxExport.Size = new System.Drawing.Size(27, 23);
+            this.pbxExport.TabIndex = 42;
+            this.pbxExport.TabStop = false;
+            // 
+            // pbxReply
+            // 
+            this.pbxReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxReply.BackgroundImage = global::Project.Properties.Resources.reply_512;
+            this.pbxReply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxReply.Location = new System.Drawing.Point(784, 343);
+            this.pbxReply.Name = "pbxReply";
+            this.pbxReply.Size = new System.Drawing.Size(29, 23);
+            this.pbxReply.TabIndex = 43;
+            this.pbxReply.TabStop = false;
+            // 
+            // btnSendReply
+            // 
+            this.btnSendReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnSendReply.FlatAppearance.BorderSize = 0;
+            this.btnSendReply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSendReply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendReply.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSendReply.Location = new System.Drawing.Point(638, 330);
+            this.btnSendReply.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSendReply.Name = "btnSendReply";
+            this.btnSendReply.Size = new System.Drawing.Size(185, 45);
+            this.btnSendReply.TabIndex = 12;
+            this.btnSendReply.Text = "Send reply";
+            this.btnSendReply.UseVisualStyleBackColor = false;
+            this.btnSendReply.Click += new System.EventHandler(this.BtnSendReply_Click);
+            // 
+            // btnMessagesExport
+            // 
+            this.btnMessagesExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnMessagesExport.FlatAppearance.BorderSize = 0;
+            this.btnMessagesExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMessagesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMessagesExport.Location = new System.Drawing.Point(853, 330);
+            this.btnMessagesExport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMessagesExport.Name = "btnMessagesExport";
+            this.btnMessagesExport.Size = new System.Drawing.Size(193, 46);
+            this.btnMessagesExport.TabIndex = 13;
+            this.btnMessagesExport.Text = "Export As EXCEL";
+            this.btnMessagesExport.UseVisualStyleBackColor = false;
+            this.btnMessagesExport.Click += new System.EventHandler(this.BtnMessagesExport_Click);
             // 
             // mtpTenantList
             // 
@@ -612,153 +759,6 @@
             this.btnTenantAdd.UseVisualStyleBackColor = false;
             this.btnTenantAdd.Click += new System.EventHandler(this.Btn_TenantAdd_Click);
             // 
-            // mtpMessagesAdmin
-            // 
-            this.mtpMessagesAdmin.Controls.Add(this.tbxReply);
-            this.mtpMessagesAdmin.Controls.Add(this.label1);
-            this.mtpMessagesAdmin.Controls.Add(this.dgvMessageAdmin);
-            this.mtpMessagesAdmin.Controls.Add(this.pbxExport);
-            this.mtpMessagesAdmin.Controls.Add(this.pbxReply);
-            this.mtpMessagesAdmin.Controls.Add(this.btnSendReply);
-            this.mtpMessagesAdmin.Controls.Add(this.btnMessagesExport);
-            this.mtpMessagesAdmin.HorizontalScrollbarBarColor = true;
-            this.mtpMessagesAdmin.Location = new System.Drawing.Point(4, 39);
-            this.mtpMessagesAdmin.Name = "mtpMessagesAdmin";
-            this.mtpMessagesAdmin.Size = new System.Drawing.Size(1046, 405);
-            this.mtpMessagesAdmin.TabIndex = 2;
-            this.mtpMessagesAdmin.Text = "Complaints and Questions";
-            this.mtpMessagesAdmin.VerticalScrollbarBarColor = true;
-            // 
-            // tbxReply
-            // 
-            this.tbxReply.Location = new System.Drawing.Point(3, 354);
-            this.tbxReply.Name = "tbxReply";
-            this.tbxReply.Size = new System.Drawing.Size(611, 22);
-            this.tbxReply.TabIndex = 45;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 325);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 18);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Reply Selected With";
-            // 
-            // dgvMessageAdmin
-            // 
-            this.dgvMessageAdmin.AllowUserToDeleteRows = false;
-            this.dgvMessageAdmin.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvMessageAdmin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvMessageAdmin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvMessageAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMessageAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chMessagesIdAdmin,
-            this.chMessagesDateAdmin,
-            this.chMessagesTypeAdmin,
-            this.chMessagesMessageAdmin,
-            this.chMessagesReplyAdmin});
-            this.dgvMessageAdmin.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMessageAdmin.Location = new System.Drawing.Point(3, 5);
-            this.dgvMessageAdmin.Name = "dgvMessageAdmin";
-            this.dgvMessageAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvMessageAdmin.RowHeadersVisible = false;
-            this.dgvMessageAdmin.RowHeadersWidth = 51;
-            this.dgvMessageAdmin.RowTemplate.Height = 24;
-            this.dgvMessageAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageAdmin.Size = new System.Drawing.Size(1035, 298);
-            this.dgvMessageAdmin.TabIndex = 9;
-            // 
-            // chMessagesIdAdmin
-            // 
-            this.chMessagesIdAdmin.HeaderText = "Id";
-            this.chMessagesIdAdmin.MinimumWidth = 6;
-            this.chMessagesIdAdmin.Name = "chMessagesIdAdmin";
-            this.chMessagesIdAdmin.Width = 50;
-            // 
-            // chMessagesDateAdmin
-            // 
-            this.chMessagesDateAdmin.HeaderText = "Date added";
-            this.chMessagesDateAdmin.MinimumWidth = 6;
-            this.chMessagesDateAdmin.Name = "chMessagesDateAdmin";
-            this.chMessagesDateAdmin.Width = 175;
-            // 
-            // chMessagesTypeAdmin
-            // 
-            this.chMessagesTypeAdmin.HeaderText = "Type";
-            this.chMessagesTypeAdmin.MinimumWidth = 6;
-            this.chMessagesTypeAdmin.Name = "chMessagesTypeAdmin";
-            this.chMessagesTypeAdmin.Width = 125;
-            // 
-            // chMessagesMessageAdmin
-            // 
-            this.chMessagesMessageAdmin.HeaderText = "Message";
-            this.chMessagesMessageAdmin.MinimumWidth = 6;
-            this.chMessagesMessageAdmin.Name = "chMessagesMessageAdmin";
-            this.chMessagesMessageAdmin.Width = 300;
-            // 
-            // chMessagesReplyAdmin
-            // 
-            this.chMessagesReplyAdmin.HeaderText = "Reply";
-            this.chMessagesReplyAdmin.MinimumWidth = 6;
-            this.chMessagesReplyAdmin.Name = "chMessagesReplyAdmin";
-            this.chMessagesReplyAdmin.Width = 300;
-            // 
-            // pbxExport
-            // 
-            this.pbxExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxExport.BackgroundImage = global::Project.Properties.Resources.excel_2_512;
-            this.pbxExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxExport.Location = new System.Drawing.Point(1011, 343);
-            this.pbxExport.Name = "pbxExport";
-            this.pbxExport.Size = new System.Drawing.Size(27, 23);
-            this.pbxExport.TabIndex = 42;
-            this.pbxExport.TabStop = false;
-            // 
-            // pbxReply
-            // 
-            this.pbxReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxReply.BackgroundImage = global::Project.Properties.Resources.reply_512;
-            this.pbxReply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxReply.Location = new System.Drawing.Point(784, 343);
-            this.pbxReply.Name = "pbxReply";
-            this.pbxReply.Size = new System.Drawing.Size(29, 23);
-            this.pbxReply.TabIndex = 43;
-            this.pbxReply.TabStop = false;
-            // 
-            // btnSendReply
-            // 
-            this.btnSendReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnSendReply.FlatAppearance.BorderSize = 0;
-            this.btnSendReply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSendReply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendReply.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSendReply.Location = new System.Drawing.Point(638, 330);
-            this.btnSendReply.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSendReply.Name = "btnSendReply";
-            this.btnSendReply.Size = new System.Drawing.Size(185, 45);
-            this.btnSendReply.TabIndex = 12;
-            this.btnSendReply.Text = "Send reply";
-            this.btnSendReply.UseVisualStyleBackColor = false;
-            this.btnSendReply.Click += new System.EventHandler(this.BtnSendReply_Click);
-            // 
-            // btnMessagesExport
-            // 
-            this.btnMessagesExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnMessagesExport.FlatAppearance.BorderSize = 0;
-            this.btnMessagesExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMessagesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMessagesExport.Location = new System.Drawing.Point(853, 330);
-            this.btnMessagesExport.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMessagesExport.Name = "btnMessagesExport";
-            this.btnMessagesExport.Size = new System.Drawing.Size(193, 46);
-            this.btnMessagesExport.TabIndex = 13;
-            this.btnMessagesExport.Text = "Export As EXCEL";
-            this.btnMessagesExport.UseVisualStyleBackColor = false;
-            this.btnMessagesExport.Click += new System.EventHandler(this.BtnMessagesExport_Click);
-            // 
             // mtpTenantsList
             // 
             this.mtpTenantsList.Controls.Add(this.btnUncompleteTask);
@@ -954,16 +954,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxModifyRule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddRule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesAdmin)).EndInit();
-            this.mtpTenantList.ResumeLayout(false);
-            this.mtpTenantList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAddUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mtpMessagesAdmin.ResumeLayout(false);
             this.mtpMessagesAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxReply)).EndInit();
+            this.mtpTenantList.ResumeLayout(false);
+            this.mtpTenantList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mtpTenantsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             this.pHeader.ResumeLayout(false);

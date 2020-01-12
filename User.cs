@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    class User
+    public class User
     {
         private static int autoIncId = 1;
 

@@ -19,7 +19,7 @@ namespace Project
             currentUser = studentsHousing.GetCurrentStudent();
 
             // Create schedule if it wasn't created
-            if (studentsHousing.GetSchedulesList().Count == 0)
+            if (studentsHousing.GetSchedulesList().Length == 0)
             {
                 studentsHousing.AddDates();
                 studentsHousing.CreateSchedule();
@@ -89,7 +89,7 @@ namespace Project
         // Update Messages List view (STUDENT)
         private void UpdateMessagesListView()
         {
-            List<Message> messages = studentsHousing.GetMessagesList();
+            Message[] messages = studentsHousing.GetMessagesCurrentUser(currentUser.Id);
 
             // Clear list view
             dgvMessageStudent.Rows.Clear();
@@ -120,7 +120,7 @@ namespace Project
         // Update House Rules List view (STUDENT and ADMIN)
         private void UpdateHouseRulesListView()
         {
-            List<HouseRule> houseRules = studentsHousing.GetRulesList();
+            HouseRule[] houseRules = studentsHousing.GetRulesList();
 
             // Clear list view
             dgvHouseRulesStudent.Rows.Clear();
@@ -149,7 +149,7 @@ namespace Project
         public void UpdateScheduleList()
         {
             // Schedule list
-            List<Schedule> schedules = studentsHousing.GetSchedulesList().OrderBy(o => o.DateId).ToList();
+            Schedule[] schedules = studentsHousing.GetSchedulesList().OrderBy(o => o.DateId).ToArray();
 
             // Clear list view
             dgvSchedule.Rows.Clear();

@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    class Schedule
+    public class Schedule
     {
         // Constructor
         public Schedule(int dateId, TaskType taskType, int studentId, TaskStatus status)

@@ -6,22 +6,16 @@ using System.Data;
 
 namespace Project
 {
-    enum MessageSubject { Question, Complaint}
-    enum TaskType { Cleaning, Garbage, Shopping}
-    enum TaskStatus { Pending, Completed, NotCompleted}
-
-    class StudentsHousing
+    public class StudentsHousing
     {
         // Fields
-        List<Student> students;
-        List<Admin> admins;
-        List<HouseRule> houseRules;
-        List<Message> messages;
-        List<Date> dates;
-        List<Schedule> schedules;
+        private List<Student> students;
+        private List<Admin> admins;
+        private List<HouseRule> houseRules;
+        private List<Message> messages;
+        private List<Date> dates;
+        private List<Schedule> schedules;
         private static StudentsHousing instance = null;
-        // No need for this/ because it's not multi threading
-        private static readonly object padlock = new object();
         // Current user
         private Student currentStudent;
         private Admin currentAdmin;
@@ -48,14 +42,11 @@ namespace Project
         {
             get
             {
-                lock (padlock)
+                if (instance == null)
                 {
-                    if (instance == null)
-                    {
-                        instance = new StudentsHousing();
-                    }
-                    return instance;
+                    instance = new StudentsHousing();
                 }
+                return instance;
             }
         }
 
@@ -74,9 +65,9 @@ namespace Project
             students.Add(student);
         }
 
-        public List<Student> GetStudentsList()
+        public Student[] GetStudentsList()
         {
-            return students;
+            return students.ToArray();
         }
 
         public void RemoveStudentById(int id)
@@ -102,7 +93,7 @@ namespace Project
             return "";
         }
 
-        public int FindStudentIndex(int studentId)
+        private int FindStudentIndex(int studentId)
         {
             for (int i = 0; i < students.Count; i++)
             {
@@ -126,7 +117,7 @@ namespace Project
             return 0;
         }
 
-        public bool StudentExists(string email)
+        private bool StudentExists(string email)
         {
             for (int i = 0; i < students.Count; i++)
             {
@@ -156,7 +147,7 @@ namespace Project
             admins.Add(admin);
         }
 
-        public bool AdminExists(string email)
+        private bool AdminExists(string email)
         {
             for (int i = 0; i < admins.Count; i++)
             {
@@ -184,9 +175,9 @@ namespace Project
             houseRules.Add(rule);
         }
 
-        public List<HouseRule> GetRulesList()
+        public HouseRule[] GetRulesList()
         {
-            return houseRules;
+            return houseRules.ToArray();
         }
 
         public void RemoveHouseRuleById(int id)
@@ -229,9 +220,9 @@ namespace Project
         }
 
         // Get messages
-        public List<Message> GetMessagesList()
+        public Message[] GetMessagesList()
         {
-            return messages;
+            return messages.ToArray();
         }
 
         // Remove message
@@ -246,14 +237,29 @@ namespace Project
             }
         }
 
+        // Get messages current user
+        public Message[] GetMessagesCurrentUser(int studentId)
+        {
+            List<Message> userMessages = new List<Message>();
+            foreach (var message in messages)
+            {
+                if (message.StudentId == studentId)
+                {
+                    userMessages.Add(message);
+                }
+            }
+
+            return userMessages.ToArray();
+        }
+
         // Send reply/ ADMIN
         public void SendReply(int messageId, string reply)
         {
-            for (int i = 0; i < messages.Count; i++)
+            foreach (var message in messages)
             {
-                if (messages[i].Id == messageId)
+                if (message.Id == messageId)
                 {
-                    messages[i].UpdateReply(messageId, reply);
+                    message.UpdateReply(messageId, reply);
                 }
             }
         }
@@ -266,7 +272,7 @@ namespace Project
             dates.Add(date);
         }
 
-        public List<Date> GetDatesList()
+        private List<Date> GetDatesList()
         {
             return dates;
         }
@@ -278,9 +284,9 @@ namespace Project
             schedules.Add(schedule);
         }
 
-        public List<Schedule> GetSchedulesList()
+        public Schedule[] GetSchedulesList()
         {
-            return schedules;
+            return schedules.ToArray();
         }
 
         // Create schedule
@@ -290,11 +296,11 @@ namespace Project
             // Dates list
             List<Date> dates = GetDatesList();
             // Students list
-            List<Student> students = GetStudentsList();
+            Student[] students = GetStudentsList();
 
             int taskCounter = 0;
             int dateCounter = 0;
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 0; i < students.Length; i++)
             {
                 for (int j = dateCounter; j < dates.Count; j += 3)
                 {
@@ -356,7 +362,7 @@ namespace Project
             return DateTime.Now;
         }
 
-        public int FindDateId(DateTime date)
+        private int FindDateId(DateTime date)
         {
             for (int i = 0; i < dates.Count; i++)
             {
@@ -436,70 +442,6 @@ namespace Project
             }
         }
 
-        // Export Excel
-        public void ExportToExcel()
-        {
-            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-            var workbook = new ExcelFile();
-            var worksheet = workbook.Worksheets.Add("Exported from messages");
-
-            // Create headers
-            var dataTable = new DataTable();
-            dataTable.Columns.Add("Id", typeof(int));
-            dataTable.Columns.Add("Date Added", typeof(DateTime));
-            dataTable.Columns.Add("Type", typeof(string));
-            dataTable.Columns.Add("Message", typeof(string));
-            dataTable.Columns.Add("Reply", typeof(string));
-
-            // Create rows
-            for (int i = 0; i < messages.Count; i++)
-            {
-                // If message is a question
-                if(messages[i].Subject == MessageSubject.Question)
-                {
-                    dataTable.Rows.Add(messages[i].Id, messages[i].DateCreated, "Question", messages[i].MessageText, messages[i].Reply);
-
-                }
-                // If message is a complaint
-                else
-                {
-                    dataTable.Rows.Add(messages[i].Id, messages[i].DateCreated, "Complaint", messages[i].MessageText, messages[i].Reply);
-                }
-            }
-
-            // Insert DataTable to an Excel worksheet.
-            worksheet.InsertDataTable(dataTable,
-                new InsertDataTableOptions()
-                {
-                    ColumnHeaders = true,
-                    StartRow = 0
-                });
-
-            /* Style */
-            // Auto fit columns, add color and background color
-            int columnCount = worksheet.CalculateMaxUsedColumns();
-            for (int i = 0; i < columnCount; i++)
-            {
-                worksheet.Columns[i].AutoFit(1, worksheet.Rows[0], worksheet.Rows[worksheet.Rows.Count - 1]);
-                worksheet.Rows[0].Cells[i].Style.FillPattern.SetGradient(GradientShadingStyle.HorizontalHigh, SpreadsheetColor.FromName(ColorName.Accent5Darker25Pct), SpreadsheetColor.FromName(ColorName.Accent5Darker50Pct));
-                worksheet.Rows[0].Cells[i].Style.Font.Color = SpreadsheetColor.FromName(ColorName.White);
-            }
-
-            // Apply borders to specific cells
-            worksheet.ConditionalFormatting.AddContainText("C2:C" + (messages.Count + 1), ContainTextOperator.Contains, "Complaint").
-                Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromName(ColorName.Red), LineStyle.Double);
-            worksheet.ConditionalFormatting.AddContainText("C2:C" + (messages.Count + 1), ContainTextOperator.Contains, "Question").
-                Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromName(ColorName.Green), LineStyle.Thick);
-
-            // Font weight
-            worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-            // Wrap text
-            worksheet.Cells.Style.WrapText = true;
-            // Header horizontal alignment
-            worksheet.Rows[0].Style.HorizontalAlignment = HorizontalAlignmentStyle.Center;
-            workbook.Save("messages.xlsx");
-        }
-
         /* Login */
         public string GetUserType(string email)
         {
@@ -554,6 +496,7 @@ namespace Project
         {
             this.currentStudent = currentUser;
         }
+
         private void SetCredentials(Admin currentUser)
         {
             this.currentAdmin = currentUser;
@@ -613,14 +556,14 @@ namespace Project
 
             //Messages
             Message message1, message2, message3, message4, message5, message6, message7, message8;
-            message1 = new Message(DateTime.Now, MessageSubject.Question, "How can I make changes to my tenancy agreement?", 0);
+            message1 = new Message(DateTime.Now, MessageSubject.Question, "How can I make changes to my tenancy agreement?", 4);
             message2 = new Message(DateTime.Now, MessageSubject.Complaint, "The elevator does not work, when will it be repaired?", 1);
             message3 = new Message(DateTime.Now, MessageSubject.Complaint, "People are not cleaning the shared facilities", 3);
             message4 = new Message(DateTime.Now, MessageSubject.Question, "Why has my rent increased?", 2);
             message5 = new Message(DateTime.Now, MessageSubject.Complaint, "My neighbors are organizing parties during the week very late at night", 2);
             message6 = new Message(DateTime.Now, MessageSubject.Question, "How can I speak to my housing officer?", 1);
-            message7 = new Message(DateTime.Now, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 0);
-            message8 = new Message(DateTime.Now, MessageSubject.Question, "How can I report a repair?", 0);
+            message7 = new Message(DateTime.Now, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 4);
+            message8 = new Message(DateTime.Now, MessageSubject.Question, "How can I report a repair?", 4);
             AddMessageToList(message1);
             AddMessageToList(message2);
             AddMessageToList(message3);

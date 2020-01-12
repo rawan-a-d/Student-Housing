@@ -3,7 +3,7 @@
 namespace Project
 {
     // Date/Subject/Message/Reply/Student ID
-    class Message
+    public class Message
     {
         private static int autoIncId = 1;
 

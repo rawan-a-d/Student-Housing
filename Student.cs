@@ -2,7 +2,7 @@
 
 namespace Project
 {
-    class Student: User
+    public class Student: User
     {
         private double balance;
         private int age;

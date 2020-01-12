@@ -2,7 +2,7 @@
 
 namespace Project
 {
-    class HouseRule
+    public class HouseRule
     {
         private static int autoIncId = 1;
 
