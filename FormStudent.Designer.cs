@@ -38,6 +38,7 @@
             this.lbl_LoggedInAs = new System.Windows.Forms.Label();
             this.mtcStudent = new MetroFramework.Controls.MetroTabControl();
             this.mtpSchedule = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dvgPendingEvents = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,26 +73,42 @@
             this.chTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_FilterSearch = new System.Windows.Forms.Button();
-            this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
-            this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
-            this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDateStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDescriptionStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
-            this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.mtpMessages = new MetroFramework.Controls.MetroTabPage();
             this.tbxMessageDescription = new System.Windows.Forms.TextBox();
             this.cbxMessageType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvMessageStudent = new System.Windows.Forms.DataGridView();
+            this.chMessagesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessagesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessageType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessageText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chMessageReply = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbxAddMessage = new System.Windows.Forms.PictureBox();
             this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
             this.btnRemoveSelectedMessage = new System.Windows.Forms.Button();
             this.btnMessageAdd = new System.Windows.Forms.Button();
+            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
+            this.btn_AgreementRejectSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementDeleteSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementEditSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementAcceptSelected = new System.Windows.Forms.Button();
+            this.cbx_AgreementPersonInvolved = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dgv_AgreementsStudent = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
+            this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
+            this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
+            this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDateStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDescriptionStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.dgvStudentTasks = new System.Windows.Forms.DataGridView();
             this.chDateTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,37 +166,22 @@
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.btnPrevMonth = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chMessagesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessagesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessageType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessageText = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chMessageReply = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tb_CreateEventTime = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.mtcStudent.SuspendLayout();
             this.mtpSchedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPendingEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
-            this.mtpHouseRules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
-            this.mtpAgreements.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.mtpMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
+            this.mtpAgreements.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AgreementsStudent)).BeginInit();
+            this.mtpHouseRules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
             this.mtpProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
@@ -189,7 +191,6 @@
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -295,9 +296,9 @@
             // 
             this.mtcStudent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mtcStudent.Controls.Add(this.mtpSchedule);
+            this.mtcStudent.Controls.Add(this.mtpMessages);
             this.mtcStudent.Controls.Add(this.mtpAgreements);
             this.mtcStudent.Controls.Add(this.mtpHouseRules);
-            this.mtcStudent.Controls.Add(this.mtpMessages);
             this.mtcStudent.Controls.Add(this.mtpProfile);
             this.mtcStudent.Controls.Add(this.metroTabPage1);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -307,7 +308,7 @@
             this.mtcStudent.Location = new System.Drawing.Point(0, 80);
             this.mtcStudent.Margin = new System.Windows.Forms.Padding(2);
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 3;
+            this.mtcStudent.SelectedIndex = 0;
             this.mtcStudent.Size = new System.Drawing.Size(790, 423);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
@@ -318,8 +319,6 @@
             // mtpSchedule
             // 
             this.mtpSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.mtpSchedule.Controls.Add(this.label17);
-            this.mtpSchedule.Controls.Add(this.tb_CreateEventTime);
             this.mtpSchedule.Controls.Add(this.pictureBox1);
             this.mtpSchedule.Controls.Add(this.label13);
             this.mtpSchedule.Controls.Add(this.dvgPendingEvents);
@@ -360,6 +359,15 @@
             this.mtpSchedule.VerticalScrollbarBarColor = true;
             this.mtpSchedule.VerticalScrollbarSize = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(378, 187);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(399, 1);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -393,6 +401,7 @@
             this.dvgPendingEvents.RowHeadersVisible = false;
             this.dvgPendingEvents.RowHeadersWidth = 51;
             this.dvgPendingEvents.RowTemplate.Height = 24;
+            this.dvgPendingEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgPendingEvents.Size = new System.Drawing.Size(388, 98);
             this.dvgPendingEvents.TabIndex = 59;
             // 
@@ -499,7 +508,7 @@
             // cb_CreateEventFloor
             // 
             this.cb_CreateEventFloor.FormattingEnabled = true;
-            this.cb_CreateEventFloor.Location = new System.Drawing.Point(556, 109);
+            this.cb_CreateEventFloor.Location = new System.Drawing.Point(501, 109);
             this.cb_CreateEventFloor.Name = "cb_CreateEventFloor";
             this.cb_CreateEventFloor.Size = new System.Drawing.Size(56, 21);
             this.cb_CreateEventFloor.TabIndex = 50;
@@ -515,7 +524,7 @@
             // tb_CreateEventLocation
             // 
             this.tb_CreateEventLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CreateEventLocation.Location = new System.Drawing.Point(618, 109);
+            this.tb_CreateEventLocation.Location = new System.Drawing.Point(563, 109);
             this.tb_CreateEventLocation.Name = "tb_CreateEventLocation";
             this.tb_CreateEventLocation.Size = new System.Drawing.Size(115, 21);
             this.tb_CreateEventLocation.TabIndex = 48;
@@ -525,7 +534,7 @@
             this.dtpCreateEventDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCreateEventDatePicker.Location = new System.Drawing.Point(379, 109);
             this.dtpCreateEventDatePicker.Name = "dtpCreateEventDatePicker";
-            this.dtpCreateEventDatePicker.Size = new System.Drawing.Size(96, 20);
+            this.dtpCreateEventDatePicker.Size = new System.Drawing.Size(116, 20);
             this.dtpCreateEventDatePicker.TabIndex = 47;
             // 
             // lblDateTime
@@ -542,7 +551,7 @@
             // 
             this.lblFloor.AutoSize = true;
             this.lblFloor.BackColor = System.Drawing.SystemColors.Control;
-            this.lblFloor.Location = new System.Drawing.Point(555, 92);
+            this.lblFloor.Location = new System.Drawing.Point(500, 92);
             this.lblFloor.Name = "lblFloor";
             this.lblFloor.Size = new System.Drawing.Size(30, 13);
             this.lblFloor.TabIndex = 45;
@@ -604,7 +613,7 @@
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.BackColor = System.Drawing.SystemColors.Control;
-            this.lblLocation.Location = new System.Drawing.Point(616, 92);
+            this.lblLocation.Location = new System.Drawing.Point(561, 92);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(48, 13);
             this.lblLocation.TabIndex = 39;
@@ -666,6 +675,7 @@
             this.dgvSchedule.RowHeadersVisible = false;
             this.dgvSchedule.RowHeadersWidth = 51;
             this.dgvSchedule.RowTemplate.Height = 24;
+            this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSchedule.Size = new System.Drawing.Size(344, 344);
             this.dgvSchedule.TabIndex = 34;
             // 
@@ -710,144 +720,6 @@
             this.btn_FilterSearch.TabIndex = 52;
             this.btn_FilterSearch.Text = "Search";
             this.btn_FilterSearch.UseVisualStyleBackColor = false;
-            // 
-            // mtpHouseRules
-            // 
-            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
-            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
-            this.mtpHouseRules.HorizontalScrollbarSize = 8;
-            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
-            this.mtpHouseRules.Margin = new System.Windows.Forms.Padding(2);
-            this.mtpHouseRules.Name = "mtpHouseRules";
-            this.mtpHouseRules.Size = new System.Drawing.Size(782, 380);
-            this.mtpHouseRules.TabIndex = 1;
-            this.mtpHouseRules.Text = "House Rules";
-            this.mtpHouseRules.VerticalScrollbarBarColor = true;
-            this.mtpHouseRules.VerticalScrollbarSize = 8;
-            // 
-            // dgvHouseRulesStudent
-            // 
-            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
-            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chIdStudent,
-            this.chDateStudent,
-            this.chDescriptionStudent});
-            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(7, 9);
-            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
-            this.dgvHouseRulesStudent.RowHeadersVisible = false;
-            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
-            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(770, 357);
-            this.dgvHouseRulesStudent.TabIndex = 9;
-            // 
-            // chIdStudent
-            // 
-            this.chIdStudent.HeaderText = "Id";
-            this.chIdStudent.MinimumWidth = 6;
-            this.chIdStudent.Name = "chIdStudent";
-            this.chIdStudent.Width = 60;
-            // 
-            // chDateStudent
-            // 
-            this.chDateStudent.HeaderText = "Date Added";
-            this.chDateStudent.MinimumWidth = 6;
-            this.chDateStudent.Name = "chDateStudent";
-            this.chDateStudent.Width = 110;
-            // 
-            // chDescriptionStudent
-            // 
-            this.chDescriptionStudent.HeaderText = "Description";
-            this.chDescriptionStudent.MinimumWidth = 6;
-            this.chDescriptionStudent.Name = "chDescriptionStudent";
-            this.chDescriptionStudent.Width = 597;
-            // 
-            // mtpAgreements
-            // 
-            this.mtpAgreements.Controls.Add(this.comboBox2);
-            this.mtpAgreements.Controls.Add(this.label16);
-            this.mtpAgreements.Controls.Add(this.comboBox1);
-            this.mtpAgreements.Controls.Add(this.label15);
-            this.mtpAgreements.Controls.Add(this.label14);
-            this.mtpAgreements.Controls.Add(this.dataGridView1);
-            this.mtpAgreements.Controls.Add(this.btn_NewAgreementSubmit);
-            this.mtpAgreements.Controls.Add(this.tb_NewAgreementDescription);
-            this.mtpAgreements.Controls.Add(this.label9);
-            this.mtpAgreements.HorizontalScrollbarBarColor = true;
-            this.mtpAgreements.HorizontalScrollbarSize = 8;
-            this.mtpAgreements.Location = new System.Drawing.Point(4, 39);
-            this.mtpAgreements.Margin = new System.Windows.Forms.Padding(2);
-            this.mtpAgreements.Name = "mtpAgreements";
-            this.mtpAgreements.Size = new System.Drawing.Size(782, 380);
-            this.mtpAgreements.TabIndex = 2;
-            this.mtpAgreements.Text = "Agreements";
-            this.mtpAgreements.VerticalScrollbarBarColor = true;
-            this.mtpAgreements.VerticalScrollbarSize = 8;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(5, 307);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 15);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Description:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 9);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 268);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // btn_NewAgreementSubmit
-            // 
-            this.btn_NewAgreementSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btn_NewAgreementSubmit.FlatAppearance.BorderSize = 0;
-            this.btn_NewAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_NewAgreementSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_NewAgreementSubmit.Location = new System.Drawing.Point(437, 332);
-            this.btn_NewAgreementSubmit.Name = "btn_NewAgreementSubmit";
-            this.btn_NewAgreementSubmit.Size = new System.Drawing.Size(70, 21);
-            this.btn_NewAgreementSubmit.TabIndex = 6;
-            this.btn_NewAgreementSubmit.Text = "Submit";
-            this.btn_NewAgreementSubmit.UseVisualStyleBackColor = false;
-            // 
-            // tb_NewAgreementDescription
-            // 
-            this.tb_NewAgreementDescription.Location = new System.Drawing.Point(80, 306);
-            this.tb_NewAgreementDescription.Name = "tb_NewAgreementDescription";
-            this.tb_NewAgreementDescription.Size = new System.Drawing.Size(693, 20);
-            this.tb_NewAgreementDescription.TabIndex = 5;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 283);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 15);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Add new agreement";
             // 
             // mtpMessages
             // 
@@ -904,6 +776,7 @@
             // 
             this.dgvMessageStudent.AllowUserToDeleteRows = false;
             this.dgvMessageStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMessageStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMessageStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMessageStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMessageStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -924,6 +797,41 @@
             this.dgvMessageStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMessageStudent.Size = new System.Drawing.Size(778, 235);
             this.dgvMessageStudent.TabIndex = 8;
+            // 
+            // chMessagesId
+            // 
+            this.chMessagesId.HeaderText = "Id";
+            this.chMessagesId.MinimumWidth = 6;
+            this.chMessagesId.Name = "chMessagesId";
+            this.chMessagesId.Width = 50;
+            // 
+            // chMessagesDate
+            // 
+            this.chMessagesDate.HeaderText = "Date";
+            this.chMessagesDate.MinimumWidth = 6;
+            this.chMessagesDate.Name = "chMessagesDate";
+            this.chMessagesDate.Width = 90;
+            // 
+            // chMessageType
+            // 
+            this.chMessageType.HeaderText = "Type";
+            this.chMessageType.MinimumWidth = 6;
+            this.chMessageType.Name = "chMessageType";
+            this.chMessageType.Width = 120;
+            // 
+            // chMessageText
+            // 
+            this.chMessageText.HeaderText = "Message";
+            this.chMessageText.MinimumWidth = 6;
+            this.chMessageText.Name = "chMessageText";
+            this.chMessageText.Width = 280;
+            // 
+            // chMessageReply
+            // 
+            this.chMessageReply.HeaderText = "Reply";
+            this.chMessageReply.MinimumWidth = 6;
+            this.chMessageReply.Name = "chMessageReply";
+            this.chMessageReply.Width = 234;
             // 
             // pbxAddMessage
             // 
@@ -975,6 +883,262 @@
             this.btnMessageAdd.Text = "Add";
             this.btnMessageAdd.UseVisualStyleBackColor = false;
             this.btnMessageAdd.Click += new System.EventHandler(this.BtnMessageAdd_Click);
+            // 
+            // mtpAgreements
+            // 
+            this.mtpAgreements.Controls.Add(this.btn_AgreementRejectSelected);
+            this.mtpAgreements.Controls.Add(this.btn_AgreementDeleteSelected);
+            this.mtpAgreements.Controls.Add(this.btn_AgreementEditSelected);
+            this.mtpAgreements.Controls.Add(this.btn_AgreementAcceptSelected);
+            this.mtpAgreements.Controls.Add(this.cbx_AgreementPersonInvolved);
+            this.mtpAgreements.Controls.Add(this.label15);
+            this.mtpAgreements.Controls.Add(this.label14);
+            this.mtpAgreements.Controls.Add(this.dgv_AgreementsStudent);
+            this.mtpAgreements.Controls.Add(this.btn_NewAgreementSubmit);
+            this.mtpAgreements.Controls.Add(this.tb_NewAgreementDescription);
+            this.mtpAgreements.Controls.Add(this.label9);
+            this.mtpAgreements.HorizontalScrollbarBarColor = true;
+            this.mtpAgreements.HorizontalScrollbarSize = 8;
+            this.mtpAgreements.Location = new System.Drawing.Point(4, 39);
+            this.mtpAgreements.Margin = new System.Windows.Forms.Padding(2);
+            this.mtpAgreements.Name = "mtpAgreements";
+            this.mtpAgreements.Size = new System.Drawing.Size(782, 380);
+            this.mtpAgreements.TabIndex = 2;
+            this.mtpAgreements.Text = "Agreements";
+            this.mtpAgreements.VerticalScrollbarBarColor = true;
+            this.mtpAgreements.VerticalScrollbarSize = 8;
+            // 
+            // btn_AgreementRejectSelected
+            // 
+            this.btn_AgreementRejectSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementRejectSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementRejectSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementRejectSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementRejectSelected.Location = new System.Drawing.Point(483, 345);
+            this.btn_AgreementRejectSelected.Name = "btn_AgreementRejectSelected";
+            this.btn_AgreementRejectSelected.Size = new System.Drawing.Size(96, 21);
+            this.btn_AgreementRejectSelected.TabIndex = 16;
+            this.btn_AgreementRejectSelected.Text = "Reject Selected";
+            this.btn_AgreementRejectSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementRejectSelected.Click += new System.EventHandler(this.btn_AgreementRejectSelected_Click);
+            // 
+            // btn_AgreementDeleteSelected
+            // 
+            this.btn_AgreementDeleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementDeleteSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementDeleteSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementDeleteSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementDeleteSelected.Location = new System.Drawing.Point(682, 345);
+            this.btn_AgreementDeleteSelected.Name = "btn_AgreementDeleteSelected";
+            this.btn_AgreementDeleteSelected.Size = new System.Drawing.Size(91, 21);
+            this.btn_AgreementDeleteSelected.TabIndex = 15;
+            this.btn_AgreementDeleteSelected.Text = "Delete Selected";
+            this.btn_AgreementDeleteSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementDeleteSelected.Click += new System.EventHandler(this.btn_AgreementDeleteSelected_Click);
+            // 
+            // btn_AgreementEditSelected
+            // 
+            this.btn_AgreementEditSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementEditSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementEditSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementEditSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementEditSelected.Location = new System.Drawing.Point(585, 345);
+            this.btn_AgreementEditSelected.Name = "btn_AgreementEditSelected";
+            this.btn_AgreementEditSelected.Size = new System.Drawing.Size(91, 21);
+            this.btn_AgreementEditSelected.TabIndex = 14;
+            this.btn_AgreementEditSelected.Text = "Edit Selected";
+            this.btn_AgreementEditSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementEditSelected.Click += new System.EventHandler(this.btn_AgreementEditSelected_Click);
+            // 
+            // btn_AgreementAcceptSelected
+            // 
+            this.btn_AgreementAcceptSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementAcceptSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementAcceptSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementAcceptSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementAcceptSelected.Location = new System.Drawing.Point(381, 345);
+            this.btn_AgreementAcceptSelected.Name = "btn_AgreementAcceptSelected";
+            this.btn_AgreementAcceptSelected.Size = new System.Drawing.Size(96, 21);
+            this.btn_AgreementAcceptSelected.TabIndex = 13;
+            this.btn_AgreementAcceptSelected.Text = "Accept Selected";
+            this.btn_AgreementAcceptSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementAcceptSelected.Click += new System.EventHandler(this.btn_AgreementAcceptSelected_Click);
+            // 
+            // cbx_AgreementPersonInvolved
+            // 
+            this.cbx_AgreementPersonInvolved.FormattingEnabled = true;
+            this.cbx_AgreementPersonInvolved.Location = new System.Drawing.Point(171, 332);
+            this.cbx_AgreementPersonInvolved.Name = "cbx_AgreementPersonInvolved";
+            this.cbx_AgreementPersonInvolved.Size = new System.Drawing.Size(92, 21);
+            this.cbx_AgreementPersonInvolved.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(5, 334);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(166, 15);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Agreement between you and ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(5, 307);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 15);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Description:";
+            // 
+            // dgv_AgreementsStudent
+            // 
+            this.dgv_AgreementsStudent.AllowUserToDeleteRows = false;
+            this.dgv_AgreementsStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_AgreementsStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_AgreementsStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_AgreementsStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_AgreementsStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_AgreementsStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgv_AgreementsStudent.Location = new System.Drawing.Point(8, 9);
+            this.dgv_AgreementsStudent.Name = "dgv_AgreementsStudent";
+            this.dgv_AgreementsStudent.ReadOnly = true;
+            this.dgv_AgreementsStudent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_AgreementsStudent.RowHeadersVisible = false;
+            this.dgv_AgreementsStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_AgreementsStudent.Size = new System.Drawing.Size(765, 268);
+            this.dgv_AgreementsStudent.TabIndex = 7;
+            this.dgv_AgreementsStudent.CurrentCellChanged += new System.EventHandler(this.dgv_AgreementsStudent_CurrentCellChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Between";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Description";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 376;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Status";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 126;
+            // 
+            // btn_NewAgreementSubmit
+            // 
+            this.btn_NewAgreementSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_NewAgreementSubmit.FlatAppearance.BorderSize = 0;
+            this.btn_NewAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_NewAgreementSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_NewAgreementSubmit.Location = new System.Drawing.Point(269, 332);
+            this.btn_NewAgreementSubmit.Name = "btn_NewAgreementSubmit";
+            this.btn_NewAgreementSubmit.Size = new System.Drawing.Size(70, 21);
+            this.btn_NewAgreementSubmit.TabIndex = 6;
+            this.btn_NewAgreementSubmit.Text = "Submit";
+            this.btn_NewAgreementSubmit.UseVisualStyleBackColor = false;
+            this.btn_NewAgreementSubmit.Click += new System.EventHandler(this.btn_NewAgreementSubmit_Click);
+            // 
+            // tb_NewAgreementDescription
+            // 
+            this.tb_NewAgreementDescription.Location = new System.Drawing.Point(80, 306);
+            this.tb_NewAgreementDescription.Name = "tb_NewAgreementDescription";
+            this.tb_NewAgreementDescription.Size = new System.Drawing.Size(693, 20);
+            this.tb_NewAgreementDescription.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(5, 283);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(117, 15);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Add new agreement";
+            // 
+            // mtpHouseRules
+            // 
+            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
+            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
+            this.mtpHouseRules.HorizontalScrollbarSize = 8;
+            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
+            this.mtpHouseRules.Margin = new System.Windows.Forms.Padding(2);
+            this.mtpHouseRules.Name = "mtpHouseRules";
+            this.mtpHouseRules.Size = new System.Drawing.Size(782, 380);
+            this.mtpHouseRules.TabIndex = 1;
+            this.mtpHouseRules.Text = "House Rules";
+            this.mtpHouseRules.VerticalScrollbarBarColor = true;
+            this.mtpHouseRules.VerticalScrollbarSize = 8;
+            // 
+            // dgvHouseRulesStudent
+            // 
+            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
+            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chIdStudent,
+            this.chDateStudent,
+            this.chDescriptionStudent});
+            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(7, 9);
+            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
+            this.dgvHouseRulesStudent.RowHeadersVisible = false;
+            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
+            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(770, 357);
+            this.dgvHouseRulesStudent.TabIndex = 9;
+            // 
+            // chIdStudent
+            // 
+            this.chIdStudent.HeaderText = "Id";
+            this.chIdStudent.MinimumWidth = 6;
+            this.chIdStudent.Name = "chIdStudent";
+            this.chIdStudent.Width = 60;
+            // 
+            // chDateStudent
+            // 
+            this.chDateStudent.HeaderText = "Date Added";
+            this.chDateStudent.MinimumWidth = 6;
+            this.chDateStudent.Name = "chDateStudent";
+            this.chDateStudent.Width = 110;
+            // 
+            // chDescriptionStudent
+            // 
+            this.chDescriptionStudent.HeaderText = "Description";
+            this.chDescriptionStudent.MinimumWidth = 6;
+            this.chDescriptionStudent.Name = "chDescriptionStudent";
+            this.chDescriptionStudent.Width = 597;
             // 
             // mtpProfile
             // 
@@ -1605,129 +1769,6 @@
             this.btnPrevMonth.Text = "<";
             this.btnPrevMonth.UseVisualStyleBackColor = true;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(5, 334);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 15);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Agreement between";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 332);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 21);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(260, 334);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 15);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "and";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(292, 332);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(128, 21);
-            this.comboBox2.TabIndex = 12;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Between";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 182;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Description";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 430;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(378, 187);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 1);
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
-            // 
-            // chMessagesId
-            // 
-            this.chMessagesId.HeaderText = "Id";
-            this.chMessagesId.MinimumWidth = 6;
-            this.chMessagesId.Name = "chMessagesId";
-            this.chMessagesId.Width = 50;
-            // 
-            // chMessagesDate
-            // 
-            this.chMessagesDate.HeaderText = "Date";
-            this.chMessagesDate.MinimumWidth = 6;
-            this.chMessagesDate.Name = "chMessagesDate";
-            this.chMessagesDate.Width = 90;
-            // 
-            // chMessageType
-            // 
-            this.chMessageType.HeaderText = "Type";
-            this.chMessageType.MinimumWidth = 6;
-            this.chMessageType.Name = "chMessageType";
-            this.chMessageType.Width = 120;
-            // 
-            // chMessageText
-            // 
-            this.chMessageText.HeaderText = "Message";
-            this.chMessageText.MinimumWidth = 6;
-            this.chMessageText.Name = "chMessageText";
-            this.chMessageText.Width = 280;
-            // 
-            // chMessageReply
-            // 
-            this.chMessageReply.HeaderText = "Reply";
-            this.chMessageReply.MinimumWidth = 6;
-            this.chMessageReply.Name = "chMessageReply";
-            this.chMessageReply.Width = 234;
-            // 
-            // tb_CreateEventTime
-            // 
-            this.tb_CreateEventTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CreateEventTime.Location = new System.Drawing.Point(481, 109);
-            this.tb_CreateEventTime.Name = "tb_CreateEventTime";
-            this.tb_CreateEventTime.Size = new System.Drawing.Size(69, 21);
-            this.tb_CreateEventTime.TabIndex = 62;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(478, 94);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(30, 13);
-            this.label17.TabIndex = 63;
-            this.label17.Text = "Time";
-            // 
             // FrmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1745,19 +1786,20 @@
             this.mtcStudent.ResumeLayout(false);
             this.mtpSchedule.ResumeLayout(false);
             this.mtpSchedule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPendingEvents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
-            this.mtpHouseRules.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
-            this.mtpAgreements.ResumeLayout(false);
-            this.mtpAgreements.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.mtpMessages.ResumeLayout(false);
             this.mtpMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
+            this.mtpAgreements.ResumeLayout(false);
+            this.mtpAgreements.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AgreementsStudent)).EndInit();
+            this.mtpHouseRules.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
             this.mtpProfile.ResumeLayout(false);
             this.mtpProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
@@ -1770,7 +1812,6 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1896,22 +1937,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chDateStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn chDescriptionStudent;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dgv_AgreementsStudent;
+        private System.Windows.Forms.ComboBox cbx_AgreementPersonInvolved;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessagesId;
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessagesDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessageType;
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessageText;
         private System.Windows.Forms.DataGridViewTextBoxColumn chMessageReply;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox tb_CreateEventTime;
+        private System.Windows.Forms.Button btn_AgreementEditSelected;
+        private System.Windows.Forms.Button btn_AgreementAcceptSelected;
+        private System.Windows.Forms.Button btn_AgreementDeleteSelected;
+        private System.Windows.Forms.Button btn_AgreementRejectSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

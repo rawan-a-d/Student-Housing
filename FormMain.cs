@@ -452,5 +452,15 @@ namespace Project
                 dgvSchedule.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
         }
+
+        private void dgvHouseRulesAdmin_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string description = dgvHouseRulesAdmin.CurrentRow.Cells[2].Value.ToString();
+                tbxNewRule.Text = description;
+            }
+            catch (Exception ex) { }
+        }
     }
 }
