@@ -1,50 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project
 {
-    class HouseRule
+    public class HouseRule
     {
         private static int autoIncId = 1;
-        private int id;
-        private DateTime dateCreated;
-        private string rule;
 
         // Constructor
-        public HouseRule(DateTime dateCreated, string rule )
+        public HouseRule(DateTime dateCreated, string rule)
         {
-            this.id = autoIncId;
-            this.dateCreated = dateCreated;
-            this.rule = rule;
+            this.Id = autoIncId;
+            this.DateCreated = dateCreated;
+            this.Rule = rule;
             autoIncId++;
         }
 
+        // Properties
+        public int Id { get; }
+        public DateTime DateCreated { get; }
+        public string Rule { get; private set; }
 
         // Methods
         // Update house rule
         public void UpdateHouseRule(int id, string updatedRule)
         {
-            this.rule = updatedRule;
-        }
-
-        // Get methods
-        public int GetId()
-        {
-            return id;
-        }
-
-        public string GetRule()
-        {
-            return rule;
-        }
-
-        public DateTime GetDateCreated()
-        {
-            return dateCreated;
+            this.Rule = updatedRule;
         }
     }
 }

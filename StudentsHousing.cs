@@ -1,53 +1,80 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using GemBox.Spreadsheet;
+using GemBox.Spreadsheet.ConditionalFormatting;
+using System.Data;
 
 namespace Project
 {
-    enum MessageSubject { Question, Complaint}
-    enum TaskType { Cleaning, Garbage, Shopping}
-    enum TaskStatus { Pending, Completed}
-    class StudentsHousing
+    public class StudentsHousing
     {
         // Fields
-        List<Student> students;
-        List<HouseRule> houseRules;
-        List<Message> messages;
-        List<Date> dates;
-        List<Schedule> schedules;
+        private List<Student> students;
+        private List<Admin> admins;
+        private List<HouseRule> houseRules;
+        private List<Message> messages;
+        private List<Date> dates;
+        private List<Schedule> schedules;
+        private static StudentsHousing instance = null;
+        // Current user
+        private Student currentStudent;
+        private Admin currentAdmin;
+        private Student student;
+        private HouseRule houseRule;
+        private Message message;
+        private int studentWithHighestScore;
+
 
         // Constructor
         public StudentsHousing()
         {
             // Initialize lists
             students = new List<Student>();
+            admins = new List<Admin>();
             houseRules = new List<HouseRule>();
             messages = new List<Message>();
             dates = new List<Date>();
             schedules = new List<Schedule>();
+            GenerateTestDate();
+        }
+
+        public static StudentsHousing Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new StudentsHousing();
+                }
+                return instance;
+            }
         }
 
         // Methods
+        /* Student */
+        public void CreateStudent(string name, string email, string password, int floorNr, int roomNr)
+        {
+            student = new Student(name, email, password, floorNr, roomNr);
 
-        // Student
-        public void AddStudentToList(Student student)
+            //Add student to list
+            AddStudentToList(student);
+        }
+
+        private void AddStudentToList(Student student)
         {
             students.Add(student);
         }
 
-        public List<Student> GetStudentsList()
+        public Student[] GetStudentsList()
         {
-            return students;
+            return students.ToArray();
         }
 
         public void RemoveStudentById(int id)
         {
             for (int i = 0; i < students.Count; i++)
             {
-                if (students[i].GetId() == id)
+                if (students[i].Id == id)
                 {
                     students.Remove(students[i]);
                 }
@@ -56,34 +83,110 @@ namespace Project
 
         public string FindStudentById(int studentId)
         {
-            for (int i = 0; i < students.Count; i++)
+            foreach (var student in students)
             {
-                if (students[i].GetId() == studentId)
+                if (student.Id == studentId)
                 {
-                    return students[i].GetName();
+                    return student.Name;
                 }
             }
 
             return "";
         }
 
+        private int FindStudentIndex(int studentId)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].Id == studentId)
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
 
-        // Housing Rule
-        public void AddHouseRuleToList(HouseRule rule)
+        public int FindStudentId(string name)
+        {
+            foreach (var student in students)
+            {
+                if (student.Name == name)
+                {
+                    return student.Id;
+                }
+            }
+
+            return 0;
+        }
+
+        private bool StudentExists(string email)
+        {
+            foreach (var student in students)
+            {
+                if(student.Email == email)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void UpdateStudentInfo(int studentId, string name, int age, string email, string password, string phone)
+        {
+            foreach (var student in students)
+            {
+                if (student.Id == studentId)
+                {
+                    student.UpdateInfo(name, age, email, password, phone);
+                }
+            }
+        }
+
+        /* Admin */
+        private void AddAdminToList(Admin admin)
+        {
+            admins.Add(admin);
+        }
+
+        private bool AdminExists(string email)
+        {
+            foreach (var admin in admins)
+            {
+                if (admin.Email == email)
+                {
+                    return true;
+                    break;
+                }
+            }
+
+            return false;
+        }
+
+
+        /* House Rule */
+        public void CreateHouseRule(DateTime currentDate, string newRule)
+        {
+            houseRule = new HouseRule(currentDate, newRule);
+
+            // Add rule to list
+            AddHouseRuleToList(houseRule);
+        }
+
+        private void AddHouseRuleToList(HouseRule rule)
         {
             houseRules.Add(rule);
         }
 
-        public List<HouseRule> GetRulesList()
+        public HouseRule[] GetRulesList()
         {
-            return houseRules;
+            return houseRules.ToArray();
         }
 
         public void RemoveHouseRuleById(int id)
         {
             for (int i = 0; i < houseRules.Count; i++)
             {
-                if(houseRules[i].GetId() == id)
+                if(houseRules[i].Id == id)
                 {
                     houseRules.Remove(houseRules[i]);
                 }
@@ -94,7 +197,7 @@ namespace Project
         {
             foreach (var rule in houseRules)
             {
-                if (rule.GetId() == id)
+                if (rule.Id == id)
                 {
                     rule.UpdateHouseRule(id, updatedRule);
                 }
@@ -102,17 +205,26 @@ namespace Project
         }
 
 
-        // Messages
+        /* Messages */
+        // Create Message
+        public void CreateMessage(DateTime currentDate, MessageSubject messageType, string messageDesc, int currentStudentId)
+        {
+            message = new Message(currentDate, messageType, messageDesc, currentStudentId);
+
+            // Add message to list
+            AddMessageToList(message);
+        }
+
         // Add message
-        public void AddMessageToList(Message message)
+        private void AddMessageToList(Message message)
         {
             messages.Add(message);
         }
 
         // Get messages
-        public List<Message> GetMessagesList()
+        public Message[] GetMessagesList()
         {
-            return messages;
+            return messages.ToArray();
         }
 
         // Remove message
@@ -120,68 +232,96 @@ namespace Project
         {
             for (int i = 0; i < messages.Count; i++)
             {
-                if (messages[i].GetId() == messageId)
+                if (messages[i].Id == messageId)
                 {
                     messages.Remove(messages[i]);
                 }
             }
         }
 
+        // Get messages current user
+        public Message[] GetMessagesCurrentUser(int studentId)
+        {
+            List<Message> userMessages = new List<Message>();
+            foreach (var message in messages)
+            {
+                if (message.StudentId == studentId)
+                {
+                    userMessages.Add(message);
+                }
+            }
+
+            return userMessages.ToArray();
+        }
+
         // Send reply/ ADMIN
         public void SendReply(int messageId, string reply)
         {
-            for (int i = 0; i < messages.Count; i++)
+            foreach (var message in messages)
             {
-                if (messages[i].GetId() == messageId)
+                if (message.Id == messageId)
                 {
-                    messages[i].UpdateReply(messageId, reply);
+                    message.UpdateReply(reply);
                 }
             }
         }
 
 
-        // Dates
+        /* Dates */
         // Add date
-        public void AddDateToList(Date date)
+        private void AddDateToList(Date date)
         {
             dates.Add(date);
         }
 
-        public List<Date> GetDatesList()
+        private List<Date> GetDatesList()
         {
             return dates;
         }
 
 
-        // Schedules
-        public void AddScheduleToList(Schedule schedule)
+        /* Schedules */
+        private void AddScheduleToList(Schedule schedule)
         {
             schedules.Add(schedule);
         }
 
-        public List<Schedule> GetSchedulesList()
+        public Schedule[] GetSchedulesList()
         {
-            return schedules;
+            return schedules.ToArray();
+        }
+
+        public Schedule[] GetScheduleCurrentUser(int studentId)
+        {
+            List<Schedule> scheduleCurrentUser = new List<Schedule>();
+            foreach (var schedule in schedules)
+            {
+                if (schedule.StudentId == studentId)
+                {
+                    scheduleCurrentUser.Add(schedule);
+                }
+            }
+            return scheduleCurrentUser.ToArray();
         }
 
         // Create schedule
         public void CreateSchedule()
         {
+            EmptySchedule();
             // Dates list
             List<Date> dates = GetDatesList();
             // Students list
-            List<Student> students = GetStudentsList();
+            Student[] students = GetStudentsList();
 
             int taskCounter = 0;
             int dateCounter = 0;
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 0; i < students.Length; i++)
             {
                 for (int j = dateCounter; j < dates.Count; j += 3)
                 {
                     // New schedule
-                    Schedule schedule = new Schedule(dates[j].GetId(), (TaskType)taskCounter, students[i].GetId(), TaskStatus.Pending);
+                    Schedule schedule = new Schedule(dates[j].Id, (TaskType)taskCounter, students[i].Id, TaskStatus.Pending);
                     AddScheduleToList(schedule);
-
                     taskCounter++;
 
                     // If task counter has th same length as TaskType
@@ -191,20 +331,20 @@ namespace Project
                     }
                 }
                 // Increase date by two so that the next student starts after two days
-                dateCounter += 2;
+                dateCounter += 5;
                 // Set taskCounter back to 0
                 taskCounter = 0;
             }
         }
-        
 
-        // Create dates and ad them to dates list
+
+        // Create dates and add them to dates list
         public void AddDates()
         {
             DateTime temp_start;
             DateTime temp_end;
             DateTime startDate = DateTime.Today;
-            DateTime endDate = startDate.AddDays(60);
+            DateTime endDate = startDate.AddDays(54);
 
             //--Normalize dates by getting rid of minues since they will get in the way when doing the loop
             temp_start = new DateTime(startDate.Year, startDate.Month, startDate.Day);
@@ -219,28 +359,199 @@ namespace Project
             }
         }
 
+        private void EmptySchedule()
+        {
+            schedules.Clear();
+        }
+
         public DateTime FindDateById(int dateId)
         {
-            for (int i = 0; i < dates.Count; i++)
+            foreach (var date in dates)
             {
-                if (dates[i].GetId() == dateId)
+                if (date.Id == dateId)
                 {
-                    return dates[i].GetDate();
+                    return date.TaskDate;
                 }
             }
 
             return DateTime.Now;
         }
 
+        private int FindDateId(DateTime date)
+        {
+            foreach (var dateItem in dates)
+            {
+                if (dateItem.TaskDate == date)
+                {
+                    return dateItem.Id;
+                }
+            }
+            return 0;
+        }
+
+
+        // Complete task
+        public void CompleteTask(int studentId, DateTime date)
+        {
+            // Update score
+            int studentIndex = FindStudentIndex(studentId);
+            UpdateScore(studentIndex);
+
+            // Complete task
+            int dateId = FindDateId(date);
+            foreach (var schedule in schedules)
+            {
+                if(schedule.StudentId == studentId && schedule.DateId == dateId)
+                {
+                    schedule.SetStatus(TaskStatus.Completed);
+                    break;
+                }
+            }
+        }
+
+        private void UpdateScore(int studentIndex)
+        {
+            // Update score
+            students[studentIndex].UpdateScore(3);
+        }
+        
+        // Compare scores
+        public bool CompareScores()
+        {
+            int currentStudentScore = currentStudent.Score;
+            foreach (var student in students)
+            {
+                if(student.Score > studentWithHighestScore)
+                {
+                    studentWithHighestScore = student.Score;
+                }
+            }
+            if(studentWithHighestScore == currentStudentScore)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        // Uncomplete task
+        public void UnCompleteTask(int studentId, DateTime date)
+        {
+            // Update Score
+            int studentIndex = FindStudentIndex(studentId);
+            students[studentIndex].Score = 0;
+            students[studentIndex].Score = -5;
+
+            // Uncomplete task
+            int dateId = FindDateId(date);
+            foreach (var schedule in schedules)
+            {
+                if (schedule.StudentId == studentId && schedule.DateId == dateId)
+                {
+                    schedule.SetStatus(TaskStatus.NotCompleted);
+                    break;
+                }
+            }
+        }
+
+        /* Login */
+        public string GetUserType(string email)
+        {
+            if (StudentExists(email))
+            {
+                return "Student";
+            }
+            else if(AdminExists(email))
+            {
+                return "Admin";
+            }
+            else
+            {
+                return "No user found";
+            }
+        }
+
+
+        public bool CheckCredentials(string userType, string email, string password)
+        { 
+            // If student
+            if(userType == "Student")
+            {
+                foreach (var student in students)
+                {
+                    if (email == student.Email && password == student.Password)
+                    {
+                        SetCredentials(student);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            // if admin
+            else if(userType == "Admin")
+            {
+                foreach (var admin in admins)
+                {
+                    if (email == admin.Email && password == admin.Password)
+                    {
+                        SetCredentials(admin);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            return false;
+        }
+
+
+        private void SetCredentials(Student currentUser)
+        {
+            this.currentStudent = currentUser;
+        }
+
+        private void SetCredentials(Admin currentUser)
+        {
+            this.currentAdmin = currentUser;
+        }
+
+        public Student GetCurrentStudent()
+        {
+            return this.currentStudent;
+        }
+        public Admin GetCurrentAdmin()
+        {
+            return this.currentAdmin;
+        }
+
+        // End session user/ logout
+        public void EndSession()
+        {
+            this.currentStudent = null;
+            this.currentAdmin = null;
+        }
 
         // Test data
-        public void GenerateTestDate()
+        private void GenerateTestDate()
         {
+            // Admins
+            Admin admin1, admin2, admin3;
+            admin1 = new Admin("Rawan", "rawan@fontys.com", "12345");
+            admin2 = new Admin("Baian", "baian@fontys.com", "12345");
+            admin3 = new Admin("Femke", "femke@fontys.com", "12345");
+            AddAdminToList(admin1);
+            AddAdminToList(admin2);
+            AddAdminToList(admin3);
+
             //Students
             Student student1, student2, student3, student4, student5, student6, student7;
-            student1 = new Student("Rawan", "rawan@fontys.com", "12345", 1, 1);
-            student2 = new Student("Baian", "baian@fontys.com", "12345", 1, 2);
-            student3 = new Student("Femke", "femke@fontys.com", "12345", 1, 3);
+            student1 = new Student("Omar", "omar@fontys.com", "12345", 1, 1);
+            student2 = new Student("Pieter", "pieter@fontys.com", "12345", 1, 2);
+            student3 = new Student("Miley", "miley@fontys.com", "12345", 1, 3);
             student4 = new Student("Mark", "mark@fontys.com", "12345", 1, 4);
             student5 = new Student("Kelvin", "kelvin@fontys.com", "12345", 1, 5);
             student6 = new Student("Ranim", "ranim@fontys.com", "12345", 1, 6);
@@ -252,18 +563,24 @@ namespace Project
             AddStudentToList(student5);
             AddStudentToList(student6);
             AddStudentToList(student7);
-
+            student1.UpdateScore(15);
+            student2.UpdateScore(38);
+            student3.UpdateScore(2);
+            student4.UpdateScore(64);
+            student5.UpdateScore(5);
+            student6.UpdateScore(12);
+            student7.UpdateScore(24);
 
             //Messages
             Message message1, message2, message3, message4, message5, message6, message7, message8;
-            message1 = new Message(DateTime.Now, MessageSubject.Question, "How can I make changes to my tenancy agreement?", 0);
+            message1 = new Message(DateTime.Now, MessageSubject.Question, "How can I make changes to my tenancy agreement?", 4);
             message2 = new Message(DateTime.Now, MessageSubject.Complaint, "The elevator does not work, when will it be repaired?", 1);
             message3 = new Message(DateTime.Now, MessageSubject.Complaint, "People are not cleaning the shared facilities", 3);
             message4 = new Message(DateTime.Now, MessageSubject.Question, "Why has my rent increased?", 2);
             message5 = new Message(DateTime.Now, MessageSubject.Complaint, "My neighbors are organizing parties during the week very late at night", 2);
             message6 = new Message(DateTime.Now, MessageSubject.Question, "How can I speak to my housing officer?", 1);
-            message7 = new Message(DateTime.Now, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 0);
-            message8 = new Message(DateTime.Now, MessageSubject.Question, "How can I report a repair?", 0);
+            message7 = new Message(DateTime.Now, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 4);
+            message8 = new Message(DateTime.Now, MessageSubject.Question, "How can I report a repair?", 4);
             AddMessageToList(message1);
             AddMessageToList(message2);
             AddMessageToList(message3);

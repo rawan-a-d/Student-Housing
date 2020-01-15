@@ -1,71 +1,77 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project
 {
-    class Student
+    public class Student: User
     {
-        //ID/Name/Age/Email/Password/phone number/Floor nr/room nr /Balance/Score
-        private static int autoIncId = 1;
-        private int id;
-        private string name;
-        private string email;
-        private string password;
-        private string phoneNr;
-        private int floorNr;
-        private int roomNr;
         private double balance;
-        private int score;
-
+        private int age;
 
         // Constructors/Create object
         public Student(string name, string email, string password, int floorNr, int roomNr)
+            : base(name, email, password)
         {
-            this.id = autoIncId;
-            this.name = name;
-            this.email = email;
-            this.password = password;
-            //this.phoneNr = phoneNr;
-            this.floorNr = floorNr;
-            this.roomNr = roomNr;
-            this.balance = 0;
-            this.score = 0;
-            autoIncId++;
+            this.FloorNr = floorNr;
+            this.RoomNr = roomNr;
+            this.Balance = 0;
+            this.Score = 0;
         }
 
-
-        // Methods
-        // Get methods
-        public int GetId()
+        // Properties
+        public int BirthYear { get; private set; }
+        public string PhoneNumber { get; set; }
+        public int FloorNr { get; set; }
+        public int RoomNr { get; set; }
+        public int Score { get; set; }
+        public double Balance
         {
-            return id;
+            get { return this.balance; }
+            set
+            {
+                if(value > 0)
+                {
+                    this.balance = value;
+                }
+            }
         }
-        public string GetName()
+        public int Age
         {
-            return name;
+            get 
+            {
+                if(BirthYear != 0)
+                {
+                    int currentYear = DateTime.Now.Year;
+                    return currentYear - BirthYear;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                int currentYear = DateTime.Now.Year;
+                if(value > 0 && value <= 30)
+                {
+                    this.Age = value;
+                    this.BirthYear = (currentYear - Age);
+                }
+            }
         }
 
-        public string GetEmail()
+        public void UpdateInfo(string name, int age, string email, string password, string phone)
         {
-            return email;
+            int currentYear = DateTime.Now.Year;
+            this.Name = name;
+            this.BirthYear = currentYear - age;
+            this.Email = email;
+            this.Password = password;
+            this.PhoneNumber = phone;
         }
 
-        public string GetPassword()
+        public void UpdateScore(int newScore)
         {
-            return password;
-        }
-
-        public int GetFloorNr()
-        {
-            return floorNr;
-        }
-
-        public int GetRoomNr()
-        {
-            return roomNr;
+            this.Score += newScore;
         }
     }
 }

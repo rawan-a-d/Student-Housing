@@ -1,48 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
-using Microsoft.Office.Interop.Excel;
-
-namespace Project
+﻿namespace Project
 {
-    class Schedule
+    public class Schedule
     {
-        private int dateId;
-        private TaskType taskType;
-        private int studentId;
-        private TaskStatus status;
-
         // Constructor
         public Schedule(int dateId, TaskType taskType, int studentId, TaskStatus status)
         {
-            this.dateId = dateId;
-            this.taskType = taskType;
-            this.studentId = studentId;
-            this.status = status;
+            this.DateId = dateId;
+            this.TaskType = taskType;
+            this.StudentId = studentId;
+            this.Status = status;
         }
+
+        // Properties
+        public int DateId { get; }
+        public TaskType TaskType { get; }
+        public int StudentId { get; }
+        public TaskStatus Status { get; private set; }
 
         // Methods
-        public int GetDateId()
+        public void SetStatus(TaskStatus status)
         {
-            return dateId;
-        }
-
-        public TaskType GetTask()
-        {
-            return taskType;
-        }
-
-        public int GetStudentId()
-        {
-            return studentId;
-        }
-
-        public TaskStatus GetStatus()
-        {
-            return status;
+            this.Status = status;
         }
     }
 }

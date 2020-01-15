@@ -1,71 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project
 {
     // Date/Subject/Message/Reply/Student ID
-    class Message
+    public class Message
     {
         private static int autoIncId = 1;
-        private int id;
-        private DateTime dateCreated;
-        private MessageSubject subject;
-        private string message;
-        private string reply;
-        private int studentId;
 
         // Constructor
         public Message(DateTime dateCreated, MessageSubject subject, string message, int studentId)
-
         {
-            this.id = autoIncId;
-            this.dateCreated = dateCreated;
-            this.subject = subject;
-            this.message = message;
-            this.studentId = studentId;
+            this.Id = autoIncId;
+            this.DateCreated = dateCreated;
+            this.Subject = subject;
+            this.MessageText = message;
+            this.StudentId = studentId;
             autoIncId++;
         }
 
+        // Properties
+        public int Id { get; }
+        public DateTime DateCreated { get; }
+        public MessageSubject Subject { get; }
+        public string MessageText { get; }
+        public string Reply { get; private set; }
+        public int StudentId { get; }
+
         // Methods
         // Update reply
-        public void UpdateReply(int messageId, string reply)
+        public void UpdateReply(string reply)
         {
-            this.reply = reply;
-        }
-
-        // Get methods
-        public int GetId()
-        {
-            return id;
-        }
-
-        public DateTime GetDateCreated()
-        {
-            return dateCreated;
-        }
-
-        public MessageSubject GetSubject()
-        {
-            return subject;
-        }
-
-        public string GetMessage()
-        {
-            return message;
-        }
-
-        public string GetReply()
-        {
-            return reply;
-        }
-
-        public int GetStudentId()
-        {
-            return studentId;
+            this.Reply = reply;
         }
     }
 }
