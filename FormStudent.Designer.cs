@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
@@ -256,10 +256,10 @@
             // 
             this.mtcStudent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mtcStudent.Controls.Add(this.mtpSchedule);
+            this.mtcStudent.Controls.Add(this.mtpProfile);
             this.mtcStudent.Controls.Add(this.mtpHouseRules);
             this.mtcStudent.Controls.Add(this.mtpAgreements);
             this.mtcStudent.Controls.Add(this.mtpMessages);
-            this.mtcStudent.Controls.Add(this.mtpProfile);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtcStudent.CustomBackground = true;
             this.mtcStudent.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
@@ -714,8 +714,8 @@
             this.columnHeader23});
             this.lv_Agreements.HideSelection = false;
             this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6});
+            listViewItem1,
+            listViewItem2});
             this.lv_Agreements.Location = new System.Drawing.Point(4, 11);
             this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Agreements.Name = "lv_Agreements";
@@ -1147,9 +1147,9 @@
             this.lblScore.Location = new System.Drawing.Point(22, 346);
             this.lblScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(114, 17);
+            this.lblScore.Size = new System.Drawing.Size(45, 17);
             this.lblScore.TabIndex = 56;
-            this.lblScore.Text = "Score this month";
+            this.lblScore.Text = "Score";
             // 
             // lblBalance
             // 

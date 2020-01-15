@@ -128,7 +128,6 @@ namespace Project
                     return true;
                 }
             }
-
             return false;
         }
 
@@ -539,6 +538,15 @@ namespace Project
         // Test data
         private void GenerateTestDate()
         {
+            // Admins
+            Admin admin1, admin2, admin3;
+            admin1 = new Admin("Rawan", "rawan@fontys.com", "12345");
+            admin2 = new Admin("Baian", "baian@fontys.com", "12345");
+            admin3 = new Admin("Femke", "femke@fontys.com", "12345");
+            AddAdminToList(admin1);
+            AddAdminToList(admin2);
+            AddAdminToList(admin3);
+
             //Students
             Student student1, student2, student3, student4, student5, student6, student7;
             student1 = new Student("Omar", "omar@fontys.com", "12345", 1, 1);
@@ -562,15 +570,6 @@ namespace Project
             student5.UpdateScore(5);
             student6.UpdateScore(12);
             student7.UpdateScore(24);
-
-            // Admins
-            Admin admin1, admin2, admin3;
-            admin1 = new Admin("Rawan", "rawan@fontys.com", "12345");
-            admin2 = new Admin("Baian", "baian@fontys.com", "12345");
-            admin3 = new Admin("Femke", "femke@fontys.com", "12345");
-            AddAdminToList(admin1);
-            AddAdminToList(admin2);
-            AddAdminToList(admin3);
 
             //Messages
             Message message1, message2, message3, message4, message5, message6, message7, message8;
