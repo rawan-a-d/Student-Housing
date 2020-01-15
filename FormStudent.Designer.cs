@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "10-11-19",
             "Clean after you use the kitchen.",
             "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "17-11-19",
             "Please be quiet after 23:59.",
             "Sarah Harrings"}, -1);
@@ -714,8 +714,8 @@
             this.columnHeader23});
             this.lv_Agreements.HideSelection = false;
             this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem3,
+            listViewItem4});
             this.lv_Agreements.Location = new System.Drawing.Point(4, 11);
             this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
             this.lv_Agreements.Name = "lv_Agreements";
@@ -1033,7 +1033,7 @@
             this.tbxAddBalance.Location = new System.Drawing.Point(324, 398);
             this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(4);
             this.tbxAddBalance.Name = "tbxAddBalance";
-            this.tbxAddBalance.Size = new System.Drawing.Size(238, 22);
+            this.tbxAddBalance.Size = new System.Drawing.Size(275, 22);
             this.tbxAddBalance.TabIndex = 62;
             // 
             // tbxRoom
