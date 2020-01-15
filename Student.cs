@@ -73,5 +73,10 @@ namespace Project
         {
             this.Score += newScore;
         }
+
+        public void AddBalance(double amount)
+        {
+            this.Balance = this.Balance + amount;
+        }
     }
 }

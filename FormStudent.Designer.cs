@@ -141,31 +141,30 @@
             this.pbxDeposit = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnDeposit = new System.Windows.Forms.Button();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.btnNextMonth = new System.Windows.Forms.Button();
-            this.btnPrevMonth = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.mtpGroceries = new MetroFramework.Controls.MetroTabPage();
+            this.dgv_Groceries = new System.Windows.Forms.DataGridView();
+            this.dgv_GroceriesHistory = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.nud_GroceryItemAmount = new System.Windows.Forms.NumericUpDown();
+            this.tb_GroceryItem = new System.Windows.Forms.TextBox();
+            this.btn_GroceryCompleteList = new System.Windows.Forms.Button();
+            this.btn_GroceryRemoveItem = new System.Windows.Forms.Button();
+            this.btn_GroceryAddItem = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_GroceryHistoryInfo = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.mtcStudent.SuspendLayout();
@@ -186,11 +185,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.metroTabPage1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
+            this.mtpGroceries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Groceries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_GroceriesHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_GroceryItemAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -300,7 +301,7 @@
             this.mtcStudent.Controls.Add(this.mtpAgreements);
             this.mtcStudent.Controls.Add(this.mtpHouseRules);
             this.mtcStudent.Controls.Add(this.mtpProfile);
-            this.mtcStudent.Controls.Add(this.metroTabPage1);
+            this.mtcStudent.Controls.Add(this.mtpGroceries);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtcStudent.CustomBackground = true;
             this.mtcStudent.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
@@ -308,7 +309,7 @@
             this.mtcStudent.Location = new System.Drawing.Point(0, 80);
             this.mtcStudent.Margin = new System.Windows.Forms.Padding(2);
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 0;
+            this.mtcStudent.SelectedIndex = 5;
             this.mtcStudent.Size = new System.Drawing.Size(790, 423);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
@@ -1229,6 +1230,7 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEdit.Location = new System.Drawing.Point(18, 339);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
@@ -1272,9 +1274,9 @@
             // 
             // tbxAddBalance
             // 
-            this.tbxAddBalance.Location = new System.Drawing.Point(217, 314);
+            this.tbxAddBalance.Location = new System.Drawing.Point(217, 329);
             this.tbxAddBalance.Name = "tbxAddBalance";
-            this.tbxAddBalance.Size = new System.Drawing.Size(180, 20);
+            this.tbxAddBalance.Size = new System.Drawing.Size(72, 20);
             this.tbxAddBalance.TabIndex = 62;
             // 
             // tbxRoom
@@ -1310,7 +1312,7 @@
             this.lblAddBalance.AutoSize = true;
             this.lblAddBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBalance.Location = new System.Drawing.Point(214, 295);
+            this.lblAddBalance.Location = new System.Drawing.Point(214, 310);
             this.lblAddBalance.Name = "lblAddBalance";
             this.lblAddBalance.Size = new System.Drawing.Size(75, 15);
             this.lblAddBalance.TabIndex = 61;
@@ -1457,7 +1459,7 @@
             this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
             this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDeposit.Location = new System.Drawing.Point(506, 302);
+            this.pbxDeposit.Location = new System.Drawing.Point(384, 320);
             this.pbxDeposit.Margin = new System.Windows.Forms.Padding(2);
             this.pbxDeposit.Name = "pbxDeposit";
             this.pbxDeposit.Size = new System.Drawing.Size(16, 20);
@@ -1480,294 +1482,283 @@
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeposit.Location = new System.Drawing.Point(414, 295);
+            this.btnDeposit.Location = new System.Drawing.Point(296, 312);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(116, 37);
             this.btnDeposit.TabIndex = 63;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = false;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
-            // metroTabPage1
+            // mtpGroceries
             // 
-            this.metroTabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel7);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel6);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel5);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel4);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel3);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel2);
-            this.metroTabPage1.Controls.Add(this.flowLayoutPanel1);
-            this.metroTabPage1.Controls.Add(this.panel1);
-            this.metroTabPage1.Controls.Add(this.metroPanel1);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarSize = 8;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
-            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(782, 380);
-            this.metroTabPage1.TabIndex = 5;
-            this.metroTabPage1.Text = "Whole schedule";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarSize = 8;
+            this.mtpGroceries.Controls.Add(this.btn_GroceryHistoryInfo);
+            this.mtpGroceries.Controls.Add(this.pictureBox6);
+            this.mtpGroceries.Controls.Add(this.pictureBox5);
+            this.mtpGroceries.Controls.Add(this.pictureBox4);
+            this.mtpGroceries.Controls.Add(this.btn_GroceryAddItem);
+            this.mtpGroceries.Controls.Add(this.btn_GroceryRemoveItem);
+            this.mtpGroceries.Controls.Add(this.btn_GroceryCompleteList);
+            this.mtpGroceries.Controls.Add(this.tb_GroceryItem);
+            this.mtpGroceries.Controls.Add(this.nud_GroceryItemAmount);
+            this.mtpGroceries.Controls.Add(this.label19);
+            this.mtpGroceries.Controls.Add(this.label18);
+            this.mtpGroceries.Controls.Add(this.label17);
+            this.mtpGroceries.Controls.Add(this.label16);
+            this.mtpGroceries.Controls.Add(this.dgv_GroceriesHistory);
+            this.mtpGroceries.Controls.Add(this.dgv_Groceries);
+            this.mtpGroceries.HorizontalScrollbarBarColor = true;
+            this.mtpGroceries.Location = new System.Drawing.Point(4, 39);
+            this.mtpGroceries.Name = "mtpGroceries";
+            this.mtpGroceries.Size = new System.Drawing.Size(782, 380);
+            this.mtpGroceries.TabIndex = 6;
+            this.mtpGroceries.Text = "Groceries";
+            this.mtpGroceries.VerticalScrollbarBarColor = true;
             // 
-            // flowLayoutPanel7
+            // dgv_Groceries
             // 
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(674, 80);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel7.TabIndex = 10;
+            this.dgv_Groceries.AllowUserToDeleteRows = false;
+            this.dgv_Groceries.AllowUserToResizeRows = false;
+            this.dgv_Groceries.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_Groceries.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_Groceries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_Groceries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Groceries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Groceries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dgv_Groceries.Location = new System.Drawing.Point(16, 17);
+            this.dgv_Groceries.Name = "dgv_Groceries";
+            this.dgv_Groceries.ReadOnly = true;
+            this.dgv_Groceries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Groceries.RowHeadersVisible = false;
+            this.dgv_Groceries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Groceries.Size = new System.Drawing.Size(332, 302);
+            this.dgv_Groceries.TabIndex = 2;
             // 
-            // flowLayoutPanel6
+            // dgv_GroceriesHistory
             // 
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(562, 80);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel6.TabIndex = 9;
+            this.dgv_GroceriesHistory.AllowUserToDeleteRows = false;
+            this.dgv_GroceriesHistory.AllowUserToResizeRows = false;
+            this.dgv_GroceriesHistory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_GroceriesHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_GroceriesHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_GroceriesHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_GroceriesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_GroceriesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.dgv_GroceriesHistory.Location = new System.Drawing.Point(367, 172);
+            this.dgv_GroceriesHistory.Name = "dgv_GroceriesHistory";
+            this.dgv_GroceriesHistory.ReadOnly = true;
+            this.dgv_GroceriesHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_GroceriesHistory.RowHeadersVisible = false;
+            this.dgv_GroceriesHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_GroceriesHistory.Size = new System.Drawing.Size(253, 188);
+            this.dgv_GroceriesHistory.TabIndex = 3;
             // 
-            // flowLayoutPanel5
+            // label16
             // 
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(450, 80);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel5.TabIndex = 8;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(365, 156);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(180, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Previous students who did groceries:";
             // 
-            // flowLayoutPanel4
+            // label17
             // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(338, 80);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel4.TabIndex = 7;
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(363, 17);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(125, 13);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Add a new item to the list";
             // 
-            // flowLayoutPanel3
+            // label18
             // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(226, 80);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel3.TabIndex = 6;
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label18.Location = new System.Drawing.Point(365, 43);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 13);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Amount";
             // 
-            // flowLayoutPanel2
+            // label19
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(113, 80);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel2.TabIndex = 5;
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(414, 43);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(27, 13);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Item";
             // 
-            // flowLayoutPanel1
+            // nud_GroceryItemAmount
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label21);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel1);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 80);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(111, 72);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.nud_GroceryItemAmount.Location = new System.Drawing.Point(366, 60);
+            this.nud_GroceryItemAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_GroceryItemAmount.Name = "nud_GroceryItemAmount";
+            this.nud_GroceryItemAmount.Size = new System.Drawing.Size(40, 20);
+            this.nud_GroceryItemAmount.TabIndex = 8;
+            this.nud_GroceryItemAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_GroceryItemAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // label21
+            // tb_GroceryItem
             // 
-            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label21.Location = new System.Drawing.Point(2, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(109, 19);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "1";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tb_GroceryItem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_GroceryItem.Location = new System.Drawing.Point(417, 60);
+            this.tb_GroceryItem.Name = "tb_GroceryItem";
+            this.tb_GroceryItem.Size = new System.Drawing.Size(141, 20);
+            this.tb_GroceryItem.TabIndex = 9;
             // 
-            // linkLabel1
+            // btn_GroceryCompleteList
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(2, 19);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(75, 13);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Appointment 1";
+            this.btn_GroceryCompleteList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryCompleteList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryCompleteList.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryCompleteList.Location = new System.Drawing.Point(148, 325);
+            this.btn_GroceryCompleteList.Name = "btn_GroceryCompleteList";
+            this.btn_GroceryCompleteList.Size = new System.Drawing.Size(200, 35);
+            this.btn_GroceryCompleteList.TabIndex = 10;
+            this.btn_GroceryCompleteList.Text = "Mark grocery list as complete     ";
+            this.btn_GroceryCompleteList.UseVisualStyleBackColor = false;
+            this.btn_GroceryCompleteList.Click += new System.EventHandler(this.btn_GroceryCompleteList_Click);
             // 
-            // linkLabel2
+            // btn_GroceryRemoveItem
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(2, 32);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(36, 13);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Friend";
+            this.btn_GroceryRemoveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryRemoveItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryRemoveItem.Location = new System.Drawing.Point(16, 325);
+            this.btn_GroceryRemoveItem.Name = "btn_GroceryRemoveItem";
+            this.btn_GroceryRemoveItem.Size = new System.Drawing.Size(120, 35);
+            this.btn_GroceryRemoveItem.TabIndex = 12;
+            this.btn_GroceryRemoveItem.Text = "Remove item     ";
+            this.btn_GroceryRemoveItem.UseVisualStyleBackColor = false;
+            this.btn_GroceryRemoveItem.Click += new System.EventHandler(this.btn_GroceryRemoveItem_Click);
             // 
-            // panel1
+            // btn_GroceryAddItem
             // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 54);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 25);
-            this.panel1.TabIndex = 3;
+            this.btn_GroceryAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryAddItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryAddItem.Location = new System.Drawing.Point(366, 87);
+            this.btn_GroceryAddItem.Name = "btn_GroceryAddItem";
+            this.btn_GroceryAddItem.Size = new System.Drawing.Size(99, 35);
+            this.btn_GroceryAddItem.TabIndex = 13;
+            this.btn_GroceryAddItem.Text = "Add item      ";
+            this.btn_GroceryAddItem.UseVisualStyleBackColor = false;
+            this.btn_GroceryAddItem.Click += new System.EventHandler(this.btn_GroceryAddItem_Click);
             // 
-            // label7
+            // pictureBox4
             // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(671, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 25);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Saturday";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox4.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(105, 334);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
             // 
-            // label6
+            // pictureBox5
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(562, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 25);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Firday";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox5.BackgroundImage = global::Project.Properties.Resources.add_512;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(432, 96);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
             // 
-            // label5
+            // pictureBox6
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(450, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 25);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Thursday";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox6.BackgroundImage = global::Project.Properties.Resources.edit_8_512;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(314, 334);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox6.TabIndex = 16;
+            this.pictureBox6.TabStop = false;
             // 
-            // label4
+            // Column9
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(113, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 25);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Monday";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Column9.HeaderText = "ID";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 35;
             // 
-            // label3
+            // Column6
             // 
-            this.label3.BackColor = System.Drawing.Color.Aqua;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(226, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tuesday";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Column6.HeaderText = "Amount";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 51;
             // 
-            // label2
+            // Column7
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(338, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Wednesday";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Column7.HeaderText = "Item(s)";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 156;
             // 
-            // label1
+            // Column8
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Sunday";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Column8.HeaderText = "Added by";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 87;
             // 
-            // metroPanel1
+            // btn_GroceryHistoryInfo
             // 
-            this.metroPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.metroPanel1.Controls.Add(this.lblDate);
-            this.metroPanel1.Controls.Add(this.metroPanel2);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 8;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(782, 54);
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 8;
+            this.btn_GroceryHistoryInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryHistoryInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryHistoryInfo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryHistoryInfo.Location = new System.Drawing.Point(627, 325);
+            this.btn_GroceryHistoryInfo.Name = "btn_GroceryHistoryInfo";
+            this.btn_GroceryHistoryInfo.Size = new System.Drawing.Size(94, 35);
+            this.btn_GroceryHistoryInfo.TabIndex = 17;
+            this.btn_GroceryHistoryInfo.Text = "Info Selected";
+            this.btn_GroceryHistoryInfo.UseVisualStyleBackColor = false;
+            this.btn_GroceryHistoryInfo.Click += new System.EventHandler(this.btn_GroceryHistoryInfo_Click);
             // 
-            // lblDate
+            // dataGridViewTextBoxColumn5
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(17, 11);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(186, 31);
-            this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "January, 2020";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 35;
             // 
-            // metroPanel2
+            // dataGridViewTextBoxColumn6
             // 
-            this.metroPanel2.Controls.Add(this.btnNextMonth);
-            this.metroPanel2.Controls.Add(this.btnPrevMonth);
-            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 8;
-            this.metroPanel2.Location = new System.Drawing.Point(666, 0);
-            this.metroPanel2.Margin = new System.Windows.Forms.Padding(2);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(116, 54);
-            this.metroPanel2.TabIndex = 2;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 8;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 120;
             // 
-            // btnNextMonth
+            // dataGridViewTextBoxColumn7
             // 
-            this.btnNextMonth.Location = new System.Drawing.Point(65, 11);
-            this.btnNextMonth.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNextMonth.Name = "btnNextMonth";
-            this.btnNextMonth.Size = new System.Drawing.Size(39, 32);
-            this.btnNextMonth.TabIndex = 3;
-            this.btnNextMonth.Text = ">";
-            this.btnNextMonth.UseVisualStyleBackColor = true;
-            // 
-            // btnPrevMonth
-            // 
-            this.btnPrevMonth.Location = new System.Drawing.Point(13, 11);
-            this.btnPrevMonth.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrevMonth.Name = "btnPrevMonth";
-            this.btnPrevMonth.Size = new System.Drawing.Size(39, 32);
-            this.btnPrevMonth.TabIndex = 2;
-            this.btnPrevMonth.Text = "<";
-            this.btnPrevMonth.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Student";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 95;
             // 
             // FrmStudent
             // 
@@ -1805,13 +1796,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.metroTabPage1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
-            this.metroPanel2.ResumeLayout(false);
+            this.mtpGroceries.ResumeLayout(false);
+            this.mtpGroceries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Groceries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_GroceriesHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_GroceryItemAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1887,30 +1879,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblName;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Button btnNextMonth;
-        private System.Windows.Forms.Button btnPrevMonth;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button btnMinimizeWindow;
         private System.Windows.Forms.PictureBox pbxDeposit;
@@ -1955,5 +1923,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private MetroFramework.Controls.MetroTabPage mtpGroceries;
+        private System.Windows.Forms.DataGridView dgv_Groceries;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dgv_GroceriesHistory;
+        private System.Windows.Forms.TextBox tb_GroceryItem;
+        private System.Windows.Forms.NumericUpDown nud_GroceryItemAmount;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btn_GroceryCompleteList;
+        private System.Windows.Forms.Button btn_GroceryRemoveItem;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btn_GroceryAddItem;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Button btn_GroceryHistoryInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

@@ -20,6 +20,8 @@ namespace Project
         List<Date> dates;
         List<Schedule> schedules;
         List<Agreement> agreements;
+        List<GroceryItem> groceryList;
+        List<GroceryHistory> groceryHistories;
         private static StudentsHousing instance = null;
         // No need for this/ because it's not multi threading
         private static readonly object padlock = new object();
@@ -30,6 +32,8 @@ namespace Project
         private HouseRule houseRule;
         private Message message;
         private Agreement agreement;
+        private GroceryItem groceryItem;
+        private GroceryHistory groceryHistory;
         private int studentWithHighestScore;
 
 
@@ -44,6 +48,8 @@ namespace Project
             dates = new List<Date>();
             schedules = new List<Schedule>();
             agreements = new List<Agreement>();
+            groceryList = new List<GroceryItem>();
+            groceryHistories = new List<GroceryHistory>();
             GenerateTestDate();
         }
 
@@ -269,7 +275,7 @@ namespace Project
             AddAgreementToList(agreement);
         }
 
-        public void AddAgreementToList(Agreement agreement)
+        private void AddAgreementToList(Agreement agreement)
         {
             agreements.Add(agreement);
         }
@@ -384,6 +390,85 @@ namespace Project
                 }
             }
         }
+
+
+        /* Grocery List */
+        // Add grocery item
+        public void CreateGroceryItem(int amount, string item, string creator)
+        {
+            groceryItem = new GroceryItem(amount, item, creator);
+            AddGroceryItemToList(groceryItem);
+        }
+            
+        private void AddGroceryItemToList(GroceryItem groceryItem)
+        {
+            groceryList.Add(groceryItem);
+        }
+
+        // Remove grocery item
+        public void RemoveGroceryItemById(int id)
+        {
+            for (int i = 0; i < groceryList.Count; i++)
+            {
+                if (groceryList[i].Id == id)
+                {
+                    groceryList.Remove(groceryList[i]);
+                }
+            }
+        }
+
+        public void ClearGroceryList()
+        {
+            groceryList.Clear();
+        }
+
+        private string GetGroceryListItems()
+        {
+            string s = "";
+            foreach (var item in groceryList)
+            {
+                s = s + $"{item.Amount}x {item.ItemName} ({item.Creator})." + "\n";
+            }
+            return s;
+        }
+
+        // Get list
+        public List<GroceryItem> GetGroceryList()
+        {
+            return groceryList;
+        }
+
+
+        /* Grocery History */
+        public void CreateGroceryHistory(DateTime dateTime, string personResponsible)
+        {
+            groceryHistory = new GroceryHistory(dateTime, personResponsible, GetGroceryListItems());
+            AddGroceryHistoryToList(groceryHistory);
+        }
+
+        public void AddGroceryHistoryToList(GroceryHistory groceryHistory)
+        {
+            groceryHistories.Add(groceryHistory);
+        }
+
+        public List<GroceryHistory> GetGroceryHistoryList()
+        {
+            return groceryHistories;
+        }
+
+        public string GetGroceryHistoryInfoById(int id)
+        {
+            string info = "";
+            for (int i = 0; i < groceryHistories.Count; i++)
+            {
+                if (groceryHistories[i].Id == id)
+                {
+                    info = groceryHistories[i].Info;
+                }
+            }
+            return info;
+        }
+
 
 
         /* Dates */
@@ -779,6 +864,30 @@ namespace Project
             AddAgreementToList(agreement4);
             AddAgreementToList(agreement5);
             AddAgreementToList(agreement6);
+
+            // groceries
+            GroceryItem item1, item2, item3, item4, item5, item6;
+            item1 = new GroceryItem(1, "Olive oil", "Mark");
+            item2 = new GroceryItem(8, "Toilet paper", "Robin");
+            item3 = new GroceryItem(1, "Detergent", "Miley");
+            item4 = new GroceryItem(1, "Chili sauce", "Ranim");
+            item5 = new GroceryItem(3, "Wash powder", "Mark");
+            item6 = new GroceryItem(4, "Handsoap", "Kelvin");
+            AddGroceryItemToList(item1);
+            AddGroceryItemToList(item2);
+            AddGroceryItemToList(item3);
+            AddGroceryItemToList(item4);
+            AddGroceryItemToList(item5);
+            AddGroceryItemToList(item6);
+
+            // grocery history list
+            GroceryHistory history1, history2, history3;
+            history1 = new GroceryHistory(four_jan, "Mark", "1x Detergent (Robin).\n3x Air freshener (Miley).\n2xFabric softener (Robin).");
+            history2 = new GroceryHistory(seven_jan, "Robin", "2x Soap (Mark).\n1x Rubbing alcohol (Ranim).");
+            history3 = new GroceryHistory(ten_jan, "Omar", "4x Sponge (Kelvin).\n2x Toilet cleaner (Mark).\n1x Toilet brush (Mark).");
+            AddGroceryHistoryToList(history1);
+            AddGroceryHistoryToList(history2);
+            AddGroceryHistoryToList(history3);
 
             // House rules
             HouseRule rule1, rule2, rule3, rule4, rule5, rule6, rule7, rule8, rule9;

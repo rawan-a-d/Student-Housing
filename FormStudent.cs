@@ -190,7 +190,7 @@ namespace Project
             tbxEmail.Text = currentUser.Email;
             tbxFloor.Text = currentUser.FloorNr.ToString();
             tbxRoom.Text = currentUser.RoomNr.ToString();
-            tbxBalance.Text = currentUser.Balance.ToString();
+            tbxBalance.Text = "€" + currentUser.Balance.ToString();
             tbxScore.Text = currentUser.Score.ToString();
             tbxPhone.Text = currentUser.PhoneNumber;
 
@@ -285,6 +285,7 @@ namespace Project
             string email = tbxEmail.Text;
             string phone = tbxPhone.Text;
             studentsHousing.UpdateStudentInfo(currentUserId, name, Convert.ToInt32(age), email, password, phone);
+            MessageBox.Show("Your profile information has been updated.");
 
             // Update Profile Info
             DisplayProfileInfo();
@@ -312,6 +313,10 @@ namespace Project
             // Display agreements
             UpdateAgreementsDgv();
             RefreshComboboxNames();
+
+            // Display grocerylists
+            UpdateGroceriesDgv();
+            UpdateGroceryHistoryDgv();
 
             // Display profile info
             DisplayProfileInfo();
@@ -597,6 +602,123 @@ namespace Project
                 tb_NewAgreementDescription.Text = description;
             }
             catch (Exception ex){}
+        }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            double amountToAdd = Convert.ToDouble(tbxAddBalance.Text);
+            currentUser.AddBalance(amountToAdd);
+            MessageBox.Show("The new balance has been added.");
+            DisplayProfileInfo();
+        }
+
+        private void btn_GroceryAddItem_Click(object sender, EventArgs e)
+        {
+            int amount = Convert.ToInt32(nud_GroceryItemAmount.Value);
+            string item = tb_GroceryItem.Text;
+
+            if (item == "")
+            {
+                MessageBox.Show("Fill in an item first.");
+            }
+            else
+            {
+                studentsHousing.CreateGroceryItem(amount, item, currentUser.Name);
+                UpdateGroceriesDgv();
+                nud_GroceryItemAmount.Value = 1;
+                tb_GroceryItem.Text = "";
+            }
+        }
+
+        private void UpdateGroceriesDgv()
+        {
+            List<GroceryItem> groceryList = studentsHousing.GetGroceryList();
+            dgv_Groceries.Rows.Clear();
+
+            foreach (var grocery in groceryList)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgv_Groceries.Rows[0].Clone();
+
+                row.Cells[0].Value = grocery.Id.ToString();
+                row.Cells[1].Value = grocery.Amount.ToString();
+                row.Cells[2].Value = grocery.ItemName;
+                row.Cells[3].Value = grocery.Creator;
+
+                dgv_Groceries.Rows.Add(row);
+            }
+            dgv_Groceries.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgv_Groceries.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void btn_GroceryRemoveItem_Click(object sender, EventArgs e)
+        {
+            if (dgv_Groceries.SelectedCells.Count <= 0)
+            {
+                MessageBox.Show("Please select a grocery item to be removed.");
+            }
+            else
+            {
+                string creator = dgv_Groceries.CurrentRow.Cells[3].Value.ToString();
+                if (creator == currentUser.Name)
+                {
+                    int selectedGroceryItemId = Convert.ToInt32(dgv_Groceries.CurrentRow.Cells[0].Value);
+                    studentsHousing.RemoveGroceryItemById(selectedGroceryItemId);
+                    MessageBox.Show("Your grocery item was successfully removed.");
+                    UpdateGroceriesDgv();
+                }
+                else
+                {
+                    MessageBox.Show("You can't remove someone else's grocery item.");
+                }
+            }
+        }
+
+        private void btn_GroceryCompleteList_Click(object sender, EventArgs e)
+        {
+            if (dgv_Groceries.Rows.Count > 1)
+            {
+                studentsHousing.CreateGroceryHistory(DateTime.Now, currentUser.Name);
+                MessageBox.Show("Grocery list successfully completed.");
+                studentsHousing.ClearGroceryList();
+                UpdateGroceriesDgv();
+                UpdateGroceryHistoryDgv();
+            }
+            else 
+            {
+                MessageBox.Show("The grocery list is empty, there is nothing to complete.");
+            }
+        }
+
+        private void UpdateGroceryHistoryDgv()
+        {
+            List<GroceryHistory> groceryHistory = studentsHousing.GetGroceryHistoryList();
+            dgv_GroceriesHistory.Rows.Clear();
+
+            foreach (var history in groceryHistory)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgv_GroceriesHistory.Rows[0].Clone();
+
+                row.Cells[0].Value = history.Id.ToString();
+                row.Cells[1].Value = history.DateAndTime.ToString("dd/MM/yyyy  h:mmtt").ToString();
+                row.Cells[2].Value = history.PersonResponsible.ToString();
+
+                dgv_GroceriesHistory.Rows.Add(row);
+            }
+            dgv_GroceriesHistory.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgv_GroceriesHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void btn_GroceryHistoryInfo_Click(object sender, EventArgs e)
+        {
+            if (dgv_GroceriesHistory.SelectedCells.Count <= 0)
+            {
+                MessageBox.Show("Please select a row first.");
+            }
+            else
+            {
+                int selectedGroceryHistoryId = Convert.ToInt32(dgv_GroceriesHistory.CurrentRow.Cells[0].Value);
+                MessageBox.Show(studentsHousing.GetGroceryHistoryInfoById(selectedGroceryHistoryId));
+            }
         }
     }
 }

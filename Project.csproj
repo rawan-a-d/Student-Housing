@@ -141,6 +141,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroceryItem.cs" />
     <Compile Include="HouseRule.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
