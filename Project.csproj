@@ -137,7 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="Agreement.cs" />
     <Compile Include="Date.cs" />
+    <Compile Include="EventTemporary.cs" />
     <Compile Include="Excel.cs" />
     <Compile Include="FormStudent.cs">
       <SubType>Form</SubType>
@@ -151,6 +153,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroceryItem.cs" />
     <Compile Include="HouseRule.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
