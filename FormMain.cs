@@ -29,6 +29,8 @@ namespace Project
                 UpdateScheduleList();
             }
 
+            lbl_LoggedInAsName.Text = currentUser.Name;
+
             // Call needed methods
             SetUp();
         }
@@ -458,6 +460,16 @@ namespace Project
                 dgvSchedule.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgvSchedule.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
+        }
+
+        private void dgvHouseRulesAdmin_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string description = dgvHouseRulesAdmin.CurrentRow.Cells[2].Value.ToString();
+                tbxNewRule.Text = description;
+            }
+            catch (Exception ex) { }
         }
     }
 }

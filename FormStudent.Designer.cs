@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "10-11-19",
-            "Clean after you use the kitchen.",
-            "Peter Young"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "17-11-19",
-            "Please be quiet after 23:59.",
-            "Sarah Harrings"}, -1);
             this.pHeader = new System.Windows.Forms.Panel();
             this.btnMinimizeWindow = new System.Windows.Forms.Button();
             this.btnX = new System.Windows.Forms.Button();
@@ -46,23 +38,31 @@
             this.lbl_LoggedInAs = new System.Windows.Forms.Label();
             this.mtcStudent = new MetroFramework.Controls.MetroTabControl();
             this.mtpSchedule = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dvgPendingEvents = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.cb_FilterAssignee = new System.Windows.Forms.ComboBox();
             this.cbx_FilterTasks = new System.Windows.Forms.CheckBox();
             this.cbx_FilterEvents = new System.Windows.Forms.CheckBox();
             this.lblAsignee = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.cb_EventFloor = new System.Windows.Forms.ComboBox();
+            this.cb_CreateEventFloor = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.tb_EventLocation = new System.Windows.Forms.TextBox();
-            this.DTP_EventDateTime = new System.Windows.Forms.DateTimePicker();
+            this.tb_CreateEventLocation = new System.Windows.Forms.TextBox();
+            this.dtpCreateEventDatePicker = new System.Windows.Forms.DateTimePicker();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_EventVoteSelectedNO = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_EventVoteSelectedYES = new System.Windows.Forms.Button();
-            this.lv_PendingEvents = new System.Windows.Forms.ListView();
-            this.tb_EventDescription = new System.Windows.Forms.TextBox();
+            this.tb_CreateEventDescription = new System.Windows.Forms.TextBox();
             this.lblLocation = new System.Windows.Forms.Label();
             this.btn_EventSendRequest = new System.Windows.Forms.Button();
             this.lblCreateEvent = new System.Windows.Forms.Label();
@@ -73,19 +73,6 @@
             this.chTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_FilterSearch = new System.Windows.Forms.Button();
-            this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
-            this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
-            this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDateStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDescriptionStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
-            this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
-            this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lv_Agreements = new System.Windows.Forms.ListView();
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mtpMessages = new MetroFramework.Controls.MetroTabPage();
             this.tbxMessageDescription = new System.Windows.Forms.TextBox();
             this.cbxMessageType = new System.Windows.Forms.ComboBox();
@@ -132,16 +119,60 @@
             this.pbxDeposit = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnDeposit = new System.Windows.Forms.Button();
+            this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
+            this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
+            this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDateStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDescriptionStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
+            this.btn_AgreementRejectSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementDeleteSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementEditSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementAcceptSelected = new System.Windows.Forms.Button();
+            this.cbx_AgreementPersonInvolved = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dgv_AgreementsStudent = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
+            this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.mtpGroceries = new MetroFramework.Controls.MetroTabPage();
+            this.btn_GroceryHistoryInfo = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_GroceryAddItem = new System.Windows.Forms.Button();
+            this.btn_GroceryRemoveItem = new System.Windows.Forms.Button();
+            this.btn_GroceryCompleteList = new System.Windows.Forms.Button();
+            this.tb_GroceryItem = new System.Windows.Forms.TextBox();
+            this.nud_GroceryItemAmount = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dgv_GroceriesHistory = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Groceries = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).BeginInit();
             this.mtcStudent.SuspendLayout();
             this.mtpSchedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgPendingEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
-            this.mtpHouseRules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
-            this.mtpAgreements.SuspendLayout();
             this.mtpMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddMessage)).BeginInit();
@@ -150,6 +181,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.mtpHouseRules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
+            this.mtpAgreements.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AgreementsStudent)).BeginInit();
+            this.mtpGroceries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_GroceryItemAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_GroceriesHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Groceries)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -164,8 +206,9 @@
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pHeader.Location = new System.Drawing.Point(0, 0);
+            this.pHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(1052, 100);
+            this.pHeader.Size = new System.Drawing.Size(1059, 106);
             this.pHeader.TabIndex = 43;
             // 
             // btnMinimizeWindow
@@ -176,9 +219,10 @@
             this.btnMinimizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeWindow.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeWindow.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMinimizeWindow.Location = new System.Drawing.Point(885, 0);
+            this.btnMinimizeWindow.Location = new System.Drawing.Point(893, 0);
+            this.btnMinimizeWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimizeWindow.Name = "btnMinimizeWindow";
-            this.btnMinimizeWindow.Size = new System.Drawing.Size(86, 100);
+            this.btnMinimizeWindow.Size = new System.Drawing.Size(85, 106);
             this.btnMinimizeWindow.TabIndex = 17;
             this.btnMinimizeWindow.Text = "-";
             this.btnMinimizeWindow.UseVisualStyleBackColor = false;
@@ -192,9 +236,10 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnX.Location = new System.Drawing.Point(971, 0);
+            this.btnX.Location = new System.Drawing.Point(978, 0);
+            this.btnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(81, 100);
+            this.btnX.Size = new System.Drawing.Size(81, 106);
             this.btnX.TabIndex = 16;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
@@ -205,11 +250,11 @@
             this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
             this.btn_Logout.FlatAppearance.BorderSize = 0;
             this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Logout.Location = new System.Drawing.Point(311, 26);
+            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logout.Location = new System.Drawing.Point(347, 30);
             this.btn_Logout.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(100, 49);
+            this.btn_Logout.Size = new System.Drawing.Size(141, 56);
             this.btn_Logout.TabIndex = 15;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
@@ -220,22 +265,22 @@
             this.lbl_LoggedInAsName.AutoSize = true;
             this.lbl_LoggedInAsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoggedInAsName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(86, 39);
+            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(147, 50);
             this.lbl_LoggedInAsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_LoggedInAsName.Name = "lbl_LoggedInAsName";
             this.lbl_LoggedInAsName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_LoggedInAsName.Size = new System.Drawing.Size(181, 36);
+            this.lbl_LoggedInAsName.Size = new System.Drawing.Size(150, 36);
             this.lbl_LoggedInAsName.TabIndex = 13;
-            this.lbl_LoggedInAsName.Text = "Peter Young";
+            this.lbl_LoggedInAsName.Text = "Username";
             // 
             // lbl_LoggedInAsPicture
             // 
             this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
-            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(26, 21);
-            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(35, 26);
+            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(5);
             this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
-            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(55, 49);
+            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(73, 60);
             this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lbl_LoggedInAsPicture.TabIndex = 12;
             this.lbl_LoggedInAsPicture.TabStop = false;
@@ -245,29 +290,31 @@
             this.lbl_LoggedInAs.AutoSize = true;
             this.lbl_LoggedInAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoggedInAs.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAs.Location = new System.Drawing.Point(90, 20);
+            this.lbl_LoggedInAs.Location = new System.Drawing.Point(153, 30);
             this.lbl_LoggedInAs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_LoggedInAs.Name = "lbl_LoggedInAs";
-            this.lbl_LoggedInAs.Size = new System.Drawing.Size(92, 18);
+            this.lbl_LoggedInAs.Size = new System.Drawing.Size(144, 18);
             this.lbl_LoggedInAs.TabIndex = 11;
-            this.lbl_LoggedInAs.Text = "Logged in as";
+            this.lbl_LoggedInAs.Text = "Logged in as student";
             // 
             // mtcStudent
             // 
             this.mtcStudent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mtcStudent.Controls.Add(this.mtpSchedule);
-            this.mtcStudent.Controls.Add(this.mtpProfile);
-            this.mtcStudent.Controls.Add(this.mtpHouseRules);
             this.mtcStudent.Controls.Add(this.mtpAgreements);
             this.mtcStudent.Controls.Add(this.mtpMessages);
+            this.mtcStudent.Controls.Add(this.mtpProfile);
+            this.mtcStudent.Controls.Add(this.mtpHouseRules);
+            this.mtcStudent.Controls.Add(this.mtpGroceries);
             this.mtcStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtcStudent.CustomBackground = true;
             this.mtcStudent.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.mtcStudent.ItemSize = new System.Drawing.Size(86, 35);
-            this.mtcStudent.Location = new System.Drawing.Point(0, 98);
+            this.mtcStudent.Location = new System.Drawing.Point(0, 110);
+            this.mtcStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 4;
-            this.mtcStudent.Size = new System.Drawing.Size(1054, 521);
+            this.mtcStudent.SelectedIndex = 1;
+            this.mtcStudent.Size = new System.Drawing.Size(1061, 515);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
             this.mtcStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -277,23 +324,27 @@
             // mtpSchedule
             // 
             this.mtpSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.mtpSchedule.Controls.Add(this.pictureBox1);
+            this.mtpSchedule.Controls.Add(this.label13);
+            this.mtpSchedule.Controls.Add(this.dvgPendingEvents);
+            this.mtpSchedule.Controls.Add(this.label12);
+            this.mtpSchedule.Controls.Add(this.label10);
             this.mtpSchedule.Controls.Add(this.cb_FilterAssignee);
             this.mtpSchedule.Controls.Add(this.cbx_FilterTasks);
             this.mtpSchedule.Controls.Add(this.cbx_FilterEvents);
             this.mtpSchedule.Controls.Add(this.lblAsignee);
             this.mtpSchedule.Controls.Add(this.label33);
-            this.mtpSchedule.Controls.Add(this.cb_EventFloor);
+            this.mtpSchedule.Controls.Add(this.cb_CreateEventFloor);
             this.mtpSchedule.Controls.Add(this.label32);
-            this.mtpSchedule.Controls.Add(this.tb_EventLocation);
-            this.mtpSchedule.Controls.Add(this.DTP_EventDateTime);
+            this.mtpSchedule.Controls.Add(this.tb_CreateEventLocation);
+            this.mtpSchedule.Controls.Add(this.dtpCreateEventDatePicker);
             this.mtpSchedule.Controls.Add(this.lblDateTime);
             this.mtpSchedule.Controls.Add(this.lblFloor);
             this.mtpSchedule.Controls.Add(this.pictureBox2);
             this.mtpSchedule.Controls.Add(this.btn_EventVoteSelectedNO);
             this.mtpSchedule.Controls.Add(this.label8);
             this.mtpSchedule.Controls.Add(this.btn_EventVoteSelectedYES);
-            this.mtpSchedule.Controls.Add(this.lv_PendingEvents);
-            this.mtpSchedule.Controls.Add(this.tb_EventDescription);
+            this.mtpSchedule.Controls.Add(this.tb_CreateEventDescription);
             this.mtpSchedule.Controls.Add(this.lblLocation);
             this.mtpSchedule.Controls.Add(this.btn_EventSendRequest);
             this.mtpSchedule.Controls.Add(this.lblCreateEvent);
@@ -304,11 +355,115 @@
             this.mtpSchedule.HorizontalScrollbarBarColor = true;
             this.mtpSchedule.ImeMode = System.Windows.Forms.ImeMode.On;
             this.mtpSchedule.Location = new System.Drawing.Point(4, 39);
+            this.mtpSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtpSchedule.Name = "mtpSchedule";
-            this.mtpSchedule.Size = new System.Drawing.Size(1046, 478);
+            this.mtpSchedule.Size = new System.Drawing.Size(1053, 472);
             this.mtpSchedule.TabIndex = 0;
             this.mtpSchedule.Text = "Schedule";
             this.mtpSchedule.VerticalScrollbarBarColor = true;
+            this.mtpSchedule.VerticalScrollbarSize = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(504, 230);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(531, 1);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(504, 388);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(154, 17);
+            this.label13.TabIndex = 60;
+            this.label13.Text = "Vote for selected event";
+            // 
+            // dvgPendingEvents
+            // 
+            this.dvgPendingEvents.AllowUserToDeleteRows = false;
+            this.dvgPendingEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgPendingEvents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dvgPendingEvents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dvgPendingEvents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dvgPendingEvents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dvgPendingEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgPendingEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dvgPendingEvents.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dvgPendingEvents.Location = new System.Drawing.Point(504, 260);
+            this.dvgPendingEvents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dvgPendingEvents.Name = "dvgPendingEvents";
+            this.dvgPendingEvents.ReadOnly = true;
+            this.dvgPendingEvents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dvgPendingEvents.RowHeadersVisible = false;
+            this.dvgPendingEvents.RowHeadersWidth = 51;
+            this.dvgPendingEvents.RowTemplate.Height = 24;
+            this.dvgPendingEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgPendingEvents.Size = new System.Drawing.Size(517, 121);
+            this.dvgPendingEvents.TabIndex = 59;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 98.5759F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Organizer";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 91.37056F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 160.5232F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 49.53037F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Votes";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(504, 241);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 17);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "Pending Events";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(504, 170);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "Description";
             // 
             // cb_FilterAssignee
             // 
@@ -350,70 +505,71 @@
             this.lblAsignee.Location = new System.Drawing.Point(500, 36);
             this.lblAsignee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAsignee.Name = "lblAsignee";
-            this.lblAsignee.Size = new System.Drawing.Size(59, 17);
+            this.lblAsignee.Size = new System.Drawing.Size(66, 17);
             this.lblAsignee.TabIndex = 53;
-            this.lblAsignee.Text = "Asignee";
+            this.lblAsignee.Text = "Assignee";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(737, 118);
+            this.label33.Location = new System.Drawing.Point(737, 116);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(0, 17);
             this.label33.TabIndex = 51;
             // 
-            // cb_EventFloor
+            // cb_CreateEventFloor
             // 
-            this.cb_EventFloor.FormattingEnabled = true;
-            this.cb_EventFloor.Location = new System.Drawing.Point(741, 136);
-            this.cb_EventFloor.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_EventFloor.Name = "cb_EventFloor";
-            this.cb_EventFloor.Size = new System.Drawing.Size(73, 24);
-            this.cb_EventFloor.TabIndex = 50;
+            this.cb_CreateEventFloor.FormattingEnabled = true;
+            this.cb_CreateEventFloor.Location = new System.Drawing.Point(668, 134);
+            this.cb_CreateEventFloor.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_CreateEventFloor.Name = "cb_CreateEventFloor";
+            this.cb_CreateEventFloor.Size = new System.Drawing.Size(73, 24);
+            this.cb_CreateEventFloor.TabIndex = 50;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(820, 118);
+            this.label32.Location = new System.Drawing.Point(820, 116);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(0, 17);
             this.label32.TabIndex = 49;
             // 
-            // tb_EventLocation
+            // tb_CreateEventLocation
             // 
-            this.tb_EventLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_EventLocation.Location = new System.Drawing.Point(824, 136);
-            this.tb_EventLocation.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_EventLocation.Name = "tb_EventLocation";
-            this.tb_EventLocation.Size = new System.Drawing.Size(152, 24);
-            this.tb_EventLocation.TabIndex = 48;
+            this.tb_CreateEventLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CreateEventLocation.Location = new System.Drawing.Point(751, 134);
+            this.tb_CreateEventLocation.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_CreateEventLocation.Name = "tb_CreateEventLocation";
+            this.tb_CreateEventLocation.Size = new System.Drawing.Size(152, 24);
+            this.tb_CreateEventLocation.TabIndex = 48;
             // 
-            // DTP_EventDateTime
+            // dtpCreateEventDatePicker
             // 
-            this.DTP_EventDateTime.Location = new System.Drawing.Point(505, 138);
-            this.DTP_EventDateTime.Margin = new System.Windows.Forms.Padding(4);
-            this.DTP_EventDateTime.Name = "DTP_EventDateTime";
-            this.DTP_EventDateTime.Size = new System.Drawing.Size(228, 22);
-            this.DTP_EventDateTime.TabIndex = 47;
+            this.dtpCreateEventDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCreateEventDatePicker.Location = new System.Drawing.Point(505, 134);
+            this.dtpCreateEventDatePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpCreateEventDatePicker.Name = "dtpCreateEventDatePicker";
+            this.dtpCreateEventDatePicker.Size = new System.Drawing.Size(153, 22);
+            this.dtpCreateEventDatePicker.TabIndex = 47;
             // 
             // lblDateTime
             // 
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDateTime.Location = new System.Drawing.Point(504, 117);
+            this.lblDateTime.Location = new System.Drawing.Point(504, 114);
             this.lblDateTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(101, 17);
+            this.lblDateTime.Size = new System.Drawing.Size(38, 17);
             this.lblDateTime.TabIndex = 46;
-            this.lblDateTime.Text = "Date and Time";
+            this.lblDateTime.Text = "Date";
             // 
             // lblFloor
             // 
             this.lblFloor.AutoSize = true;
             this.lblFloor.BackColor = System.Drawing.SystemColors.Control;
-            this.lblFloor.Location = new System.Drawing.Point(740, 115);
+            this.lblFloor.Location = new System.Drawing.Point(667, 113);
             this.lblFloor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFloor.Name = "lblFloor";
             this.lblFloor.Size = new System.Drawing.Size(40, 17);
@@ -423,10 +579,10 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(504, 75);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(672, 92);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(531, 1);
+            this.pictureBox2.Size = new System.Drawing.Size(707, 1);
             this.pictureBox2.TabIndex = 44;
             this.pictureBox2.TabStop = false;
             // 
@@ -436,7 +592,7 @@
             this.btn_EventVoteSelectedNO.FlatAppearance.BorderSize = 0;
             this.btn_EventVoteSelectedNO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_EventVoteSelectedNO.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_EventVoteSelectedNO.Location = new System.Drawing.Point(607, 399);
+            this.btn_EventVoteSelectedNO.Location = new System.Drawing.Point(608, 407);
             this.btn_EventVoteSelectedNO.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EventVoteSelectedNO.Name = "btn_EventVoteSelectedNO";
             this.btn_EventVoteSelectedNO.Size = new System.Drawing.Size(87, 28);
@@ -459,7 +615,7 @@
             this.btn_EventVoteSelectedYES.FlatAppearance.BorderSize = 0;
             this.btn_EventVoteSelectedYES.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_EventVoteSelectedYES.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_EventVoteSelectedYES.Location = new System.Drawing.Point(503, 399);
+            this.btn_EventVoteSelectedYES.Location = new System.Drawing.Point(504, 407);
             this.btn_EventVoteSelectedYES.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EventVoteSelectedYES.Name = "btn_EventVoteSelectedYES";
             this.btn_EventVoteSelectedYES.Size = new System.Drawing.Size(87, 28);
@@ -467,34 +623,21 @@
             this.btn_EventVoteSelectedYES.Text = "YES";
             this.btn_EventVoteSelectedYES.UseVisualStyleBackColor = false;
             // 
-            // lv_PendingEvents
+            // tb_CreateEventDescription
             // 
-            this.lv_PendingEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lv_PendingEvents.HideSelection = false;
-            this.lv_PendingEvents.Location = new System.Drawing.Point(505, 245);
-            this.lv_PendingEvents.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_PendingEvents.Name = "lv_PendingEvents";
-            this.lv_PendingEvents.Size = new System.Drawing.Size(471, 128);
-            this.lv_PendingEvents.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lv_PendingEvents.TabIndex = 40;
-            this.lv_PendingEvents.UseCompatibleStateImageBehavior = false;
-            this.lv_PendingEvents.View = System.Windows.Forms.View.Details;
-            // 
-            // tb_EventDescription
-            // 
-            this.tb_EventDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_EventDescription.Location = new System.Drawing.Point(505, 192);
-            this.tb_EventDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_EventDescription.Multiline = true;
-            this.tb_EventDescription.Name = "tb_EventDescription";
-            this.tb_EventDescription.Size = new System.Drawing.Size(140, 33);
-            this.tb_EventDescription.TabIndex = 37;
+            this.tb_CreateEventDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CreateEventDescription.Location = new System.Drawing.Point(505, 190);
+            this.tb_CreateEventDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_CreateEventDescription.Multiline = true;
+            this.tb_CreateEventDescription.Name = "tb_CreateEventDescription";
+            this.tb_CreateEventDescription.Size = new System.Drawing.Size(179, 25);
+            this.tb_CreateEventDescription.TabIndex = 37;
             // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.BackColor = System.Drawing.SystemColors.Control;
-            this.lblLocation.Location = new System.Drawing.Point(821, 115);
+            this.lblLocation.Location = new System.Drawing.Point(748, 113);
             this.lblLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(62, 17);
@@ -507,10 +650,10 @@
             this.btn_EventSendRequest.FlatAppearance.BorderSize = 0;
             this.btn_EventSendRequest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_EventSendRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_EventSendRequest.Location = new System.Drawing.Point(655, 189);
+            this.btn_EventSendRequest.Location = new System.Drawing.Point(693, 190);
             this.btn_EventSendRequest.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EventSendRequest.Name = "btn_EventSendRequest";
-            this.btn_EventSendRequest.Size = new System.Drawing.Size(123, 36);
+            this.btn_EventSendRequest.Size = new System.Drawing.Size(123, 26);
             this.btn_EventSendRequest.TabIndex = 38;
             this.btn_EventSendRequest.Text = "Send request";
             this.btn_EventSendRequest.UseVisualStyleBackColor = false;
@@ -519,7 +662,7 @@
             // 
             this.lblCreateEvent.AutoSize = true;
             this.lblCreateEvent.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCreateEvent.Location = new System.Drawing.Point(504, 89);
+            this.lblCreateEvent.Location = new System.Drawing.Point(504, 86);
             this.lblCreateEvent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreateEvent.Name = "lblCreateEvent";
             this.lblCreateEvent.Size = new System.Drawing.Size(89, 17);
@@ -530,7 +673,7 @@
             // 
             this.lblFilter.AutoSize = true;
             this.lblFilter.BackColor = System.Drawing.SystemColors.Control;
-            this.lblFilter.Location = new System.Drawing.Point(564, 6);
+            this.lblFilter.Location = new System.Drawing.Point(500, 7);
             this.lblFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(89, 17);
@@ -542,6 +685,7 @@
             this.dgvSchedule.AllowUserToDeleteRows = false;
             this.dgvSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvSchedule.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSchedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -551,19 +695,21 @@
             this.chTask,
             this.chStatus});
             this.dgvSchedule.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSchedule.Location = new System.Drawing.Point(22, 11);
+            this.dgvSchedule.Location = new System.Drawing.Point(21, 11);
+            this.dgvSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.ReadOnly = true;
             this.dgvSchedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSchedule.RowHeadersVisible = false;
             this.dgvSchedule.RowHeadersWidth = 51;
             this.dgvSchedule.RowTemplate.Height = 24;
-            this.dgvSchedule.Size = new System.Drawing.Size(438, 423);
+            this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSchedule.Size = new System.Drawing.Size(459, 423);
             this.dgvSchedule.TabIndex = 34;
             // 
             // chAsignee
             // 
-            this.chAsignee.HeaderText = "Asignee";
+            this.chAsignee.HeaderText = "Assignee";
             this.chAsignee.MinimumWidth = 6;
             this.chAsignee.Name = "chAsignee";
             this.chAsignee.ReadOnly = true;
@@ -596,148 +742,13 @@
             this.btn_FilterSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_FilterSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FilterSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_FilterSearch.Location = new System.Drawing.Point(872, 30);
-            this.btn_FilterSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_FilterSearch.Location = new System.Drawing.Point(872, 27);
+            this.btn_FilterSearch.Margin = new System.Windows.Forms.Padding(5);
             this.btn_FilterSearch.Name = "btn_FilterSearch";
-            this.btn_FilterSearch.Size = new System.Drawing.Size(138, 37);
+            this.btn_FilterSearch.Size = new System.Drawing.Size(139, 37);
             this.btn_FilterSearch.TabIndex = 52;
             this.btn_FilterSearch.Text = "Search";
             this.btn_FilterSearch.UseVisualStyleBackColor = false;
-            // 
-            // mtpHouseRules
-            // 
-            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
-            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
-            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
-            this.mtpHouseRules.Name = "mtpHouseRules";
-            this.mtpHouseRules.Size = new System.Drawing.Size(1046, 478);
-            this.mtpHouseRules.TabIndex = 1;
-            this.mtpHouseRules.Text = "House Rules";
-            this.mtpHouseRules.VerticalScrollbarBarColor = true;
-            // 
-            // dgvHouseRulesStudent
-            // 
-            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
-            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chIdStudent,
-            this.chDateStudent,
-            this.chDescriptionStudent});
-            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(9, 11);
-            this.dgvHouseRulesStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
-            this.dgvHouseRulesStudent.RowHeadersVisible = false;
-            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
-            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(1026, 421);
-            this.dgvHouseRulesStudent.TabIndex = 9;
-            // 
-            // chIdStudent
-            // 
-            this.chIdStudent.HeaderText = "Id";
-            this.chIdStudent.MinimumWidth = 6;
-            this.chIdStudent.Name = "chIdStudent";
-            this.chIdStudent.Width = 122;
-            // 
-            // chDateStudent
-            // 
-            this.chDateStudent.HeaderText = "Date Added";
-            this.chDateStudent.MinimumWidth = 6;
-            this.chDateStudent.Name = "chDateStudent";
-            this.chDateStudent.Width = 190;
-            // 
-            // chDescriptionStudent
-            // 
-            this.chDescriptionStudent.HeaderText = "Description";
-            this.chDescriptionStudent.MinimumWidth = 6;
-            this.chDescriptionStudent.Name = "chDescriptionStudent";
-            this.chDescriptionStudent.Width = 477;
-            // 
-            // mtpAgreements
-            // 
-            this.mtpAgreements.Controls.Add(this.btn_NewAgreementSubmit);
-            this.mtpAgreements.Controls.Add(this.tb_NewAgreementDescription);
-            this.mtpAgreements.Controls.Add(this.label9);
-            this.mtpAgreements.Controls.Add(this.lv_Agreements);
-            this.mtpAgreements.HorizontalScrollbarBarColor = true;
-            this.mtpAgreements.Location = new System.Drawing.Point(4, 39);
-            this.mtpAgreements.Name = "mtpAgreements";
-            this.mtpAgreements.Size = new System.Drawing.Size(1046, 478);
-            this.mtpAgreements.TabIndex = 2;
-            this.mtpAgreements.Text = "Agreements";
-            this.mtpAgreements.VerticalScrollbarBarColor = true;
-            // 
-            // btn_NewAgreementSubmit
-            // 
-            this.btn_NewAgreementSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btn_NewAgreementSubmit.FlatAppearance.BorderSize = 0;
-            this.btn_NewAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_NewAgreementSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_NewAgreementSubmit.Location = new System.Drawing.Point(961, 372);
-            this.btn_NewAgreementSubmit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_NewAgreementSubmit.Name = "btn_NewAgreementSubmit";
-            this.btn_NewAgreementSubmit.Size = new System.Drawing.Size(76, 27);
-            this.btn_NewAgreementSubmit.TabIndex = 6;
-            this.btn_NewAgreementSubmit.Text = "Submit";
-            this.btn_NewAgreementSubmit.UseVisualStyleBackColor = false;
-            // 
-            // tb_NewAgreementDescription
-            // 
-            this.tb_NewAgreementDescription.Location = new System.Drawing.Point(7, 374);
-            this.tb_NewAgreementDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_NewAgreementDescription.Name = "tb_NewAgreementDescription";
-            this.tb_NewAgreementDescription.Size = new System.Drawing.Size(946, 22);
-            this.tb_NewAgreementDescription.TabIndex = 5;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 344);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 18);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Add agreement";
-            // 
-            // lv_Agreements
-            // 
-            this.lv_Agreements.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader23});
-            this.lv_Agreements.HideSelection = false;
-            this.lv_Agreements.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
-            this.lv_Agreements.Location = new System.Drawing.Point(4, 11);
-            this.lv_Agreements.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_Agreements.Name = "lv_Agreements";
-            this.lv_Agreements.Size = new System.Drawing.Size(1033, 320);
-            this.lv_Agreements.TabIndex = 2;
-            this.lv_Agreements.UseCompatibleStateImageBehavior = false;
-            this.lv_Agreements.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Date Added";
-            this.columnHeader12.Width = 70;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Description";
-            this.columnHeader13.Width = 595;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "Creator";
-            this.columnHeader23.Width = 104;
             // 
             // mtpMessages
             // 
@@ -751,19 +762,21 @@
             this.mtpMessages.Controls.Add(this.btnMessageAdd);
             this.mtpMessages.HorizontalScrollbarBarColor = true;
             this.mtpMessages.Location = new System.Drawing.Point(4, 39);
+            this.mtpMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtpMessages.Name = "mtpMessages";
-            this.mtpMessages.Size = new System.Drawing.Size(1046, 478);
+            this.mtpMessages.Size = new System.Drawing.Size(1053, 472);
             this.mtpMessages.TabIndex = 3;
             this.mtpMessages.Text = "Complaints and Questions";
             this.mtpMessages.VerticalScrollbarBarColor = true;
+            this.mtpMessages.VerticalScrollbarSize = 11;
             // 
             // tbxMessageDescription
             // 
-            this.tbxMessageDescription.Location = new System.Drawing.Point(187, 405);
+            this.tbxMessageDescription.Location = new System.Drawing.Point(193, 401);
             this.tbxMessageDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbxMessageDescription.Multiline = true;
             this.tbxMessageDescription.Name = "tbxMessageDescription";
-            this.tbxMessageDescription.Size = new System.Drawing.Size(706, 24);
+            this.tbxMessageDescription.Size = new System.Drawing.Size(705, 25);
             this.tbxMessageDescription.TabIndex = 12;
             // 
             // cbxMessageType
@@ -772,7 +785,7 @@
             this.cbxMessageType.Items.AddRange(new object[] {
             "Question",
             "Complaint"});
-            this.cbxMessageType.Location = new System.Drawing.Point(4, 405);
+            this.cbxMessageType.Location = new System.Drawing.Point(10, 401);
             this.cbxMessageType.Margin = new System.Windows.Forms.Padding(4);
             this.cbxMessageType.Name = "cbxMessageType";
             this.cbxMessageType.Size = new System.Drawing.Size(175, 24);
@@ -783,7 +796,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 371);
+            this.label11.Location = new System.Drawing.Point(10, 374);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(141, 18);
@@ -794,6 +807,7 @@
             // 
             this.dgvMessageStudent.AllowUserToDeleteRows = false;
             this.dgvMessageStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMessageStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMessageStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMessageStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMessageStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -804,14 +818,15 @@
             this.chMessageText,
             this.chMessageReply});
             this.dgvMessageStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMessageStudent.Location = new System.Drawing.Point(0, 0);
+            this.dgvMessageStudent.Location = new System.Drawing.Point(3, 9);
+            this.dgvMessageStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMessageStudent.Name = "dgvMessageStudent";
             this.dgvMessageStudent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMessageStudent.RowHeadersVisible = false;
             this.dgvMessageStudent.RowHeadersWidth = 51;
             this.dgvMessageStudent.RowTemplate.Height = 24;
             this.dgvMessageStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageStudent.Size = new System.Drawing.Size(1037, 289);
+            this.dgvMessageStudent.Size = new System.Drawing.Size(1037, 274);
             this.dgvMessageStudent.TabIndex = 8;
             // 
             // chMessagesId
@@ -823,40 +838,41 @@
             // 
             // chMessagesDate
             // 
-            this.chMessagesDate.HeaderText = "Date added";
+            this.chMessagesDate.HeaderText = "Date";
             this.chMessagesDate.MinimumWidth = 6;
             this.chMessagesDate.Name = "chMessagesDate";
-            this.chMessagesDate.Width = 175;
+            this.chMessagesDate.Width = 90;
             // 
             // chMessageType
             // 
             this.chMessageType.HeaderText = "Type";
             this.chMessageType.MinimumWidth = 6;
             this.chMessageType.Name = "chMessageType";
-            this.chMessageType.Width = 125;
+            this.chMessageType.Width = 120;
             // 
             // chMessageText
             // 
             this.chMessageText.HeaderText = "Message";
             this.chMessageText.MinimumWidth = 6;
             this.chMessageText.Name = "chMessageText";
-            this.chMessageText.Width = 300;
+            this.chMessageText.Width = 280;
             // 
             // chMessageReply
             // 
             this.chMessageReply.HeaderText = "Reply";
             this.chMessageReply.MinimumWidth = 6;
             this.chMessageReply.Name = "chMessageReply";
-            this.chMessageReply.Width = 300;
+            this.chMessageReply.Width = 234;
             // 
             // pbxAddMessage
             // 
             this.pbxAddMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxAddMessage.BackgroundImage = global::Project.Properties.Resources.add_512;
             this.pbxAddMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddMessage.Location = new System.Drawing.Point(999, 389);
+            this.pbxAddMessage.Location = new System.Drawing.Point(1064, 384);
+            this.pbxAddMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxAddMessage.Name = "pbxAddMessage";
-            this.pbxAddMessage.Size = new System.Drawing.Size(23, 25);
+            this.pbxAddMessage.Size = new System.Drawing.Size(31, 31);
             this.pbxAddMessage.TabIndex = 17;
             this.pbxAddMessage.TabStop = false;
             // 
@@ -865,9 +881,10 @@
             this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
             this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveMessage.Location = new System.Drawing.Point(200, 308);
+            this.pbxRemoveMessage.Location = new System.Drawing.Point(203, 315);
+            this.pbxRemoveMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxRemoveMessage.Name = "pbxRemoveMessage";
-            this.pbxRemoveMessage.Size = new System.Drawing.Size(20, 23);
+            this.pbxRemoveMessage.Size = new System.Drawing.Size(27, 28);
             this.pbxRemoveMessage.TabIndex = 18;
             this.pbxRemoveMessage.TabStop = false;
             // 
@@ -877,10 +894,10 @@
             this.btnRemoveSelectedMessage.FlatAppearance.BorderSize = 0;
             this.btnRemoveSelectedMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoveSelectedMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRemoveSelectedMessage.Location = new System.Drawing.Point(0, 296);
+            this.btnRemoveSelectedMessage.Location = new System.Drawing.Point(4, 304);
             this.btnRemoveSelectedMessage.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveSelectedMessage.Name = "btnRemoveSelectedMessage";
-            this.btnRemoveSelectedMessage.Size = new System.Drawing.Size(236, 51);
+            this.btnRemoveSelectedMessage.Size = new System.Drawing.Size(236, 50);
             this.btnRemoveSelectedMessage.TabIndex = 9;
             this.btnRemoveSelectedMessage.Text = "Remove Selected";
             this.btnRemoveSelectedMessage.UseVisualStyleBackColor = false;
@@ -891,7 +908,7 @@
             this.btnMessageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.btnMessageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMessageAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMessageAdd.Location = new System.Drawing.Point(901, 375);
+            this.btnMessageAdd.Location = new System.Drawing.Point(906, 374);
             this.btnMessageAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnMessageAdd.Name = "btnMessageAdd";
             this.btnMessageAdd.Size = new System.Drawing.Size(136, 54);
@@ -905,7 +922,6 @@
             this.mtpProfile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mtpProfile.Controls.Add(this.dgvStudentTasks);
             this.mtpProfile.Controls.Add(this.btnEdit);
-            this.mtpProfile.Controls.Add(this.btnCompleteTask);
             this.mtpProfile.Controls.Add(this.tbxFloor);
             this.mtpProfile.Controls.Add(this.tbxPassword);
             this.mtpProfile.Controls.Add(this.tbxAddBalance);
@@ -931,13 +947,16 @@
             this.mtpProfile.Controls.Add(this.pbxDeposit);
             this.mtpProfile.Controls.Add(this.pictureBox3);
             this.mtpProfile.Controls.Add(this.btnDeposit);
+            this.mtpProfile.Controls.Add(this.btnCompleteTask);
             this.mtpProfile.HorizontalScrollbarBarColor = true;
             this.mtpProfile.Location = new System.Drawing.Point(4, 39);
+            this.mtpProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtpProfile.Name = "mtpProfile";
-            this.mtpProfile.Size = new System.Drawing.Size(1046, 478);
+            this.mtpProfile.Size = new System.Drawing.Size(1053, 472);
             this.mtpProfile.TabIndex = 4;
             this.mtpProfile.Text = "Profile";
             this.mtpProfile.VerticalScrollbarBarColor = true;
+            this.mtpProfile.VerticalScrollbarSize = 11;
             // 
             // dgvStudentTasks
             // 
@@ -952,13 +971,14 @@
             this.chTaskDesc,
             this.chStatusTask});
             this.dgvStudentTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvStudentTasks.Location = new System.Drawing.Point(324, 43);
+            this.dgvStudentTasks.Location = new System.Drawing.Point(432, 53);
+            this.dgvStudentTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvStudentTasks.Name = "dgvStudentTasks";
             this.dgvStudentTasks.RowHeadersVisible = false;
             this.dgvStudentTasks.RowHeadersWidth = 51;
             this.dgvStudentTasks.RowTemplate.Height = 24;
             this.dgvStudentTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentTasks.Size = new System.Drawing.Size(652, 219);
+            this.dgvStudentTasks.Size = new System.Drawing.Size(574, 219);
             this.dgvStudentTasks.TabIndex = 70;
             // 
             // chDateTask
@@ -985,8 +1005,10 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEdit.Location = new System.Drawing.Point(24, 417);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(112, 38);
             this.btnEdit.TabIndex = 69;
@@ -1001,10 +1023,10 @@
             this.btnCompleteTask.FlatAppearance.BorderSize = 0;
             this.btnCompleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCompleteTask.Location = new System.Drawing.Point(324, 282);
-            this.btnCompleteTask.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCompleteTask.Location = new System.Drawing.Point(432, 290);
+            this.btnCompleteTask.Margin = new System.Windows.Forms.Padding(5);
             this.btnCompleteTask.Name = "btnCompleteTask";
-            this.btnCompleteTask.Size = new System.Drawing.Size(221, 45);
+            this.btnCompleteTask.Size = new System.Drawing.Size(221, 46);
             this.btnCompleteTask.TabIndex = 68;
             this.btnCompleteTask.Text = "Complete Selected Task";
             this.btnCompleteTask.UseVisualStyleBackColor = false;
@@ -1025,24 +1047,24 @@
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
-            this.tbxPassword.Size = new System.Drawing.Size(238, 22);
+            this.tbxPassword.Size = new System.Drawing.Size(261, 22);
             this.tbxPassword.TabIndex = 65;
             // 
             // tbxAddBalance
             // 
-            this.tbxAddBalance.Location = new System.Drawing.Point(324, 398);
-            this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxAddBalance.Location = new System.Drawing.Point(440, 421);
+            this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(5);
             this.tbxAddBalance.Name = "tbxAddBalance";
-            this.tbxAddBalance.Size = new System.Drawing.Size(275, 22);
+            this.tbxAddBalance.Size = new System.Drawing.Size(203, 22);
             this.tbxAddBalance.TabIndex = 62;
             // 
             // tbxRoom
             // 
-            this.tbxRoom.Location = new System.Drawing.Point(145, 265);
-            this.tbxRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxRoom.Location = new System.Drawing.Point(146, 265);
+            this.tbxRoom.Margin = new System.Windows.Forms.Padding(5);
             this.tbxRoom.Name = "tbxRoom";
             this.tbxRoom.ReadOnly = true;
-            this.tbxRoom.Size = new System.Drawing.Size(118, 22);
+            this.tbxRoom.Size = new System.Drawing.Size(140, 22);
             this.tbxRoom.TabIndex = 60;
             // 
             // lblProfileFloor
@@ -1060,7 +1082,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPassword.Location = new System.Drawing.Point(22, 94);
+            this.lblPassword.Location = new System.Drawing.Point(21, 94);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(69, 17);
@@ -1072,8 +1094,8 @@
             this.lblAddBalance.AutoSize = true;
             this.lblAddBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBalance.Location = new System.Drawing.Point(327, 363);
-            this.lblAddBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddBalance.Location = new System.Drawing.Point(437, 394);
+            this.lblAddBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAddBalance.Name = "lblAddBalance";
             this.lblAddBalance.Size = new System.Drawing.Size(88, 18);
             this.lblAddBalance.TabIndex = 61;
@@ -1083,8 +1105,8 @@
             // 
             this.lblRoom.AutoSize = true;
             this.lblRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRoom.Location = new System.Drawing.Point(147, 245);
-            this.lblRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRoom.Location = new System.Drawing.Point(143, 245);
+            this.lblRoom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(45, 17);
             this.lblRoom.TabIndex = 59;
@@ -1096,7 +1118,7 @@
             this.tbxScore.Margin = new System.Windows.Forms.Padding(4);
             this.tbxScore.Name = "tbxScore";
             this.tbxScore.ReadOnly = true;
-            this.tbxScore.Size = new System.Drawing.Size(238, 22);
+            this.tbxScore.Size = new System.Drawing.Size(261, 22);
             this.tbxScore.TabIndex = 57;
             // 
             // tbxBalance
@@ -1105,7 +1127,7 @@
             this.tbxBalance.Margin = new System.Windows.Forms.Padding(4);
             this.tbxBalance.Name = "tbxBalance";
             this.tbxBalance.ReadOnly = true;
-            this.tbxBalance.Size = new System.Drawing.Size(238, 22);
+            this.tbxBalance.Size = new System.Drawing.Size(261, 22);
             this.tbxBalance.TabIndex = 55;
             // 
             // tbxPhone
@@ -1113,23 +1135,23 @@
             this.tbxPhone.Location = new System.Drawing.Point(23, 214);
             this.tbxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPhone.Name = "tbxPhone";
-            this.tbxPhone.Size = new System.Drawing.Size(240, 22);
+            this.tbxPhone.Size = new System.Drawing.Size(263, 22);
             this.tbxPhone.TabIndex = 50;
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(23, 163);
+            this.tbxEmail.Location = new System.Drawing.Point(23, 162);
             this.tbxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(240, 22);
+            this.tbxEmail.Size = new System.Drawing.Size(263, 22);
             this.tbxEmail.TabIndex = 48;
             // 
             // tbxAge
             // 
-            this.tbxAge.Location = new System.Drawing.Point(190, 62);
-            this.tbxAge.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxAge.Location = new System.Drawing.Point(197, 62);
+            this.tbxAge.Margin = new System.Windows.Forms.Padding(5);
             this.tbxAge.Name = "tbxAge";
-            this.tbxAge.Size = new System.Drawing.Size(73, 22);
+            this.tbxAge.Size = new System.Drawing.Size(89, 22);
             this.tbxAge.TabIndex = 46;
             // 
             // tbxName
@@ -1137,14 +1159,14 @@
             this.tbxName.Location = new System.Drawing.Point(23, 62);
             this.tbxName.Margin = new System.Windows.Forms.Padding(4);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(159, 22);
+            this.tbxName.Size = new System.Drawing.Size(165, 22);
             this.tbxName.TabIndex = 44;
             // 
             // lblScore
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblScore.Location = new System.Drawing.Point(22, 346);
+            this.lblScore.Location = new System.Drawing.Point(21, 346);
             this.lblScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(45, 17);
@@ -1155,7 +1177,7 @@
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBalance.Location = new System.Drawing.Point(22, 296);
+            this.lblBalance.Location = new System.Drawing.Point(21, 295);
             this.lblBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(59, 17);
@@ -1167,8 +1189,8 @@
             this.lblMyTasks.AutoSize = true;
             this.lblMyTasks.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblMyTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyTasks.Location = new System.Drawing.Point(327, 11);
-            this.lblMyTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMyTasks.Location = new System.Drawing.Point(436, 14);
+            this.lblMyTasks.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMyTasks.Name = "lblMyTasks";
             this.lblMyTasks.Size = new System.Drawing.Size(76, 20);
             this.lblMyTasks.TabIndex = 52;
@@ -1179,7 +1201,7 @@
             this.lblGeneralInfo.AutoSize = true;
             this.lblGeneralInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblGeneralInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGeneralInfo.Location = new System.Drawing.Point(22, 11);
+            this.lblGeneralInfo.Location = new System.Drawing.Point(21, 11);
             this.lblGeneralInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGeneralInfo.Name = "lblGeneralInfo";
             this.lblGeneralInfo.Size = new System.Drawing.Size(156, 20);
@@ -1212,8 +1234,8 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAge.Location = new System.Drawing.Point(190, 43);
-            this.lblAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAge.Location = new System.Drawing.Point(201, 42);
+            this.lblAge.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(33, 17);
             this.lblAge.TabIndex = 45;
@@ -1235,17 +1257,18 @@
             this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
             this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDeposit.Location = new System.Drawing.Point(747, 384);
+            this.pbxDeposit.Location = new System.Drawing.Point(622, 300);
+            this.pbxDeposit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxDeposit.Name = "pbxDeposit";
-            this.pbxDeposit.Size = new System.Drawing.Size(22, 24);
+            this.pbxDeposit.Size = new System.Drawing.Size(21, 25);
             this.pbxDeposit.TabIndex = 2;
             this.pbxDeposit.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(297, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(367, 28);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1, 418);
             this.pictureBox3.TabIndex = 53;
@@ -1258,36 +1281,607 @@
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeposit.Location = new System.Drawing.Point(626, 374);
-            this.btnDeposit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeposit.Location = new System.Drawing.Point(658, 401);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(5);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(155, 46);
+            this.btnDeposit.Size = new System.Drawing.Size(207, 44);
             this.btnDeposit.TabIndex = 63;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = false;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
+            // 
+            // mtpHouseRules
+            // 
+            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
+            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
+            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
+            this.mtpHouseRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpHouseRules.Name = "mtpHouseRules";
+            this.mtpHouseRules.Size = new System.Drawing.Size(1053, 472);
+            this.mtpHouseRules.TabIndex = 1;
+            this.mtpHouseRules.Text = "House Rules";
+            this.mtpHouseRules.VerticalScrollbarBarColor = true;
+            this.mtpHouseRules.VerticalScrollbarSize = 11;
+            // 
+            // dgvHouseRulesStudent
+            // 
+            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
+            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chIdStudent,
+            this.chDateStudent,
+            this.chDescriptionStudent});
+            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(9, 11);
+            this.dgvHouseRulesStudent.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
+            this.dgvHouseRulesStudent.RowHeadersVisible = false;
+            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
+            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(1027, 439);
+            this.dgvHouseRulesStudent.TabIndex = 9;
+            // 
+            // chIdStudent
+            // 
+            this.chIdStudent.HeaderText = "Id";
+            this.chIdStudent.MinimumWidth = 6;
+            this.chIdStudent.Name = "chIdStudent";
+            this.chIdStudent.Width = 60;
+            // 
+            // chDateStudent
+            // 
+            this.chDateStudent.HeaderText = "Date Added";
+            this.chDateStudent.MinimumWidth = 6;
+            this.chDateStudent.Name = "chDateStudent";
+            this.chDateStudent.Width = 110;
+            // 
+            // chDescriptionStudent
+            // 
+            this.chDescriptionStudent.HeaderText = "Description";
+            this.chDescriptionStudent.MinimumWidth = 6;
+            this.chDescriptionStudent.Name = "chDescriptionStudent";
+            this.chDescriptionStudent.Width = 597;
+            // 
+            // mtpAgreements
+            // 
+            this.mtpAgreements.Controls.Add(this.btn_AgreementRejectSelected);
+            this.mtpAgreements.Controls.Add(this.btn_AgreementDeleteSelected);
+            this.mtpAgreements.Controls.Add(this.btn_AgreementEditSelected);
+            this.mtpAgreements.Controls.Add(this.btn_AgreementAcceptSelected);
+            this.mtpAgreements.Controls.Add(this.cbx_AgreementPersonInvolved);
+            this.mtpAgreements.Controls.Add(this.label15);
+            this.mtpAgreements.Controls.Add(this.label14);
+            this.mtpAgreements.Controls.Add(this.dgv_AgreementsStudent);
+            this.mtpAgreements.Controls.Add(this.btn_NewAgreementSubmit);
+            this.mtpAgreements.Controls.Add(this.tb_NewAgreementDescription);
+            this.mtpAgreements.Controls.Add(this.label9);
+            this.mtpAgreements.HorizontalScrollbarBarColor = true;
+            this.mtpAgreements.Location = new System.Drawing.Point(4, 39);
+            this.mtpAgreements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpAgreements.Name = "mtpAgreements";
+            this.mtpAgreements.Size = new System.Drawing.Size(1053, 472);
+            this.mtpAgreements.TabIndex = 2;
+            this.mtpAgreements.Text = "Agreements";
+            this.mtpAgreements.VerticalScrollbarBarColor = true;
+            this.mtpAgreements.VerticalScrollbarSize = 11;
+            // 
+            // btn_AgreementRejectSelected
+            // 
+            this.btn_AgreementRejectSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementRejectSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementRejectSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementRejectSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementRejectSelected.Location = new System.Drawing.Point(644, 425);
+            this.btn_AgreementRejectSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AgreementRejectSelected.Name = "btn_AgreementRejectSelected";
+            this.btn_AgreementRejectSelected.Size = new System.Drawing.Size(128, 26);
+            this.btn_AgreementRejectSelected.TabIndex = 16;
+            this.btn_AgreementRejectSelected.Text = "Reject Selected";
+            this.btn_AgreementRejectSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementRejectSelected.Click += new System.EventHandler(this.btn_AgreementRejectSelected_Click);
+            // 
+            // btn_AgreementDeleteSelected
+            // 
+            this.btn_AgreementDeleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementDeleteSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementDeleteSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementDeleteSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementDeleteSelected.Location = new System.Drawing.Point(909, 425);
+            this.btn_AgreementDeleteSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AgreementDeleteSelected.Name = "btn_AgreementDeleteSelected";
+            this.btn_AgreementDeleteSelected.Size = new System.Drawing.Size(121, 26);
+            this.btn_AgreementDeleteSelected.TabIndex = 15;
+            this.btn_AgreementDeleteSelected.Text = "Delete Selected";
+            this.btn_AgreementDeleteSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementDeleteSelected.Click += new System.EventHandler(this.btn_AgreementDeleteSelected_Click);
+            // 
+            // btn_AgreementEditSelected
+            // 
+            this.btn_AgreementEditSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementEditSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementEditSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementEditSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementEditSelected.Location = new System.Drawing.Point(780, 425);
+            this.btn_AgreementEditSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AgreementEditSelected.Name = "btn_AgreementEditSelected";
+            this.btn_AgreementEditSelected.Size = new System.Drawing.Size(121, 26);
+            this.btn_AgreementEditSelected.TabIndex = 14;
+            this.btn_AgreementEditSelected.Text = "Edit Selected";
+            this.btn_AgreementEditSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementEditSelected.Click += new System.EventHandler(this.btn_AgreementEditSelected_Click);
+            // 
+            // btn_AgreementAcceptSelected
+            // 
+            this.btn_AgreementAcceptSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_AgreementAcceptSelected.FlatAppearance.BorderSize = 0;
+            this.btn_AgreementAcceptSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AgreementAcceptSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_AgreementAcceptSelected.Location = new System.Drawing.Point(508, 425);
+            this.btn_AgreementAcceptSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AgreementAcceptSelected.Name = "btn_AgreementAcceptSelected";
+            this.btn_AgreementAcceptSelected.Size = new System.Drawing.Size(128, 26);
+            this.btn_AgreementAcceptSelected.TabIndex = 13;
+            this.btn_AgreementAcceptSelected.Text = "Accept Selected";
+            this.btn_AgreementAcceptSelected.UseVisualStyleBackColor = false;
+            this.btn_AgreementAcceptSelected.Click += new System.EventHandler(this.btn_AgreementAcceptSelected_Click);
+            // 
+            // cbx_AgreementPersonInvolved
+            // 
+            this.cbx_AgreementPersonInvolved.FormattingEnabled = true;
+            this.cbx_AgreementPersonInvolved.Location = new System.Drawing.Point(228, 425);
+            this.cbx_AgreementPersonInvolved.Margin = new System.Windows.Forms.Padding(4);
+            this.cbx_AgreementPersonInvolved.Name = "cbx_AgreementPersonInvolved";
+            this.cbx_AgreementPersonInvolved.Size = new System.Drawing.Size(121, 24);
+            this.cbx_AgreementPersonInvolved.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(7, 427);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(198, 18);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Agreement between you and ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(7, 378);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 18);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Description:";
+            // 
+            // dgv_AgreementsStudent
+            // 
+            this.dgv_AgreementsStudent.AllowUserToDeleteRows = false;
+            this.dgv_AgreementsStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_AgreementsStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_AgreementsStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_AgreementsStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_AgreementsStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_AgreementsStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgv_AgreementsStudent.Location = new System.Drawing.Point(10, 14);
+            this.dgv_AgreementsStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_AgreementsStudent.Name = "dgv_AgreementsStudent";
+            this.dgv_AgreementsStudent.ReadOnly = true;
+            this.dgv_AgreementsStudent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_AgreementsStudent.RowHeadersVisible = false;
+            this.dgv_AgreementsStudent.RowHeadersWidth = 51;
+            this.dgv_AgreementsStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_AgreementsStudent.Size = new System.Drawing.Size(1020, 330);
+            this.dgv_AgreementsStudent.TabIndex = 7;
+            this.dgv_AgreementsStudent.CurrentCellChanged += new System.EventHandler(this.dgv_AgreementsStudent_CurrentCellChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Between";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Description";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 376;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Status";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 126;
+            // 
+            // btn_NewAgreementSubmit
+            // 
+            this.btn_NewAgreementSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_NewAgreementSubmit.FlatAppearance.BorderSize = 0;
+            this.btn_NewAgreementSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_NewAgreementSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_NewAgreementSubmit.Location = new System.Drawing.Point(359, 425);
+            this.btn_NewAgreementSubmit.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_NewAgreementSubmit.Name = "btn_NewAgreementSubmit";
+            this.btn_NewAgreementSubmit.Size = new System.Drawing.Size(93, 26);
+            this.btn_NewAgreementSubmit.TabIndex = 6;
+            this.btn_NewAgreementSubmit.Text = "Submit";
+            this.btn_NewAgreementSubmit.UseVisualStyleBackColor = false;
+            this.btn_NewAgreementSubmit.Click += new System.EventHandler(this.btn_NewAgreementSubmit_Click);
+            // 
+            // tb_NewAgreementDescription
+            // 
+            this.tb_NewAgreementDescription.Location = new System.Drawing.Point(107, 377);
+            this.tb_NewAgreementDescription.Margin = new System.Windows.Forms.Padding(5);
+            this.tb_NewAgreementDescription.Name = "tb_NewAgreementDescription";
+            this.tb_NewAgreementDescription.Size = new System.Drawing.Size(923, 22);
+            this.tb_NewAgreementDescription.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(7, 348);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(138, 18);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Add new agreement";
+            // 
+            // mtpGroceries
+            // 
+            this.mtpGroceries.Controls.Add(this.btn_GroceryHistoryInfo);
+            this.mtpGroceries.Controls.Add(this.pictureBox6);
+            this.mtpGroceries.Controls.Add(this.pictureBox5);
+            this.mtpGroceries.Controls.Add(this.pictureBox4);
+            this.mtpGroceries.Controls.Add(this.btn_GroceryAddItem);
+            this.mtpGroceries.Controls.Add(this.btn_GroceryRemoveItem);
+            this.mtpGroceries.Controls.Add(this.btn_GroceryCompleteList);
+            this.mtpGroceries.Controls.Add(this.tb_GroceryItem);
+            this.mtpGroceries.Controls.Add(this.nud_GroceryItemAmount);
+            this.mtpGroceries.Controls.Add(this.label19);
+            this.mtpGroceries.Controls.Add(this.label18);
+            this.mtpGroceries.Controls.Add(this.label17);
+            this.mtpGroceries.Controls.Add(this.label16);
+            this.mtpGroceries.Controls.Add(this.dgv_GroceriesHistory);
+            this.mtpGroceries.Controls.Add(this.dgv_Groceries);
+            this.mtpGroceries.HorizontalScrollbarBarColor = true;
+            this.mtpGroceries.HorizontalScrollbarSize = 12;
+            this.mtpGroceries.Location = new System.Drawing.Point(4, 39);
+            this.mtpGroceries.Margin = new System.Windows.Forms.Padding(4);
+            this.mtpGroceries.Name = "mtpGroceries";
+            this.mtpGroceries.Size = new System.Drawing.Size(1053, 472);
+            this.mtpGroceries.TabIndex = 6;
+            this.mtpGroceries.Text = "Groceries";
+            this.mtpGroceries.VerticalScrollbarBarColor = true;
+            this.mtpGroceries.VerticalScrollbarSize = 13;
+            // 
+            // btn_GroceryHistoryInfo
+            // 
+            this.btn_GroceryHistoryInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryHistoryInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryHistoryInfo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryHistoryInfo.Location = new System.Drawing.Point(836, 400);
+            this.btn_GroceryHistoryInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_GroceryHistoryInfo.Name = "btn_GroceryHistoryInfo";
+            this.btn_GroceryHistoryInfo.Size = new System.Drawing.Size(125, 43);
+            this.btn_GroceryHistoryInfo.TabIndex = 17;
+            this.btn_GroceryHistoryInfo.Text = "Info Selected";
+            this.btn_GroceryHistoryInfo.UseVisualStyleBackColor = false;
+            this.btn_GroceryHistoryInfo.Click += new System.EventHandler(this.btn_GroceryHistoryInfo_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox6.BackgroundImage = global::Project.Properties.Resources.edit_8_512;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(419, 411);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox6.TabIndex = 16;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox5.BackgroundImage = global::Project.Properties.Resources.add_512;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(576, 118);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox4.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(140, 411);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btn_GroceryAddItem
+            // 
+            this.btn_GroceryAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryAddItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryAddItem.Location = new System.Drawing.Point(488, 107);
+            this.btn_GroceryAddItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_GroceryAddItem.Name = "btn_GroceryAddItem";
+            this.btn_GroceryAddItem.Size = new System.Drawing.Size(132, 43);
+            this.btn_GroceryAddItem.TabIndex = 13;
+            this.btn_GroceryAddItem.Text = "Add item      ";
+            this.btn_GroceryAddItem.UseVisualStyleBackColor = false;
+            this.btn_GroceryAddItem.Click += new System.EventHandler(this.btn_GroceryAddItem_Click);
+            // 
+            // btn_GroceryRemoveItem
+            // 
+            this.btn_GroceryRemoveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryRemoveItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryRemoveItem.Location = new System.Drawing.Point(21, 400);
+            this.btn_GroceryRemoveItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_GroceryRemoveItem.Name = "btn_GroceryRemoveItem";
+            this.btn_GroceryRemoveItem.Size = new System.Drawing.Size(160, 43);
+            this.btn_GroceryRemoveItem.TabIndex = 12;
+            this.btn_GroceryRemoveItem.Text = "Remove item     ";
+            this.btn_GroceryRemoveItem.UseVisualStyleBackColor = false;
+            this.btn_GroceryRemoveItem.Click += new System.EventHandler(this.btn_GroceryRemoveItem_Click);
+            // 
+            // btn_GroceryCompleteList
+            // 
+            this.btn_GroceryCompleteList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btn_GroceryCompleteList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_GroceryCompleteList.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_GroceryCompleteList.Location = new System.Drawing.Point(197, 400);
+            this.btn_GroceryCompleteList.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_GroceryCompleteList.Name = "btn_GroceryCompleteList";
+            this.btn_GroceryCompleteList.Size = new System.Drawing.Size(267, 43);
+            this.btn_GroceryCompleteList.TabIndex = 10;
+            this.btn_GroceryCompleteList.Text = "Mark grocery list as complete     ";
+            this.btn_GroceryCompleteList.UseVisualStyleBackColor = false;
+            this.btn_GroceryCompleteList.Click += new System.EventHandler(this.btn_GroceryCompleteList_Click);
+            // 
+            // tb_GroceryItem
+            // 
+            this.tb_GroceryItem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_GroceryItem.Location = new System.Drawing.Point(556, 74);
+            this.tb_GroceryItem.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_GroceryItem.Name = "tb_GroceryItem";
+            this.tb_GroceryItem.Size = new System.Drawing.Size(187, 22);
+            this.tb_GroceryItem.TabIndex = 9;
+            // 
+            // nud_GroceryItemAmount
+            // 
+            this.nud_GroceryItemAmount.Location = new System.Drawing.Point(488, 74);
+            this.nud_GroceryItemAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.nud_GroceryItemAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_GroceryItemAmount.Name = "nud_GroceryItemAmount";
+            this.nud_GroceryItemAmount.Size = new System.Drawing.Size(53, 22);
+            this.nud_GroceryItemAmount.TabIndex = 8;
+            this.nud_GroceryItemAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_GroceryItemAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(552, 53);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(34, 17);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Item";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label18.Location = new System.Drawing.Point(487, 53);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 17);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Amount";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(484, 21);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(165, 17);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Add a new item to the list";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(487, 192);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(240, 17);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Previous students who did groceries:";
+            // 
+            // dgv_GroceriesHistory
+            // 
+            this.dgv_GroceriesHistory.AllowUserToDeleteRows = false;
+            this.dgv_GroceriesHistory.AllowUserToResizeRows = false;
+            this.dgv_GroceriesHistory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_GroceriesHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_GroceriesHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_GroceriesHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_GroceriesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_GroceriesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.dgv_GroceriesHistory.Location = new System.Drawing.Point(489, 212);
+            this.dgv_GroceriesHistory.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_GroceriesHistory.Name = "dgv_GroceriesHistory";
+            this.dgv_GroceriesHistory.ReadOnly = true;
+            this.dgv_GroceriesHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_GroceriesHistory.RowHeadersVisible = false;
+            this.dgv_GroceriesHistory.RowHeadersWidth = 51;
+            this.dgv_GroceriesHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_GroceriesHistory.Size = new System.Drawing.Size(337, 231);
+            this.dgv_GroceriesHistory.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 35;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Student";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 95;
+            // 
+            // dgv_Groceries
+            // 
+            this.dgv_Groceries.AllowUserToDeleteRows = false;
+            this.dgv_Groceries.AllowUserToResizeRows = false;
+            this.dgv_Groceries.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_Groceries.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_Groceries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_Groceries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Groceries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Groceries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dgv_Groceries.Location = new System.Drawing.Point(21, 21);
+            this.dgv_Groceries.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_Groceries.Name = "dgv_Groceries";
+            this.dgv_Groceries.ReadOnly = true;
+            this.dgv_Groceries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Groceries.RowHeadersVisible = false;
+            this.dgv_Groceries.RowHeadersWidth = 51;
+            this.dgv_Groceries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Groceries.Size = new System.Drawing.Size(443, 372);
+            this.dgv_Groceries.TabIndex = 2;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "ID";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 35;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Amount";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 51;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Item(s)";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 156;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Added by";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 87;
             // 
             // FrmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 612);
+            this.ClientSize = new System.Drawing.Size(1059, 622);
             this.Controls.Add(this.mtcStudent);
             this.Controls.Add(this.pHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmStudent";
             this.Text = "Student";
+            this.Load += new System.EventHandler(this.FrmStudent_Load);
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_LoggedInAsPicture)).EndInit();
             this.mtcStudent.ResumeLayout(false);
             this.mtpSchedule.ResumeLayout(false);
             this.mtpSchedule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgPendingEvents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
-            this.mtpHouseRules.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
-            this.mtpAgreements.ResumeLayout(false);
-            this.mtpAgreements.PerformLayout();
             this.mtpMessages.ResumeLayout(false);
             this.mtpMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
@@ -1298,6 +1892,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.mtpHouseRules.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
+            this.mtpAgreements.ResumeLayout(false);
+            this.mtpAgreements.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AgreementsStudent)).EndInit();
+            this.mtpGroceries.ResumeLayout(false);
+            this.mtpGroceries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_GroceryItemAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_GroceriesHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Groceries)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1318,40 +1925,28 @@
         private System.Windows.Forms.Label lblAsignee;
         private System.Windows.Forms.Button btn_FilterSearch;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox cb_EventFloor;
+        private System.Windows.Forms.ComboBox cb_CreateEventFloor;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox tb_EventLocation;
-        private System.Windows.Forms.DateTimePicker DTP_EventDateTime;
+        private System.Windows.Forms.TextBox tb_CreateEventLocation;
+        private System.Windows.Forms.DateTimePicker dtpCreateEventDatePicker;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Label lblFloor;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_EventVoteSelectedNO;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_EventVoteSelectedYES;
-        private System.Windows.Forms.ListView lv_PendingEvents;
-        private System.Windows.Forms.TextBox tb_EventDescription;
+        private System.Windows.Forms.TextBox tb_CreateEventDescription;
         private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.Button btn_EventSendRequest;
         private System.Windows.Forms.Label lblCreateEvent;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.DataGridView dgvSchedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chAsignee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chTask;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chStatus;
         private MetroFramework.Controls.MetroTabPage mtpHouseRules;
         private System.Windows.Forms.DataGridView dgvHouseRulesStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chIdStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chDateStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chDescriptionStudent;
         private MetroFramework.Controls.MetroTabPage mtpAgreements;
         private System.Windows.Forms.Button btn_NewAgreementSubmit;
         private System.Windows.Forms.TextBox tb_NewAgreementDescription;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView lv_Agreements;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader23;
         private MetroFramework.Controls.MetroTabPage mtpMessages;
         private System.Windows.Forms.Button btnMessageAdd;
         private System.Windows.Forms.TextBox tbxMessageDescription;
@@ -1359,11 +1954,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnRemoveSelectedMessage;
         private System.Windows.Forms.DataGridView dgvMessageStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chMessagesId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chMessagesDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chMessageType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chMessageText;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chMessageReply;
         private MetroFramework.Controls.MetroTabPage mtpProfile;
         private System.Windows.Forms.Button btnCompleteTask;
         private System.Windows.Forms.TextBox tbxFloor;
@@ -1400,5 +1990,62 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chDateTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn chTaskDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn chStatusTask;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dvgPendingEvents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chAsignee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chTask;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chIdStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chDateStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chDescriptionStudent;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView dgv_AgreementsStudent;
+        private System.Windows.Forms.ComboBox cbx_AgreementPersonInvolved;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chMessagesId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chMessagesDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chMessageType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chMessageText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chMessageReply;
+        private System.Windows.Forms.Button btn_AgreementEditSelected;
+        private System.Windows.Forms.Button btn_AgreementAcceptSelected;
+        private System.Windows.Forms.Button btn_AgreementDeleteSelected;
+        private System.Windows.Forms.Button btn_AgreementRejectSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private MetroFramework.Controls.MetroTabPage mtpGroceries;
+        private System.Windows.Forms.DataGridView dgv_Groceries;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dgv_GroceriesHistory;
+        private System.Windows.Forms.TextBox tb_GroceryItem;
+        private System.Windows.Forms.NumericUpDown nud_GroceryItemAmount;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btn_GroceryCompleteList;
+        private System.Windows.Forms.Button btn_GroceryRemoveItem;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btn_GroceryAddItem;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Button btn_GroceryHistoryInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

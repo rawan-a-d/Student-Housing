@@ -41,6 +41,8 @@ namespace Project
                     else
                     {
                         MessageBox.Show("Credentials are wrong");
+                        mpsLogin.Value += 0;
+                        mpsLogin.Visible = false;
                     }
                 }
                 else if(studentsHousing.GetUserType(email) == "Admin")
