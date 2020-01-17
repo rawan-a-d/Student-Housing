@@ -162,7 +162,7 @@ namespace Project
                 DataGridViewRow row = (DataGridViewRow)dgvSchedule.Rows[0].Clone();
 
                 // Insert data into rows
-                row.Cells[0].Value = studentsHousing.FindStudentById(schedule.StudentId).ToString();
+                row.Cells[0].Value = studentsHousing.FindStudentById(schedule.StudentId).Name.ToString();
                 row.Cells[1].Value = studentsHousing.FindDateById(schedule.DateId).ToString("dd/MM/yyyy");
                 row.Cells[2].Value = (schedule.TaskType).ToString();
                 row.Cells[3].Value = (schedule.Status).ToString();
@@ -317,6 +317,9 @@ namespace Project
 
             // Display profile info
             DisplayProfileInfo();
+
+            // Events
+            UpdateEventsList();
         }
 
         private void btnX_Click(object sender, EventArgs e)
@@ -721,6 +724,101 @@ namespace Project
         private void FrmStudent_Load(object sender, EventArgs e)
         {
 
+        }
+
+                                                                    /* Events */
+        private void btn_EventSendRequest_Click(object sender, EventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(dtpEventDate.Text);
+            string description = tbxEventDescription.Text;
+            string location = tbxEventLocation.Text;
+            string floor = tbxEventFloor.Text;
+            string fullLocation = floor + location;
+
+            // Create event
+            studentsHousing.CreateEvent(currentUser.Id, description, fullLocation, date);
+
+            // Update events list
+            UpdateEventsList();
+        }
+
+        private void UpdateEventsList()
+        {
+            Event[] events = studentsHousing.GetEventsList();
+
+            // Clear list view
+            dgvEvents.Rows.Clear();
+            // Display rules
+            foreach (var eventItem in events)
+            {
+                // Create new rows
+                DataGridViewRow row = (DataGridViewRow)dgvEvents.Rows[0].Clone();
+
+                // Insert data into rows
+                row.Cells[0].Value = eventItem.EventId;
+                row.Cells[1].Value = studentsHousing.FindStudentById(eventItem.CreatorId).Name;
+                row.Cells[2].Value = eventItem.EventDate.ToString("dd/MM/yyyy");
+                row.Cells[3].Value = eventItem.Description;
+                row.Cells[4].Value = eventItem.Location;
+                if (String.IsNullOrEmpty(eventItem.Percentage))
+                {
+                    row.Cells[5].Value = eventItem.Percentage;
+                }
+                row.Cells[6].Value = eventItem.VotersNr;
+
+
+                // Add the item to list view
+                dgvEvents.Rows.Add(row);
+
+                // Text wrap
+                dgvEvents.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvEvents.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
+        }
+
+        private void btnEventVoteNo_Click(object sender, EventArgs e)
+        {
+            if (dgvEvents.SelectedCells.Count <= 0)
+            {
+                MessageBox.Show("Please select an event to vote on.");
+            }
+            else
+            {
+                int eventId = Convert.ToInt32(dgvEvents.CurrentRow.Cells[0].Value);
+                int voterId = currentUser.Id;
+                PollType answer = PollType.No;
+
+                bool hasVoted = studentsHousing.VoteEvent(eventId, voterId, answer);
+
+                UpdateEventsList();
+                // If student already voted on this event
+                if (!hasVoted)
+                {
+                    MessageBox.Show("You already voted for this event");
+                }
+            }
+        }
+
+        private void btnEventVoteYes_Click(object sender, EventArgs e)
+        {
+            if (dgvEvents.SelectedCells.Count <= 0)
+            {
+                MessageBox.Show("Please select an event to vote on.");
+            }
+            else
+            {
+                int eventId = Convert.ToInt32(dgvEvents.CurrentRow.Cells[0].Value);
+                int voterId = currentUser.Id;
+                PollType answer = PollType.Yes;
+
+                bool hasVoted = studentsHousing.VoteEvent(eventId, voterId, answer);
+                UpdateEventsList();
+                // If student already voted on this event
+                if (!hasVoted)
+                {
+                    MessageBox.Show("You already voted for this event");
+                }
+            }
         }
     }
 }

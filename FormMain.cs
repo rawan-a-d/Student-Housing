@@ -448,7 +448,7 @@ namespace Project
                 DataGridViewRow row = (DataGridViewRow)dgvSchedule.Rows[0].Clone();
 
                 // Insert data into rows
-                row.Cells[0].Value = studentsHousing.FindStudentById(schedule.StudentId).ToString();
+                row.Cells[0].Value = studentsHousing.FindStudentById(schedule.StudentId).Name.ToString();
                 row.Cells[1].Value = studentsHousing.FindDateById(schedule.DateId);
                 row.Cells[2].Value = (schedule.TaskType).ToString();
                 row.Cells[3].Value = (schedule.Status).ToString();

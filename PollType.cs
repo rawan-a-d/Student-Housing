@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaterialDesignColors.Recommended;
 
 namespace Project
 {
-    public enum TaskStatus
+    public enum PollType
     {
-        Pending, Completed, NotCompleted
+        Yes,
+        No
     }
 }

@@ -203,7 +203,7 @@
             this.mtcAdmin.Location = new System.Drawing.Point(0, 110);
             this.mtcAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtcAdmin.Name = "mtcAdmin";
-            this.mtcAdmin.SelectedIndex = 2;
+            this.mtcAdmin.SelectedIndex = 1;
             this.mtcAdmin.Size = new System.Drawing.Size(1061, 515);
             this.mtcAdmin.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcAdmin.TabIndex = 44;
@@ -221,6 +221,7 @@
             this.mtpHouseRulesAdmin.Controls.Add(this.btnRulesModifySelected);
             this.mtpHouseRulesAdmin.Controls.Add(this.btnAddRule);
             this.mtpHouseRulesAdmin.Controls.Add(this.dgvHouseRulesAdmin);
+            this.mtpHouseRulesAdmin.CustomBackground = true;
             this.mtpHouseRulesAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtpHouseRulesAdmin.HorizontalScrollbarBarColor = true;
             this.mtpHouseRulesAdmin.Location = new System.Drawing.Point(4, 39);
@@ -237,7 +238,7 @@
             this.pbxRemoveRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxRemoveRule.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
             this.pbxRemoveRule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveRule.Location = new System.Drawing.Point(1008, 398);
+            this.pbxRemoveRule.Location = new System.Drawing.Point(999, 398);
             this.pbxRemoveRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxRemoveRule.Name = "pbxRemoveRule";
             this.pbxRemoveRule.Size = new System.Drawing.Size(21, 21);
@@ -249,7 +250,7 @@
             this.pbxModifyRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxModifyRule.BackgroundImage = global::Project.Properties.Resources.edit_8_512;
             this.pbxModifyRule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxModifyRule.Location = new System.Drawing.Point(813, 398);
+            this.pbxModifyRule.Location = new System.Drawing.Point(801, 398);
             this.pbxModifyRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxModifyRule.Name = "pbxModifyRule";
             this.pbxModifyRule.Size = new System.Drawing.Size(23, 22);
@@ -261,7 +262,7 @@
             this.pbxAddRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxAddRule.BackgroundImage = global::Project.Properties.Resources.add_512;
             this.pbxAddRule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddRule.Location = new System.Drawing.Point(637, 398);
+            this.pbxAddRule.Location = new System.Drawing.Point(617, 398);
             this.pbxAddRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxAddRule.Name = "pbxAddRule";
             this.pbxAddRule.Size = new System.Drawing.Size(23, 22);
@@ -270,19 +271,19 @@
             // 
             // tbxNewRule
             // 
-            this.tbxNewRule.Location = new System.Drawing.Point(13, 408);
+            this.tbxNewRule.Location = new System.Drawing.Point(26, 408);
             this.tbxNewRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxNewRule.Name = "tbxNewRule";
-            this.tbxNewRule.Size = new System.Drawing.Size(523, 22);
+            this.tbxNewRule.Size = new System.Drawing.Size(478, 22);
             this.tbxNewRule.TabIndex = 55;
             // 
             // lblAddModifyRule
             // 
             this.lblAddModifyRule.AutoSize = true;
-            this.lblAddModifyRule.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAddModifyRule.BackColor = System.Drawing.SystemColors.Control;
             this.lblAddModifyRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddModifyRule.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblAddModifyRule.Location = new System.Drawing.Point(8, 372);
+            this.lblAddModifyRule.Location = new System.Drawing.Point(23, 370);
             this.lblAddModifyRule.Name = "lblAddModifyRule";
             this.lblAddModifyRule.Size = new System.Drawing.Size(123, 18);
             this.lblAddModifyRule.TabIndex = 54;
@@ -294,7 +295,7 @@
             this.btnRulesRemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnRulesRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRulesRemoveSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRulesRemoveSelected.Location = new System.Drawing.Point(852, 386);
+            this.btnRulesRemoveSelected.Location = new System.Drawing.Point(840, 386);
             this.btnRulesRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRulesRemoveSelected.Name = "btnRulesRemoveSelected";
             this.btnRulesRemoveSelected.Size = new System.Drawing.Size(189, 44);
@@ -309,7 +310,7 @@
             this.btnRulesModifySelected.FlatAppearance.BorderSize = 0;
             this.btnRulesModifySelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRulesModifySelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRulesModifySelected.Location = new System.Drawing.Point(677, 386);
+            this.btnRulesModifySelected.Location = new System.Drawing.Point(663, 386);
             this.btnRulesModifySelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRulesModifySelected.Name = "btnRulesModifySelected";
             this.btnRulesModifySelected.Size = new System.Drawing.Size(167, 46);
@@ -324,7 +325,7 @@
             this.btnAddRule.FlatAppearance.BorderSize = 0;
             this.btnAddRule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddRule.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddRule.Location = new System.Drawing.Point(552, 386);
+            this.btnAddRule.Location = new System.Drawing.Point(534, 386);
             this.btnAddRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddRule.Name = "btnAddRule";
             this.btnAddRule.Size = new System.Drawing.Size(117, 46);
@@ -347,13 +348,13 @@
             this.chDesc});
             this.dgvHouseRulesAdmin.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHouseRulesAdmin.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvHouseRulesAdmin.Location = new System.Drawing.Point(13, 21);
+            this.dgvHouseRulesAdmin.Location = new System.Drawing.Point(26, 21);
             this.dgvHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvHouseRulesAdmin.Name = "dgvHouseRulesAdmin";
             this.dgvHouseRulesAdmin.RowHeadersVisible = false;
             this.dgvHouseRulesAdmin.RowHeadersWidth = 51;
             this.dgvHouseRulesAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHouseRulesAdmin.Size = new System.Drawing.Size(1032, 315);
+            this.dgvHouseRulesAdmin.Size = new System.Drawing.Size(1003, 315);
             this.dgvHouseRulesAdmin.TabIndex = 9;
             this.dgvHouseRulesAdmin.CurrentCellChanged += new System.EventHandler(this.dgvHouseRulesAdmin_CurrentCellChanged);
             // 
@@ -397,6 +398,7 @@
             this.mtpTenantList.Controls.Add(this.lvwTenantList);
             this.mtpTenantList.Controls.Add(this.btn_TenantRemoveSelected);
             this.mtpTenantList.Controls.Add(this.btnTenantAdd);
+            this.mtpTenantList.CustomBackground = true;
             this.mtpTenantList.HorizontalScrollbarBarColor = true;
             this.mtpTenantList.Location = new System.Drawing.Point(4, 39);
             this.mtpTenantList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -410,7 +412,7 @@
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblRoom.BackColor = System.Drawing.SystemColors.Control;
             this.lblRoom.Location = new System.Drawing.Point(924, 234);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(45, 17);
@@ -420,7 +422,7 @@
             // lblFloor
             // 
             this.lblFloor.AutoSize = true;
-            this.lblFloor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblFloor.BackColor = System.Drawing.SystemColors.Control;
             this.lblFloor.Location = new System.Drawing.Point(787, 234);
             this.lblFloor.Name = "lblFloor";
             this.lblFloor.Size = new System.Drawing.Size(40, 17);
@@ -430,7 +432,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
             this.lblPassword.Location = new System.Drawing.Point(787, 171);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(69, 17);
@@ -440,7 +442,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
             this.lblEmail.Location = new System.Drawing.Point(787, 110);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(42, 17);
@@ -450,7 +452,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblName.BackColor = System.Drawing.SystemColors.Control;
             this.lblName.Location = new System.Drawing.Point(787, 34);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(45, 17);
@@ -529,7 +531,7 @@
             this.pbxRemoveUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxRemoveUser.BackgroundImage = global::Project.Properties.Resources.remove_user_512;
             this.pbxRemoveUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveUser.Location = new System.Drawing.Point(176, 387);
+            this.pbxRemoveUser.Location = new System.Drawing.Point(190, 387);
             this.pbxRemoveUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxRemoveUser.Name = "pbxRemoveUser";
             this.pbxRemoveUser.Size = new System.Drawing.Size(21, 23);
@@ -558,10 +560,10 @@
             this.chScore});
             this.lvwTenantList.FullRowSelect = true;
             this.lvwTenantList.HideSelection = false;
-            this.lvwTenantList.Location = new System.Drawing.Point(9, 34);
+            this.lvwTenantList.Location = new System.Drawing.Point(26, 34);
             this.lvwTenantList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvwTenantList.Name = "lvwTenantList";
-            this.lvwTenantList.Size = new System.Drawing.Size(727, 312);
+            this.lvwTenantList.Size = new System.Drawing.Size(710, 312);
             this.lvwTenantList.TabIndex = 2;
             this.lvwTenantList.UseCompatibleStateImageBehavior = false;
             this.lvwTenantList.View = System.Windows.Forms.View.Details;
@@ -607,7 +609,7 @@
             this.btn_TenantRemoveSelected.FlatAppearance.BorderSize = 0;
             this.btn_TenantRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_TenantRemoveSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TenantRemoveSelected.Location = new System.Drawing.Point(13, 374);
+            this.btn_TenantRemoveSelected.Location = new System.Drawing.Point(26, 374);
             this.btn_TenantRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_TenantRemoveSelected.Name = "btn_TenantRemoveSelected";
             this.btn_TenantRemoveSelected.Size = new System.Drawing.Size(197, 52);
@@ -640,6 +642,7 @@
             this.mtpMessagesAdmin.Controls.Add(this.pbxReply);
             this.mtpMessagesAdmin.Controls.Add(this.btnSendReply);
             this.mtpMessagesAdmin.Controls.Add(this.btnMessagesExport);
+            this.mtpMessagesAdmin.CustomBackground = true;
             this.mtpMessagesAdmin.HorizontalScrollbarBarColor = true;
             this.mtpMessagesAdmin.Location = new System.Drawing.Point(4, 39);
             this.mtpMessagesAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -652,18 +655,18 @@
             // 
             // tbxReply
             // 
-            this.tbxReply.Location = new System.Drawing.Point(13, 403);
+            this.tbxReply.Location = new System.Drawing.Point(26, 407);
             this.tbxReply.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxReply.Name = "tbxReply";
-            this.tbxReply.Size = new System.Drawing.Size(611, 22);
+            this.tbxReply.Size = new System.Drawing.Size(576, 22);
             this.tbxReply.TabIndex = 45;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 381);
+            this.label1.Location = new System.Drawing.Point(23, 383);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 18);
             this.label1.TabIndex = 44;
@@ -684,7 +687,7 @@
             this.chMessagesMessageAdmin,
             this.chMessagesReplyAdmin});
             this.dgvMessageAdmin.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMessageAdmin.Location = new System.Drawing.Point(7, 5);
+            this.dgvMessageAdmin.Location = new System.Drawing.Point(26, 5);
             this.dgvMessageAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMessageAdmin.Name = "dgvMessageAdmin";
             this.dgvMessageAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -692,7 +695,7 @@
             this.dgvMessageAdmin.RowHeadersWidth = 51;
             this.dgvMessageAdmin.RowTemplate.Height = 24;
             this.dgvMessageAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageAdmin.Size = new System.Drawing.Size(1031, 353);
+            this.dgvMessageAdmin.Size = new System.Drawing.Size(1007, 353);
             this.dgvMessageAdmin.TabIndex = 9;
             // 
             // chMessagesIdAdmin
@@ -735,10 +738,10 @@
             this.pbxExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxExport.BackgroundImage = global::Project.Properties.Resources.excel_2_512;
             this.pbxExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxExport.Location = new System.Drawing.Point(1006, 394);
+            this.pbxExport.Location = new System.Drawing.Point(1001, 405);
             this.pbxExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxExport.Name = "pbxExport";
-            this.pbxExport.Size = new System.Drawing.Size(27, 23);
+            this.pbxExport.Size = new System.Drawing.Size(22, 23);
             this.pbxExport.TabIndex = 42;
             this.pbxExport.TabStop = false;
             // 
@@ -747,10 +750,10 @@
             this.pbxReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxReply.BackgroundImage = global::Project.Properties.Resources.reply_512;
             this.pbxReply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxReply.Location = new System.Drawing.Point(794, 394);
+            this.pbxReply.Location = new System.Drawing.Point(791, 410);
             this.pbxReply.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxReply.Name = "pbxReply";
-            this.pbxReply.Size = new System.Drawing.Size(29, 23);
+            this.pbxReply.Size = new System.Drawing.Size(22, 20);
             this.pbxReply.TabIndex = 43;
             this.pbxReply.TabStop = false;
             // 
@@ -761,7 +764,7 @@
             this.btnSendReply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSendReply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendReply.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSendReply.Location = new System.Drawing.Point(650, 383);
+            this.btnSendReply.Location = new System.Drawing.Point(644, 394);
             this.btnSendReply.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnSendReply.Name = "btnSendReply";
             this.btnSendReply.Size = new System.Drawing.Size(185, 46);
@@ -776,7 +779,7 @@
             this.btnMessagesExport.FlatAppearance.BorderSize = 0;
             this.btnMessagesExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMessagesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMessagesExport.Location = new System.Drawing.Point(849, 383);
+            this.btnMessagesExport.Location = new System.Drawing.Point(840, 394);
             this.btnMessagesExport.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnMessagesExport.Name = "btnMessagesExport";
             this.btnMessagesExport.Size = new System.Drawing.Size(193, 46);
@@ -789,6 +792,7 @@
             // 
             this.mtpTenantsList.Controls.Add(this.btnUncompleteTask);
             this.mtpTenantsList.Controls.Add(this.dgvSchedule);
+            this.mtpTenantsList.CustomBackground = true;
             this.mtpTenantsList.HorizontalScrollbarBarColor = true;
             this.mtpTenantsList.Location = new System.Drawing.Point(4, 39);
             this.mtpTenantsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -803,7 +807,7 @@
             // 
             this.btnUncompleteTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.btnUncompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUncompleteTask.Location = new System.Drawing.Point(8, 378);
+            this.btnUncompleteTask.Location = new System.Drawing.Point(26, 378);
             this.btnUncompleteTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUncompleteTask.Name = "btnUncompleteTask";
             this.btnUncompleteTask.Size = new System.Drawing.Size(173, 41);
@@ -827,7 +831,7 @@
             this.chTask,
             this.chStatus});
             this.dgvSchedule.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSchedule.Location = new System.Drawing.Point(8, 21);
+            this.dgvSchedule.Location = new System.Drawing.Point(26, 21);
             this.dgvSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -835,7 +839,7 @@
             this.dgvSchedule.RowHeadersWidth = 51;
             this.dgvSchedule.RowTemplate.Height = 24;
             this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSchedule.Size = new System.Drawing.Size(1029, 327);
+            this.dgvSchedule.Size = new System.Drawing.Size(1007, 327);
             this.dgvSchedule.TabIndex = 35;
             // 
             // chAsignee
@@ -921,7 +925,7 @@
             // 
             this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
             this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Logout.Location = new System.Drawing.Point(311, 23);
+            this.btn_Logout.Location = new System.Drawing.Point(300, 23);
             this.btn_Logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(168, 63);
@@ -935,7 +939,7 @@
             this.lbl_LoggedInAsName.AutoSize = true;
             this.lbl_LoggedInAsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoggedInAsName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(126, 50);
+            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(115, 50);
             this.lbl_LoggedInAsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_LoggedInAsName.Name = "lbl_LoggedInAsName";
             this.lbl_LoggedInAsName.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -947,7 +951,7 @@
             // 
             this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
-            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(41, 23);
+            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(30, 23);
             this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
             this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(58, 63);
@@ -960,7 +964,7 @@
             this.lbl_LoggedInAs.AutoSize = true;
             this.lbl_LoggedInAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoggedInAs.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAs.Location = new System.Drawing.Point(129, 23);
+            this.lbl_LoggedInAs.Location = new System.Drawing.Point(118, 23);
             this.lbl_LoggedInAs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_LoggedInAs.Name = "lbl_LoggedInAs";
             this.lbl_LoggedInAs.Size = new System.Drawing.Size(136, 18);

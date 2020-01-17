@@ -19,6 +19,7 @@ namespace Project
         private List<Agreement> agreements;
         private List<GroceryItem> groceryList;
         private List<GroceryHistory> groceryHistories;
+        private List<Event> events;
         private static StudentsHousing instance = null;
         // Current user
         private Student currentStudent;
@@ -45,6 +46,7 @@ namespace Project
             agreements = new List<Agreement>();
             groceryList = new List<GroceryItem>();
             groceryHistories = new List<GroceryHistory>();
+            events = new List<Event>();
             GenerateTestDate();
         }
 
@@ -91,17 +93,17 @@ namespace Project
             }
         }
 
-        public string FindStudentById(int studentId)
+        public Student FindStudentById(int studentId)
         {
             foreach (var student in students)
             {
                 if (student.Id == studentId)
                 {
-                    return student.Name;
+                    return student;
                 }
             }
 
-            return "";
+            return null;
         }
 
         private int FindStudentIndex(int studentId)
@@ -748,6 +750,111 @@ namespace Project
             this.currentAdmin = null;
         }
 
+
+        /* Events */
+
+        public void CreateEvent(int creatorId, string description, string location, DateTime eventDate)
+        {
+            Event newEvent = new Event(creatorId, description, location, eventDate);
+            AddToEventsList(newEvent);
+        }
+
+        public Event[] GetEventsList()
+        {
+            CountVotes();
+            return this.events.ToArray();
+        }
+
+        public void AddToEventsList(Event newEvent)
+        {
+            this.events.Add(newEvent);
+
+        }
+
+        public Event FindEventById(int id)
+        {
+            for (int i = 0; i < events.Count; i++)
+            {
+                if (events[i].EventId == id)
+                {
+                    return events[i];
+                }
+            }
+
+            return null;
+        }
+
+        public bool VoteEvent(int eventId, int voterId, PollType answer)
+        {
+            Event foundEvent = FindEventById(eventId);
+
+            List<Poll> polls = foundEvent.Polls;
+
+            foreach (var poll in polls)
+            {
+                // If user already voted
+                if (poll.VoterId == voterId)
+                {
+                    return false;
+                }
+            }
+            // Create poll object
+            Poll newPoll = new Poll(voterId, answer);
+
+            // Add it to list
+            polls.Add(newPoll);
+
+            foundEvent.VotersNr++;
+
+            return true;
+        }
+
+        // Count votes
+        public void CountVotes()
+        {
+            int yesVoters = 0;
+            int noVoters = 0;
+
+            foreach (var eventItem in events)
+            {
+                int votersNr = eventItem.VotersNr;
+                foreach (var poll in eventItem.Polls)
+                {
+                    // If vote is yes
+                    if (poll.Answer == PollType.Yes)
+                    {
+                        yesVoters++;
+
+                    }
+                    // If vote is no
+                    else
+                    {
+                        noVoters++;
+                    }
+                }
+
+                // If there are votes
+                if (votersNr > 0)
+                { 
+                    // Check higher number
+                    if (yesVoters >= noVoters)
+                    {
+                        // Update percentage
+                        eventItem.Percentage = $"{100 * yesVoters / votersNr}% YES";
+                    }
+                    else
+                    {
+                        // Update percentage
+                        eventItem.Percentage = $"{100 * noVoters / votersNr}% NO";
+                    }
+                }
+
+                // Reset voters
+                yesVoters = 0;
+                noVoters = 0;
+            }
+        }
+
         // Test data
         private void GenerateTestDate()
         {
@@ -790,7 +897,7 @@ namespace Project
             DateTime six_jan = new DateTime(2020, 01, 06);
             DateTime seven_jan = new DateTime(2020, 01, 07);
             DateTime ten_jan = new DateTime(2020, 01, 10);
-            DateTime thirdteen_jan = new DateTime(2020, 01, 13);
+            DateTime thirteen_jan = new DateTime(2020, 01, 13);
 
 
             //Messages
@@ -801,8 +908,8 @@ namespace Project
             message4 = new Message(seven_jan, MessageSubject.Question, "Why has my rent increased?", 5);
             message5 = new Message(ten_jan, MessageSubject.Complaint, "My neighbors are organizing parties during the week very late at night", 2);
             message6 = new Message(ten_jan, MessageSubject.Question, "How can I speak to my housing officer?", 7);
-            message7 = new Message(thirdteen_jan, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 7);
-            message8 = new Message(thirdteen_jan, MessageSubject.Question, "How can I report a repair?", 5);
+            message7 = new Message(thirteen_jan, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 7);
+            message8 = new Message(thirteen_jan, MessageSubject.Question, "How can I report a repair?", 5);
             AddMessageToList(message1);
             AddMessageToList(message2);
             AddMessageToList(message3);
@@ -819,7 +926,7 @@ namespace Project
             agreement3 = new Agreement(seven_jan, "Miley & Mark", "Please take away your towel and clothes after showering.", "Pending");
             agreement4 = new Agreement(seven_jan, "Mark & Everyone", "Saturday is pizza day!", "Pending", 5, 6, "->OmarMileyKelvinRobinRanimMark");
             agreement5 = new Agreement(ten_jan, "Omar & Everyone", "No loud noises after 11:00PM.", "Pending", 3, 5, "->OmarMileyPieterRobinRanim");
-            agreement6 = new Agreement(thirdteen_jan, "Pieter & Mark", "Help me with unpacking the groceries.", "Pending");
+            agreement6 = new Agreement(thirteen_jan, "Pieter & Mark", "Help me with unpacking the groceries.", "Pending");
             AddAgreementToList(agreement1);
             AddAgreementToList(agreement2);
             AddAgreementToList(agreement3);
@@ -861,7 +968,7 @@ namespace Project
             rule6 = new HouseRule(seven_jan, "The supplied furniture may not be removed from your room or the common areas.");
             rule7 = new HouseRule(seven_jan, "Please ensure that all air conditions/heating units are turned off in bedrooms before leaving the house.");
             rule8 = new HouseRule(seven_jan, "Guests must not interfere with the reasonable peace, comfort and privacy of other residents.");
-            rule9 = new HouseRule(thirdteen_jan, "Report your disturbances to your Resident Assistant and Building Manager");
+            rule9 = new HouseRule(thirteen_jan, "Report your disturbances to your Resident Assistant and Building Manager");
             AddHouseRuleToList(rule1);
             AddHouseRuleToList(rule2);
             AddHouseRuleToList(rule3);
@@ -871,6 +978,21 @@ namespace Project
             AddHouseRuleToList(rule7);
             AddHouseRuleToList(rule8);
             AddHouseRuleToList(rule9);
+
+            DateTime eighteen_jan = new DateTime(2020, 01, 18);
+            DateTime twentysecond_jan = new DateTime(2020, 01, 22);
+            DateTime twentyeight_jan = new DateTime(2020, 01, 28);
+            DateTime second_feb = new DateTime(2020, 02, 02);
+
+            // Events
+            CreateEvent(6, "My birthday party", "Floor 3 common area", eighteen_jan);
+            VoteEvent(1, 3, PollType.Yes);
+            VoteEvent(1, 4, PollType.Yes);
+            VoteEvent(1, 5, PollType.No);
+            VoteEvent(1, 1, PollType.No);
+            CreateEvent(4, "Hang out", "First floor room 20", twentysecond_jan);
+            //CreateEvent(3, "My birthday party", "Floor 3 common area", eighteen_jan);
+            //CreateEvent(3, "My birthday party", "Floor 3 common area", eighteen_jan);
         }
     }
 }
