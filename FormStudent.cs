@@ -758,9 +758,9 @@ namespace Project
                 row.Cells[0].Value = eventItem.EventId;
                 row.Cells[1].Value = studentsHousing.FindStudentById(eventItem.CreatorId).Name;
                 row.Cells[2].Value = eventItem.EventDate.ToString("dd/MM/yyyy");
-                row.Cells[3].Value = eventItem.Description;
-                row.Cells[4].Value = eventItem.Location;
-                if (String.IsNullOrEmpty(eventItem.Percentage))
+                row.Cells[3].Value = eventItem.Location;
+                row.Cells[4].Value = eventItem.Description;
+                if (!String.IsNullOrEmpty(eventItem.Percentage))
                 {
                     row.Cells[5].Value = eventItem.Percentage;
                 }
