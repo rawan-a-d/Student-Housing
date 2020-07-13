@@ -9,7 +9,7 @@ using GemBox.Spreadsheet.ConditionalFormatting;
 
 namespace Project
 {
-    public class Excel
+    public static class Excel
     {
         // Export Excel
         public static void ExportToExcel(Message[] messages)

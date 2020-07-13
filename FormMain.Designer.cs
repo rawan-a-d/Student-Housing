@@ -80,14 +80,14 @@
             this.btn_TenantRemoveSelected = new System.Windows.Forms.Button();
             this.btnTenantAdd = new System.Windows.Forms.Button();
             this.mtpMessagesAdmin = new MetroFramework.Controls.MetroTabPage();
-            this.tbxReply = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvMessageAdmin = new System.Windows.Forms.DataGridView();
             this.chMessagesIdAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessagesDateAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessagesTypeAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessagesMessageAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chMessagesReplyAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbxReply = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pbxExport = new System.Windows.Forms.PictureBox();
             this.pbxReply = new System.Windows.Forms.PictureBox();
             this.btnSendReply = new System.Windows.Forms.Button();
@@ -131,10 +131,9 @@
             // 
             this.lblTodayDate.AutoSize = true;
             this.lblTodayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayDate.Location = new System.Drawing.Point(841, 31);
-            this.lblTodayDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTodayDate.Location = new System.Drawing.Point(631, 25);
             this.lblTodayDate.Name = "lblTodayDate";
-            this.lblTodayDate.Size = new System.Drawing.Size(0, 36);
+            this.lblTodayDate.Size = new System.Drawing.Size(0, 29);
             this.lblTodayDate.TabIndex = 7;
             // 
             // errorProvider
@@ -200,11 +199,11 @@
             this.mtcAdmin.CustomBackground = true;
             this.mtcAdmin.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.mtcAdmin.ItemSize = new System.Drawing.Size(86, 35);
-            this.mtcAdmin.Location = new System.Drawing.Point(0, 110);
-            this.mtcAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtcAdmin.Location = new System.Drawing.Point(0, 89);
+            this.mtcAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtcAdmin.Name = "mtcAdmin";
-            this.mtcAdmin.SelectedIndex = 1;
-            this.mtcAdmin.Size = new System.Drawing.Size(1061, 515);
+            this.mtcAdmin.SelectedIndex = 0;
+            this.mtcAdmin.Size = new System.Drawing.Size(796, 418);
             this.mtcAdmin.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcAdmin.TabIndex = 44;
             this.mtcAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -224,24 +223,25 @@
             this.mtpHouseRulesAdmin.CustomBackground = true;
             this.mtpHouseRulesAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtpHouseRulesAdmin.HorizontalScrollbarBarColor = true;
+            this.mtpHouseRulesAdmin.HorizontalScrollbarSize = 8;
             this.mtpHouseRulesAdmin.Location = new System.Drawing.Point(4, 39);
-            this.mtpHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtpHouseRulesAdmin.Name = "mtpHouseRulesAdmin";
-            this.mtpHouseRulesAdmin.Size = new System.Drawing.Size(1053, 472);
+            this.mtpHouseRulesAdmin.Size = new System.Drawing.Size(788, 375);
             this.mtpHouseRulesAdmin.TabIndex = 0;
             this.mtpHouseRulesAdmin.Text = "House Rules";
             this.mtpHouseRulesAdmin.VerticalScrollbarBarColor = true;
-            this.mtpHouseRulesAdmin.VerticalScrollbarSize = 11;
+            this.mtpHouseRulesAdmin.VerticalScrollbarSize = 8;
             // 
             // pbxRemoveRule
             // 
             this.pbxRemoveRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxRemoveRule.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
             this.pbxRemoveRule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveRule.Location = new System.Drawing.Point(999, 398);
-            this.pbxRemoveRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxRemoveRule.Location = new System.Drawing.Point(749, 323);
+            this.pbxRemoveRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxRemoveRule.Name = "pbxRemoveRule";
-            this.pbxRemoveRule.Size = new System.Drawing.Size(21, 21);
+            this.pbxRemoveRule.Size = new System.Drawing.Size(16, 17);
             this.pbxRemoveRule.TabIndex = 46;
             this.pbxRemoveRule.TabStop = false;
             // 
@@ -250,10 +250,10 @@
             this.pbxModifyRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxModifyRule.BackgroundImage = global::Project.Properties.Resources.edit_8_512;
             this.pbxModifyRule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxModifyRule.Location = new System.Drawing.Point(801, 398);
-            this.pbxModifyRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxModifyRule.Location = new System.Drawing.Point(601, 323);
+            this.pbxModifyRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxModifyRule.Name = "pbxModifyRule";
-            this.pbxModifyRule.Size = new System.Drawing.Size(23, 22);
+            this.pbxModifyRule.Size = new System.Drawing.Size(17, 18);
             this.pbxModifyRule.TabIndex = 47;
             this.pbxModifyRule.TabStop = false;
             // 
@@ -262,19 +262,19 @@
             this.pbxAddRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxAddRule.BackgroundImage = global::Project.Properties.Resources.add_512;
             this.pbxAddRule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddRule.Location = new System.Drawing.Point(617, 398);
-            this.pbxAddRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxAddRule.Location = new System.Drawing.Point(463, 323);
+            this.pbxAddRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxAddRule.Name = "pbxAddRule";
-            this.pbxAddRule.Size = new System.Drawing.Size(23, 22);
+            this.pbxAddRule.Size = new System.Drawing.Size(17, 18);
             this.pbxAddRule.TabIndex = 48;
             this.pbxAddRule.TabStop = false;
             // 
             // tbxNewRule
             // 
-            this.tbxNewRule.Location = new System.Drawing.Point(26, 408);
-            this.tbxNewRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxNewRule.Location = new System.Drawing.Point(20, 332);
+            this.tbxNewRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxNewRule.Name = "tbxNewRule";
-            this.tbxNewRule.Size = new System.Drawing.Size(478, 22);
+            this.tbxNewRule.Size = new System.Drawing.Size(360, 20);
             this.tbxNewRule.TabIndex = 55;
             // 
             // lblAddModifyRule
@@ -283,9 +283,10 @@
             this.lblAddModifyRule.BackColor = System.Drawing.SystemColors.Control;
             this.lblAddModifyRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddModifyRule.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblAddModifyRule.Location = new System.Drawing.Point(23, 370);
+            this.lblAddModifyRule.Location = new System.Drawing.Point(17, 301);
+            this.lblAddModifyRule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddModifyRule.Name = "lblAddModifyRule";
-            this.lblAddModifyRule.Size = new System.Drawing.Size(123, 18);
+            this.lblAddModifyRule.Size = new System.Drawing.Size(102, 15);
             this.lblAddModifyRule.TabIndex = 54;
             this.lblAddModifyRule.Text = "Add / Modify Rule";
             // 
@@ -295,10 +296,9 @@
             this.btnRulesRemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnRulesRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRulesRemoveSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRulesRemoveSelected.Location = new System.Drawing.Point(840, 386);
-            this.btnRulesRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRulesRemoveSelected.Location = new System.Drawing.Point(630, 314);
             this.btnRulesRemoveSelected.Name = "btnRulesRemoveSelected";
-            this.btnRulesRemoveSelected.Size = new System.Drawing.Size(189, 44);
+            this.btnRulesRemoveSelected.Size = new System.Drawing.Size(142, 36);
             this.btnRulesRemoveSelected.TabIndex = 15;
             this.btnRulesRemoveSelected.Text = "Remove Selected";
             this.btnRulesRemoveSelected.UseVisualStyleBackColor = false;
@@ -310,10 +310,9 @@
             this.btnRulesModifySelected.FlatAppearance.BorderSize = 0;
             this.btnRulesModifySelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRulesModifySelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRulesModifySelected.Location = new System.Drawing.Point(663, 386);
-            this.btnRulesModifySelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRulesModifySelected.Location = new System.Drawing.Point(497, 314);
             this.btnRulesModifySelected.Name = "btnRulesModifySelected";
-            this.btnRulesModifySelected.Size = new System.Drawing.Size(167, 46);
+            this.btnRulesModifySelected.Size = new System.Drawing.Size(125, 37);
             this.btnRulesModifySelected.TabIndex = 13;
             this.btnRulesModifySelected.Text = "Modify Selected";
             this.btnRulesModifySelected.UseVisualStyleBackColor = false;
@@ -325,10 +324,9 @@
             this.btnAddRule.FlatAppearance.BorderSize = 0;
             this.btnAddRule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddRule.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddRule.Location = new System.Drawing.Point(534, 386);
-            this.btnAddRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddRule.Location = new System.Drawing.Point(400, 314);
             this.btnAddRule.Name = "btnAddRule";
-            this.btnAddRule.Size = new System.Drawing.Size(117, 46);
+            this.btnAddRule.Size = new System.Drawing.Size(88, 37);
             this.btnAddRule.TabIndex = 11;
             this.btnAddRule.Text = "Add";
             this.btnAddRule.UseVisualStyleBackColor = false;
@@ -348,13 +346,12 @@
             this.chDesc});
             this.dgvHouseRulesAdmin.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHouseRulesAdmin.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvHouseRulesAdmin.Location = new System.Drawing.Point(26, 21);
-            this.dgvHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvHouseRulesAdmin.Location = new System.Drawing.Point(20, 17);
             this.dgvHouseRulesAdmin.Name = "dgvHouseRulesAdmin";
             this.dgvHouseRulesAdmin.RowHeadersVisible = false;
             this.dgvHouseRulesAdmin.RowHeadersWidth = 51;
             this.dgvHouseRulesAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHouseRulesAdmin.Size = new System.Drawing.Size(1003, 315);
+            this.dgvHouseRulesAdmin.Size = new System.Drawing.Size(752, 256);
             this.dgvHouseRulesAdmin.TabIndex = 9;
             this.dgvHouseRulesAdmin.CurrentCellChanged += new System.EventHandler(this.dgvHouseRulesAdmin_CurrentCellChanged);
             // 
@@ -400,22 +397,24 @@
             this.mtpTenantList.Controls.Add(this.btnTenantAdd);
             this.mtpTenantList.CustomBackground = true;
             this.mtpTenantList.HorizontalScrollbarBarColor = true;
+            this.mtpTenantList.HorizontalScrollbarSize = 8;
             this.mtpTenantList.Location = new System.Drawing.Point(4, 39);
-            this.mtpTenantList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpTenantList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtpTenantList.Name = "mtpTenantList";
-            this.mtpTenantList.Size = new System.Drawing.Size(1053, 472);
+            this.mtpTenantList.Size = new System.Drawing.Size(788, 375);
             this.mtpTenantList.TabIndex = 1;
             this.mtpTenantList.Text = "Tenant List";
             this.mtpTenantList.VerticalScrollbarBarColor = true;
-            this.mtpTenantList.VerticalScrollbarSize = 11;
+            this.mtpTenantList.VerticalScrollbarSize = 8;
             // 
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
             this.lblRoom.BackColor = System.Drawing.SystemColors.Control;
-            this.lblRoom.Location = new System.Drawing.Point(924, 234);
+            this.lblRoom.Location = new System.Drawing.Point(693, 190);
+            this.lblRoom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(45, 17);
+            this.lblRoom.Size = new System.Drawing.Size(35, 13);
             this.lblRoom.TabIndex = 75;
             this.lblRoom.Text = "Room";
             // 
@@ -423,9 +422,10 @@
             // 
             this.lblFloor.AutoSize = true;
             this.lblFloor.BackColor = System.Drawing.SystemColors.Control;
-            this.lblFloor.Location = new System.Drawing.Point(787, 234);
+            this.lblFloor.Location = new System.Drawing.Point(590, 190);
+            this.lblFloor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFloor.Name = "lblFloor";
-            this.lblFloor.Size = new System.Drawing.Size(40, 17);
+            this.lblFloor.Size = new System.Drawing.Size(30, 13);
             this.lblFloor.TabIndex = 74;
             this.lblFloor.Text = "Floor";
             // 
@@ -433,9 +433,10 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPassword.Location = new System.Drawing.Point(787, 171);
+            this.lblPassword.Location = new System.Drawing.Point(590, 139);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 73;
             this.lblPassword.Text = "Password";
             // 
@@ -443,9 +444,10 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
-            this.lblEmail.Location = new System.Drawing.Point(787, 110);
+            this.lblEmail.Location = new System.Drawing.Point(590, 89);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 72;
             this.lblEmail.Text = "Email";
             // 
@@ -453,64 +455,64 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.SystemColors.Control;
-            this.lblName.Location = new System.Drawing.Point(787, 34);
+            this.lblName.Location = new System.Drawing.Point(590, 28);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.Size = new System.Drawing.Size(35, 13);
             this.lblName.TabIndex = 71;
             this.lblName.Text = "Name";
             // 
             // tbxTenantRoom
             // 
-            this.tbxTenantRoom.Location = new System.Drawing.Point(927, 266);
-            this.tbxTenantRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxTenantRoom.Location = new System.Drawing.Point(695, 216);
+            this.tbxTenantRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxTenantRoom.Name = "tbxTenantRoom";
-            this.tbxTenantRoom.Size = new System.Drawing.Size(87, 22);
+            this.tbxTenantRoom.Size = new System.Drawing.Size(66, 20);
             this.tbxTenantRoom.TabIndex = 70;
             this.tbxTenantRoom.Validating += new System.ComponentModel.CancelEventHandler(this.TbxTenantRoom_Validating);
             // 
             // tbxTenantFloor
             // 
-            this.tbxTenantFloor.Location = new System.Drawing.Point(789, 266);
-            this.tbxTenantFloor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxTenantFloor.Location = new System.Drawing.Point(592, 216);
+            this.tbxTenantFloor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxTenantFloor.Name = "tbxTenantFloor";
-            this.tbxTenantFloor.Size = new System.Drawing.Size(107, 22);
+            this.tbxTenantFloor.Size = new System.Drawing.Size(81, 20);
             this.tbxTenantFloor.TabIndex = 69;
             this.tbxTenantFloor.Validating += new System.ComponentModel.CancelEventHandler(this.TbxTenantFloor_Validating);
             // 
             // tbxTenantPassword
             // 
-            this.tbxTenantPassword.Location = new System.Drawing.Point(789, 199);
-            this.tbxTenantPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxTenantPassword.Location = new System.Drawing.Point(592, 162);
+            this.tbxTenantPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxTenantPassword.Name = "tbxTenantPassword";
-            this.tbxTenantPassword.Size = new System.Drawing.Size(223, 22);
+            this.tbxTenantPassword.Size = new System.Drawing.Size(168, 20);
             this.tbxTenantPassword.TabIndex = 68;
             this.tbxTenantPassword.Validating += new System.ComponentModel.CancelEventHandler(this.TbxTenantPassword_Validating);
             // 
             // tbxTenantEmail
             // 
-            this.tbxTenantEmail.Location = new System.Drawing.Point(789, 138);
-            this.tbxTenantEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxTenantEmail.Location = new System.Drawing.Point(592, 112);
+            this.tbxTenantEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxTenantEmail.Name = "tbxTenantEmail";
-            this.tbxTenantEmail.Size = new System.Drawing.Size(223, 22);
+            this.tbxTenantEmail.Size = new System.Drawing.Size(168, 20);
             this.tbxTenantEmail.TabIndex = 67;
             this.tbxTenantEmail.Validating += new System.ComponentModel.CancelEventHandler(this.TbxTenantEmail_Validating);
             // 
             // tbxTenantName
             // 
-            this.tbxTenantName.Location = new System.Drawing.Point(789, 66);
-            this.tbxTenantName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxTenantName.Location = new System.Drawing.Point(592, 54);
+            this.tbxTenantName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxTenantName.Name = "tbxTenantName";
-            this.tbxTenantName.Size = new System.Drawing.Size(223, 22);
+            this.tbxTenantName.Size = new System.Drawing.Size(168, 20);
             this.tbxTenantName.TabIndex = 66;
             this.tbxTenantName.Validating += new System.ComponentModel.CancelEventHandler(this.TbxTenantName_Validating);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(645, -15);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(484, -12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 17);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 25;
             this.label2.Text = "Add a new tenant";
             // 
@@ -519,10 +521,10 @@
             this.pbxAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxAddUser.BackgroundImage = global::Project.Properties.Resources.add_user_512;
             this.pbxAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAddUser.Location = new System.Drawing.Point(978, 357);
-            this.pbxAddUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxAddUser.Location = new System.Drawing.Point(734, 290);
+            this.pbxAddUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxAddUser.Name = "pbxAddUser";
-            this.pbxAddUser.Size = new System.Drawing.Size(25, 30);
+            this.pbxAddUser.Size = new System.Drawing.Size(19, 24);
             this.pbxAddUser.TabIndex = 64;
             this.pbxAddUser.TabStop = false;
             // 
@@ -531,20 +533,19 @@
             this.pbxRemoveUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxRemoveUser.BackgroundImage = global::Project.Properties.Resources.remove_user_512;
             this.pbxRemoveUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveUser.Location = new System.Drawing.Point(190, 387);
-            this.pbxRemoveUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxRemoveUser.Location = new System.Drawing.Point(142, 314);
+            this.pbxRemoveUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxRemoveUser.Name = "pbxRemoveUser";
-            this.pbxRemoveUser.Size = new System.Drawing.Size(21, 23);
+            this.pbxRemoveUser.Size = new System.Drawing.Size(16, 19);
             this.pbxRemoveUser.TabIndex = 65;
             this.pbxRemoveUser.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(761, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(571, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(2, 392);
+            this.pictureBox1.Size = new System.Drawing.Size(2, 319);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
@@ -560,10 +561,9 @@
             this.chScore});
             this.lvwTenantList.FullRowSelect = true;
             this.lvwTenantList.HideSelection = false;
-            this.lvwTenantList.Location = new System.Drawing.Point(26, 34);
-            this.lvwTenantList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvwTenantList.Location = new System.Drawing.Point(20, 28);
             this.lvwTenantList.Name = "lvwTenantList";
-            this.lvwTenantList.Size = new System.Drawing.Size(710, 312);
+            this.lvwTenantList.Size = new System.Drawing.Size(534, 254);
             this.lvwTenantList.TabIndex = 2;
             this.lvwTenantList.UseCompatibleStateImageBehavior = false;
             this.lvwTenantList.View = System.Windows.Forms.View.Details;
@@ -609,10 +609,9 @@
             this.btn_TenantRemoveSelected.FlatAppearance.BorderSize = 0;
             this.btn_TenantRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_TenantRemoveSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TenantRemoveSelected.Location = new System.Drawing.Point(26, 374);
-            this.btn_TenantRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_TenantRemoveSelected.Location = new System.Drawing.Point(20, 304);
             this.btn_TenantRemoveSelected.Name = "btn_TenantRemoveSelected";
-            this.btn_TenantRemoveSelected.Size = new System.Drawing.Size(197, 52);
+            this.btn_TenantRemoveSelected.Size = new System.Drawing.Size(148, 42);
             this.btn_TenantRemoveSelected.TabIndex = 3;
             this.btn_TenantRemoveSelected.Text = "Remove Selected";
             this.btn_TenantRemoveSelected.UseVisualStyleBackColor = false;
@@ -624,10 +623,9 @@
             this.btnTenantAdd.FlatAppearance.BorderSize = 0;
             this.btnTenantAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTenantAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTenantAdd.Location = new System.Drawing.Point(787, 347);
-            this.btnTenantAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTenantAdd.Location = new System.Drawing.Point(590, 282);
             this.btnTenantAdd.Name = "btnTenantAdd";
-            this.btnTenantAdd.Size = new System.Drawing.Size(227, 46);
+            this.btnTenantAdd.Size = new System.Drawing.Size(170, 37);
             this.btnTenantAdd.TabIndex = 26;
             this.btnTenantAdd.Text = "Add New Tenant";
             this.btnTenantAdd.UseVisualStyleBackColor = false;
@@ -644,33 +642,15 @@
             this.mtpMessagesAdmin.Controls.Add(this.btnMessagesExport);
             this.mtpMessagesAdmin.CustomBackground = true;
             this.mtpMessagesAdmin.HorizontalScrollbarBarColor = true;
+            this.mtpMessagesAdmin.HorizontalScrollbarSize = 8;
             this.mtpMessagesAdmin.Location = new System.Drawing.Point(4, 39);
-            this.mtpMessagesAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpMessagesAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtpMessagesAdmin.Name = "mtpMessagesAdmin";
-            this.mtpMessagesAdmin.Size = new System.Drawing.Size(1053, 472);
+            this.mtpMessagesAdmin.Size = new System.Drawing.Size(788, 375);
             this.mtpMessagesAdmin.TabIndex = 2;
             this.mtpMessagesAdmin.Text = "Complaints and Questions";
             this.mtpMessagesAdmin.VerticalScrollbarBarColor = true;
-            this.mtpMessagesAdmin.VerticalScrollbarSize = 11;
-            // 
-            // tbxReply
-            // 
-            this.tbxReply.Location = new System.Drawing.Point(26, 407);
-            this.tbxReply.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbxReply.Name = "tbxReply";
-            this.tbxReply.Size = new System.Drawing.Size(576, 22);
-            this.tbxReply.TabIndex = 45;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 383);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 18);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Reply Selected With";
+            this.mtpMessagesAdmin.VerticalScrollbarSize = 8;
             // 
             // dgvMessageAdmin
             // 
@@ -687,15 +667,15 @@
             this.chMessagesMessageAdmin,
             this.chMessagesReplyAdmin});
             this.dgvMessageAdmin.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMessageAdmin.Location = new System.Drawing.Point(26, 5);
-            this.dgvMessageAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMessageAdmin.Location = new System.Drawing.Point(20, 4);
+            this.dgvMessageAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvMessageAdmin.Name = "dgvMessageAdmin";
             this.dgvMessageAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMessageAdmin.RowHeadersVisible = false;
             this.dgvMessageAdmin.RowHeadersWidth = 51;
             this.dgvMessageAdmin.RowTemplate.Height = 24;
             this.dgvMessageAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageAdmin.Size = new System.Drawing.Size(1007, 353);
+            this.dgvMessageAdmin.Size = new System.Drawing.Size(755, 287);
             this.dgvMessageAdmin.TabIndex = 9;
             // 
             // chMessagesIdAdmin
@@ -733,15 +713,35 @@
             this.chMessagesReplyAdmin.Name = "chMessagesReplyAdmin";
             this.chMessagesReplyAdmin.Width = 225;
             // 
+            // tbxReply
+            // 
+            this.tbxReply.Location = new System.Drawing.Point(20, 331);
+            this.tbxReply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxReply.Name = "tbxReply";
+            this.tbxReply.Size = new System.Drawing.Size(433, 20);
+            this.tbxReply.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 311);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 15);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Reply Selected With";
+            // 
             // pbxExport
             // 
             this.pbxExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxExport.BackgroundImage = global::Project.Properties.Resources.excel_2_512;
             this.pbxExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxExport.Location = new System.Drawing.Point(1001, 405);
-            this.pbxExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxExport.Location = new System.Drawing.Point(751, 329);
+            this.pbxExport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxExport.Name = "pbxExport";
-            this.pbxExport.Size = new System.Drawing.Size(22, 23);
+            this.pbxExport.Size = new System.Drawing.Size(16, 19);
             this.pbxExport.TabIndex = 42;
             this.pbxExport.TabStop = false;
             // 
@@ -750,10 +750,10 @@
             this.pbxReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.pbxReply.BackgroundImage = global::Project.Properties.Resources.reply_512;
             this.pbxReply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxReply.Location = new System.Drawing.Point(791, 410);
-            this.pbxReply.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxReply.Location = new System.Drawing.Point(593, 333);
+            this.pbxReply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxReply.Name = "pbxReply";
-            this.pbxReply.Size = new System.Drawing.Size(22, 20);
+            this.pbxReply.Size = new System.Drawing.Size(16, 16);
             this.pbxReply.TabIndex = 43;
             this.pbxReply.TabStop = false;
             // 
@@ -764,10 +764,10 @@
             this.btnSendReply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSendReply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendReply.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSendReply.Location = new System.Drawing.Point(644, 394);
-            this.btnSendReply.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSendReply.Location = new System.Drawing.Point(483, 320);
+            this.btnSendReply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSendReply.Name = "btnSendReply";
-            this.btnSendReply.Size = new System.Drawing.Size(185, 46);
+            this.btnSendReply.Size = new System.Drawing.Size(139, 37);
             this.btnSendReply.TabIndex = 12;
             this.btnSendReply.Text = "Send reply";
             this.btnSendReply.UseVisualStyleBackColor = false;
@@ -779,10 +779,10 @@
             this.btnMessagesExport.FlatAppearance.BorderSize = 0;
             this.btnMessagesExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMessagesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMessagesExport.Location = new System.Drawing.Point(840, 394);
-            this.btnMessagesExport.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMessagesExport.Location = new System.Drawing.Point(630, 320);
+            this.btnMessagesExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMessagesExport.Name = "btnMessagesExport";
-            this.btnMessagesExport.Size = new System.Drawing.Size(193, 46);
+            this.btnMessagesExport.Size = new System.Drawing.Size(145, 37);
             this.btnMessagesExport.TabIndex = 13;
             this.btnMessagesExport.Text = "Export As EXCEL";
             this.btnMessagesExport.UseVisualStyleBackColor = false;
@@ -794,23 +794,24 @@
             this.mtpTenantsList.Controls.Add(this.dgvSchedule);
             this.mtpTenantsList.CustomBackground = true;
             this.mtpTenantsList.HorizontalScrollbarBarColor = true;
+            this.mtpTenantsList.HorizontalScrollbarSize = 8;
             this.mtpTenantsList.Location = new System.Drawing.Point(4, 39);
-            this.mtpTenantsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpTenantsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtpTenantsList.Name = "mtpTenantsList";
-            this.mtpTenantsList.Size = new System.Drawing.Size(1053, 472);
+            this.mtpTenantsList.Size = new System.Drawing.Size(788, 375);
             this.mtpTenantsList.TabIndex = 3;
             this.mtpTenantsList.Text = "Tenants Schedule";
             this.mtpTenantsList.VerticalScrollbarBarColor = true;
-            this.mtpTenantsList.VerticalScrollbarSize = 11;
+            this.mtpTenantsList.VerticalScrollbarSize = 8;
             // 
             // btnUncompleteTask
             // 
             this.btnUncompleteTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
             this.btnUncompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUncompleteTask.Location = new System.Drawing.Point(26, 378);
-            this.btnUncompleteTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUncompleteTask.Location = new System.Drawing.Point(20, 307);
+            this.btnUncompleteTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUncompleteTask.Name = "btnUncompleteTask";
-            this.btnUncompleteTask.Size = new System.Drawing.Size(173, 41);
+            this.btnUncompleteTask.Size = new System.Drawing.Size(130, 33);
             this.btnUncompleteTask.TabIndex = 36;
             this.btnUncompleteTask.Text = "Uncomplete Task";
             this.btnUncompleteTask.UseVisualStyleBackColor = false;
@@ -831,15 +832,15 @@
             this.chTask,
             this.chStatus});
             this.dgvSchedule.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSchedule.Location = new System.Drawing.Point(26, 21);
-            this.dgvSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvSchedule.Location = new System.Drawing.Point(20, 17);
+            this.dgvSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSchedule.RowHeadersVisible = false;
             this.dgvSchedule.RowHeadersWidth = 51;
             this.dgvSchedule.RowTemplate.Height = 24;
             this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSchedule.Size = new System.Drawing.Size(1007, 327);
+            this.dgvSchedule.Size = new System.Drawing.Size(755, 266);
             this.dgvSchedule.TabIndex = 35;
             // 
             // chAsignee
@@ -882,9 +883,9 @@
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pHeader.Location = new System.Drawing.Point(0, 0);
-            this.pHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(1062, 106);
+            this.pHeader.Size = new System.Drawing.Size(796, 86);
             this.pHeader.TabIndex = 42;
             // 
             // btnMinimizeWindow
@@ -895,10 +896,10 @@
             this.btnMinimizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeWindow.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeWindow.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMinimizeWindow.Location = new System.Drawing.Point(870, 0);
-            this.btnMinimizeWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizeWindow.Location = new System.Drawing.Point(652, 0);
+            this.btnMinimizeWindow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizeWindow.Name = "btnMinimizeWindow";
-            this.btnMinimizeWindow.Size = new System.Drawing.Size(85, 106);
+            this.btnMinimizeWindow.Size = new System.Drawing.Size(64, 86);
             this.btnMinimizeWindow.TabIndex = 18;
             this.btnMinimizeWindow.Text = "-";
             this.btnMinimizeWindow.UseVisualStyleBackColor = false;
@@ -912,10 +913,10 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnX.Location = new System.Drawing.Point(955, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnX.Location = new System.Drawing.Point(716, 0);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(107, 106);
+            this.btnX.Size = new System.Drawing.Size(80, 86);
             this.btnX.TabIndex = 16;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
@@ -925,10 +926,9 @@
             // 
             this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
             this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Logout.Location = new System.Drawing.Point(300, 23);
-            this.btn_Logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Logout.Location = new System.Drawing.Point(225, 19);
             this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(168, 63);
+            this.btn_Logout.Size = new System.Drawing.Size(126, 51);
             this.btn_Logout.TabIndex = 15;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
@@ -939,11 +939,10 @@
             this.lbl_LoggedInAsName.AutoSize = true;
             this.lbl_LoggedInAsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoggedInAsName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(115, 50);
-            this.lbl_LoggedInAsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(86, 41);
             this.lbl_LoggedInAsName.Name = "lbl_LoggedInAsName";
             this.lbl_LoggedInAsName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_LoggedInAsName.Size = new System.Drawing.Size(150, 36);
+            this.lbl_LoggedInAsName.Size = new System.Drawing.Size(124, 29);
             this.lbl_LoggedInAsName.TabIndex = 13;
             this.lbl_LoggedInAsName.Text = "Username";
             // 
@@ -951,10 +950,9 @@
             // 
             this.lbl_LoggedInAsPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_LoggedInAsPicture.Image = ((System.Drawing.Image)(resources.GetObject("lbl_LoggedInAsPicture.Image")));
-            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(30, 23);
-            this.lbl_LoggedInAsPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbl_LoggedInAsPicture.Location = new System.Drawing.Point(22, 19);
             this.lbl_LoggedInAsPicture.Name = "lbl_LoggedInAsPicture";
-            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(58, 63);
+            this.lbl_LoggedInAsPicture.Size = new System.Drawing.Size(44, 52);
             this.lbl_LoggedInAsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lbl_LoggedInAsPicture.TabIndex = 12;
             this.lbl_LoggedInAsPicture.TabStop = false;
@@ -964,23 +962,21 @@
             this.lbl_LoggedInAs.AutoSize = true;
             this.lbl_LoggedInAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoggedInAs.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAs.Location = new System.Drawing.Point(118, 23);
-            this.lbl_LoggedInAs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_LoggedInAs.Location = new System.Drawing.Point(88, 19);
             this.lbl_LoggedInAs.Name = "lbl_LoggedInAs";
-            this.lbl_LoggedInAs.Size = new System.Drawing.Size(136, 18);
+            this.lbl_LoggedInAs.Size = new System.Drawing.Size(116, 15);
             this.lbl_LoggedInAs.TabIndex = 11;
             this.lbl_LoggedInAs.Text = "Logged in as admin";
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 623);
+            this.ClientSize = new System.Drawing.Size(796, 506);
             this.Controls.Add(this.pHeader);
             this.Controls.Add(this.mtcAdmin);
             this.Controls.Add(this.lblTodayDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.Text = "Students Housing BV";
             this.Load += new System.EventHandler(this.FrmMain_Load);

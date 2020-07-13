@@ -30,13 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             this.pHeader = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_LoggedInAsName = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnMinimizeWindow = new System.Windows.Forms.Button();
             this.btnX = new System.Windows.Forms.Button();
             this.mtcStudent = new MetroFramework.Controls.MetroTabControl();
             this.mtpSchedule = new MetroFramework.Controls.MetroTabPage();
+            this.tbxEventFloor = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvEvents = new System.Windows.Forms.DataGridView();
+            this.chEventId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chVoters = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -57,7 +69,27 @@
             this.chDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
+            this.btn_AgreementRejectSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementDeleteSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementEditSelected = new System.Windows.Forms.Button();
+            this.btn_AgreementAcceptSelected = new System.Windows.Forms.Button();
+            this.cbx_AgreementPersonInvolved = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dgv_AgreementsStudent = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
+            this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.mtpMessages = new MetroFramework.Controls.MetroTabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbxMessageDescription = new System.Windows.Forms.TextBox();
             this.cbxMessageType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -70,13 +102,40 @@
             this.pbxRemoveMessage = new System.Windows.Forms.PictureBox();
             this.btnRemoveSelectedMessage = new System.Windows.Forms.Button();
             this.btnMessageAdd = new System.Windows.Forms.Button();
+            this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
+            this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
+            this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDateStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDescriptionStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtpGroceries = new MetroFramework.Controls.MetroTabPage();
+            this.btn_GroceryHistoryInfo = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_GroceryAddItem = new System.Windows.Forms.Button();
+            this.btn_GroceryRemoveItem = new System.Windows.Forms.Button();
+            this.btn_GroceryCompleteList = new System.Windows.Forms.Button();
+            this.tb_GroceryItem = new System.Windows.Forms.TextBox();
+            this.nud_GroceryItemAmount = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dgv_GroceriesHistory = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Groceries = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.dgvStudentTasks = new System.Windows.Forms.DataGridView();
             this.chDateTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chTaskDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chStatusTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCompleteTask = new System.Windows.Forms.Button();
             this.tbxFloor = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.tbxAddBalance = new System.Windows.Forms.TextBox();
@@ -101,84 +160,23 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pbxDeposit = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnCompleteTask = new System.Windows.Forms.Button();
             this.btnDeposit = new System.Windows.Forms.Button();
-            this.mtpHouseRules = new MetroFramework.Controls.MetroTabPage();
-            this.dgvHouseRulesStudent = new System.Windows.Forms.DataGridView();
-            this.chIdStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDateStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDescriptionStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
-            this.btn_AgreementRejectSelected = new System.Windows.Forms.Button();
-            this.btn_AgreementDeleteSelected = new System.Windows.Forms.Button();
-            this.btn_AgreementEditSelected = new System.Windows.Forms.Button();
-            this.btn_AgreementAcceptSelected = new System.Windows.Forms.Button();
-            this.cbx_AgreementPersonInvolved = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dgv_AgreementsStudent = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_NewAgreementSubmit = new System.Windows.Forms.Button();
-            this.tb_NewAgreementDescription = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.mtpGroceries = new MetroFramework.Controls.MetroTabPage();
-            this.btn_GroceryHistoryInfo = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btn_GroceryAddItem = new System.Windows.Forms.Button();
-            this.btn_GroceryRemoveItem = new System.Windows.Forms.Button();
-            this.btn_GroceryCompleteList = new System.Windows.Forms.Button();
-            this.tb_GroceryItem = new System.Windows.Forms.TextBox();
-            this.nud_GroceryItemAmount = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dgv_GroceriesHistory = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Groceries = new System.Windows.Forms.DataGridView();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbxEventFloor = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbl_LoggedInAsName = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chEventId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chVoters = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.mtcStudent.SuspendLayout();
             this.mtpSchedule.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
-            this.mtpMessages.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
-            this.mtpProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.mtpHouseRules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
             this.mtpAgreements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AgreementsStudent)).BeginInit();
+            this.mtpMessages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).BeginInit();
+            this.mtpHouseRules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).BeginInit();
             this.mtpGroceries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -186,8 +184,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_GroceryItemAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GroceriesHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Groceries)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.mtpProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pHeader
@@ -206,6 +206,56 @@
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(1091, 106);
             this.pHeader.TabIndex = 43;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(299, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 63);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // lbl_LoggedInAsName
+            // 
+            this.lbl_LoggedInAsName.AutoSize = true;
+            this.lbl_LoggedInAsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_LoggedInAsName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(114, 50);
+            this.lbl_LoggedInAsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_LoggedInAsName.Name = "lbl_LoggedInAsName";
+            this.lbl_LoggedInAsName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_LoggedInAsName.Size = new System.Drawing.Size(150, 36);
+            this.lbl_LoggedInAsName.TabIndex = 20;
+            this.lbl_LoggedInAsName.Text = "Username";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(29, 23);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(58, 63);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 19;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(117, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 18);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Logged in as student";
             // 
             // btnMinimizeWindow
             // 
@@ -256,8 +306,9 @@
             this.mtcStudent.ItemSize = new System.Drawing.Size(86, 35);
             this.mtcStudent.Location = new System.Drawing.Point(0, 110);
             this.mtcStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtcStudent.Multiline = true;
             this.mtcStudent.Name = "mtcStudent";
-            this.mtcStudent.SelectedIndex = 0;
+            this.mtcStudent.SelectedIndex = 5;
             this.mtcStudent.Size = new System.Drawing.Size(1091, 515);
             this.mtcStudent.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtcStudent.TabIndex = 44;
@@ -300,6 +351,13 @@
             this.mtpSchedule.Text = "Schedule and Events";
             this.mtpSchedule.VerticalScrollbarBarColor = true;
             this.mtpSchedule.VerticalScrollbarSize = 11;
+            // 
+            // tbxEventFloor
+            // 
+            this.tbxEventFloor.Location = new System.Drawing.Point(672, 64);
+            this.tbxEventFloor.Name = "tbxEventFloor";
+            this.tbxEventFloor.Size = new System.Drawing.Size(131, 22);
+            this.tbxEventFloor.TabIndex = 62;
             // 
             // pictureBox1
             // 
@@ -351,6 +409,62 @@
             this.dgvEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEvents.Size = new System.Drawing.Size(605, 188);
             this.dgvEvents.TabIndex = 59;
+            // 
+            // chEventId
+            // 
+            this.chEventId.FillWeight = 62.79013F;
+            this.chEventId.HeaderText = "Event Id";
+            this.chEventId.MinimumWidth = 6;
+            this.chEventId.Name = "chEventId";
+            this.chEventId.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 103.3662F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Organizer";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 95.81075F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // chLocation
+            // 
+            this.chLocation.FillWeight = 104.8595F;
+            this.chLocation.HeaderText = "Location";
+            this.chLocation.MinimumWidth = 6;
+            this.chLocation.Name = "chLocation";
+            this.chLocation.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 168.3239F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 104.8128F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Votes";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // chVoters
+            // 
+            this.chVoters.FillWeight = 60.03668F;
+            this.chVoters.HeaderText = "Voters Nr";
+            this.chVoters.MinimumWidth = 6;
+            this.chVoters.Name = "chVoters";
+            this.chVoters.ReadOnly = true;
             // 
             // label12
             // 
@@ -573,595 +687,6 @@
             this.chStatus.Name = "chStatus";
             this.chStatus.ReadOnly = true;
             // 
-            // mtpMessages
-            // 
-            this.mtpMessages.Controls.Add(this.label3);
-            this.mtpMessages.Controls.Add(this.label1);
-            this.mtpMessages.Controls.Add(this.pictureBox2);
-            this.mtpMessages.Controls.Add(this.tbxMessageDescription);
-            this.mtpMessages.Controls.Add(this.cbxMessageType);
-            this.mtpMessages.Controls.Add(this.label11);
-            this.mtpMessages.Controls.Add(this.dgvMessageStudent);
-            this.mtpMessages.Controls.Add(this.pbxRemoveMessage);
-            this.mtpMessages.Controls.Add(this.btnRemoveSelectedMessage);
-            this.mtpMessages.Controls.Add(this.btnMessageAdd);
-            this.mtpMessages.CustomBackground = true;
-            this.mtpMessages.HorizontalScrollbarBarColor = true;
-            this.mtpMessages.Location = new System.Drawing.Point(4, 39);
-            this.mtpMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mtpMessages.Name = "mtpMessages";
-            this.mtpMessages.Size = new System.Drawing.Size(1083, 472);
-            this.mtpMessages.TabIndex = 3;
-            this.mtpMessages.Text = "Complaints and Questions";
-            this.mtpMessages.VerticalScrollbarBarColor = true;
-            this.mtpMessages.VerticalScrollbarSize = 11;
-            // 
-            // tbxMessageDescription
-            // 
-            this.tbxMessageDescription.Location = new System.Drawing.Point(398, 334);
-            this.tbxMessageDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxMessageDescription.Multiline = true;
-            this.tbxMessageDescription.Name = "tbxMessageDescription";
-            this.tbxMessageDescription.Size = new System.Drawing.Size(496, 108);
-            this.tbxMessageDescription.TabIndex = 12;
-            // 
-            // cbxMessageType
-            // 
-            this.cbxMessageType.FormattingEnabled = true;
-            this.cbxMessageType.Items.AddRange(new object[] {
-            "Question",
-            "Complaint"});
-            this.cbxMessageType.Location = new System.Drawing.Point(398, 302);
-            this.cbxMessageType.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxMessageType.Name = "cbxMessageType";
-            this.cbxMessageType.Size = new System.Drawing.Size(496, 24);
-            this.cbxMessageType.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.Control;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(395, 270);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 18);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Add a new message";
-            // 
-            // dgvMessageStudent
-            // 
-            this.dgvMessageStudent.AllowUserToDeleteRows = false;
-            this.dgvMessageStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvMessageStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvMessageStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvMessageStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvMessageStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMessageStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chMessagesId,
-            this.chMessagesDate,
-            this.chMessageType,
-            this.chMessageText,
-            this.chMessageReply});
-            this.dgvMessageStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMessageStudent.Location = new System.Drawing.Point(25, 9);
-            this.dgvMessageStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvMessageStudent.Name = "dgvMessageStudent";
-            this.dgvMessageStudent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvMessageStudent.RowHeadersVisible = false;
-            this.dgvMessageStudent.RowHeadersWidth = 51;
-            this.dgvMessageStudent.RowTemplate.Height = 24;
-            this.dgvMessageStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageStudent.Size = new System.Drawing.Size(1030, 239);
-            this.dgvMessageStudent.TabIndex = 8;
-            // 
-            // chMessagesId
-            // 
-            this.chMessagesId.HeaderText = "Id";
-            this.chMessagesId.MinimumWidth = 6;
-            this.chMessagesId.Name = "chMessagesId";
-            this.chMessagesId.Width = 50;
-            // 
-            // chMessagesDate
-            // 
-            this.chMessagesDate.HeaderText = "Date";
-            this.chMessagesDate.MinimumWidth = 6;
-            this.chMessagesDate.Name = "chMessagesDate";
-            this.chMessagesDate.Width = 90;
-            // 
-            // chMessageType
-            // 
-            this.chMessageType.HeaderText = "Type";
-            this.chMessageType.MinimumWidth = 6;
-            this.chMessageType.Name = "chMessageType";
-            this.chMessageType.Width = 120;
-            // 
-            // chMessageText
-            // 
-            this.chMessageText.HeaderText = "Message";
-            this.chMessageText.MinimumWidth = 6;
-            this.chMessageText.Name = "chMessageText";
-            this.chMessageText.Width = 280;
-            // 
-            // chMessageReply
-            // 
-            this.chMessageReply.HeaderText = "Reply";
-            this.chMessageReply.MinimumWidth = 6;
-            this.chMessageReply.Name = "chMessageReply";
-            this.chMessageReply.Width = 234;
-            // 
-            // pbxRemoveMessage
-            // 
-            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
-            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveMessage.Location = new System.Drawing.Point(188, 285);
-            this.pbxRemoveMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
-            this.pbxRemoveMessage.Size = new System.Drawing.Size(23, 22);
-            this.pbxRemoveMessage.TabIndex = 18;
-            this.pbxRemoveMessage.TabStop = false;
-            // 
-            // btnRemoveSelectedMessage
-            // 
-            this.btnRemoveSelectedMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnRemoveSelectedMessage.FlatAppearance.BorderSize = 0;
-            this.btnRemoveSelectedMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRemoveSelectedMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRemoveSelectedMessage.Location = new System.Drawing.Point(25, 270);
-            this.btnRemoveSelectedMessage.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRemoveSelectedMessage.Name = "btnRemoveSelectedMessage";
-            this.btnRemoveSelectedMessage.Size = new System.Drawing.Size(197, 50);
-            this.btnRemoveSelectedMessage.TabIndex = 9;
-            this.btnRemoveSelectedMessage.Text = "Remove Selected";
-            this.btnRemoveSelectedMessage.UseVisualStyleBackColor = false;
-            this.btnRemoveSelectedMessage.Click += new System.EventHandler(this.BtnRemoveSelectedMessage_Click);
-            // 
-            // btnMessageAdd
-            // 
-            this.btnMessageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnMessageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessageAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMessageAdd.Location = new System.Drawing.Point(919, 388);
-            this.btnMessageAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMessageAdd.Name = "btnMessageAdd";
-            this.btnMessageAdd.Size = new System.Drawing.Size(136, 54);
-            this.btnMessageAdd.TabIndex = 13;
-            this.btnMessageAdd.Text = "Add";
-            this.btnMessageAdd.UseVisualStyleBackColor = false;
-            this.btnMessageAdd.Click += new System.EventHandler(this.BtnMessageAdd_Click);
-            // 
-            // mtpProfile
-            // 
-            this.mtpProfile.BackColor = System.Drawing.SystemColors.Control;
-            this.mtpProfile.Controls.Add(this.dgvStudentTasks);
-            this.mtpProfile.Controls.Add(this.btnEdit);
-            this.mtpProfile.Controls.Add(this.tbxFloor);
-            this.mtpProfile.Controls.Add(this.tbxPassword);
-            this.mtpProfile.Controls.Add(this.tbxAddBalance);
-            this.mtpProfile.Controls.Add(this.tbxRoom);
-            this.mtpProfile.Controls.Add(this.lblProfileFloor);
-            this.mtpProfile.Controls.Add(this.lblPassword);
-            this.mtpProfile.Controls.Add(this.lblAddBalance);
-            this.mtpProfile.Controls.Add(this.lblRoom);
-            this.mtpProfile.Controls.Add(this.tbxScore);
-            this.mtpProfile.Controls.Add(this.tbxBalance);
-            this.mtpProfile.Controls.Add(this.tbxPhone);
-            this.mtpProfile.Controls.Add(this.tbxEmail);
-            this.mtpProfile.Controls.Add(this.tbxAge);
-            this.mtpProfile.Controls.Add(this.tbxName);
-            this.mtpProfile.Controls.Add(this.lblScore);
-            this.mtpProfile.Controls.Add(this.lblBalance);
-            this.mtpProfile.Controls.Add(this.lblMyTasks);
-            this.mtpProfile.Controls.Add(this.lblGeneralInfo);
-            this.mtpProfile.Controls.Add(this.lblPhone);
-            this.mtpProfile.Controls.Add(this.lblEmail);
-            this.mtpProfile.Controls.Add(this.lblAge);
-            this.mtpProfile.Controls.Add(this.lblName);
-            this.mtpProfile.Controls.Add(this.pbxDeposit);
-            this.mtpProfile.Controls.Add(this.pictureBox3);
-            this.mtpProfile.Controls.Add(this.btnCompleteTask);
-            this.mtpProfile.Controls.Add(this.btnDeposit);
-            this.mtpProfile.CustomBackground = true;
-            this.mtpProfile.HorizontalScrollbarBarColor = true;
-            this.mtpProfile.Location = new System.Drawing.Point(4, 39);
-            this.mtpProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mtpProfile.Name = "mtpProfile";
-            this.mtpProfile.Size = new System.Drawing.Size(1083, 472);
-            this.mtpProfile.TabIndex = 4;
-            this.mtpProfile.Text = "Profile";
-            this.mtpProfile.VerticalScrollbarBarColor = true;
-            this.mtpProfile.VerticalScrollbarSize = 11;
-            // 
-            // dgvStudentTasks
-            // 
-            this.dgvStudentTasks.AllowUserToDeleteRows = false;
-            this.dgvStudentTasks.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvStudentTasks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvStudentTasks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvStudentTasks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvStudentTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chDateTask,
-            this.chTaskDesc,
-            this.chStatusTask});
-            this.dgvStudentTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvStudentTasks.Location = new System.Drawing.Point(432, 53);
-            this.dgvStudentTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvStudentTasks.Name = "dgvStudentTasks";
-            this.dgvStudentTasks.RowHeadersVisible = false;
-            this.dgvStudentTasks.RowHeadersWidth = 51;
-            this.dgvStudentTasks.RowTemplate.Height = 24;
-            this.dgvStudentTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentTasks.Size = new System.Drawing.Size(574, 219);
-            this.dgvStudentTasks.TabIndex = 70;
-            // 
-            // chDateTask
-            // 
-            this.chDateTask.HeaderText = "Date";
-            this.chDateTask.MinimumWidth = 6;
-            this.chDateTask.Name = "chDateTask";
-            this.chDateTask.Width = 200;
-            // 
-            // chTaskDesc
-            // 
-            this.chTaskDesc.HeaderText = "Task";
-            this.chTaskDesc.MinimumWidth = 6;
-            this.chTaskDesc.Name = "chTaskDesc";
-            this.chTaskDesc.Width = 150;
-            // 
-            // chStatusTask
-            // 
-            this.chStatusTask.HeaderText = "Status";
-            this.chStatusTask.MinimumWidth = 6;
-            this.chStatusTask.Name = "chStatusTask";
-            this.chStatusTask.Width = 150;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEdit.Location = new System.Drawing.Point(25, 413);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(112, 38);
-            this.btnEdit.TabIndex = 69;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnCompleteTask
-            // 
-            this.btnCompleteTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnCompleteTask.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnCompleteTask.FlatAppearance.BorderSize = 0;
-            this.btnCompleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCompleteTask.Location = new System.Drawing.Point(432, 290);
-            this.btnCompleteTask.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCompleteTask.Name = "btnCompleteTask";
-            this.btnCompleteTask.Size = new System.Drawing.Size(221, 46);
-            this.btnCompleteTask.TabIndex = 68;
-            this.btnCompleteTask.Text = "Complete Selected Task";
-            this.btnCompleteTask.UseVisualStyleBackColor = false;
-            this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
-            // 
-            // tbxFloor
-            // 
-            this.tbxFloor.Location = new System.Drawing.Point(25, 265);
-            this.tbxFloor.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxFloor.Name = "tbxFloor";
-            this.tbxFloor.ReadOnly = true;
-            this.tbxFloor.Size = new System.Drawing.Size(111, 22);
-            this.tbxFloor.TabIndex = 67;
-            // 
-            // tbxPassword
-            // 
-            this.tbxPassword.Location = new System.Drawing.Point(25, 112);
-            this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.PasswordChar = '*';
-            this.tbxPassword.Size = new System.Drawing.Size(261, 22);
-            this.tbxPassword.TabIndex = 65;
-            // 
-            // tbxAddBalance
-            // 
-            this.tbxAddBalance.Location = new System.Drawing.Point(440, 421);
-            this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(5);
-            this.tbxAddBalance.Name = "tbxAddBalance";
-            this.tbxAddBalance.Size = new System.Drawing.Size(203, 22);
-            this.tbxAddBalance.TabIndex = 62;
-            // 
-            // tbxRoom
-            // 
-            this.tbxRoom.Location = new System.Drawing.Point(146, 265);
-            this.tbxRoom.Margin = new System.Windows.Forms.Padding(5);
-            this.tbxRoom.Name = "tbxRoom";
-            this.tbxRoom.ReadOnly = true;
-            this.tbxRoom.Size = new System.Drawing.Size(140, 22);
-            this.tbxRoom.TabIndex = 60;
-            // 
-            // lblProfileFloor
-            // 
-            this.lblProfileFloor.AutoSize = true;
-            this.lblProfileFloor.BackColor = System.Drawing.SystemColors.Control;
-            this.lblProfileFloor.Location = new System.Drawing.Point(21, 245);
-            this.lblProfileFloor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProfileFloor.Name = "lblProfileFloor";
-            this.lblProfileFloor.Size = new System.Drawing.Size(40, 17);
-            this.lblProfileFloor.TabIndex = 66;
-            this.lblProfileFloor.Text = "Floor";
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPassword.Location = new System.Drawing.Point(21, 94);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
-            this.lblPassword.TabIndex = 64;
-            this.lblPassword.Text = "Password";
-            // 
-            // lblAddBalance
-            // 
-            this.lblAddBalance.AutoSize = true;
-            this.lblAddBalance.BackColor = System.Drawing.SystemColors.Control;
-            this.lblAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBalance.Location = new System.Drawing.Point(437, 394);
-            this.lblAddBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblAddBalance.Name = "lblAddBalance";
-            this.lblAddBalance.Size = new System.Drawing.Size(88, 18);
-            this.lblAddBalance.TabIndex = 61;
-            this.lblAddBalance.Text = "Add balance";
-            // 
-            // lblRoom
-            // 
-            this.lblRoom.AutoSize = true;
-            this.lblRoom.BackColor = System.Drawing.SystemColors.Control;
-            this.lblRoom.Location = new System.Drawing.Point(143, 245);
-            this.lblRoom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(45, 17);
-            this.lblRoom.TabIndex = 59;
-            this.lblRoom.Text = "Room";
-            // 
-            // tbxScore
-            // 
-            this.tbxScore.Location = new System.Drawing.Point(25, 372);
-            this.tbxScore.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxScore.Name = "tbxScore";
-            this.tbxScore.ReadOnly = true;
-            this.tbxScore.Size = new System.Drawing.Size(261, 22);
-            this.tbxScore.TabIndex = 57;
-            // 
-            // tbxBalance
-            // 
-            this.tbxBalance.Location = new System.Drawing.Point(25, 314);
-            this.tbxBalance.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxBalance.Name = "tbxBalance";
-            this.tbxBalance.ReadOnly = true;
-            this.tbxBalance.Size = new System.Drawing.Size(261, 22);
-            this.tbxBalance.TabIndex = 55;
-            // 
-            // tbxPhone
-            // 
-            this.tbxPhone.Location = new System.Drawing.Point(23, 214);
-            this.tbxPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxPhone.Name = "tbxPhone";
-            this.tbxPhone.Size = new System.Drawing.Size(263, 22);
-            this.tbxPhone.TabIndex = 50;
-            // 
-            // tbxEmail
-            // 
-            this.tbxEmail.Location = new System.Drawing.Point(23, 162);
-            this.tbxEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(263, 22);
-            this.tbxEmail.TabIndex = 48;
-            // 
-            // tbxAge
-            // 
-            this.tbxAge.Location = new System.Drawing.Point(197, 62);
-            this.tbxAge.Margin = new System.Windows.Forms.Padding(5);
-            this.tbxAge.Name = "tbxAge";
-            this.tbxAge.Size = new System.Drawing.Size(89, 22);
-            this.tbxAge.TabIndex = 46;
-            // 
-            // tbxName
-            // 
-            this.tbxName.Location = new System.Drawing.Point(23, 62);
-            this.tbxName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(165, 22);
-            this.tbxName.TabIndex = 44;
-            // 
-            // lblScore
-            // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.BackColor = System.Drawing.SystemColors.Control;
-            this.lblScore.Location = new System.Drawing.Point(21, 346);
-            this.lblScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(45, 17);
-            this.lblScore.TabIndex = 56;
-            this.lblScore.Text = "Score";
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.BackColor = System.Drawing.SystemColors.Control;
-            this.lblBalance.Location = new System.Drawing.Point(21, 295);
-            this.lblBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(59, 17);
-            this.lblBalance.TabIndex = 54;
-            this.lblBalance.Text = "Balance";
-            // 
-            // lblMyTasks
-            // 
-            this.lblMyTasks.AutoSize = true;
-            this.lblMyTasks.BackColor = System.Drawing.SystemColors.Control;
-            this.lblMyTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyTasks.Location = new System.Drawing.Point(436, 14);
-            this.lblMyTasks.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblMyTasks.Name = "lblMyTasks";
-            this.lblMyTasks.Size = new System.Drawing.Size(76, 20);
-            this.lblMyTasks.TabIndex = 52;
-            this.lblMyTasks.Text = "My tasks";
-            // 
-            // lblGeneralInfo
-            // 
-            this.lblGeneralInfo.AutoSize = true;
-            this.lblGeneralInfo.BackColor = System.Drawing.SystemColors.Control;
-            this.lblGeneralInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGeneralInfo.Location = new System.Drawing.Point(21, 11);
-            this.lblGeneralInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGeneralInfo.Name = "lblGeneralInfo";
-            this.lblGeneralInfo.Size = new System.Drawing.Size(156, 20);
-            this.lblGeneralInfo.TabIndex = 51;
-            this.lblGeneralInfo.Text = "General Information";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPhone.Location = new System.Drawing.Point(21, 196);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(49, 17);
-            this.lblPhone.TabIndex = 49;
-            this.lblPhone.Text = "Phone";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
-            this.lblEmail.Location = new System.Drawing.Point(21, 144);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 17);
-            this.lblEmail.TabIndex = 47;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.BackColor = System.Drawing.SystemColors.Control;
-            this.lblAge.Location = new System.Drawing.Point(201, 42);
-            this.lblAge.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(33, 17);
-            this.lblAge.TabIndex = 45;
-            this.lblAge.Text = "Age";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.SystemColors.Control;
-            this.lblName.Location = new System.Drawing.Point(21, 42);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(45, 17);
-            this.lblName.TabIndex = 43;
-            this.lblName.Text = "Name";
-            // 
-            // pbxDeposit
-            // 
-            this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
-            this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDeposit.Location = new System.Drawing.Point(820, 414);
-            this.pbxDeposit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbxDeposit.Name = "pbxDeposit";
-            this.pbxDeposit.Size = new System.Drawing.Size(20, 25);
-            this.pbxDeposit.TabIndex = 2;
-            this.pbxDeposit.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(367, 28);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1, 418);
-            this.pictureBox3.TabIndex = 53;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnDeposit
-            // 
-            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.btnDeposit.FlatAppearance.BorderSize = 0;
-            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeposit.Location = new System.Drawing.Point(662, 407);
-            this.btnDeposit.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(207, 44);
-            this.btnDeposit.TabIndex = 63;
-            this.btnDeposit.Text = "Deposit";
-            this.btnDeposit.UseVisualStyleBackColor = false;
-            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
-            // 
-            // mtpHouseRules
-            // 
-            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
-            this.mtpHouseRules.CustomBackground = true;
-            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
-            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
-            this.mtpHouseRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mtpHouseRules.Name = "mtpHouseRules";
-            this.mtpHouseRules.Size = new System.Drawing.Size(1083, 472);
-            this.mtpHouseRules.TabIndex = 1;
-            this.mtpHouseRules.Text = "House Rules";
-            this.mtpHouseRules.VerticalScrollbarBarColor = true;
-            this.mtpHouseRules.VerticalScrollbarSize = 11;
-            // 
-            // dgvHouseRulesStudent
-            // 
-            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
-            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chIdStudent,
-            this.chDateStudent,
-            this.chDescriptionStudent});
-            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(25, 11);
-            this.dgvHouseRulesStudent.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
-            this.dgvHouseRulesStudent.RowHeadersVisible = false;
-            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
-            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(1032, 439);
-            this.dgvHouseRulesStudent.TabIndex = 9;
-            // 
-            // chIdStudent
-            // 
-            this.chIdStudent.HeaderText = "Id";
-            this.chIdStudent.MinimumWidth = 6;
-            this.chIdStudent.Name = "chIdStudent";
-            this.chIdStudent.Width = 60;
-            // 
-            // chDateStudent
-            // 
-            this.chDateStudent.HeaderText = "Date Added";
-            this.chDateStudent.MinimumWidth = 6;
-            this.chDateStudent.Name = "chDateStudent";
-            this.chDateStudent.Width = 110;
-            // 
-            // chDescriptionStudent
-            // 
-            this.chDescriptionStudent.HeaderText = "Description";
-            this.chDescriptionStudent.MinimumWidth = 6;
-            this.chDescriptionStudent.Name = "chDescriptionStudent";
-            this.chDescriptionStudent.Width = 597;
-            // 
             // mtpAgreements
             // 
             this.mtpAgreements.BackColor = System.Drawing.SystemColors.Control;
@@ -1382,6 +907,250 @@
             this.label9.Size = new System.Drawing.Size(138, 18);
             this.label9.TabIndex = 3;
             this.label9.Text = "Add new agreement";
+            // 
+            // mtpMessages
+            // 
+            this.mtpMessages.Controls.Add(this.label3);
+            this.mtpMessages.Controls.Add(this.label1);
+            this.mtpMessages.Controls.Add(this.pictureBox2);
+            this.mtpMessages.Controls.Add(this.tbxMessageDescription);
+            this.mtpMessages.Controls.Add(this.cbxMessageType);
+            this.mtpMessages.Controls.Add(this.label11);
+            this.mtpMessages.Controls.Add(this.dgvMessageStudent);
+            this.mtpMessages.Controls.Add(this.pbxRemoveMessage);
+            this.mtpMessages.Controls.Add(this.btnRemoveSelectedMessage);
+            this.mtpMessages.Controls.Add(this.btnMessageAdd);
+            this.mtpMessages.CustomBackground = true;
+            this.mtpMessages.HorizontalScrollbarBarColor = true;
+            this.mtpMessages.Location = new System.Drawing.Point(4, 39);
+            this.mtpMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpMessages.Name = "mtpMessages";
+            this.mtpMessages.Size = new System.Drawing.Size(1083, 472);
+            this.mtpMessages.TabIndex = 3;
+            this.mtpMessages.Text = "Complaints and Questions";
+            this.mtpMessages.VerticalScrollbarBarColor = true;
+            this.mtpMessages.VerticalScrollbarSize = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(320, 337);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Message";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(339, 302);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Type";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.add_512;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1016, 404);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tbxMessageDescription
+            // 
+            this.tbxMessageDescription.Location = new System.Drawing.Point(398, 334);
+            this.tbxMessageDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxMessageDescription.Multiline = true;
+            this.tbxMessageDescription.Name = "tbxMessageDescription";
+            this.tbxMessageDescription.Size = new System.Drawing.Size(496, 108);
+            this.tbxMessageDescription.TabIndex = 12;
+            // 
+            // cbxMessageType
+            // 
+            this.cbxMessageType.FormattingEnabled = true;
+            this.cbxMessageType.Items.AddRange(new object[] {
+            "Question",
+            "Complaint"});
+            this.cbxMessageType.Location = new System.Drawing.Point(398, 302);
+            this.cbxMessageType.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxMessageType.Name = "cbxMessageType";
+            this.cbxMessageType.Size = new System.Drawing.Size(496, 24);
+            this.cbxMessageType.TabIndex = 11;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(395, 270);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 18);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Add a new message";
+            // 
+            // dgvMessageStudent
+            // 
+            this.dgvMessageStudent.AllowUserToDeleteRows = false;
+            this.dgvMessageStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMessageStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvMessageStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvMessageStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMessageStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMessageStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chMessagesId,
+            this.chMessagesDate,
+            this.chMessageType,
+            this.chMessageText,
+            this.chMessageReply});
+            this.dgvMessageStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMessageStudent.Location = new System.Drawing.Point(25, 9);
+            this.dgvMessageStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMessageStudent.Name = "dgvMessageStudent";
+            this.dgvMessageStudent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMessageStudent.RowHeadersVisible = false;
+            this.dgvMessageStudent.RowHeadersWidth = 51;
+            this.dgvMessageStudent.RowTemplate.Height = 24;
+            this.dgvMessageStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMessageStudent.Size = new System.Drawing.Size(1030, 239);
+            this.dgvMessageStudent.TabIndex = 8;
+            // 
+            // chMessagesId
+            // 
+            this.chMessagesId.HeaderText = "Id";
+            this.chMessagesId.MinimumWidth = 6;
+            this.chMessagesId.Name = "chMessagesId";
+            this.chMessagesId.Width = 50;
+            // 
+            // chMessagesDate
+            // 
+            this.chMessagesDate.HeaderText = "Date";
+            this.chMessagesDate.MinimumWidth = 6;
+            this.chMessagesDate.Name = "chMessagesDate";
+            this.chMessagesDate.Width = 90;
+            // 
+            // chMessageType
+            // 
+            this.chMessageType.HeaderText = "Type";
+            this.chMessageType.MinimumWidth = 6;
+            this.chMessageType.Name = "chMessageType";
+            this.chMessageType.Width = 120;
+            // 
+            // chMessageText
+            // 
+            this.chMessageText.HeaderText = "Message";
+            this.chMessageText.MinimumWidth = 6;
+            this.chMessageText.Name = "chMessageText";
+            this.chMessageText.Width = 280;
+            // 
+            // chMessageReply
+            // 
+            this.chMessageReply.HeaderText = "Reply";
+            this.chMessageReply.MinimumWidth = 6;
+            this.chMessageReply.Name = "chMessageReply";
+            this.chMessageReply.Width = 234;
+            // 
+            // pbxRemoveMessage
+            // 
+            this.pbxRemoveMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxRemoveMessage.BackgroundImage = global::Project.Properties.Resources.x_mark_4_512;
+            this.pbxRemoveMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxRemoveMessage.Location = new System.Drawing.Point(188, 285);
+            this.pbxRemoveMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxRemoveMessage.Name = "pbxRemoveMessage";
+            this.pbxRemoveMessage.Size = new System.Drawing.Size(23, 22);
+            this.pbxRemoveMessage.TabIndex = 18;
+            this.pbxRemoveMessage.TabStop = false;
+            // 
+            // btnRemoveSelectedMessage
+            // 
+            this.btnRemoveSelectedMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnRemoveSelectedMessage.FlatAppearance.BorderSize = 0;
+            this.btnRemoveSelectedMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveSelectedMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRemoveSelectedMessage.Location = new System.Drawing.Point(25, 270);
+            this.btnRemoveSelectedMessage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveSelectedMessage.Name = "btnRemoveSelectedMessage";
+            this.btnRemoveSelectedMessage.Size = new System.Drawing.Size(197, 50);
+            this.btnRemoveSelectedMessage.TabIndex = 9;
+            this.btnRemoveSelectedMessage.Text = "Remove Selected";
+            this.btnRemoveSelectedMessage.UseVisualStyleBackColor = false;
+            this.btnRemoveSelectedMessage.Click += new System.EventHandler(this.BtnRemoveSelectedMessage_Click);
+            // 
+            // btnMessageAdd
+            // 
+            this.btnMessageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnMessageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessageAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMessageAdd.Location = new System.Drawing.Point(919, 388);
+            this.btnMessageAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMessageAdd.Name = "btnMessageAdd";
+            this.btnMessageAdd.Size = new System.Drawing.Size(136, 54);
+            this.btnMessageAdd.TabIndex = 13;
+            this.btnMessageAdd.Text = "Add";
+            this.btnMessageAdd.UseVisualStyleBackColor = false;
+            this.btnMessageAdd.Click += new System.EventHandler(this.BtnMessageAdd_Click);
+            // 
+            // mtpHouseRules
+            // 
+            this.mtpHouseRules.Controls.Add(this.dgvHouseRulesStudent);
+            this.mtpHouseRules.CustomBackground = true;
+            this.mtpHouseRules.HorizontalScrollbarBarColor = true;
+            this.mtpHouseRules.Location = new System.Drawing.Point(4, 39);
+            this.mtpHouseRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpHouseRules.Name = "mtpHouseRules";
+            this.mtpHouseRules.Size = new System.Drawing.Size(1083, 472);
+            this.mtpHouseRules.TabIndex = 1;
+            this.mtpHouseRules.Text = "House Rules";
+            this.mtpHouseRules.VerticalScrollbarBarColor = true;
+            this.mtpHouseRules.VerticalScrollbarSize = 11;
+            // 
+            // dgvHouseRulesStudent
+            // 
+            this.dgvHouseRulesStudent.AllowUserToDeleteRows = false;
+            this.dgvHouseRulesStudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvHouseRulesStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHouseRulesStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvHouseRulesStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHouseRulesStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chIdStudent,
+            this.chDateStudent,
+            this.chDescriptionStudent});
+            this.dgvHouseRulesStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvHouseRulesStudent.Location = new System.Drawing.Point(25, 11);
+            this.dgvHouseRulesStudent.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvHouseRulesStudent.Name = "dgvHouseRulesStudent";
+            this.dgvHouseRulesStudent.RowHeadersVisible = false;
+            this.dgvHouseRulesStudent.RowHeadersWidth = 51;
+            this.dgvHouseRulesStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHouseRulesStudent.Size = new System.Drawing.Size(1032, 439);
+            this.dgvHouseRulesStudent.TabIndex = 9;
+            // 
+            // chIdStudent
+            // 
+            this.chIdStudent.HeaderText = "Id";
+            this.chIdStudent.MinimumWidth = 6;
+            this.chIdStudent.Name = "chIdStudent";
+            this.chIdStudent.Width = 60;
+            // 
+            // chDateStudent
+            // 
+            this.chDateStudent.HeaderText = "Date Added";
+            this.chDateStudent.MinimumWidth = 6;
+            this.chDateStudent.Name = "chDateStudent";
+            this.chDateStudent.Width = 110;
+            // 
+            // chDescriptionStudent
+            // 
+            this.chDescriptionStudent.HeaderText = "Description";
+            this.chDescriptionStudent.MinimumWidth = 6;
+            this.chDescriptionStudent.Name = "chDescriptionStudent";
+            this.chDescriptionStudent.Width = 597;
             // 
             // mtpGroceries
             // 
@@ -1681,147 +1450,379 @@
             this.Column8.ReadOnly = true;
             this.Column8.Width = 87;
             // 
-            // tbxEventFloor
+            // mtpProfile
             // 
-            this.tbxEventFloor.Location = new System.Drawing.Point(672, 64);
-            this.tbxEventFloor.Name = "tbxEventFloor";
-            this.tbxEventFloor.Size = new System.Drawing.Size(131, 22);
-            this.tbxEventFloor.TabIndex = 62;
+            this.mtpProfile.BackColor = System.Drawing.SystemColors.Control;
+            this.mtpProfile.Controls.Add(this.dgvStudentTasks);
+            this.mtpProfile.Controls.Add(this.btnEdit);
+            this.mtpProfile.Controls.Add(this.tbxFloor);
+            this.mtpProfile.Controls.Add(this.tbxPassword);
+            this.mtpProfile.Controls.Add(this.tbxAddBalance);
+            this.mtpProfile.Controls.Add(this.tbxRoom);
+            this.mtpProfile.Controls.Add(this.lblProfileFloor);
+            this.mtpProfile.Controls.Add(this.lblPassword);
+            this.mtpProfile.Controls.Add(this.lblAddBalance);
+            this.mtpProfile.Controls.Add(this.lblRoom);
+            this.mtpProfile.Controls.Add(this.tbxScore);
+            this.mtpProfile.Controls.Add(this.tbxBalance);
+            this.mtpProfile.Controls.Add(this.tbxPhone);
+            this.mtpProfile.Controls.Add(this.tbxEmail);
+            this.mtpProfile.Controls.Add(this.tbxAge);
+            this.mtpProfile.Controls.Add(this.tbxName);
+            this.mtpProfile.Controls.Add(this.lblScore);
+            this.mtpProfile.Controls.Add(this.lblBalance);
+            this.mtpProfile.Controls.Add(this.lblMyTasks);
+            this.mtpProfile.Controls.Add(this.lblGeneralInfo);
+            this.mtpProfile.Controls.Add(this.lblPhone);
+            this.mtpProfile.Controls.Add(this.lblEmail);
+            this.mtpProfile.Controls.Add(this.lblAge);
+            this.mtpProfile.Controls.Add(this.lblName);
+            this.mtpProfile.Controls.Add(this.pbxDeposit);
+            this.mtpProfile.Controls.Add(this.pictureBox3);
+            this.mtpProfile.Controls.Add(this.btnCompleteTask);
+            this.mtpProfile.Controls.Add(this.btnDeposit);
+            this.mtpProfile.CustomBackground = true;
+            this.mtpProfile.HorizontalScrollbarBarColor = true;
+            this.mtpProfile.Location = new System.Drawing.Point(4, 39);
+            this.mtpProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtpProfile.Name = "mtpProfile";
+            this.mtpProfile.Size = new System.Drawing.Size(1083, 472);
+            this.mtpProfile.TabIndex = 4;
+            this.mtpProfile.Text = "Profile";
+            this.mtpProfile.VerticalScrollbarBarColor = true;
+            this.mtpProfile.VerticalScrollbarSize = 11;
             // 
-            // pictureBox2
+            // dgvStudentTasks
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
-            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.add_512;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1016, 404);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
+            this.dgvStudentTasks.AllowUserToDeleteRows = false;
+            this.dgvStudentTasks.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvStudentTasks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvStudentTasks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvStudentTasks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvStudentTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chDateTask,
+            this.chTaskDesc,
+            this.chStatusTask});
+            this.dgvStudentTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvStudentTasks.Location = new System.Drawing.Point(432, 53);
+            this.dgvStudentTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvStudentTasks.Name = "dgvStudentTasks";
+            this.dgvStudentTasks.RowHeadersVisible = false;
+            this.dgvStudentTasks.RowHeadersWidth = 51;
+            this.dgvStudentTasks.RowTemplate.Height = 24;
+            this.dgvStudentTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudentTasks.Size = new System.Drawing.Size(574, 219);
+            this.dgvStudentTasks.TabIndex = 70;
             // 
-            // button1
+            // chDateTask
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(299, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 63);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btn_Logout_Click);
+            this.chDateTask.HeaderText = "Date";
+            this.chDateTask.MinimumWidth = 6;
+            this.chDateTask.Name = "chDateTask";
+            this.chDateTask.Width = 200;
             // 
-            // lbl_LoggedInAsName
+            // chTaskDesc
             // 
-            this.lbl_LoggedInAsName.AutoSize = true;
-            this.lbl_LoggedInAsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoggedInAsName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_LoggedInAsName.Location = new System.Drawing.Point(114, 50);
-            this.lbl_LoggedInAsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_LoggedInAsName.Name = "lbl_LoggedInAsName";
-            this.lbl_LoggedInAsName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_LoggedInAsName.Size = new System.Drawing.Size(150, 36);
-            this.lbl_LoggedInAsName.TabIndex = 20;
-            this.lbl_LoggedInAsName.Text = "Username";
+            this.chTaskDesc.HeaderText = "Task";
+            this.chTaskDesc.MinimumWidth = 6;
+            this.chTaskDesc.Name = "chTaskDesc";
+            this.chTaskDesc.Width = 150;
             // 
-            // pictureBox7
+            // chStatusTask
             // 
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(29, 23);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(58, 63);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 19;
-            this.pictureBox7.TabStop = false;
+            this.chStatusTask.HeaderText = "Status";
+            this.chStatusTask.MinimumWidth = 6;
+            this.chStatusTask.Name = "chStatusTask";
+            this.chStatusTask.Width = 150;
             // 
-            // label2
+            // btnEdit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(117, 23);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 18);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Logged in as student";
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEdit.Location = new System.Drawing.Point(25, 413);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(112, 38);
+            this.btnEdit.TabIndex = 69;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // label1
+            // tbxFloor
             // 
-            this.label1.Location = new System.Drawing.Point(339, 302);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Type";
+            this.tbxFloor.Location = new System.Drawing.Point(25, 265);
+            this.tbxFloor.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxFloor.Name = "tbxFloor";
+            this.tbxFloor.ReadOnly = true;
+            this.tbxFloor.Size = new System.Drawing.Size(111, 22);
+            this.tbxFloor.TabIndex = 67;
             // 
-            // label3
+            // tbxPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 337);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Message";
+            this.tbxPassword.Location = new System.Drawing.Point(25, 112);
+            this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
+            this.tbxPassword.Size = new System.Drawing.Size(261, 22);
+            this.tbxPassword.TabIndex = 65;
             // 
-            // chEventId
+            // tbxAddBalance
             // 
-            this.chEventId.FillWeight = 62.79013F;
-            this.chEventId.HeaderText = "Event Id";
-            this.chEventId.MinimumWidth = 6;
-            this.chEventId.Name = "chEventId";
-            this.chEventId.ReadOnly = true;
+            this.tbxAddBalance.Location = new System.Drawing.Point(440, 421);
+            this.tbxAddBalance.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxAddBalance.Name = "tbxAddBalance";
+            this.tbxAddBalance.Size = new System.Drawing.Size(203, 22);
+            this.tbxAddBalance.TabIndex = 62;
             // 
-            // dataGridViewTextBoxColumn1
+            // tbxRoom
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 103.3662F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Organizer";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tbxRoom.Location = new System.Drawing.Point(146, 265);
+            this.tbxRoom.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxRoom.Name = "tbxRoom";
+            this.tbxRoom.ReadOnly = true;
+            this.tbxRoom.Size = new System.Drawing.Size(140, 22);
+            this.tbxRoom.TabIndex = 60;
             // 
-            // dataGridViewTextBoxColumn2
+            // lblProfileFloor
             // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 95.81075F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.lblProfileFloor.AutoSize = true;
+            this.lblProfileFloor.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProfileFloor.Location = new System.Drawing.Point(21, 245);
+            this.lblProfileFloor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProfileFloor.Name = "lblProfileFloor";
+            this.lblProfileFloor.Size = new System.Drawing.Size(40, 17);
+            this.lblProfileFloor.TabIndex = 66;
+            this.lblProfileFloor.Text = "Floor";
             // 
-            // chLocation
+            // lblPassword
             // 
-            this.chLocation.FillWeight = 104.8595F;
-            this.chLocation.HeaderText = "Location";
-            this.chLocation.MinimumWidth = 6;
-            this.chLocation.Name = "chLocation";
-            this.chLocation.ReadOnly = true;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPassword.Location = new System.Drawing.Point(21, 94);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
+            this.lblPassword.TabIndex = 64;
+            this.lblPassword.Text = "Password";
             // 
-            // dataGridViewTextBoxColumn3
+            // lblAddBalance
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 168.3239F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.lblAddBalance.AutoSize = true;
+            this.lblAddBalance.BackColor = System.Drawing.SystemColors.Control;
+            this.lblAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddBalance.Location = new System.Drawing.Point(437, 394);
+            this.lblAddBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAddBalance.Name = "lblAddBalance";
+            this.lblAddBalance.Size = new System.Drawing.Size(88, 18);
+            this.lblAddBalance.TabIndex = 61;
+            this.lblAddBalance.Text = "Add balance";
             // 
-            // dataGridViewTextBoxColumn4
+            // lblRoom
             // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 104.8128F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Votes";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.lblRoom.AutoSize = true;
+            this.lblRoom.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRoom.Location = new System.Drawing.Point(143, 245);
+            this.lblRoom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Size = new System.Drawing.Size(45, 17);
+            this.lblRoom.TabIndex = 59;
+            this.lblRoom.Text = "Room";
             // 
-            // chVoters
+            // tbxScore
             // 
-            this.chVoters.FillWeight = 60.03668F;
-            this.chVoters.HeaderText = "Voters Nr";
-            this.chVoters.MinimumWidth = 6;
-            this.chVoters.Name = "chVoters";
-            this.chVoters.ReadOnly = true;
+            this.tbxScore.Location = new System.Drawing.Point(25, 372);
+            this.tbxScore.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxScore.Name = "tbxScore";
+            this.tbxScore.ReadOnly = true;
+            this.tbxScore.Size = new System.Drawing.Size(261, 22);
+            this.tbxScore.TabIndex = 57;
+            // 
+            // tbxBalance
+            // 
+            this.tbxBalance.Location = new System.Drawing.Point(25, 314);
+            this.tbxBalance.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxBalance.Name = "tbxBalance";
+            this.tbxBalance.ReadOnly = true;
+            this.tbxBalance.Size = new System.Drawing.Size(261, 22);
+            this.tbxBalance.TabIndex = 55;
+            // 
+            // tbxPhone
+            // 
+            this.tbxPhone.Location = new System.Drawing.Point(23, 214);
+            this.tbxPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPhone.Name = "tbxPhone";
+            this.tbxPhone.Size = new System.Drawing.Size(263, 22);
+            this.tbxPhone.TabIndex = 50;
+            // 
+            // tbxEmail
+            // 
+            this.tbxEmail.Location = new System.Drawing.Point(23, 162);
+            this.tbxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(263, 22);
+            this.tbxEmail.TabIndex = 48;
+            // 
+            // tbxAge
+            // 
+            this.tbxAge.Location = new System.Drawing.Point(197, 62);
+            this.tbxAge.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxAge.Name = "tbxAge";
+            this.tbxAge.Size = new System.Drawing.Size(89, 22);
+            this.tbxAge.TabIndex = 46;
+            // 
+            // tbxName
+            // 
+            this.tbxName.Location = new System.Drawing.Point(23, 62);
+            this.tbxName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(165, 22);
+            this.tbxName.TabIndex = 44;
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.SystemColors.Control;
+            this.lblScore.Location = new System.Drawing.Point(21, 346);
+            this.lblScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(45, 17);
+            this.lblScore.TabIndex = 56;
+            this.lblScore.Text = "Score";
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBalance.Location = new System.Drawing.Point(21, 295);
+            this.lblBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(59, 17);
+            this.lblBalance.TabIndex = 54;
+            this.lblBalance.Text = "Balance";
+            // 
+            // lblMyTasks
+            // 
+            this.lblMyTasks.AutoSize = true;
+            this.lblMyTasks.BackColor = System.Drawing.SystemColors.Control;
+            this.lblMyTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMyTasks.Location = new System.Drawing.Point(436, 14);
+            this.lblMyTasks.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblMyTasks.Name = "lblMyTasks";
+            this.lblMyTasks.Size = new System.Drawing.Size(76, 20);
+            this.lblMyTasks.TabIndex = 52;
+            this.lblMyTasks.Text = "My tasks";
+            // 
+            // lblGeneralInfo
+            // 
+            this.lblGeneralInfo.AutoSize = true;
+            this.lblGeneralInfo.BackColor = System.Drawing.SystemColors.Control;
+            this.lblGeneralInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeneralInfo.Location = new System.Drawing.Point(21, 11);
+            this.lblGeneralInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGeneralInfo.Name = "lblGeneralInfo";
+            this.lblGeneralInfo.Size = new System.Drawing.Size(156, 20);
+            this.lblGeneralInfo.TabIndex = 51;
+            this.lblGeneralInfo.Text = "General Information";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPhone.Location = new System.Drawing.Point(21, 196);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(49, 17);
+            this.lblPhone.TabIndex = 49;
+            this.lblPhone.Text = "Phone";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEmail.Location = new System.Drawing.Point(21, 144);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 47;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.BackColor = System.Drawing.SystemColors.Control;
+            this.lblAge.Location = new System.Drawing.Point(201, 42);
+            this.lblAge.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(33, 17);
+            this.lblAge.TabIndex = 45;
+            this.lblAge.Text = "Age";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblName.Location = new System.Drawing.Point(21, 42);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.TabIndex = 43;
+            this.lblName.Text = "Name";
+            // 
+            // pbxDeposit
+            // 
+            this.pbxDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.pbxDeposit.BackgroundImage = global::Project.Properties.Resources.banknotes_512;
+            this.pbxDeposit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxDeposit.Location = new System.Drawing.Point(820, 414);
+            this.pbxDeposit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxDeposit.Name = "pbxDeposit";
+            this.pbxDeposit.Size = new System.Drawing.Size(20, 25);
+            this.pbxDeposit.TabIndex = 2;
+            this.pbxDeposit.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(367, 28);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1, 418);
+            this.pictureBox3.TabIndex = 53;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnCompleteTask
+            // 
+            this.btnCompleteTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnCompleteTask.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnCompleteTask.FlatAppearance.BorderSize = 0;
+            this.btnCompleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompleteTask.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCompleteTask.Location = new System.Drawing.Point(432, 290);
+            this.btnCompleteTask.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCompleteTask.Name = "btnCompleteTask";
+            this.btnCompleteTask.Size = new System.Drawing.Size(221, 46);
+            this.btnCompleteTask.TabIndex = 68;
+            this.btnCompleteTask.Text = "Complete Selected Task";
+            this.btnCompleteTask.UseVisualStyleBackColor = false;
+            this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
+            // 
+            // btnDeposit
+            // 
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(69)))), ((int)(((byte)(90)))));
+            this.btnDeposit.FlatAppearance.BorderSize = 0;
+            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeposit.Location = new System.Drawing.Point(662, 407);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(207, 44);
+            this.btnDeposit.TabIndex = 63;
+            this.btnDeposit.Text = "Deposit";
+            this.btnDeposit.UseVisualStyleBackColor = false;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // FrmStudent
             // 
@@ -1837,26 +1838,23 @@
             this.Load += new System.EventHandler(this.FrmStudent_Load);
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.mtcStudent.ResumeLayout(false);
             this.mtpSchedule.ResumeLayout(false);
             this.mtpSchedule.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
-            this.mtpMessages.ResumeLayout(false);
-            this.mtpMessages.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
-            this.mtpProfile.ResumeLayout(false);
-            this.mtpProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.mtpHouseRules.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
             this.mtpAgreements.ResumeLayout(false);
             this.mtpAgreements.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AgreementsStudent)).EndInit();
+            this.mtpMessages.ResumeLayout(false);
+            this.mtpMessages.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMessageStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveMessage)).EndInit();
+            this.mtpHouseRules.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHouseRulesStudent)).EndInit();
             this.mtpGroceries.ResumeLayout(false);
             this.mtpGroceries.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -1865,8 +1863,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_GroceryItemAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GroceriesHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Groceries)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.mtpProfile.ResumeLayout(false);
+            this.mtpProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentTasks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDeposit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

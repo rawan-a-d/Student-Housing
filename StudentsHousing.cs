@@ -167,7 +167,6 @@ namespace Project
                 if (admin.Email == email)
                 {
                     return true;
-                    break;
                 }
             }
 
@@ -558,7 +557,8 @@ namespace Project
         {
             DateTime temp_start;
             DateTime temp_end;
-            DateTime startDate = DateTime.Today;
+            //DateTime startDate = DateTime.Today;
+            DateTime startDate = new DateTime(2020, 01, 10);
             DateTime endDate = startDate.AddDays(54);
 
             //--Normalize dates by getting rid of minues since they will get in the way when doing the loop
@@ -870,9 +870,9 @@ namespace Project
             //Students
             Student student1, student2, student3, student4, student5, student6, student7;
             student1 = new Student("Omar", "omar@fontys.com", "12345", 1, 1);
-            student2 = new Student("Pieter", "pieter@fontys.com", "12345", 1, 2);
+            student2 = new Student("Mark", "mark@fontys.com", "12345", 1, 4); 
             student3 = new Student("Miley", "miley@fontys.com", "12345", 1, 3);
-            student4 = new Student("Mark", "mark@fontys.com", "12345", 1, 4);
+            student4 = new Student("Pieter", "pieter@fontys.com", "12345", 1, 2);
             student5 = new Student("Kelvin", "kelvin@fontys.com", "12345", 1, 5);
             student6 = new Student("Ranim", "ranim@fontys.com", "12345", 1, 6);
             student7 = new Student("Robin", "robin@fontys.com", "12345", 1, 7);
@@ -886,7 +886,7 @@ namespace Project
             student1.UpdateScore(15);
             student2.UpdateScore(38);
             student3.UpdateScore(2);
-            student4.UpdateScore(64);
+            student4.UpdateScore(63);
             student5.UpdateScore(5);
             student6.UpdateScore(12);
             student7.UpdateScore(24);
@@ -898,18 +898,23 @@ namespace Project
             DateTime seven_jan = new DateTime(2020, 01, 07);
             DateTime ten_jan = new DateTime(2020, 01, 10);
             DateTime thirteen_jan = new DateTime(2020, 01, 13);
+            DateTime twinty_jan = new DateTime(2020, 01, 20);
 
 
             //Messages
-            Message message1, message2, message3, message4, message5, message6, message7, message8;
+            Message message1, message2, message3, message4, message5, message6, message7, message8, message9, message10;
             message1 = new Message(four_jan, MessageSubject.Question, "How can I make changes to my tenancy agreement?", 3);
-            message2 = new Message(six_jan, MessageSubject.Complaint, "The elevator does not work, when will it be repaired?", 7);
+            message2 = new Message(six_jan, MessageSubject.Complaint, "The elevator does not work, when will it be repaired?", 5);
             message3 = new Message(six_jan, MessageSubject.Complaint, "People are not cleaning the shared facilities", 3);
             message4 = new Message(seven_jan, MessageSubject.Question, "Why has my rent increased?", 5);
             message5 = new Message(ten_jan, MessageSubject.Complaint, "My neighbors are organizing parties during the week very late at night", 2);
             message6 = new Message(ten_jan, MessageSubject.Question, "How can I speak to my housing officer?", 7);
             message7 = new Message(thirteen_jan, MessageSubject.Question, "Am I due to have my kitchen and bathroom upgraded?", 7);
             message8 = new Message(thirteen_jan, MessageSubject.Question, "How can I report a repair?", 5);
+            message9 = new Message(thirteen_jan, MessageSubject.Question, "Hello, I'm pieter and I'm moving to a new apartment, could you please remove my account?", 6);
+            message10 = new Message(twinty_jan, MessageSubject.Complaint, "Mark didn't complete his task(Cleaning) on the 15th of january", 6);
+
+
             AddMessageToList(message1);
             AddMessageToList(message2);
             AddMessageToList(message3);
@@ -918,6 +923,8 @@ namespace Project
             AddMessageToList(message6);
             AddMessageToList(message7);
             AddMessageToList(message8);
+            AddMessageToList(message9);
+            AddMessageToList(message10);
 
             // agreements
             Agreement agreement1, agreement2, agreement3, agreement4, agreement5, agreement6;
@@ -961,16 +968,18 @@ namespace Project
             // House rules
             HouseRule rule1, rule2, rule3, rule4, rule5, rule6, rule7, rule8, rule9;
             rule1 = new HouseRule(four_jan, "No Smoking");
-            rule2 = new HouseRule(four_jan, "No animals permitted in residence");
+            //rule2 = new HouseRule(four_jan, "No animals permitted in residence");
             rule3 = new HouseRule(four_jan, "Keep the rooms clean");
-            rule4 = new HouseRule(four_jan, "No fan heaters allowed whatsoever - these can very easily cause fires!");
+            //rule4 = new HouseRule(four_jan, "No fan heaters allowed whatsoever - these can very easily cause fires!");
+            rule4 = new HouseRule(four_jan, "No fan heaters allowed whatsoever");
+
             rule5 = new HouseRule(four_jan, "Please use any off-street parking provided fairly between all housemates.");
             rule6 = new HouseRule(seven_jan, "The supplied furniture may not be removed from your room or the common areas.");
             rule7 = new HouseRule(seven_jan, "Please ensure that all air conditions/heating units are turned off in bedrooms before leaving the house.");
             rule8 = new HouseRule(seven_jan, "Guests must not interfere with the reasonable peace, comfort and privacy of other residents.");
             rule9 = new HouseRule(thirteen_jan, "Report your disturbances to your Resident Assistant and Building Manager");
             AddHouseRuleToList(rule1);
-            AddHouseRuleToList(rule2);
+            //AddHouseRuleToList(rule2);
             AddHouseRuleToList(rule3);
             AddHouseRuleToList(rule4);
             AddHouseRuleToList(rule5);
@@ -993,6 +1002,8 @@ namespace Project
             CreateEvent(4, "Hang out", "First floor room 20", twentysecond_jan);
             //CreateEvent(3, "My birthday party", "Floor 3 common area", eighteen_jan);
             //CreateEvent(3, "My birthday party", "Floor 3 common area", eighteen_jan);
+
+
         }
     }
 }

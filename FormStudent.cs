@@ -23,6 +23,15 @@ namespace Project
             {
                 studentsHousing.AddDates();
                 studentsHousing.CreateSchedule();
+                studentsHousing.CompleteTask(5, new DateTime(2020, 01, 15));
+                studentsHousing.CompleteTask(4, new DateTime(2020, 01, 10));
+                studentsHousing.CompleteTask(4, new DateTime(2020, 01, 13));
+                studentsHousing.CompleteTask(5, new DateTime(2020, 01, 15));
+                studentsHousing.CompleteTask(4, new DateTime(2020, 01, 16));
+                studentsHousing.CompleteTask(5, new DateTime(2020, 01, 18));
+                studentsHousing.CompleteTask(4, new DateTime(2020, 01, 19));
+                studentsHousing.CompleteTask(6, new DateTime(2020, 01, 20));
+
                 UpdateScheduleList();
             }
             else
