@@ -9,39 +9,41 @@ The most important role of this software solution is that there will be a way fo
 
 
 # Screenshots
-*Login:*
+*Login:*\
 ![login](https://user-images.githubusercontent.com/27498593/87733433-1ce33a00-c7d0-11ea-82f3-97117e67fec2.png)
 
 
-### Admin
-*House Rules:*
+
+## Admin
+*House Rules:*\
 ![admin_houserules](https://user-images.githubusercontent.com/27498593/87733426-1bb20d00-c7d0-11ea-8a15-5a434891e70d.png)
 
-*Messages:*
+*Messages:*\
 ![admin_messages](https://user-images.githubusercontent.com/27498593/87733427-1c4aa380-c7d0-11ea-8d01-bc216fed77c1.png)
 
-*Schedule:*
+*Schedule:*\
 ![admin_schedule](https://user-images.githubusercontent.com/27498593/87733428-1c4aa380-c7d0-11ea-9828-437ca794d9b8.jpg)
 
-*Tenants:*
+*Tenants:*\
 ![admin_tenant_list](https://user-images.githubusercontent.com/27498593/87733432-1c4aa380-c7d0-11ea-8e6c-d51e5adb02ef.png)
 
 
-### Student
-*Agreements:*
+
+## Student
+*Agreements:*\
 ![student_agreements](https://user-images.githubusercontent.com/27498593/87733434-1ce33a00-c7d0-11ea-81bb-7ad4c19e035e.png)
 
-*Groceries:*
+*Groceries:*\
 ![student_groceries](https://user-images.githubusercontent.com/27498593/87733435-1ce33a00-c7d0-11ea-99c8-199662de0ae9.png)
 
-*House Rules:*
+*House Rules:*\
 ![student_houserules](https://user-images.githubusercontent.com/27498593/87733436-1d7bd080-c7d0-11ea-8179-0df9d4168ffb.jpg)
 
-*Messages:*
+*Messages:*\
 ![student_messages](https://user-images.githubusercontent.com/27498593/87733437-1d7bd080-c7d0-11ea-84e9-21a4c13ab4b3.png)
 
-*Profile:*
+*Profile:*\
 ![student_profile](https://user-images.githubusercontent.com/27498593/87733438-1d7bd080-c7d0-11ea-8b76-0c82e0eb4895.jpg)
 
-*Schedule:*
+*Schedule:*\
 ![student_schedule](https://user-images.githubusercontent.com/27498593/87733439-1e146700-c7d0-11ea-8680-57dc57efb702.png)
